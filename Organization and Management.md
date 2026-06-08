@@ -253,3 +253,61 @@ Intelligence is:
     -   Espirit de Corps
         -   "Union is Strength" - refers to harmony and mutal understanding among the members of an organization
      
+## A.4 Ownership
+Types:
+   - Single Ownership
+     - adv:
+       - easy to form and dissolve
+       - easy to manage
+       - direct motivation
+       - absolute control
+       - business secrecy
+       - promptness in decision making
+       - flexibility in operation
+     - disadv:
+       - limited financial resources
+       - unlimited profit oriented
+       - unlimited liability
+       - health issues/time management
+   - Partnership
+     - Sleeping Partnership
+     - adv:
+      - easy to form and dissolve
+        - can be formed without much legal formalities
+        - easy to dissolve as well, with the mutual consent of the partners
+       - large resources
+         - depending upon the number of copartners, large capital can be raised
+         - more resources and funds than single ownership organization
+       - better skills and ability
+         - certainly more people involved means diversity in the skills and ability
+         - wider range of knowledge
+       - quick decisions
+         - partners can meet in person to take quick decisions
+     - disadv:
+       - instability in business
+         - since more than one person is involved, it is not necessary there will be mutual understanding in the relationship
+         - conflict between the parterns may cause instability in business
+       - liability
+         - all partners are liable for the actions of the other partners
+         - if for some reason business fails, the partner with even the minimum investment may be liable to pay off all debts if the partners are not able to pay
+       - misunderstanding
+         - since more people are involved, confusions and misunderstanding can occur
+         - decisions need to be shared, not always brings up the best interest
+         - profits and loss are shared as per the investment, some partner can put in more time to the business, some may not be able to put more time.
+
+Here's a simple footnote/reference,[^1] sample[^2] longer one.[^3]
+
+[^1]: This is the first footnote.
+[^2]: This is weird
+
+[^3]: Here's one with multiple paragraphs and code.
+
+    Indent paragraphs to include them in the footnote.
+
+    ```c
+    #include<stdio.h>
+    printf("Enter this %d", i)
+    { my code }
+    ```
+
+    Add as many paragraphs as you like.
