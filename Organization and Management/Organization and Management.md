@@ -1,26 +1,25 @@
 
 Organization has:
-
 -   HR
 -   Manpower
 -   Finances
 
 Organization produces:
-
 -   Product
 -   Service
 
-## Z.1 Definition of an Organization
-
+# A Definition of an Organization
 -   Social structure
--   an entity in which two or more people work interdependently through structured pattenrs
+-   An entity in which two or more people work interdependently through structured patterns
 -   coordination of man, machine and materials
 -   for a purpose of accomplishing a set of goals
     -   create value for its stakeholders, stockholders, employees, community, society.
 -   Goal oriented system
     -   people work together for a specific goal
+- Social System
+	- People use the knowledge and techniques they possess.
 
-## Z.2 Why an organization
+## A.1 Why an organization
 
 -   People work together to achieve certain goals
 -   when organized, they can have better performances
@@ -32,13 +31,13 @@ Organization produces:
 -   people related should be willing to cooperate with each other
 -   have greater communications with each other
 
-## Z.3 Organization in Society
+## A.2 Organization in Society
 
 -   the goals the organizations set to achieve directly or indirectly affects the society
 -   development in education system, healthcare, technologies have helped us live a better life
 -   Hospitals, Colleges and Universities, Banks, Telecommunication, Technologies, Entertainment industry
 
-### Z.3.1 System approach of Organization
+### A.2.1 System approach of Organization
 
 ```mermaid
 flowchart LR
@@ -67,7 +66,7 @@ Input:
 -   Fro Output
 -   to System
 
-## Z.4 Principles of Organization
+## A.3 Principles of Organization
 
 -   Henry Fayol
 -   also referred as Principles of Management
@@ -89,7 +88,7 @@ Input:
         -   every worker should receive orders from one boss only
         -   helps in effective run of an organization
 
-## Z.5 Formal and Informal Organization
+## A.4 Formal and Informal Organization
 
 -   Informal structure created within an organization
 -   Based on the factors like same language, culture, languages, personal attitudes, same tastes or any other factors
@@ -97,7 +96,7 @@ Input:
 -   are informed informally within the organization by socializing and interpersonal relationships within the individuals over the breaks, or other social functions
 -   not necessarily leader is chosen within informal organization who can have greater power than the formal leader over getting things done in the organization.
 
-## Z.6 Management
+## A.5 Management
 
 -   In simple words, getting things done through other people
 -   in an organization, management is the act of getting people together to achieve the set goals using the available resources effectively and efficiently
@@ -107,14 +106,14 @@ Input:
     -   General Sun Tzu, the art of war, 6\th century BC
     -   Chanakya's Arthashastra, 300 BC
 
-### Z.6.1 Functtion/Importance
+### A.5.1 Functtion/Importance
 
 -   Proper Planning, determine what is to be achieved
 -   Proper Organizing, allocate resources and establish the means to accomplish the plan
 -   Proper influence, motivate and lead personnel towards the goal
 -   Controlling activities in the organization, compare results achieved to the planned goals
 
-### Z.6.2 Level of Management
+### A.5.2 Level of Management
 
 -   Depends upon the size, complexity and the nature of organization
 -   Top level Management
@@ -131,7 +130,7 @@ Input:
     -   Supervision of the workers and labors
     -   More involved in working to achieve the goals set by the organization
 
-### Z.6.3 Function of Management
+### A.5.3 Function of Management
 
 **PODCC**
 
@@ -150,7 +149,7 @@ Input:
     -   watch the activities of the organization
     -   compare the results achieved with the goals set
 
-### Z.6.4 Managerial Skills
+### A.5.4 Managerial Skills
 
 -   Interpersonal Skills
     -   Interaction between the people inside and outside of organization
@@ -159,9 +158,9 @@ Input:
 -   Decisional Skills
     -   Use the information gathered to make decisions for the betterment of the organization
 
-# A Artificial Intelligence
+# B Artificial Intelligence
 
-## A.1 Intelligent Behaviors
+## B.1 Intelligent Behaviors
 
 Intelligence is:
 
@@ -175,7 +174,7 @@ Intelligence is:
     Bigger subsets to smaller subsets:  
     AI -> ML -> DL
 
-## A.2 Behavioral Management Approach
+## B.2 Behavioral Management Approach
 
 -   After the use of scientific management approach of Yaylor
     -   the average output of work per day rose from 12.7 ton to 48.8 tons
@@ -197,7 +196,7 @@ Intelligence is:
     -   group of 14 males and their work were observed
     -   social interaction between the group had a good impact on the performance and the quality of their work
 
-### A.2.1 Conclusion
+### B.2.1 Conclusion
 
 -   When employees are given special attention by the managers, output is likely to improve trather than just changing the workign conditions
 -   organization is a social system
@@ -207,7 +206,7 @@ Intelligence is:
 -   better communication between various level is important
 -   management requires not only technical but the social skills as well
 
-## A.3 Administrative Management Approach
+## B.3 Administrative Management Approach
 
 -   Henry Fayol (1842-1925), French Mining engineer and Management Consultant
 -   First person to analyze the functions of Management
@@ -254,7 +253,7 @@ Intelligence is:
     -   Espirit de Corps
         -   "Union is Strength" - refers to harmony and mutal understanding among the members of an organization
      
-## A.4 Ownership
+## B.4 Ownership
 Types:
    - Single Ownership
      - adv:

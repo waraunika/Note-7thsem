@@ -1,0 +1,37 @@
+- Z = R + j X
+	- impedance = resistance + j Reactance
+- Y = G - jB
+	- admittance = conductance - j succeptance
+- load <-> Source
+- Series <-> Parallel/Shunt
+- $\G$ <-> SWR
+### Z.1.1 Smith Chart
+- horizontal: equator
+	- prime left 0 <- 1.0 is prime center -> prime right infinity
+	- R = 0, G = $\infty$, Vmin, Imax
+	- R = 1, G = 1
+	- R = $\infty$, G = 0, Vmax, Imin
+- vertical: equator
+	- 0 -> 1 -> $\infty$
+- Resistance circle, center at prime right
+- Reactance:
+	- clockwise: +jX
+	- anticlockwise: -jX
+- Reactance circle
+
+lets say:
+- Z$_L$ = 100 +j100
+- Z$_0$ = 100
+- to normalize: divide by Z$_0$ 
+- Z$_{L_{N}}$ = 1 + j 1
+- angles
+	- 63 degree reflection
+	- 32 degree transmission
+- swr
+	- Zl : Zin = 1 :  2.6
+- W-towards-g = 0.338
+- W-towards-l = 0.162
+- load deko xa, so design from w-t-g
+- Z-l = 50 +j 150, 
+- Z-l = 120 - j 90
+- Z-0 = 100
