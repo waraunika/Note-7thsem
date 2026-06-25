@@ -1,7 +1,7 @@
 [
   "obsidian-excalidraw-plugin",
   "obsidian-git",
-  "number-headings-obsidian",
   "symbols-prettifier",
-  "typing-speed"
+  "typing-speed",
+  "auto-heading"
 ]

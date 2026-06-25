@@ -1,16 +1,8 @@
-Organization has:
--   HR
--   Manpower
--   Finances
-
-Organization produces:
--   Product
--   Service
-
-# A Introduction
-## A.1 Organization
-### A.1.1 Concepts of Organization
-#### A.1.1.1 Definition
+<p style="text-align: center; font-weight: bold;">20 Hours</p>
+# A.1 Organization
+<p style="text-align: center;">2 Hours</p>
+## A.1 Concepts of Organization
+### A.1.1.1 Definition
 -   Social structure
 -   An entity in which two or more people work interdependently through structured patterns
 -   coordination of man, machine and materials
@@ -22,7 +14,7 @@ Organization produces:
 	- People use the knowledge and techniques they possess.
 - Technological System
 	- People use the knowledge and techniques they possess.
-#### A.1.1.2 Why an organization
+### A.1.1.2 Why an organization
 -   People work together to achieve certain goals
 -   when organized, they can have better performances
 -   fulfill basic needs
@@ -33,19 +25,18 @@ Organization produces:
 -   rules and regulations must be organized, so no conflicts and confusion occur
 -   people related should be willing to cooperate with each other
 -   have greater communications with each other
-
-#### A.1.1.3 Organization in Society
+### ⁠a. Organization in society
 -   the goals the organizations set to achieve directly or indirectly affects the society
 -   development in education system, healthcare, technologies have helped us live a better life
 -   Hospitals, Colleges and Universities, Banks, Telecommunication, Technologies, Entertainment industry
-### A.1.2 System approach of Organization
+## ⁠b. approach of Organization
 - consists of interdependent parts that work together to continually monitor and transact with the external environment
 - important to study the change in the external world
 - changes in technologies, methods, customer needs, market trends, rules and regulations
 - feedback from the customers
 ![[Drawing 2026-06-24 06.56.08.excalidraw | 900]]
 
-### A.1.3 Principles of Organization
+## ⁠c. of Organization
 -   Henry Fayol
 -   also referred as Principles of Management
 -   For an organization to run smoothly, following principles are to be followed
@@ -66,7 +57,7 @@ Organization produces:
         -   every worker should receive orders from one boss only
         -   helps in effective run of an organization
 
-### A.1.4 Formal and Informal Organization
+## ⁠d. Formal and Informal Organization
 -   Informal structure created within an organization
 -   Based on the factors like same language, culture, languages, personal attitudes, same tastes or any other factors
 -   Informal organization exerts a strong influence on employee behaviors, if management can understand its nature, it can contribute to organization's productivity
@@ -74,7 +65,7 @@ Organization produces:
 -   not necessarily formed to accomplish the organization goals, rather, formed to fulfill the social activities
 - An informal leader is chosen within informal organization who can have greater power than the formal leader over getting things done in the organization.
 
-## A.2 Management
+# ⁠e. Management
 -   In simple words, getting things done through other people
 -   in an organization, management is the act of getting people together to achieve the set goals using the available resources effectively and efficiently
 -   Brain of an organization
@@ -83,7 +74,7 @@ Organization produces:
     -   General Sun Tzu, the art of war, 6\th century BC
     -   Chanakya's Arthashastra, 300 BC
 
-### A.2.1 Function of Management
+## ⁠e.1. Function of Management
 **PODCC**
 -   Planning:
     -   Thinking before doing
@@ -100,7 +91,7 @@ Organization produces:
     -   watch the activities of the organization
     -   compare the results achieved with the goals set
 
-### A.2.2 Level of Management
+## ⁠e.2. Level of Management
 -   Depends upon the size, complexity and the nature of organization
 -   Top level Management
     -   Higher Authority
@@ -116,19 +107,19 @@ Organization produces:
     -   Supervision of the workers and labors
     -   More involved in working to achieve the goals set by the organization
 
-### A.2.3 Managerial Skills
+## ⁠e.3. Managerial Skills
 -   Interpersonal Skills
     -   Interaction between the people inside and outside of organization
 -   Informational Skills
     -   Gather information related to the goals and operation of the organization
 -   Decisional Skills
     -   Use the information gathered to make decisions for the betterment of the organization
-### A.2.4 Importance/Function
+## ⁠e.4. Importance/Function
 -   Proper Planning, determine what is to be achieved
 -   Proper Organizing, allocate resources and establish the means to accomplish the plan
 -   Proper influence, motivate and lead personnel towards the goal
 -   Controlling activities in the organization, compare results achieved to the planned goals
-### A.2.5 Models of Management
+## ⁠e.5. Models of Management
 - Hierarchical Management Model
 	- Authority and Responsibility
 	- Managers receive authority from the superiors to command resources and actions to the subordinates
@@ -155,10 +146,10 @@ Organization produces:
 	- Management support consists of tools that keep the organization on an established path towards the goals.
 - Organization may choose to use all or few of these models according to their needs.
 
-## A.3 Theories of Management
+# ⁠f. Theories of Management
 Necessary to understand the historical development of management
 
-### A.3.1 Scientific Management Approach
+## ⁠f.1. Scientific Management Approach
 - Frederic W Taylor, first person to study management, early 1900's
 - believes scientific approaches should be used to increase the productivity and efficiency of the work
 - his belief, there should be one best way of doing each task
@@ -176,7 +167,7 @@ Necessary to understand the historical development of management
 - after the use of scientific management approach of taylor
 	- the average output of work per day rose from 12.7 ton to 48.8 ton
 	- daily pay rose from $1.14 to a substantial high $1.85
-### A.3.2 Administrative Management Approach
+## ⁠f.2. Administrative Management Approach
 -   Henry Fayol (1842-1925), French Mining engineer and Management Consultant
 -   First person to analyze the functions of Management
 -   Made three major contribution to the theory of management
@@ -221,7 +212,7 @@ Necessary to understand the historical development of management
         -   importance should be given to the success of the organization rather than individual stress
     -   Espirit de Corps
         -   "Union is Strength" - refers to harmony and mutual understanding among the members of an organization
-### A.3.3 Behavioral Management Approach
+## ⁠f.3. Behavioral Management Approach
 - Elton Mayo and his associates in the 1920's
 - productivity not necessarily increased through the monetary incentives, human behavior and social environment plays an important part
 - HR Movement, saw the organization as the social system with members strongly influenced by intergroup relationships and with the individual motivated by a complex hierarchy of needs
@@ -245,8 +236,8 @@ Necessary to understand the historical development of management
 	-   worker satisfaction is based on productivity and increased the effectiveness
 	-   better communication between various level is important
 	-   management requires not only technical but the social skills as well
-### A.3.4 Modern Management Theories
-#### A.3.4.1 Contingency and System Approach
+## ⁠f.4. Modern Management Theories
+### ⁠f.4.a. Contingency and System Approach
 - Contingency Approach
 	- As an integrative approach, fits together both the theories
 	- assumes no single theory is the best, existing ideas must be applied selectively
@@ -256,8 +247,8 @@ Necessary to understand the historical development of management
 	- organization uses inputs, capital, physical and human resources and transforms it into a desirable output
 	- necessary to recognize the internal and external environment and the changes in these environment that directly affects the performance of the services.
 
-## A.4 Forms of Ownership
-### A.4.1 Single Ownership
+# ⁠g. Forms of Ownership
+## ⁠g.1. Single Ownership
  - Oldest, popular and simplest form of organization
  - owned and controlled by single person
  - formed to fulfill own goals and use of own resources
@@ -340,7 +331,7 @@ Necessary to understand the historical development of management
 		<td></td>
 	</tr>
 </table>
-### A.4.2 Partnership
+## ⁠g.2. Partnership
  - Is formed when two or more people join hands to work together, sharing equally the profit and loss
  - Increases the resources, capital, skills and manpower
  - Formed with the mutual understanding between the partners
@@ -388,7 +379,7 @@ Necessary to understand the historical development of management
 		<td>Since more people are involved, confusions and misunderstanding can occur<br>Decisions need to be shared, not always brings up the best interest<br>Profits and loss are shared as per the investment, some partner can put in more time to the business, some may not be able to put more time</td>
 	</tr>
 </table>
-### A.4.3 Joint Stock Company
+## ⁠g.3. Joint Stock Company
 - Association of individuals for the purpose of carrying on some trade or business
 - aka corporations or limited companies
 - capital is collected by selling shares to different people, known as share holders
@@ -460,7 +451,7 @@ Necessary to understand the historical development of management
 		<td>All reports are to be par with the government laws and regulation<br>Lots of resources and time are consumed, complying the law</td>
 	</tr>
 </table>
-### A.4.4 Cooperative Societies
+## ⁠g.4. Cooperative Societies
 - Different from other companies as it is not primarily formed for profit motive but as rendering services to its members in particular and to the society in general
 - voluntary association of individuals for their mutual, social and economical and cultural benefit
 - at least 10 members and no more than 100, membership is open to anyone
@@ -470,7 +461,7 @@ Necessary to understand the historical development of management
 - formed on the basis of self help, self responsibility, democracy, equality
 - management committee is elected by members on the basis of "One Man One Vote" regardless of the number of shares owned by an individual
 - fixed ate of dividend. part of the profit is utilized for general welfare of the society, part is shared as bonus among the members on the basis of effort put in by its members.
-#### A.4.4.1 Types of Cooperatives
+### ⁠g.4.a. Types of Cooperatives
 - Producer's Cooperatives
 	- Created to help and strengthen small producers who can't withstand competition by organized large scale producers
 	- Cooperatives provide them with raw materials, tools and equipment, the producers sell their product to the cooperatives and is introduced in the market
@@ -544,7 +535,7 @@ Necessary to understand the historical development of management
 		<td>Since the dividends are not shared beyond certain percentage of the profit, the members of managing committee do not sufficiently feel motivated to do their best</td>
 	</tr>
 </table>
-### A.4.5 Public Corporation
+## ⁠g.5. Public Corporation
 - An organization formed by the government
 - social welfare organization created for non profit objectives
 - history: between 1936 and 1939, 20 were formed
@@ -589,14 +580,14 @@ Necessary to understand the historical development of management
 		<td>Since the person in charge are chosen by the government, politics play important part<br>Person chosen not necessarily bears the required skills<br>May be the reason behind the failure of the organization</td>
 	</tr>
 </table>
-## A.5 Organizational Structure
+# ⁠h. Organizational Structure
 - Refers to division of labor as well as the patterns of coordination, communication, workflow and formal power
 - structure provides guidelines essential for effective employee performance and overall success
 - Represents the hierarchical arrangement of various positions in an organization
 - in simple words, it defines who is to direct to whom and who is to report to whom
 - there is no single best way of an organization structure, management of every organization has to evolve its own structure as per their requirements and convenience
 - Based upon nature of activities of business, and competence of personnel, there are three different types of organization which are quite popular in the business world.
-### A.5.1 Line Organization
+## ⁠h.1. Line Organization
 - Simplest form of an organization
 - represents a direct vertical relationships through which the authority flows from the topmost executive to the lower supervisor levels
 - authority is greatest at the top and decreases with each successive level down the hierarchy
@@ -619,7 +610,7 @@ C --> G[Supervisor]
 	- Since the authority is concentrated at top, if they are not able perform well, the organization will not be successful
 	- lack of effectiveness as the firm grows, top executive is too much overloaded
 	- only suitable for small organization, lack of specialization my hamper the future
-### A.5.2 Functional Organization
+## ⁠h.2. Functional Organization
 - Idea developed by F.W Taylor
 - Organization is divided into several units based on functions such as production, marketing, finance, personnel management and are put under the charge of different persons
 - If a person performs several functions, he/she will be under the direct charge of the several persons in charge of the particular functions
@@ -644,7 +635,7 @@ flowchart TD
 	 - violates the principle of unity of command
 	 - a functional manager may tend to think in terms of his own department only department only rather than the organization as a whole
 	 - delay in decision making when the decision requires the involvement of more than one specialists
-### A.5.3 Line and Staff Organization
+## ⁠h.3. Line and Staff Organization
 - In this organization, line authority moves down in the same manner as in the line organization, with addition of specialists attached to the line managers to advise them on business matters
 - these specialist stand ready with their specialty to serve when they are called for, with information for the better performance of the organization
 - provides advice to the line managers with their expertise
@@ -671,7 +662,7 @@ flowchart TD
 	- line executives work in more practical manner, staff executives who are specialists tend to be more theoretical
 	- since staff executives are not accounted for the results, they may not be performing their duties well
 
-### A.5.4 Committee Organization
+## ⁠h.4. Committee Organization
 - Two or more person appointed by higher authority for the purpose of advising
 - may be formed for a limited duration or standing committee
 - it may or may not have authorities
@@ -683,8 +674,8 @@ flowchart TD
 	- delay in decision making
 	- committee might take decision based on compromise between the different views rather than whats best
 
-## A.6 Purchasing and Marketing Management
-### A.6.1 Purchasing Introduction
+# ⁠i. Purchasing and Marketing Management
+## ⁠i.1. Purchasing Introduction
 - Important function in all types of organization, no business can operate successfully without functions related to purchasing
 - the activity of acquiring goods and services by payment, to accomplish the goals of organization
 - Procurement of materials, machine, tools and equipment
@@ -692,7 +683,7 @@ flowchart TD
 - In small organization different departments do their own purchasing, while in big scale organization it is a common practice to have a separate purchasing department responsible for making required purchases throughout the organization.
 - Purchasing department are responsible to understand the needs and the requirement of different departments and individuals within the organization and meet their needs.
 
-### A.6.2 Functions of Purchasing Department
+## ⁠i.2. Functions of Purchasing Department
 - Purchasing department has certain responsibility to buy materials, and ensure continuity of supply of all types of materials required for the operation of organization.
 - The main function of the purchasing department is to maintain regular flow of materials in following way:
 	- What to purchase i.e. to buy materials of right quality
@@ -701,7 +692,7 @@ flowchart TD
 	- When to purchase i.e. to buy materials at right time (regular flow of materials)
 	- Where to purchase i.e. to buy materials from a reliable supplier/manufacturer with delivery at the right time
 - Maintain the regular flow of inputs to maintain the flow of outputs
-### A.6.3 Methods of Management
+## ⁠i.3. Methods of Management
 - Direct Purchase Procedure
 	- When the materials are immediately required to perform certain jobs, materials are purchased directly from certain suppliers
 - Quotation Procedure
@@ -713,7 +704,7 @@ flowchart TD
 	- Collect the tender from the interested suppliers and evaluate it and purchase the materials from prospective suppliers
 	- A tender is a written document provided by suppliers, consisting of price quotations, terms and condition for the supply of goods
 	
-### A.6.4 Different steps of Purchasing
+## ⁠i.4. Different steps of Purchasing
 - Identifying the required materials from different departments 
 -  Inquiry to supplier
 -  Receive price quotations 
@@ -725,7 +716,7 @@ flowchart TD
 - Inspection of materials and creating report/records
 - Requesting the accounts department for the payment
 - Allocate materials as per requirements
-### A.6.5 Marketing Introduction
+## ⁠i.5. Marketing Introduction
 - Process of communicating the value of products or services to the consumers or end users
 - An organizational function for creating, delivering and communicating  value to the customers, and managing customer relationships for the mutual benefit of both the customers as well as the organization and its shareholders
 - Performance of business activities that direct the flow of goods and services from producers to consumers
@@ -752,7 +743,7 @@ flowchart TD
 		- Market intelligence: knowing what is happening in the market, knowing what the competitors are planning
 		- Market Analysis: gather information from customers about their reaction to new pricing policies and new products
 		- Product Evaluation: determine the effectiveness of the strategies adopted for the product and analyze  any changes needed in the future
-### A.6.6 Functions of Marketing
+## ⁠i.6. Functions of Marketing
 - Pricing
 	- Setting the price of the product at the right level as per demand, quality of product
 - Buying  
@@ -769,7 +760,7 @@ flowchart TD
 	- Obtaining, managing and using information about what customers want ,to improve business decision making, performance of marketing activities, and determining what will sell
 - Promotion
 	- Communicating with customers about the product to achieve the desired result--customer demand for and purchase of the product. Includes advertising, personal selling, publicity, and public relations
-### A.6.7 Advertising
+## ⁠i.7. Advertising
 - Form of marketing, used to encourage or persuade the consumers or end users to take action upon the product, an organization is advertising to sell
 - Newspaper, magazines, medias, online sources, TV, door to door selling, billboards, sales promotions
 - Helps increase sales by creating awareness in people, making them conscious about the products and brands and help make an organization popular within the circle of potential buyers

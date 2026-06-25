@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Organization and Management/Chapter 2.md",
+                "file": "Organization and Management/Chapter 2 Personal Management.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 2"
+              "title": "Chapter 2 Personal Management"
             }
           }
         ],
@@ -91,7 +91,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "46db94f0435341e0",
@@ -169,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Organization and Management/Chapter 1.md",
+                "file": "Organization and Management/Chapter 2 Personal Management.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 1"
+              "title": "Outline of Chapter 2 Personal Management"
             }
           },
           {
@@ -184,17 +185,16 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-view"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -209,10 +209,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "719d405be49c37cd",
+  "active": "9fc8c76a21ac0a39",
   "lastOpenFiles": [
-    "Organization and Management/Chapter 1.md",
-    "Organization and Management/Chapter 2.md",
+    "Organization and Management/Chapter 1 Introduction.md",
+    "Organization and Management/Chapter 2 Personal Management.md",
     "Excalidraw/Drawing 2026-06-24 06.56.08.excalidraw.md",
     "Organization and Management/Daily notes.md",
     "Artificial Intelligence/june 5 2026.md",
