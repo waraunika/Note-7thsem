@@ -687,12 +687,94 @@ flowchart TD
 ### A.6.1 Purchasing Introduction
 - Important function in all types of organization, no business can operate successfully without functions related to purchasing
 - the activity of acquiring goods and services by payment, to accomplish the goals of organization
+- Procurement of materials, machine, tools and equipment
+- An organization has huge responsibility to buy materials of right quality, the right quantity, at right time, from the right sources with delivery at the right place
+- In small organization different departments do their own purchasing, while in big scale organization it is a common practice to have a separate purchasing department responsible for making required purchases throughout the organization.
+- Purchasing department are responsible to understand the needs and the requirement of different departments and individuals within the organization and meet their needs.
 
 ### A.6.2 Functions of Purchasing Department
+- Purchasing department has certain responsibility to buy materials, and ensure continuity of supply of all types of materials required for the operation of organization.
+- The main function of the purchasing department is to maintain regular flow of materials in following way:
+	- What to purchase i.e. to buy materials of right quality
+	- How much to purchase i.e. to buy materials of right quantity
+	- What rate to purchase i.e. to buy materials at right price
+	- When to purchase i.e. to buy materials at right time (regular flow of materials)
+	- Where to purchase i.e. to buy materials from a reliable supplier/manufacturer with delivery at the right time
+- Maintain the regular flow of inputs to maintain the flow of outputs
 ### A.6.3 Methods of Management
-### A.6.4 Marketing Introduction
-### A.6.5 Functions of Marketing
-### A.6.6 Advertising
+- Direct Purchase Procedure
+	- When the materials are immediately required to perform certain jobs, materials are purchased directly from certain suppliers
+- Quotation Procedure
+	- Price quotation are collected from different suppliers, at least three
+	- Evaluate the price quotation and purchase the materials from the suitable supplier
+- Tender Procedure
+	- Materials are purchased from open market
+	- Advertise the materials required in local/international newspaper or different form of media
+	- Collect the tender from the interested suppliers and evaluate it and purchase the materials from prospective suppliers
+	- A tender is a written document provided by suppliers, consisting of price quotations, terms and condition for the supply of goods
+	
+### A.6.4 Different steps of Purchasing
+- Identifying the required materials from different departments 
+-  Inquiry to supplier
+-  Receive price quotations 
+- Prepare the comparative statement from different suppliers and evaluate it
+- Choose/Approve the supplier
+- Placing order, sending copies of purchase list to the respective departments or storage, accounts
+- Follow up the order
+- Receiving the orders, inform the respective departments and users
+- Inspection of materials and creating report/records
+- Requesting the accounts department for the payment
+- Allocate materials as per requirements
+### A.6.5 Marketing Introduction
+- Process of communicating the value of products or services to the consumers or end users
+- An organizational function for creating, delivering and communicating  value to the customers, and managing customer relationships for the mutual benefit of both the customers as well as the organization and its shareholders
+- Performance of business activities that direct the flow of goods and services from producers to consumers
+- According to William J Stanton, Marketing is a total system of interacting business activities design to plan, price, promote and distribute wants satisfying products and services to present and potential customers
+- Four P’s of Marketing, Product, Pricing, Placement and Promotion
+	- Product should be developed as per the product information provided through market research, should meet the needs of the end users
+	- Pricing refers to setting a price for the product
+	- Placement refers to how a product reaches the buyer, how it is sold, online, retail, wholesale, to which market base(businesses, personal, families, youths)
+	- Promotion includes advertising, sales promotion, publicity, branding
+- Marketing Management: important operative function of management
+	- It performs all management functions related to the field of marketing
+	- Includes all activities which are necessary to determine the needs of customers and to supply goods and services
+- Marketing Concept
+	- Marketing represents satisfying customer by selling the products meeting their needs 
+	- The objective of marketing is not only making profit by volume sales but making profit by satisfying the customers
+	- Marketing concept is based on three fundamental belief’s:
+		- Customer oriented: company planning, policies and operation should be customer oriented
+		- Profit oriented: profitable sales volume should be the goal 
+		- Satisfaction of customers: products should be based upon customer satisfaction
+- Marketing Research 
+	- Activity by an organization with the purpose of gaining information about potential buyers
+	- Four key elements to market research
+		- Analysis of current activities: monitoring current sales trends, gives idea of who is buying what and where
+		- Market intelligence: knowing what is happening in the market, knowing what the competitors are planning
+		- Market Analysis: gather information from customers about their reaction to new pricing policies and new products
+		- Product Evaluation: determine the effectiveness of the strategies adopted for the product and analyze  any changes needed in the future
+### A.6.6 Functions of Marketing
+- Pricing
+	- Setting the price of the product at the right level as per demand, quality of product
+- Buying  
+	- Involves what to buy, where to buy, how much, from whom, when and at what price – Purchasing 
+- Selling 
+	- Core of marketing, supplying the product to the buyers for the exchange of pay
+- Distribution 
+	- Determining the best ways for customers to locate, obtain, and use the products and services of an organization
+- Financing
+	- Budgeting for marketing activities, obtaining the resources needed for operations
+- Product /Service Management
+	- Designing, developing, maintaining, improving and acquiring products and services that meet consumer needs
+- Market information Management
+	- Obtaining, managing and using information about what customers want ,to improve business decision making, performance of marketing activities, and determining what will sell
+- Promotion
+	- Communicating with customers about the product to achieve the desired result--customer demand for and purchase of the product. Includes advertising, personal selling, publicity, and public relations
+### A.6.7 Advertising
+- Form of marketing, used to encourage or persuade the consumers or end users to take action upon the product, an organization is advertising to sell
+- Newspaper, magazines, medias, online sources, TV, door to door selling, billboards, sales promotions
+- Helps increase sales by creating awareness in people, making them conscious about the products and brands and help make an organization popular within the circle of potential buyers
+
+
 Here's a simple footnote/reference,[^1] sample[^2] longer one.[^3]
 
 [^1]: This is the first footnote.
