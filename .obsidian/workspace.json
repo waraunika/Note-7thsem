@@ -15,8 +15,8 @@
               "state": {
                 "file": "Excalidraw/Drawing 2026-06-24 06.56.08.excalidraw.md"
               },
-              "icon": "excalidraw-icon",
-              "title": "Drawing 2026-06-24 06.56.08.excalidraw"
+              "icon": "lucide-ghost",
+              "title": "excalidraw"
             }
           },
           {
@@ -185,8 +185,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "lucide-ghost",
+              "title": "git-view"
             }
           }
         ],
