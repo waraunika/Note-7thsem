@@ -57,3 +57,38 @@
 ## High speed interfaces and usage of those interfaces
 
 ## Embedded SoC/MPSoC architectures detail and interfaces
+
+
+# Chapter 4
+## DSO algorithms design and implementation in RTL
+### Basic Cordic Algorithm Implementation in Verilog
+## Verification approaches i RTL
+- the verification is the step for verifying the correctness of any design.
+- the verification step ensure and validate the different test cases and their expected results
+- Methods:
+	- Functional Verification
+		- Simulation
+	- Emulation
+	- Formal Verification
+		- equivalence checking
+		- model checking
+	- semiformal verification
+- Techniques:
+	- Simulation (functional and timing)
+		- behavioral
+		- rtl
+		- gate level
+		- switch level
+		- transistor level
+	- model based verification (functional)
+		- binary decision diagrams
+		- equivalence checking
+		- model checking
+	- static and dynamic timing analysis (timing)
+- there are multiple approaches or techniques in RTL verification, common approaches are:
+	1. simulation
+		- verifying the functionality via testbench based simulation where we introduce different test cases or input scenario and ananlyze the input
+	2. Structural Analysis
+	3. Formal methods
+	4. Timing Analysis
+- to help accelerate the verification timescales, several frameworks exist which can be used to help verify functional performance. These include UVM (Universal Verification Machine) which is SystemVerilog based and OSVVM
