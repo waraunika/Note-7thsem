@@ -11,14 +11,12 @@
             "id": "bd03ba61ce023054",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "FPGA/daily-notes.md",
-                "mode": "source",
-                "source": false
+                "file": "Excalidraw/Drawing 2026-06-30 16.55.51.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "daily-notes"
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-06-30 16.55.51.excalidraw"
             }
           }
         ]
@@ -198,6 +196,8 @@
   },
   "active": "bd03ba61ce023054",
   "lastOpenFiles": [
+    "FPGA/daily-notes.md",
+    "Excalidraw/Drawing 2026-06-30 16.55.51.excalidraw.md",
     "Artificial Intelligence/june 5 2026.md",
     "RF and Microwave Engineering/Untitled.md",
     "Mathjax globals.md",
@@ -232,7 +232,6 @@
     "Daily Notes/2026-05-21.md",
     "Daily Notes/2026-05-19.md",
     "Daily Notes/2026-05-18.md",
-    "FPGA/daily-notes.md",
     "syllabus-reference",
     "major project",
     "Wireless Communication",
