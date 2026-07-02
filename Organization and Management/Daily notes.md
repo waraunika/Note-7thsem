@@ -329,3 +329,22 @@ NOTE Search Gramin Bikas Bank, Bangladesh
 - Marketing management important operative function of management.
   - It performs all management important operative function of management
   - Includes all activities which are necessary to determine the needs of customers and to supply goods and services
+
+
+## Job Analysis
+- What is  a Job?
+  - When the total wokr to be done in an organization is divided and grouped into packages, we call it a jobs
+  - collection of task duties and responsibilities
+
+## Compensable Facts Hay System
+Knowledge
+  - Functional expertise: 8
+  - managerial skills: 7
+  - human relations: 3
+Problem Solving
+  - environment: 8
+  - challenge:  5
+Accountability
+  - freedom to act: 8
+  - impact on end result: 4
+
