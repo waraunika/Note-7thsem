@@ -13,13 +13,26 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Excalidraw/Drawing 2026-06-24 06.56.08.excalidraw.md"
+                "file": "Excalidraw/RF-2nd July.md"
+              },
+              "icon": "lucide-ghost",
+              "title": "excalidraw"
+            }
+          },
+          {
+            "id": "1defe1b16a6ba600",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2026-07-02 14.42.58.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Drawing 2026-06-24 06.56.08.excalidraw"
+              "title": "Drawing 2026-07-02 14.42.58.excalidraw"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -76,7 +89,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "46db94f0435341e0",
@@ -169,8 +183,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "lucide-ghost",
+              "title": "git-view"
             }
           }
         ],
@@ -194,8 +208,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bd03ba61ce023054",
+  "active": "1defe1b16a6ba600",
   "lastOpenFiles": [
+    "Excalidraw/Drawing 2026-07-02 14.42.58.excalidraw.md",
+    "Excalidraw/RF-2nd July.md",
+    "CS-2nd July.md",
+    "Excalidraw/Drawing 2026-06-24 06.56.08.excalidraw.md",
     "Daily Notes/2026-06-03.md",
     "Organization and Management/Daily notes.md",
     "FPGA/daily-notes.md",
@@ -206,7 +224,6 @@
     "Excalidraw/Drawing 2026-06-25 10.52.47.excalidraw.md",
     "Organization and Management/Chapter 2 Personal Management.md",
     "Organization and Management/Chapter 1 Introduction.md",
-    "Excalidraw/Drawing 2026-06-24 06.56.08.excalidraw.md",
     "Excalidraw",
     "list.md",
     "7th-sem/a.md",
@@ -231,7 +248,6 @@
     "Daily Notes/2026-05-25.md",
     "Daily Notes/2026-05-21.md",
     "Daily Notes/2026-05-19.md",
-    "Daily Notes/2026-05-18.md",
     "syllabus-reference",
     "major project",
     "Wireless Communication",
@@ -239,7 +255,6 @@
     "Organization and Management",
     "Daily Notes",
     "FPGA",
-    "DSAP",
-    "README.md"
+    "DSAP"
   ]
 }
