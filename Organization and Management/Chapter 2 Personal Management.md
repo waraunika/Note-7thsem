@@ -64,7 +64,80 @@
 - Policies should also include comprehensive information about workpace rules and regulations that includes hours of work, attendance, pay, benefits, supervision, disciplines, attire
 - Should also discuss sensitive legal issues like employee safety regulations, workforce harassment.
 
+## Different Policies/Terms included in Personnel Policy/Employee Handbook
+
+- Welcome speech/and general address by the top level manager
+- Brief introduction of an organization, its values, morals and goals and objectives
+- Organization Structure
+- Organizational rules and regulations, Hiring policy, Dismissal policy, lay offs, disciplines, proper attires, probationary periods
+- Hours of work, rest periods, attendance, leaves, sick leaves, holidays, paid leaves, vacations and allowances
+- Pay structures, benefits, incentives and bonuses, insurance plans, dental plans, family benefits, educational assistance, Unions
+- Legal policies involving, harassments policy, work related accidents, disabilities, security, disciplinary policy, conflicts, administrative dismissals
+
 # ⁠D. Manpower Planning
+- The term manpower relates to the actual people working in an organization and can be defines as the sum total of the skills, talents, knowledge, qualifications, creativity, ability and the values of the workforce of an organization
+- Manpower planning/human resource planning is a function of a Personnel Management that puts right number of individuals, right kind of individuals, at right place, right time, doing the right job they are suitable for.
+- Manpower planning procedure:
+	- Analyzing the current manpower inventory
+		- How many individuals are already working in an organization, in different departments
+	- Making future manpower forecasts
+		- Analyzing the need of the manpower in future, depending upon the work loads in the current employees, future prospects of the organization, budget and planning analysis, needs of the experts
+	- Developing employment programmes
+		- Once the forecasts are complete, the employment programs can be framed and develped accordingly, includes recruitment, and hiring and selections, and placements.
+	- Design training programmes
+		- Training and development plans for the new hires, improvement in technology
+		- To improve skills, capabilities and knowledge.
+## Importance of Manpower Planning
+- Higher Productivity
+	- Productivity of an organization increases when resources are utilized in best possible manner
+	- Ensure sufficient information regarding skills and qualification of all employees, increasing efficiency
+- Necessary to analyze if an organziation has the required number of manpower needed, no overloads no deficiency
+- Same way can help reduce excess labors or staffs, help reduce operating costs
+- To attrack prospective employees, new talents and skills
+- Motivation: motivation educational and training programmes, incentive and benefit plans
+
 # ⁠E. Recruitment and Selection - Scientific Selection
 # ⁠F. Job Analysis, Job Evaluation and Merit Rating
+## Job Analysis
+- What is a Job?
+	- when the total work to be done in an organziation is divided and grouped into packages, we call it a job
+	- collection of task, duties and responsibilities performed by an individual in exchange of pay
+- Process of describing aspects of job and specifying the skills and other requirements necessary to perform the job
+- Process to find out why the job exists, who is qualified to do the job, how and when is the job done, what are the conditions required for the job, what tools and equipments are needed to get the job done
+- Differentiate one job form the others
+- It is the determination of the tasks which comprise the job and of the skills, knowledge, abilities and responsibilities required of the worker for a successful performance
+- Job analysis enables personnel managers to understand jobs and job structures to improve the work flow or develop the techniques to improve productivity.
+## Terms related to Job Analysis
+- Job Title:
+	- Each job has a specific title, individual employees are assigned to perform the job
+- Job Description
+	- A statement describing the job title, job responsibilities, location, working conditions, salary and benefits
+	- It should jell what is to be done, how is it to be done and why
+- Job Specification
+	- It is awritten record of the human qualities required for the performance of job
+	- Education, skills, qualification, knowledge and experience required for the job
+- Job Design
+	- Process of altering the nature and structure of job for the purpose of increasing productivity
+	- Subdivision of work according to its nature and complexity
+- **Job Evaluation**:
+	- Systematic way of determining the value/worth of a job in relation to other jobs in organization
+	- Evaluates the skills, qualification, experience and efforts required to perform the job
+	- Basis for creating job hierarchy and the pay differentials
+	- The purpose  of job evaluation is to produce a ranking of jobs on which a rational and acceptable pay structure can be built
+	- The objective of job evaluation is to determine which jobs should get more pay than others
+	- Job evaluation rates the job and not the man.
+## Job Analysis Process
+- Various approaches can be utilized, most popular 3 are Questionnaires
+- Questionnaires
+	- Job holders are asked to fill out a questionnaire related to the nature and complexity of job, skills required, stress related, strength requierd and others
+- Interview
+	- Method to collect a variety of information from the job holder by asking them to describe the task and duties performed
+	- Allows the individual to describe duties that are are not observable.
+	- Individual can exaggerate the duties performed.
+- Observation
+	- Direct observation of the job holders by the job analyst enables him to obtain first hand knowledge about the job being analyzed.
+	- Advantage over interview and questionnaire method
+	- Analysts experience the working conditions, interrelationships and knowledge of tools and equipments used in the workforce.
+	- Fields in which observation method are used, machine operators, construction workers, flight attendants, police and traffic works, etc
+	- Has a disadvantage, indivudals can differ their working behavior when known that they are being observed.
 # ⁠G. Wages and Incentives

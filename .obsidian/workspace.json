@@ -15,24 +15,11 @@
               "state": {
                 "file": "Excalidraw/RF-2nd July.md"
               },
-              "icon": "lucide-ghost",
-              "title": "excalidraw"
-            }
-          },
-          {
-            "id": "1defe1b16a6ba600",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Drawing 2026-07-02 14.42.58.excalidraw.md"
-              },
               "icon": "excalidraw-icon",
-              "title": "Drawing 2026-07-02 14.42.58.excalidraw"
+              "title": "RF-2nd July"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -208,7 +195,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1defe1b16a6ba600",
+  "active": "bd03ba61ce023054",
   "lastOpenFiles": [
     "Excalidraw/Drawing 2026-07-02 14.42.58.excalidraw.md",
     "Excalidraw/RF-2nd July.md",
