@@ -11,12 +11,14 @@
             "id": "bd03ba61ce023054",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/RF-2nd July.md"
+                "file": "syllabus-reference/Syllabus.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "RF-2nd July"
+              "icon": "lucide-file",
+              "title": "Syllabus"
             }
           }
         ]
@@ -197,8 +199,8 @@
   },
   "active": "bd03ba61ce023054",
   "lastOpenFiles": [
-    "Excalidraw/Drawing 2026-07-02 14.42.58.excalidraw.md",
     "Excalidraw/RF-2nd July.md",
+    "Excalidraw/Drawing 2026-07-02 14.42.58.excalidraw.md",
     "CS-2nd July.md",
     "Excalidraw/Drawing 2026-06-24 06.56.08.excalidraw.md",
     "Daily Notes/2026-06-03.md",
