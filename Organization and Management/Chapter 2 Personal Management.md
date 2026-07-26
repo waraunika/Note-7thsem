@@ -1,6 +1,6 @@
 # ⁠A. Introduction
 
-## Perosnnel Management
+## Personnel Management
 - Discipline of hiring and developing employees so that they become more valuable to the organization
 - Effective control and use of manpower
 - Obtaining, using and maintaining a satisfied workforce
@@ -8,12 +8,12 @@
 - When someone or a team is concerned with the welfare and personnel Management
 - Company Policies, staffing, hirin and firing, orientation, wage determination, leave and vacation approval, healthcare programs, training and appraisals
 
-## 3 Aspects of Personnel Managmeent
+## 3 Aspects of Personnel Management
 - The welfare aspect
-	- Concerned with cworking conditions and amenities such as canteens, housing, personal problems of workers, therapy
+	- Concerned with working conditions and amenities such as canteens, housing, personal problems of workers, therapy
 - The Labor/Personnel aspect
 	- Concerned with recruitment, placement of employees, remuneration, promotions, incentives
-- Concerned with trade union negotations, settlement of industrial disputes, collective bargaining
+- Concerned with trade union negotiations, settlement of industrial disputes, collective bargaining
 
 ## Workplace Ergonomics
 
@@ -342,7 +342,7 @@
 		- Accepting or offering bribe
 		- Stealing property of company
 		- Embezzlement of financy of company
-		- Causing damage to the company's propery knowingly, intentionally
+		- Causing damage to the company's property knowingly, intentionally
 		- Absence from company for more than a consecutive period of 30 days without getting the leave approved
 		- Leaking Secrecy relating to special technology, production formula of the company with motive of causing damage to company, informations to competitors
 		- convicted on a criminal offence

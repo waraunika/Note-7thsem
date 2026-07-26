@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "syllabus-reference/Syllabus.md",
+                "file": "Organization and Management/Chapter 3 Motivating and Leading People.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Syllabus"
+              "title": "Chapter 3 Motivating and Leading People"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "46db94f0435341e0",
@@ -199,6 +198,10 @@
   },
   "active": "bd03ba61ce023054",
   "lastOpenFiles": [
+    "Organization and Management/Chapter 2 Personal Management.md",
+    "Clippings/rPiracy Wiki Movies & TV Streaming Resources.md",
+    "Clippings",
+    "syllabus-reference/Syllabus.md",
     "Excalidraw/RF-2nd July.md",
     "Excalidraw/Drawing 2026-07-02 14.42.58.excalidraw.md",
     "CS-2nd July.md",
@@ -211,12 +214,10 @@
     "RF and Microwave Engineering/Untitled.md",
     "Mathjax globals.md",
     "Excalidraw/Drawing 2026-06-25 10.52.47.excalidraw.md",
-    "Organization and Management/Chapter 2 Personal Management.md",
     "Organization and Management/Chapter 1 Introduction.md",
     "Excalidraw",
     "list.md",
     "7th-sem/a.md",
-    "syllabus-reference/Syllabus.md",
     "syllabus-reference/book-recommendation.md",
     "major project/List of all equipment.md",
     "Daily Notes/attachments/Pasted image 20260601095816.png",
@@ -236,14 +237,12 @@
     "Daily Notes/2026-06-01.md",
     "Daily Notes/2026-05-25.md",
     "Daily Notes/2026-05-21.md",
-    "Daily Notes/2026-05-19.md",
     "syllabus-reference",
     "major project",
     "Wireless Communication",
     "RF and Microwave Engineering",
     "Organization and Management",
     "Daily Notes",
-    "FPGA",
-    "DSAP"
+    "FPGA"
   ]
 }
