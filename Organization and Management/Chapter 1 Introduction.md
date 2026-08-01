@@ -92,6 +92,7 @@
     -   compare the results achieved with the goals set
 
 ## ⁠e.2. Level of Management
+![[Pasted image 20260731115511.png]]
 -   Depends upon the size, complexity and the nature of organization
 -   Top level Management
     -   Higher Authority
@@ -640,16 +641,16 @@ flowchart TD
 - these specialist stand ready with their specialty to serve when they are called for, with information for the better performance of the organization
 - provides advice to the line managers with their expertise
 ```mermaid
-flowchart TD
-	 B[Legal Advisor] --> A[General Manager]
-	 C[Research Expert] --> A
-	 D[Personnel Manager] --> A
-	 A --> E[Asst. Manager]
-	 A --> F[Asst. Manager]
-	 A --> G[Asst. Manager]
-	 E --> H[Supervisor]
-	 F --> I[Supervisor]
-	 G --> J[Supervisor]
+flowchart td
+	 b[legal advisor] --> a[general manager]
+	 c[research expert] --> a
+	 d[personnel manager] --> a
+	 a --> e[asst. manager]
+	 a --> f[asst. manager]
+	 a --> g[asst. manager]
+	 e --> h[supervisor]
+	 f --> i[supervisor]
+	 g --> j[supervisor]
 ```
 - Advantage
 	- Line managers get the benefit of specialized knowledge of staff specialists at various level
