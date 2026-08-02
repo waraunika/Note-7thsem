@@ -13,26 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Organization and Management/Edited ones/Chapter 5 MIS.md",
+                "file": "Artificial Intelligence/Chapter 1 Introduction to Artificial Intelligence.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 5 MIS"
-            }
-          },
-          {
-            "id": "4a9862e42f9a7a92",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Organization and Management/Chapter 5 Management Information System.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Chapter 5 Management Information System"
+              "title": "Chapter 1 Introduction to Artificial Intelligence"
             }
           }
         ]
@@ -55,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -213,10 +201,22 @@
   },
   "active": "bd03ba61ce023054",
   "lastOpenFiles": [
+    "Excalidraw/Drawing 2026-08-01 09.46.07.excalidraw.md",
+    "Artificial Intelligence/Chapter 1 Introduction to Artificial Intelligence.md",
+    "Artificial Intelligence/attachments/Pasted image 20260801101720.png",
     "Organization and Management/Chapter 5 Management Information System.md",
+    "Artificial Intelligence/attachments/Pasted image 20260801101702.png",
+    "Excalidraw/Drawing 2026-08-01 10.08.46.excalidraw.md",
+    "Artificial Intelligence/attachments/2026-08-01-09-44-04.png",
+    "Artificial Intelligence/attachments/agent with sensor effectors.png",
+    "Artificial Intelligence/attachments/Pasted image 20260801095108.png",
+    "Artificial Intelligence/attachments",
+    "Artificial Intelligence/Attachments/Pasted image 20260801095028.png",
+    "Artificial Intelligence/Attachments",
+    "Organization and Management/Edited ones/Chapter 5 MIS.md",
+    "Excalidraw/Untitled.md",
     "Organization and Management/Chapter 3 Motivating and Leading People.md",
     "Organization and Management/Edited ones/Chapter 3 Motivation and Leadership.md",
-    "Organization and Management/Edited ones/Chapter 5 MIS.md",
     "Organization and Management/Edited ones/Chapter 2 Personnel Management.md",
     "Organization and Management/Chapter 2 Personal Management.md",
     "Organization and Management/Edited ones/Chapter 1 Introduction.md",
@@ -238,26 +238,13 @@
     "Excalidraw/Drawing 2026-06-30 16.55.51.excalidraw.md",
     "RF and Microwave Engineering/Untitled.md",
     "Mathjax globals.md",
-    "Excalidraw/Drawing 2026-06-25 10.52.47.excalidraw.md",
     "Excalidraw",
-    "list.md",
-    "7th-sem/a.md",
-    "syllabus-reference/book-recommendation.md",
-    "major project/List of all equipment.md",
     "Daily Notes/attachments/Pasted image 20260601095816.png",
     "Daily Notes/attachments/Pasted image 20260519110803.png",
     "Daily Notes/attachments/Pasted image 20260601095233.png",
-    "Daily Notes/attachments/Pasted image 20260601095037.png",
-    "Daily Notes/attachments/Pasted image 20260519110724.png",
-    "Daily Notes/attachments/Pasted image 20260519105925.png",
-    "Daily Notes/attachments/Pasted image 20260519105922.png",
-    "Daily Notes/attachments/Pasted image 20260519105744.png",
-    "Daily Notes/attachments/Pasted image 20260519105544.png",
     "Daily Notes/attachments",
     "syllabus-reference",
     "major project",
-    "Wireless Communication",
-    "RF and Microwave Engineering",
-    "Organization and Management"
+    "Wireless Communication"
   ]
 }
