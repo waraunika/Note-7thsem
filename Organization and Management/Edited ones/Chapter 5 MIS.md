@@ -139,31 +139,31 @@ MIS can be recorded as old as human history.
 ---
 # Organizational Structure and MIS
 ## Information Needs at Different Management Levels
-text
+```
 
 ┌─────────────────────────────────────────────────────────────┐
 │                    STRATEGIC MANAGEMENT                     │
 │          (Top Level - CEO, Board of Directors)              │
 │                                                             │
 │  Information: Policies, Plans, Budgets, Objectives          │
-│  Timeframe: Quarterly/Yearly                               │
+│  Timeframe: Quarterly/Yearly                                │
 │  Source: External (suppliers, competitors, media)           │
 ├─────────────────────────────────────────────────────────────┤
-│                    TACTICAL MANAGEMENT                       │
+│                    TACTICAL MANAGEMENT                      │
 │          (Middle Level - Department Heads)                  │
 │                                                             │
 │  Information: Schedules, Revenue, Profits, Costs            │
-│  Timeframe: Weekly/Monthly                                 │
+│  Timeframe: Weekly/Monthly                                  │
 │  Purpose: Control procedures, resource allocation           │
 ├─────────────────────────────────────────────────────────────┤
 │                   OPERATIONAL MANAGEMENT                    │
 │          (Lower Level - Supervisors)                        │
 │                                                             │
 │  Information: Goods, Services, Performance                  │
-│  Timeframe: Hourly/Daily                                   │
+│  Timeframe: Hourly/Daily                                    │
 │  Purpose: Production scheduling, material requirements      │
 └─────────────────────────────────────────────────────────────┘
-
+```
 ### D.2 Information by Management Level
 
 #### D.2.1 Operational Management (Lower Level)
@@ -171,22 +171,15 @@ text
 **Role:** Deals with actual production of services and goods.
 
 **MIS Use:**
-
 - Determine raw materials needed
-    
 - Develop work schedules
-    
 - Ensure materials and people are at the right place at the right time
-    
 
 **Information Timing:** Hourly or daily basis
 
 **Key Questions:**
-
 - Have goods/services been produced on schedule?
-    
 - Does production meet customer expectations?
-    
 
 #### D.2.2 Tactical Management (Middle Level)
 
@@ -339,29 +332,28 @@ text
 |**KWS**|Knowledge Work System|Supports specialized knowledge work|Professionals|CAD, scientific analysis, design tools|
 
 ### G.2 Information System Model
-
-text
-
+```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    INFORMATION SYSTEM MODEL                    │
+│                    INFORMATION SYSTEM MODEL                     │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
-│   INPUT ────► PROCESSING ────► OUTPUT ────► FEEDBACK          │
-│   (Data)      (Analysis)      (Information)  (Control)         │
+│   INPUT ────► PROCESSING ────► OUTPUT ────► FEEDBACK            │
+│   (Data)      (Analysis)      (Information)  (Control)          │
 │                                                                 │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
-│   TYPES OF INFORMATION SYSTEMS:                                │
+│   TYPES OF INFORMATION SYSTEMS:                                 │
 │                                                                 │
-│   ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐      │
-│   │   TPS    │  │   MIS    │  │   DSS    │  │   EIS    │      │
-│   └──────────┘  └──────────┘  └──────────┘  └──────────┘      │
-│   Transaction  Management    Decision     Executive            │
-│   Processing   Information   Support      Information          │
-│   System       System        System       System              │
+│   ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐        │
+│   │   TPS    │  │   MIS    │  │   DSS    │  │   EIS    │        │
+│   └──────────┘  └──────────┘  └──────────┘  └──────────┘        │
+│   Transaction  Management    Decision     Executive             │
+│   Processing   Information   Support      Information           │
+│   System       System        System       System                │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 
+```
 ### G.3 DSS vs. MIS Comparison
 
 |Aspect|MIS|DSS|
@@ -393,36 +385,26 @@ text
 |**Drill-Down Capability**|Allows deeper investigation of specific areas|
 
 **Features of EIS:**
-
 - User-friendly interface
-    
 - Graphical presentation
-    
 - Drill-down capability
-    
 - External data integration
-    
 - Key Performance Indicators (KPIs)
-    
 - Exception reporting
-    
-
 ---
-
 ## H. Organizing Information Systems
-
 ### H.1 How Information Systems Can Be Organized Properly
 
-|Principle|Description|
-|---|---|
-|**1. Clear Objectives**|Define what the system should achieve|
-|**2. User Focus**|Designed with user needs in mind|
-|**3. Data Quality**|Accurate, timely, relevant data|
-|**4. Integration**|Systems connect and share data|
-|**5. Scalability**|Can grow with the organization|
-|**6. Security**|Protect sensitive information|
-|**7. Cost-Effectiveness**|Balance costs and benefits|
-|**8. Support**|Training and technical support available|
+| Principle                 | Description                              |
+| ------------------------- | ---------------------------------------- |
+| **1. Clear Objectives**   | Define what the system should achieve    |
+| **2. User Focus**         | Designed with user needs in mind         |
+| **3. Data Quality**       | Accurate, timely, relevant data          |
+| **4. Integration**        | Systems connect and share data           |
+| **5. Scalability**        | Can grow with the organization           |
+| **6. Security**           | Protect sensitive information            |
+| **7. Cost-Effectiveness** | Balance costs and benefits               |
+| **8. Support**            | Training and technical support available |
 
 ### H.2 Factors to Consider in Organizing IS
 
@@ -479,12 +461,11 @@ text
 
 ### J.2 Quick Reference: Types of Information Systems
 
-text
-
-┌─────────────────────────────────────────────────────────────────┐
+```
+┌────────────────────────────────────────────────────────────────┐
 │                    QUICK REFERENCE: IS TYPES                   │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
+├────────────────────────────────────────────────────────────────┤
+│                                                                │
 │   TPS          MIS           DSS           EIS                 │
 │   ↓            ↓             ↓             ↓                   │
 │   Data         Reports       Analysis      Strategic           │
@@ -495,45 +476,6 @@ text
 │   ↓            ↓             ↓             ↓                   │
 │   Hourly/      Weekly/       Monthly/      Quarterly/          │
 │   Daily        Monthly       Yearly        Yearly              │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-
----
-
-## K. Key Exam Tips for Chapter 5
-
-1. **Definitions First:** Start with clear definitions (MIS, Data, Information, Database)
-    
-2. **Types of Systems:** Know the differences between:
-    
-    - TPS vs. MIS vs. DSS vs. EIS
-        
-    - Online vs. Real-time processing
-        
-    - Strategic vs. Tactical vs. Operational levels
-        
-3. **Management Levels:** Be able to explain information needs at each level:
-    
-    - Operational (hourly/daily)
-        
-    - Tactical (weekly/monthly)
-        
-    - Strategic (quarterly/yearly)
-        
-4. **Functions:** Memorize the six functions of MIS (Data capturing, Processing, Prediction, Planning, Controlling, Assistance)
-    
-5. **Evolution:** Know the factors that led to MIS evolution
-    
-6. **Computer Role:** Explain how computers improved MIS
-    
-7. **Diagrams:** Be prepared to draw:
-    
-    - Information system model
-        
-    - Management levels and information flow
-        
-    - Organizational structure and MIS flow
-        
-8. **Nepal Context:** Consider how MIS applies to organizations in Nepal (Nepal Telecom, Nepal Electricity Authority, etc.)
-    
-9. **Functional Areas:** Know how MIS supports different functional areas (Marketing, Production, Finance, Personnel, Top Management)
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+```
