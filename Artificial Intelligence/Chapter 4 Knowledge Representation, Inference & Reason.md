@@ -72,6 +72,22 @@
                     </tr>
                 </table>
 ## Predicate Logic
+### First Order Logic
+- Predicate logic is an extension of propositional logic
+- Predicate logic allows flexible knowledge representation
+    - in terms of objects, properties, relations and functions
+    - the symbols denote properties of an object or relation between objects
+    - first order predicate logic (FOPL) makes use of quantified variables over objectcts.
+- Interpretation specifies referents for
+    - constant symbols -> objects
+    - predicate symbols -> relations
+    - function symbols -> functional relation
+### Quantifier
+- These are the symbols that permit to determine or identify the range and scope of the variable in the logical expression.
+- There are two types of quantifier in predicate logic:
+    - Universal Quantifier ($\forall$) (for all, everyone, everything)
+        - universal quantiifer states that the statements within its scope are true for every value of the specific cvariable.
+        it is denoted by the symbol $\forall$
 ## FOPL
 ## Interpretation
 ## Quantification
