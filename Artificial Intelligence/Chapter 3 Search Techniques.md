@@ -1,4 +1,6 @@
 # Search Technique
+**9 Hours**
+
 Search is a 
 - universal problem solving technique 
 - by finding the required states or nodes 
