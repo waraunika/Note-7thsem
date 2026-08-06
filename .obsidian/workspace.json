@@ -11,14 +11,12 @@
             "id": "bd03ba61ce023054",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "Organization and Management/interview.md",
-                "mode": "source",
-                "source": false
+                "file": "Excalidraw/Drawing 2026-08-06 15.27.27.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "interview"
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-08-06 15.27.27.excalidraw"
             }
           }
         ]
@@ -80,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "46db94f0435341e0",
@@ -200,6 +199,8 @@
   },
   "active": "bd03ba61ce023054",
   "lastOpenFiles": [
+    "Organization and Management/interview.md",
+    "Excalidraw/Drawing 2026-08-06 15.27.27.excalidraw.md",
     "Organization and Management/Edited ones/Chapter 5 MIS.md",
     "Artificial Intelligence/Chapter 1 Introduction to Artificial Intelligence.md",
     "Excalidraw/Drawing 2026-08-01 09.46.07.excalidraw.md",
@@ -236,7 +237,6 @@
     "FPGA/daily-notes.md",
     "Excalidraw/Drawing 2026-06-30 16.55.51.excalidraw.md",
     "RF and Microwave Engineering/Untitled.md",
-    "Mathjax globals.md",
     "Excalidraw",
     "Daily Notes/attachments/Pasted image 20260601095816.png",
     "Daily Notes/attachments/Pasted image 20260519110803.png",
