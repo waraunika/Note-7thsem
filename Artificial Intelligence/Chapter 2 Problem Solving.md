@@ -7,7 +7,7 @@
     - the processing of exploring what the means can d.
 - State Representation
     - A state space consist of sets of nodes representation each node of the problem, arcs between node representing the legal moves (actions) from one staet to another
-- ![sequence of actions](attachmnets/sequence%20of%20actions.png)
+- ![sequence of actions](attachments/sequence%20of%20actions.png)
 ## Problem Space
 - The problem space refers to:
     - the set of all possible states and actions that can be taken to reach a particular goal or solve a given problem.

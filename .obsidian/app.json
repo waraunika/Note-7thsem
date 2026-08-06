@@ -1,5 +1,5 @@
 {
-  "vimMode": true,
+  "vimMode": false,
   "tabSize": 2,
   "attachmentFolderPath": "./attachments",
   "readableLineLength": false
