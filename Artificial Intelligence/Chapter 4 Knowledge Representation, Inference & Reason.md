@@ -87,7 +87,19 @@
 - There are two types of quantifier in predicate logic:
     - Universal Quantifier ($\forall$) (for all, everyone, everything)
         - universal quantiifer states that the statements within its scope are true for every value of the specific cvariable.
-        it is denoted by the symbol $\forall$
+        - it is denoted by the symbol $\forall$
+        - e.g.
+            - all men drink coffee
+            - Everyone at Pitt is smart: $\forall x \text{At}(x, \text{Pitt}) => \text{Smart(x)}$
+    - Existential Quantifier ($\exists$) (there exist, for some, at least one)
+        - existential quantifier states that the statements within its scope are true for some values of the specific variable
+        - It is denoted by the symbol ($\exists$)
+        - e.g.,
+            - some boys attend class.
+            - Someone at Pitt is smart: $\exists x \text{At}(x, Pitt) \land \text{Smart}(x)$
+- Use **logical and with $\forall$**
+- Use **implication with $\exists$**
+
 ## FOPL
 ## Interpretation
 ## Quantification
