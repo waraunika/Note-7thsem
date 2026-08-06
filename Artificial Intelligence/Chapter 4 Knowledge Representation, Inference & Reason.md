@@ -36,9 +36,39 @@
                         <th>Mnemonic</th>
                     </tr>
                     <tr>
-                        <td>$\lnot$</td>
+                        <td>¬</td>
                         <td>Negation</td>
                         <td>NOT</td>
+                    </tr>
+                    <tr>
+                        <td>⋀</td>
+                        <td>Conjuction</td>
+                        <td>AND</td>
+                    </tr>
+                    <tr>
+                        <td>⋀</td>
+                        <td>Conjuction</td>
+                        <td>AND</td>
+                    </tr>
+                    <tr>
+                        <td>⋁</td>
+                        <td>Disjuction</td>
+                        <td>OR</td>
+                    </tr>
+                    <tr>
+                        <td>→</td>
+                        <td>Implication</td>
+                        <td>IF THEN</td>
+                    </tr>
+                    <tr>
+                        <td>↔</td>
+                        <td>Bi-implication</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>()</td>
+                        <td>Parenthesies</td>
+                        <td></td>
                     </tr>
                 </table>
 ## Predicate Logic
