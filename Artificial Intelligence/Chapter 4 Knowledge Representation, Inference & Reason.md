@@ -15,7 +15,7 @@
 - Atomic Propositions/sentences are the statements constructed from
     - a single propositional symbol along with constants or propositional symbols (P, Q).
 - Composite propositions/sentences are the:
-    - statements constructed using valid atomic propositions connected via logical connectives \(\land \)), Disjunction (\(\lor \)), Implication (→), and Biconditional (\(\leftrightarrow \)
+    - statements constructed using valid atomic propositions connected via logical connectives ($\land$), Disjunction ($\lor$), Implication ($\leftarrow$), and Biconditional ($\leftrightarrow$)
 ## Predicate Logic
 ## FOPL
 ## Interpretation
