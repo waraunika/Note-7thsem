@@ -20,7 +20,7 @@ Many problems don't have a simple algorithmic solution
 Steps in Searching
 - Check whether the current state is the goal state or not?
 - expand the current state to generate the new sets of states
-- choose one o fthe new states generated for search depending upon the search strategy
+- choose one of the new states generated for search depending upon the search strategy
 - Repeat step 1 to 3 until the goal state is reached or no more state to be expanded.
 
 Useful when the sequence of actions required to solve a problem is not known:
@@ -69,7 +69,7 @@ We will evaluate the performance of a search algorithm in four ways.
     - Worst case: expand all except the last node at depth d
     - Total no. of nodes generated:
     $$ 1 + b + b^2 + b^3 + ... + (b^{d+1} - b) = O(b^{d+1})$$
-- Space Complexity = O(b^{d+1})
+- Space Complexity = O(b$\large^{d+1}$)
     - Each node that is generated must remain in memory
     - Total no. of nodes in memory:
     $$ 1 + b + b^2 + b^3 + ... + (b^{d+1} - b) = O(b^{d+1})$$
@@ -158,6 +158,8 @@ For DFS with depth limit l,
 ## Search Strategy Comparison
 
 ![Search Strategy Comparison](attachments/comparison.png)
+
+---
 # Informed Search Techniques
 - aka Heuristic Search
 - Informed search have problem specific knowledge apart from problem definition.
@@ -235,6 +237,7 @@ For DFS with depth limit l,
 - Space complexity;
     - It keeps all generated nodes in memory.
     - Hence space is the major problem.
+---
 ## Hill Climbing
 - Local search, Greedy approach, no backtracking
 - Hill climbing is the depth-first search with a heuristic measurement that orders choices as nodes are expanded.
@@ -294,6 +297,24 @@ function HillClimbing(graph, initialState):
     - but over time we gradually settle in on the most promising path
 - If temperature is lowered slowly enough:
     - an optimal solution will be found.
+#### Algorithm
+```algorithm
+function SIMULATED-ANNEALING(problem, schedule)
+returns solution state
+
+current <- MAKE-NODE(problem.INITIAL-STATE)
+	for t = 1 to infty do
+		T <- schedule(t) // Get the temperateure at time t
+		
+		if T = 0 then
+			return current.STATE
+		
+		neighbor <- a randomly selected successor of current
+		if Delta E > 0 then
+			current <- neighbor // move to better state
+		else with probability exp(Delta E / T) do
+			current <- neighbor // sometimes move to worse state
+```
 # Aderversarial Search Techniques
 - Used in game-playing scenarios where two or more players compete against each other
 - The goal of Aderversarial search is to:

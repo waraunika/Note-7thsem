@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "69c4777c39aeabe8",
+        "id": "408ffe3d35b7a447",
         "type": "tabs",
         "children": [
           {
-            "id": "bd03ba61ce023054",
+            "id": "5adab0554968ab5d",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/Drawing 2026-08-06 15.27.27.excalidraw.md"
+                "file": "Artificial Intelligence/Chapter 7 Applications of AI.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Drawing 2026-08-06 15.27.27.excalidraw"
+              "icon": "lucide-file",
+              "title": "Chapter 7 Applications of AI"
             }
           }
         ]
@@ -197,12 +199,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bd03ba61ce023054",
+  "active": "5adab0554968ab5d",
   "lastOpenFiles": [
-    "Organization and Management/interview.md",
-    "Excalidraw/Drawing 2026-08-06 15.27.27.excalidraw.md",
-    "Organization and Management/Edited ones/Chapter 5 MIS.md",
+    "Artificial Intelligence/Chapter 7 Applications of AI.md",
+    "Artificial Intelligence/Chapter 4 Knowledge Representation, Inference & Reason.md",
+    "Artificial Intelligence/Chapter 3 Search Techniques.md",
     "Artificial Intelligence/Chapter 1 Introduction to Artificial Intelligence.md",
+    "Excalidraw/RF-2nd July.md",
+    "Excalidraw/Drawing 2026-08-06 15.27.27.excalidraw.md",
+    "Organization and Management/interview.md",
+    "Organization and Management/Edited ones/Chapter 5 MIS.md",
     "Excalidraw/Drawing 2026-08-01 09.46.07.excalidraw.md",
     "Artificial Intelligence/attachments/Pasted image 20260801101720.png",
     "Organization and Management/Chapter 5 Management Information System.md",
@@ -228,15 +234,11 @@
     "Clippings/rPiracy Wiki Movies & TV Streaming Resources.md",
     "Clippings",
     "syllabus-reference/Syllabus.md",
-    "Excalidraw/RF-2nd July.md",
     "Excalidraw/Drawing 2026-07-02 14.42.58.excalidraw.md",
     "CS-2nd July.md",
     "Excalidraw/Drawing 2026-06-24 06.56.08.excalidraw.md",
     "Daily Notes/2026-06-03.md",
     "Organization and Management/Daily notes.md",
-    "FPGA/daily-notes.md",
-    "Excalidraw/Drawing 2026-06-30 16.55.51.excalidraw.md",
-    "RF and Microwave Engineering/Untitled.md",
     "Excalidraw",
     "Daily Notes/attachments/Pasted image 20260601095816.png",
     "Daily Notes/attachments/Pasted image 20260519110803.png",

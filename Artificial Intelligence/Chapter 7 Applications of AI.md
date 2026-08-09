@@ -181,7 +181,7 @@ Formulas:
 - Neuron Input:
     - y$_{in}$ = b + $\Sigma$x$_i$w$_i$
 - Delta Rule:
-    - b(new) = b(old) + $\alpha$(t - y$_{in}$
+    - b(new) = b(old) + $\alpha$(t - y$_{in}$)
     - w$_i$(new) = w$_i$(old) + $\alpha$(t - y$_{in}$) x$_i$
 ### Learning Rate
 - THe performance of an ADALINE neuron depends heavily on the choice of learning rate
