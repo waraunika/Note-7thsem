@@ -1,7 +1,9 @@
-# Definition of Aritifical Intelligence
+# Definition of Aritificial Intelligence
+
 ## Intelligent Behaviors
+
 - Everyday tasks
-    - recognize a friend, recognie who is calling
+    - recognize a friend, recognize who is calling
     - translate from one language to another
     - interpret a photograph
     - talk,
@@ -17,18 +19,21 @@
     - financial analysis
 
 Intelligence is:
+
 - The ability to reason
 - The ability to understand
 - The ability to create
 
 ## Approaches of AI
-Thinking Humanly
-- Cognitive model of exactly how humans think (cognitive modelling approach)
-- Once we have precise theory of mind, it is possible to express the theory as a computer program.
-- Example: General Problem Solver (GPS)
-    - developed by Newell & Simon in 1961 attempted to synthesize the human solving process.
-- Critics: Lacks scientific theories of internal activities of brain
-    - Therefore it is not possible to make the machines that think like human brain.
+
+- Thinking Humanly
+    - Cognitive model of exactly how humans think (cognitive modelling approach)
+    - Once we have precise theory of mind, it is possible to express the theory as a
+    computer program.
+    - Example: General Problem Solver (GPS)
+        - developed by Newell & Simon in 1961 attempted to synthesize the human solving process.
+    - Critics: Lacks scientific theories of internal activities of brain
+        - Therefore it is not possible to make the machines that think like human brain.
 
 Acting Humanly
 - Modeling exactly how humans actually act. (The Turing Test)
