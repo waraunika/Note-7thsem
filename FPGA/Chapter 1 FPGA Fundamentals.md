@@ -97,11 +97,11 @@ At a high level, every FPGA, regardless of vendor, is built from three classes o
 ```
         IOB   IOB   IOB   IOB
        ┌───┬─────┬─────┬─────┬───┐
-  IOB  │CLB│ CLB │ CLB │ CLB │IOB
+  IOB  │CLB│ CLB │ CLB │ CLB │IOB│
        ├───┼─────┼─────┼─────┼───┤
-  IOB  │CLB│ CLB │ CLB │ CLB │IOB     <- CLBs are "islands"
+  IOB  │CLB│ CLB │ CLB │ CLB │IOB│    <- CLBs are "islands"
        ├───┼─────┼─────┼─────┼───┤       surrounded by a
-  IOB  │CLB│ CLB │ CLB │ CLB │IOB       "sea" of routing
+  IOB  │CLB│ CLB │ CLB │ CLB │IOB│       "sea" of routing
        └───┴─────┴─────┴─────┴───┘
         IOB   IOB   IOB   IOB
 ```
@@ -518,4 +518,3 @@ The FPGA design flow takes a design from an initial concept through HDL coding, 
 
 ![Vivado Processes](attachments/vivado-toolchain.png)
 ![Vivado Tool Flow](attachments/vivado-toolflow.png)
-

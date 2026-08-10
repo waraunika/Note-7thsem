@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "FPGA/Chapter 1 FPGA Fundamentals.md",
+                "file": "FPGA/Chapter 2 FPGA Logical Components, Architectures and Interfaces.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 1 FPGA Fundamentals"
+              "title": "Chapter 2 FPGA Logical Components, Architectures and Interfaces"
             }
           }
         ]
@@ -201,6 +201,7 @@
   },
   "active": "5adab0554968ab5d",
   "lastOpenFiles": [
+    "FPGA/Chapter 1 FPGA Fundamentals.md",
     "Artificial Intelligence/Chapter 7 Applications of AI.md",
     "Artificial Intelligence/Chapter 4 Knowledge Representation, Inference & Reason.md",
     "Artificial Intelligence/Chapter 3 Search Techniques.md",
@@ -238,7 +239,6 @@
     "CS-2nd July.md",
     "Excalidraw/Drawing 2026-06-24 06.56.08.excalidraw.md",
     "Daily Notes/2026-06-03.md",
-    "Organization and Management/Daily notes.md",
     "Excalidraw",
     "Daily Notes/attachments/Pasted image 20260601095816.png",
     "Daily Notes/attachments/Pasted image 20260519110803.png",
