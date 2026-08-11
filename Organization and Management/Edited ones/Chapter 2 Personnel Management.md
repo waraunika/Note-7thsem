@@ -1,6 +1,6 @@
-# Introduction to Personnel Management
+# ⁠A. Introduction to Personnel Management
 
-## Definition and Concept
+## ⁠A.1. Definition and Concept
 
 **Personnel Management** is the discipline of hiring, developing, and effectively utilizing human resources to make them more valuable to the organization.
 
@@ -21,7 +21,7 @@
 
 ---
 
-## Three Aspects of Personnel Management
+## ⁠A.2. Three Aspects of Personnel Management
 
 | Aspect                          | Focus Area                                 | Key Activities                                                                     |
 | ------------------------------- | ------------------------------------------ | ---------------------------------------------------------------------------------- |
@@ -31,7 +31,7 @@
 
 ---
 
-## Workplace Ergonomics
+## ⁠A.3. Workplace Ergonomics
 
 **Definition:** The science of designing the workplace to fit the worker, reducing strain, fatigue, and injuries.
 
@@ -55,9 +55,9 @@
 
 ---
 
-# Functions of Personnel Management
+# ⁠B. Functions of Personnel Management
 
-## Managerial Functions (PODCC)
+## ⁠B.1. Managerial Functions (PODCC)
 
 | Function         | Description                                                                |
 | ---------------- | -------------------------------------------------------------------------- |
@@ -69,7 +69,7 @@
 
 ---
 
-## Operative Functions
+## ⁠B.2. Operative Functions
 
 | Function                   | Description                                     | Key Activities                                                                                                                     |
 | -------------------------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -82,7 +82,7 @@
 
 ---
 
-## Human Resource Management (HRM) Perspective
+## ⁠B.3. Human Resource Management (HRM) Perspective
 
 **Personnel Management vs. HRM:**
 
@@ -96,9 +96,9 @@
 
 ---
 
-# Personnel Policy (Employee Handbook)
+# ⁠C. Personnel Policy (Employee Handbook)
 
-## Definition and Purpose
+## ⁠C.1. Definition and Purpose
 
 **Personnel Policy** (also called **Employee Handbook**) is a statement/document that explains:
 
@@ -108,7 +108,7 @@
 
 ---
 
-## Contents of a Personnel Policy/Employee Handbook
+## ⁠C.2. Contents of a Personnel Policy/Employee Handbook
 
 | Section                    | Content                                                                      |
 | -------------------------- | ---------------------------------------------------------------------------- |
@@ -134,7 +134,7 @@
 
 ---
 
-## Why Personnel Policy is Important
+## ⁠C.3. Why Personnel Policy is Important
 
 1. **Clarity:** Provides clear guidelines for employee behavior and expectations
 2. **Consistency:** Ensures uniform treatment of all employees
@@ -145,9 +145,9 @@
 
 ---
 
-# Manpower Planning (Human Resource Planning)
+# ⁠D. Manpower Planning (Human Resource Planning)
 
-## Definition
+## ⁠D.1. Definition
 
 **Manpower** refers to the actual people working in an organization; the sum total of skills, talents, knowledge, qualifications, creativity, ability, and values of the workforce.
 
@@ -161,7 +161,7 @@
 
 ---
 
-## Manpower Planning Procedure
+## ⁠D.2. Manpower Planning Procedure
 
 | Step                                        | Description                                                                                                                |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
@@ -172,7 +172,7 @@
 
 ---
 
-## Importance of Manpower Planning
+## ⁠D.3. Importance of Manpower Planning
 
 | Importance                       | Description                                                                                      |
 | -------------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -186,9 +186,9 @@
 
 ---
 
-# Recruitment and Selection
+# ⁠E. Recruitment and Selection
 
-## Definitions
+## ⁠E.1. Definitions
 
 - **Recruitment:** The process of searching for prospective employees and stimulating them to apply for jobs in the organization.
 - **Selection:** The process of choosing the most suitable candidates from those who have applied.
@@ -202,7 +202,7 @@
 
 ---
 
-## Steps of Recruitment and Selection Process
+## ⁠E.2. Steps of Recruitment and Selection Process
 
 | Step                              | Description                                                                                                     |
 | --------------------------------- | --------------------------------------------------------------------------------------------------------------- |
@@ -221,7 +221,7 @@
 
 ---
 
-## Employee File Documentation
+## ⁠E.3. Employee File Documentation
 
 | Document                           | Purpose                                |
 | ---------------------------------- | -------------------------------------- |
@@ -235,7 +235,7 @@
 
 ---
 
-## Interviewing Process
+## ⁠E.4. Interviewing Process
 
 **Definition:** An interview is an attempt to secure maximum information from the candidate concerning their suitability for the job.
 
@@ -252,7 +252,7 @@
 
 ---
 
-## Referral Approach for Manpower Recruitment
+## ⁠E.5. Referral Approach for Manpower Recruitment
 
 **Definition:** Using current employees to refer potential candidates for job openings.
 
@@ -277,9 +277,9 @@
 
 ---
 
-# Training and Development of Manpower
+# ⁠F. Training and Development of Manpower
 
-## Definition & Purpose
+## ⁠F.1. Definition & Purpose
 
 **Training:** An organized activity for increasing the knowledge and skills of people for a definite purpose.
 
@@ -294,7 +294,7 @@
 
 ---
 
-## Benefits of Training
+## ⁠F.2. Benefits of Training
 
 | Benefit                      | Description                                                           |
 | ---------------------------- | --------------------------------------------------------------------- |
@@ -308,7 +308,7 @@
 
 ---
 
-## Training Methods
+## ⁠F.3. Training Methods
 
 | Method                   | Description                                                |
 | ------------------------ | ---------------------------------------------------------- |
@@ -325,7 +325,7 @@
 
 ---
 
-## Identifying Training Needs
+## ⁠F.4. Identifying Training Needs
 
 **Methods to Identify Training Needs:**
 
@@ -340,9 +340,9 @@
 
 ---
 
-# Job Analysis, Job Evaluation, and Merit Rating
+# ⁠G. Job Analysis, Job Evaluation, and Merit Rating
 
-## Job Analysis
+## ⁠G.1. Job Analysis
 
 **Definition:** The systematic process of describing aspects of a job and specifying the skills and other requirements necessary to perform it.
 
@@ -368,7 +368,7 @@
 
 ---
 
-## Job Analysis Methods
+## ⁠G.2. Job Analysis Methods
 
 | Method            | Description                                                                                    | Advantages                                          | Disadvantages                                 |
 | ----------------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------- | --------------------------------------------- |
@@ -385,7 +385,7 @@
 
 ---
 
-## Job Description
+## ⁠G.3. Job Description
 
 **Definition:** A statement that tells what is to be done, how it is done, and why.
 
@@ -411,7 +411,7 @@
 
 ---
 
-## Job Evaluation
+## ⁠G.4. Job Evaluation
 
 **Definition:** Systematic way of determining the value/worth of a job in relation to other jobs in the organization.
 
@@ -437,7 +437,7 @@
 
 ---
 
-## Merit Rating (Performance Appraisal)
+## ⁠G.5. Merit Rating (Performance Appraisal)
 
 **Definition:** The process of evaluating employees to determine their effectiveness, personality, potential, and contribution to the organization.
 
@@ -457,7 +457,7 @@
 
 ---
 
-## Methods of Merit Rating/Performance Appraisal
+## ⁠G.6. Methods of Merit Rating/Performance Appraisal
 
 **Traditional Methods:**
 
@@ -480,9 +480,9 @@
 
 ---
 
-# Wages, Salary, and Incentives
+# ⁠H. Wages, Salary, and Incentives
 
-## Wage and Salary Structure
+## ⁠H.1. Wage and Salary Structure
 
 **Definitions:**
 
@@ -506,7 +506,7 @@
 
 ---
 
-## Factors Affecting Wage/Salary Structure
+## ⁠H.2. Factors Affecting Wage/Salary Structure
 
 | Factor                             | Description                                                                                      |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -523,7 +523,7 @@
 
 ---
 
-## Incentives
+## ⁠H.3. Incentives
 
 **Definition:** Something that motivates an individual to perform certain action.
 
@@ -558,9 +558,9 @@
 
 ---
 
-# Separation and Exit Process
+# ⁠I. Separation and Exit Process
 
-## Types of Separation
+## ⁠I.1. Types of Separation
 
 | Type                    | Description                                     |
 | ----------------------- | ----------------------------------------------- |
@@ -573,7 +573,7 @@
 
 ---
 
-## Disciplinary Actions and Penalties
+## ⁠I.2. Disciplinary Actions and Penalties
 
 **1. Warning (Verbal/Written)**
 
@@ -622,7 +622,7 @@
 
 ---
 
-## Exit Process
+## ⁠I.3. Exit Process
 
 | Step                      | Description                                                             |
 | ------------------------- | ----------------------------------------------------------------------- |

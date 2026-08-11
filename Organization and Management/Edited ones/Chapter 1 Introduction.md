@@ -1,6 +1,6 @@
-# Organization
+# ⁠A. Organization
 
-## Definition of Organization
+## ⁠A.1. Definition of Organization
 An organization is a **social structure** or entity in which two or more people work **interdependently** through structured patterns to accomplish a set of goals.
 
 **Key Characteristics:**
@@ -22,7 +22,7 @@ INPUT → PROCESSING → OUTPUT → FEEDBACK → ADAPTATION
 (Resources) (Operations) (Products/Services) (Customer Response) (Changes)
 ```
 ---
-## Necessity/Importance of Organization
+## ⁠A.2. Necessity/Importance of Organization
 **Why do we need organization?**
 - People working together achieve more than working alone
 - Organizations fulfill basic human needs (economic, social)
@@ -42,7 +42,7 @@ INPUT → PROCESSING → OUTPUT → FEEDBACK → ADAPTATION
 - Performance feedback and growth
 - Job security and stability
 ---
-## Principles of Organization (Henry Fayol's Principles)
+## ⁠A.3. Principles of Organization (Henry Fayol's Principles)
 For an organization to run smoothly, the following principles must be followed:
 
 | Principle                                     | Description                                                                                                          |
@@ -64,7 +64,7 @@ For an organization to run smoothly, the following principles must be followed:
 | **Esprit de Corps**                           | "Union is Strength" - harmony and mutual understanding among members                                                 |
 
 ---
-## Formal and Informal Organization
+## ⁠A.4. Formal and Informal Organization
 
 | Aspect            | Formal Organization                          | Informal Organization                                                 |
 | ----------------- | -------------------------------------------- | --------------------------------------------------------------------- |
@@ -83,8 +83,8 @@ For an organization to run smoothly, the following principles must be followed:
 - If management understands its nature, it can contribute to productivity
 - Informal leaders may have greater power than formal leaders in getting things done
 ---
-# Management
-## Definition of Management
+# ⁠B. Management
+## ⁠B.1. Definition of Management
 **Simple Definition:** Getting things done through other people.
 **Comprehensive Definition:**
 - The act of getting people together to achieve set goals using available resources effectively and efficiently
@@ -96,7 +96,7 @@ For an organization to run smoothly, the following principles must be followed:
 - **As an Art**: Requires personal skills, creativity, practical application, and experience
 - **Example**: A manager uses scientific principles (planning, organizing) but applies them artistically (motivating people, handling unique situations)
 ---
-## Functions of Management (PODCC)
+## ⁠B.2. Functions of Management (PODCC)
 
 | Function         | Description                                                                               |
 | ---------------- | ----------------------------------------------------------------------------------------- |
@@ -107,7 +107,7 @@ For an organization to run smoothly, the following principles must be followed:
 | **Controlling**  | Monitoring activities; comparing results achieved with goals set                          |
 
 ---
-## Levels of Management
+## ⁠B.3. Levels of Management
 
 | Level                       | Responsibilities                                                       | Key Functions                                                                 |
 | --------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
@@ -116,7 +116,7 @@ For an organization to run smoothly, the following principles must be followed:
 | **Lower Level Management**  | Supervisory level; responsible for day-to-day activities               | Supervision of workers, ensuring achievement of organizational goals          |
 
 ---
-## Managerial Skills
+## ⁠B.4. Managerial Skills
 
 | Skill Category           | Description                                                | Examples                                                   |
 | ------------------------ | ---------------------------------------------------------- | ---------------------------------------------------------- |
@@ -134,7 +134,7 @@ For an organization to run smoothly, the following principles must be followed:
 - Adaptability and flexibility
 - Vision and strategic thinking
 ---
-## Models of Management
+## ⁠B.5. Models of Management
 
 | Model                                   | Description                                                                                                                      |
 | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -147,7 +147,7 @@ For an organization to run smoothly, the following principles must be followed:
 **Note:** Organizations may choose to use all or a few of these models according to their needs.
 
 ---
-## Importance of Management
+## ⁠B.6. Importance of Management
 - Proper planning to determine what is to be achieved
 - Proper organizing to allocate resources and establish means to accomplish plans
 - Proper influence to motivate and lead personnel towards goals
@@ -155,8 +155,8 @@ For an organization to run smoothly, the following principles must be followed:
 - Ensuring coordination and efficiency
 - Achieving organizational objectives effectively and efficiently
 ---
-# Theories of Management
-## Scientific Management Theory (Frederic W. Taylor)
+# ⁠C. Theories of Management
+## ⁠C.1. Scientific Management Theory (Frederic W. Taylor)
 **Historical Background:** Developed by Frederic W. Taylor in the early 1900's; first person to study management systematically.
 **Core Beliefs:**
 - Scientific approaches should be used to increase productivity and efficiency
@@ -178,7 +178,7 @@ For an organization to run smoothly, the following principles must be followed:
 - Modern applications: Lean manufacturing, Six Sigma, process optimization
 - However, modern organizations also consider human factors and motivation
 ---
-## Administrative Management Theory (Henry Fayol)
+## ⁠C.2. Administrative Management Theory (Henry Fayol)
 **Historical Background:** Henry Fayol (1842-1925), French Mining Engineer and Management Consultant; first to analyze functions of management.
 **Three Major Contributions:**
 1. Clear distinction between technical and managerial skills
@@ -209,7 +209,7 @@ For an organization to run smoothly, the following principles must be followed:
 - Modern organizations may adapt principles based on context
 - Digital transformation has changed some aspects but core principles remain
 ---
-## Behavioral Management Theory (Elton Mayo)
+## ⁠C.3. Behavioral Management Theory (Elton Mayo)
 **Historical Background:** Developed by Elton Mayo and associates in the 1920's; challenged scientific management's focus on monetary incentives.
 **Core Beliefs:**
 - Productivity not necessarily increased through monetary incentives
@@ -234,7 +234,7 @@ For an organization to run smoothly, the following principles must be followed:
 - Better communication between levels is important
 - Management requires both technical and social skills
 ---
-## Modern Management Theories
+## ⁠C.4. Modern Management Theories
 **A. Contingency Approach:**
 - Integrative approach that fits together both theories
 - Assumes no single theory is universally best
@@ -251,8 +251,8 @@ For an organization to run smoothly, the following principles must be followed:
 - Large organizations may need modern approaches
 - Context of Nepal: traditional values, hierarchical structures, growing technology adoption
 ---
-# Forms of Ownership
-## Single Ownership (Sole Proprietorship)
+# ⁠D. Forms of Ownership
+## ⁠D.1. Single Ownership (Sole Proprietorship)
 **Definition:** Oldest, simplest, and most popular form; owned and controlled by single person; formed to fulfill own goals using own resources.
 **Key Features:**
 - Total control and freedom to run business in owner's own way
@@ -284,7 +284,7 @@ For an organization to run smoothly, the following principles must be followed:
 | **Health Issues/Time Management** | Overwork may affect owner's health                                           |
 
 ---
-## Partnership
+## ⁠D.2. Partnership
 **Definition:** Formed when two or more people join hands to work together, sharing profit and loss equally or as per agreement.
 **Key Features:**
 - Mutual understanding between partners
@@ -308,7 +308,7 @@ For an organization to run smoothly, the following principles must be followed:
 | **Misunderstanding**        | Confusion can occur; decisions need to be shared  |
 
 ---
-## Joint Stock Company
+## ⁠D.3. Joint Stock Company
 **Definition:** Association of individuals for carrying on trade or business; also called corporations or limited companies.
 **Key Features:**
 - Capital collected by selling shares to shareholders
@@ -353,7 +353,7 @@ For an organization to run smoothly, the following principles must be followed:
 - Proof of registered office address
 - Tax registration (PAN) documents
 ---
-## Cooperative Societies
+## ⁠D.4. Cooperative Societies
 **Definition:** Voluntary association of individuals for mutual social, economic, and cultural benefit; not primarily for profit motive but for rendering services.
 **Key Features:**
 - At least 10 members; maximum up to 100
@@ -395,7 +395,7 @@ For an organization to run smoothly, the following principles must be followed:
 | **Lack of Motivation**        | Dividends limited; management committee less motivated  |
 
 ---
-## Public Corporation
+## ⁠D.5. Public Corporation
 **Definition:** Organization formed by the government for social welfare and non-profit objectives. Historical: 20 formed between 1936-1939.
 **Advantages:**
 
@@ -415,12 +415,12 @@ For an organization to run smoothly, the following principles must be followed:
 | **Political Influence**             | Appointments may be politically motivated; may lack required skills |
 
 ---
-# Organizational Structure
-## Definition
+# ⁠E. Organizational Structure
+## ⁠E.1. Definition
 Refers to division of labor and patterns of coordination, communication, workflow, and formal power. Represents the hierarchical arrangement of various positions. Defines who directs whom and who reports to whom.
 
 ---
-## Line Organization
+## ⁠E.2. Line Organization
 **Definition:** Simplest form; represents direct vertical relationships with authority flowing from topmost executive to lower supervisor levels. Authority decreases with each successive level.
 **Diagram:**
 ```mermaid
@@ -445,7 +445,7 @@ C --> G[Supervisor]
 - Only suitable for small organizations
 - Lack of specialization may hamper future growth
 ---
-## Functional Organization
+## ⁠E.3. Functional Organization
 **Definition:** Developed by F.W. Taylor; organization divided into units based on functions (production, marketing, finance, personnel). Each unit under charge of different person. If a person performs several functions, they report to multiple functional heads.
 **Diagram:**
 ```mermaid
@@ -471,7 +471,7 @@ flowchart TD
 - Functional manager may focus on own department only
 - Delay in decision making involving multiple specialists
 ---
-## Line and Staff Organization
+## ⁠E.4. Line and Staff Organization
 **Definition:** Line authority flows down as in line organization, with addition of specialists (staff) attached to line managers to advise on business matters. Staff executives provide advice and information for better performance.
 **Diagram:**
 ```mermaid
@@ -497,7 +497,7 @@ flowchart TD
 - Staff executives tend to be theoretical; line executives more practical
 - Staff executives not accountable for results
 ---
-## Committee Organization
+## ⁠E.5. Committee Organization
 **Definition:** Two or more persons appointed by higher authority for the purpose of advising. May be standing committee or for limited duration. May or may not have authority.
 **Advantages:**
 - Brings together wide range of ideas, expertise, and interests
@@ -515,8 +515,8 @@ flowchart TD
     - Resource pooling
     - Expert coordination
 ---
-# Purchasing and Marketing Management
-## Purchasing Management
+# ⁠F. Purchasing and Marketing Management
+## ⁠F.1. Purchasing Management
 **Definition:** Activity of acquiring goods and services by payment to accomplish organizational goals. Includes procurement of materials, machines, tools, and equipment.
 **Key Responsibility:** Buy materials of **right quality**, **right quantity**, at **right time**, from **right sources**, with delivery at **right place**.
 
@@ -550,7 +550,7 @@ flowchart TD
 10. Request accounts department for payment
 11. Allocate materials as per requirements
 ---
-## Marketing Management
+## ⁠F.2. Marketing Management
 **Definition:** Process of communicating the value of products or services to consumers; organizational function for creating, delivering, and communicating value to customers; managing customer relationships for mutual benefit.
 **Four P's of Marketing:**
 1. **Product:** Developed based on market research; should meet user needs
@@ -597,7 +597,7 @@ flowchart TD
 - Builds trust and loyalty
 - Provides immediate feedback
 ---
-## Advertising
+## ⁠F.3. Advertising
 **Definition:** Form of marketing used to encourage or persuade consumers to take action upon a product.
 **Forms:** Newspapers, magazines, media, online sources, TV, door-to-door selling, billboards, sales promotions
 **Importance of Advertising:**

@@ -1,5 +1,5 @@
-# MOTIVATION
-## Introduction to Motivation
+# ⁠A. MOTIVATION
+## ⁠A.1. Introduction to Motivation
 **Etymology:** Comes from Latin word _'Mover'_ which means "to move."
 
 **Definition:**  
@@ -10,7 +10,7 @@ The process of influencing or stimulating a person to take action by creating a 
 - Makes people continually interested in and committed to their job
 - Different people have different forms of motivation (rewards, punishment, monetary incentives)
 ---
-## Role of Management in Motivation
+## ⁠A.2. Role of Management in Motivation
 
 | Role                           | Description                                                                                                |
 | ------------------------------ | ---------------------------------------------------------------------------------------------------------- |
@@ -25,8 +25,8 @@ The process of influencing or stimulating a person to take action by creating a 
 **Key Insight:** Better the motivation schemes, better the quality of work produced.
 
 ---
-## Types of Motivation
-### Intrinsic vs. Extrinsic Motivation
+## ⁠A.3. Types of Motivation
+### ⁠A.3.a. Intrinsic vs. Extrinsic Motivation
 
 | Aspect             | Intrinsic Motivation                              | Extrinsic Motivation                          |
 | ------------------ | ------------------------------------------------- | --------------------------------------------- |
@@ -41,7 +41,7 @@ The process of influencing or stimulating a person to take action by creating a 
 **Extrinsic Motivation:** Desires to perform tasks are controlled by an external source; someone else wants you to do something, offering certain rewards or fear of punishment.
 
 ---
-### Positive vs. Negative Motivation
+### ⁠A.3.b. Positive vs. Negative Motivation
 
 | Aspect             | Positive Motivation               | Negative Motivation                   |
 | ------------------ | --------------------------------- | ------------------------------------- |
@@ -51,8 +51,8 @@ The process of influencing or stimulating a person to take action by creating a 
 | **Sustainability** | Long-term                         | Short-term                            |
 
 ---
-## Types of Motivation by Focus
-### Attitude Motivation
+## ⁠A.4. Types of Motivation by Focus
+### ⁠A.4.a. Attitude Motivation
 **Definition:** About how people think and feel; self-confidence, belief in themselves, attitude to life (positive or negative).
 
 **Key Points:**
@@ -60,7 +60,7 @@ The process of influencing or stimulating a person to take action by creating a 
 - How they react to their past
 - If both employers and employees maintain **positive attitude** about themselves, others, and situations → leads to better performance
 ---
-### Group Motivation
+### ⁠A.4.b. Group Motivation
 **Definition:** Teams are the life of any organization; productivity and success depend upon employee performance as a team.
 
 **Key Points:**
@@ -68,7 +68,7 @@ The process of influencing or stimulating a person to take action by creating a 
 - Bringing out the best in each individual and recognizing their performance increases motivation
 - Team building exercises, trainings, incentives, social recognition help motivate members
 ---
-### Executive Motivation
+### ⁠A.4.c. Executive Motivation
 **Definition:** One of the key issues in organizations is motivating and keeping managerial talents.
 
 **Motivation Techniques for Executives:**
@@ -79,8 +79,8 @@ The process of influencing or stimulating a person to take action by creating a 
 - Public recognition
 - Better pay
 ---
-## Motivation Theories
-### Maslow's Hierarchy of Needs Theory
+## ⁠A.5. Motivation Theories
+### ⁠A.5.a. Maslow's Hierarchy of Needs Theory
 **Theorist:** Abraham Maslow (1940s)
 
 **Core Idea:** Employee behavior is motivated by several needs arranged in a hierarchy. Lower needs must be at least partially satisfied before higher needs become motivating.
@@ -98,7 +98,7 @@ The process of influencing or stimulating a person to take action by creating a 
 **Key Point:** This is called the **"satisfaction progression process"** because once a need is satisfied, it no longer motivates, and the person progresses to the next level.
 
 ---
-### Alderfer's ERG Theory
+### ⁠A.5.b. Alderfer's ERG Theory
 **Theorist:** Clayton Alderfer (1969)
 
 **Core Idea:** Human needs are divided into three categories.
@@ -112,7 +112,7 @@ The process of influencing or stimulating a person to take action by creating a 
 **Key Point:** Unlike Maslow, ERG theory allows movement between levels and recognizes that if higher needs are frustrated, individuals may regress to lower needs.
 
 ---
-### McClelland's Theory of Learned Needs
+### ⁠A.5.c. McClelland's Theory of Learned Needs
 **Theorist:** David McClelland (1960s)
 
 **Core Idea:** Three needs are important sources of motivation that are learned through life experiences.
@@ -124,7 +124,7 @@ The process of influencing or stimulating a person to take action by creating a 
 | **Need for Affiliation (nAff)** | Wants to belong to a group; forms better work relationships; wants to be liked and respected                                    | Avoids conflict; seeks harmony; prefers collaborative work      |
 
 ---
-### McGregor's Theory X and Theory Y
+### ⁠A.5.d. McGregor's Theory X and Theory Y
 **Theorist:** Douglas McGregor (1960s)
 
 **Core Idea:** Managers' assumptions about human nature influence their management style.
@@ -154,7 +154,7 @@ The process of influencing or stimulating a person to take action by creating a 
 **Management Style Required:** Less control; gives employees more control and responsibility; creates environment for greater job satisfaction and high motivation.
 
 ---
-### Fear and Punishment Theory (Reinforcement Theory)
+### ⁠A.5.e. Fear and Punishment Theory (Reinforcement Theory)
 **Theorist:** B.F. Skinner
 
 **Core Idea:**
@@ -162,7 +162,7 @@ The process of influencing or stimulating a person to take action by creating a 
 - For these people, fear and punishment schemes are necessary to motivate them
 - Some people get motivated by rewards; some must be controlled through fear
 ---
-### Herzberg's Two-Factor (Motivation-Hygiene) Theory
+### ⁠A.5.f. Herzberg's Two-Factor (Motivation-Hygiene) Theory
 **Theorist:** Frederick Herzberg (1959)
 
 **Core Idea:** Workplace has two separate sets of factors:
@@ -181,7 +181,7 @@ The process of influencing or stimulating a person to take action by creating a 
 - **Salary** is primarily a hygiene factor (prevents dissatisfaction)
 - **Recognition and achievement** are motivators
 ---
-### Vroom's Expectancy (VIE) Theory
+### ⁠A.5.g. Vroom's Expectancy (VIE) Theory
 **Theorist:** Victor Vroom (Yale School of Management)
 
 **Core Idea:** A person will decide to behave or act in a certain way based on what they expect the result of that behavior will be.
@@ -204,7 +204,7 @@ The process of influencing or stimulating a person to take action by creating a 
 **Why It's Called a Process Theory:** Explains the cognitive process through which needs are translated into behavior.
 
 ---
-## Motivation Techniques
+## ⁠A.6. Motivation Techniques
 
 | Technique                                    | Description                                                         |
 | -------------------------------------------- | ------------------------------------------------------------------- |
@@ -218,8 +218,8 @@ The process of influencing or stimulating a person to take action by creating a 
 | **Recognition and Awards**                   | Formal acknowledgment of achievement                                |
 
 ---
-# LEADERSHIP
-## Introduction to Leadership
+# ⁠B. LEADERSHIP
+## ⁠B.1. Introduction to Leadership
 **Definition:**
 - The process of influencing people and providing an environment for them to achieve team or organizational activities
 - The activity of leading a group of people or an organization
@@ -245,7 +245,7 @@ The process of influencing or stimulating a person to take action by creating a 
 **Note:** All leaders are not necessarily managers; a leader might be any team member with strong influence over others.
 
 ---
-## Qualities of a Good Leader
+## ⁠B.2. Qualities of a Good Leader
 
 | Quality                      | Description                                                                             |
 | ---------------------------- | --------------------------------------------------------------------------------------- |
@@ -263,8 +263,8 @@ The process of influencing or stimulating a person to take action by creating a 
 | **Empathy**                  | Understands and relates to others                                                       |
 
 ---
-## Leadership Styles
-### Autocratic (Authoritarian) Style
+## ⁠B.3. Leadership Styles
+### ⁠B.3.a. Autocratic (Authoritarian) Style
 **Characteristics:**
 - Gives orders which must be obeyed
 - Makes choices based on own ideas and judgments
@@ -293,7 +293,7 @@ The process of influencing or stimulating a person to take action by creating a 
 | Tells what to do     | Shows how to do      |
 
 ---
-### Democratic (Participative) Style
+### ⁠B.3.b. Democratic (Participative) Style
 **Characteristics:**
 - Gives orders after consulting the group
 - Policies worked out in group discussions
@@ -308,7 +308,7 @@ The process of influencing or stimulating a person to take action by creating a 
 - Increased group morale
 - Members feel more engaged
 ---
-### Laissez-Faire (Free Rein) Style
+### ⁠B.3.c. Laissez-Faire (Free Rein) Style
 **Characteristics:**
 - Leader provides little or no direction
 - Gives employees maximum freedom
@@ -325,7 +325,7 @@ The process of influencing or stimulating a person to take action by creating a 
 - Decisions need to be made quickly
 - Team lacks self-motivation
 ---
-### Blake and Mouton's Managerial Grid
+### ⁠B.3.d. Blake and Mouton's Managerial Grid
 **Theorists:** Robert R. Blake and Jake Mouton
 **Core Idea:** Leadership style is determined by two dimensions:
 - **X-axis:** Concern for Production (1 to 9)
@@ -349,8 +349,8 @@ The process of influencing or stimulating a person to take action by creating a 
 - Develops committed and motivated workforce
 - Leads to sustainable organizational growth
 ---
-## Leadership Approaches/Theories
-### Trait Approach
+## ⁠B.4. Leadership Approaches/Theories
+### ⁠B.4.a. Trait Approach
 **Core Idea:** Leadership is based on personal traits, abilities, personality, background, physical characteristics, intelligence, attitudes, learning behavior, and maturity.
 
 **Core Traits of Effective Leaders:**
@@ -368,7 +368,7 @@ The process of influencing or stimulating a person to take action by creating a 
 **Limitation:** Not all leaders share same traits; traits alone don't guarantee effectiveness.
 
 ---
-### Behavioral Approach
+### ⁠B.4.b. Behavioral Approach
 **Core Idea:** Focuses on what leaders do (behavior); argues great leaders are made, not born; leadership capability can be learned.
 
 **Two Distinguished Behaviors:**
@@ -381,7 +381,7 @@ The process of influencing or stimulating a person to take action by creating a 
 **Key Insight:** Initially thought leaders who are people-oriented are weak at task-oriented (and vice versa), but studies show effective leaders can exhibit **high levels of both**; these behaviors are independent.
 
 ---
-### Contingency/Situational Approach
+### ⁠B.4.c. Contingency/Situational Approach
 **Core Idea:** Best approach to leadership depends upon the situation. What a leader does depends on characteristics of the situation.
 
 **Leadership Styles in Contingency Approach:**
@@ -394,7 +394,7 @@ The process of influencing or stimulating a person to take action by creating a 
 | **Achievement-Oriented** | Sets challenging goals; expects high performance; shows confidence in workers                              | When tasks are complex             |
 
 ---
-### Integrated Approach to Leadership
+### ⁠B.4.d. Integrated Approach to Leadership
 **Core Idea:** Integration of:
 - Characteristics, behavior, and experience of the **Leader**
 - Ability, experience, and maturity of **Followers**
@@ -405,8 +405,8 @@ The process of influencing or stimulating a person to take action by creating a 
 
 ---
 
-# ENTREPRENEURSHIP
-### C.1 Introduction to Entrepreneurship
+# ⁠C. ENTREPRENEURSHIP
+### ⁠C.1.a. Introduction to Entrepreneurship
 **Etymology:** French word _'entrependre'_ which means "to undertake."
 
 **Definition:**  
@@ -418,7 +418,7 @@ The capacity and willingness to develop, organize, and manage a business venture
 - An entrepreneur is a person of high aptitude who pioneers change
 - Someone who wants to work for themselves and start their own business with their knowledge and innovations
 ---
-## Entrepreneurial Characteristics
+## ⁠C.2. Entrepreneurial Characteristics
 
 | Characteristic            | Description                                                               |
 | ------------------------- | ------------------------------------------------------------------------- |
@@ -433,7 +433,7 @@ The capacity and willingness to develop, organize, and manage a business venture
 | **Strong Work Ethics**    | First to arrive, last to leave; mind constantly on work; motivates team   |
 
 ---
-## Entrepreneurship Development
+## ⁠C.3. Entrepreneurship Development
 **Role in Economic Development:**
 - Vital role in economic development of a country
 - Involves adoption of new business organizations, new technologies, new enterprises
@@ -451,7 +451,7 @@ The capacity and willingness to develop, organize, and manage a business venture
 | **Supportive Environment**    | Government policies, market conditions, and cultural acceptance         |
 
 ---
-## Need for Promotion of Entrepreneurship
+## ⁠C.4. Need for Promotion of Entrepreneurship
 
 | Reason                         | Description                                                                                                                        |
 | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -468,7 +468,7 @@ The capacity and willingness to develop, organize, and manage a business venture
 - Making and bringing changes
 
 ---
-## Importance of Entrepreneurship in Nepali Context
+## ⁠C.5. Importance of Entrepreneurship in Nepali Context
 **For National Economy:**
 - Employment creation for young workforce
 - Economic diversification beyond agriculture
@@ -487,14 +487,14 @@ The capacity and willingness to develop, organize, and manage a business venture
 - Reduces brain drain
 - Promotes digital transformation
 ---
-## Steps for Establishing a Small Scale Unit
+## ⁠C.6. Steps for Establishing a Small Scale Unit
 **Who Can Start?**
 - Existing entrepreneur or fresh to business
 - With or without business background in family
 - Educated or uneducated
 - Rural/backward area persons, physically handicapped, minorities
 - **Key Requirements:** Strong will, essential skills, ability to work hard, ability to take calculated risks
-#### Step-by-Step Process:
+#### ⁠C.6.a.I. Step-by-Step Process:
 
 | Step                          | Description                                                                                                                                                             |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -509,7 +509,7 @@ The capacity and willingness to develop, organize, and manage a business venture
 **Key Advice:** Planning in advance is useful. Keep assessing and improving your plan at every stage.
 
 ---
-## Risks and Challenges for Entrepreneurs
+## ⁠C.7. Risks and Challenges for Entrepreneurs
 **For Aspiring Entrepreneurs:**
 - Financial constraints (student loans, lack of capital)
 - Lack of experience and skills
