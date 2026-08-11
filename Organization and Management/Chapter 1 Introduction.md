@@ -1,6 +1,9 @@
 <p style="text-align: center; font-weight: bold;">20 Hours</p>
+
 # A.1 Organization
+
 <p style="text-align: center;">2 Hours</p>
+
 ## A.1 Concepts of Organization
 ### A.1.1.1 Definition
 -   Social structure
@@ -14,6 +17,7 @@
 	- People use the knowledge and techniques they possess.
 - Technological System
 	- People use the knowledge and techniques they possess.
+
 ### A.1.1.2 Why an organization
 -   People work together to achieve certain goals
 -   when organized, they can have better performances
@@ -36,7 +40,7 @@
 - feedback from the customers
 ![[Drawing 2026-06-24 06.56.08.excalidraw | 900]]
 
-## ⁠c. of Organization
+## ⁠c. Principles of Organization
 -   Henry Fayol
 -   also referred as Principles of Management
 -   For an organization to run smoothly, following principles are to be followed
