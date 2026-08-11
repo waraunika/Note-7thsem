@@ -1,12 +1,16 @@
 # Introduction to Personnel Management
+
 ## Definition and Concept
+
 **Personnel Management** is the discipline of hiring, developing, and effectively utilizing human resources to make them more valuable to the organization.
+
 **Key Aspects:**
+
 - Effective control and use of manpower
 - Obtaining, using, and maintaining a satisfied workforce
 - Concerned with the welfare and well-being of employees
 - Often referred to as **Human Resource Management (HRM)**
-**Scope of Personnel Management:**
+  **Scope of Personnel Management:**
 - Company policies and procedures
 - Staffing, hiring, and firing
 - Orientation and induction
@@ -14,7 +18,9 @@
 - Leave and vacation approval
 - Healthcare programs
 - Training and performance appraisals
+
 ---
+
 ## Three Aspects of Personnel Management
 
 | Aspect                          | Focus Area                                 | Key Activities                                                                     |
@@ -24,9 +30,13 @@
 | **Industrial Relations Aspect** | Labor relations and dispute resolution     | Trade union negotiations, settlement of industrial disputes, collective bargaining |
 
 ---
+
 ## Workplace Ergonomics
+
 **Definition:** The science of designing the workplace to fit the worker, reducing strain, fatigue, and injuries.
+
 **Benefits of Proper Ergonomics:**
+
 - Reduces health expenses and work-related injuries
 - Improves workplace arrangements and efficiency
 - Decreases fatigue and physical stress
@@ -44,7 +54,9 @@
 | **Safety**               | Proper application of safety protocols                                |
 
 ---
+
 # Functions of Personnel Management
+
 ## Managerial Functions (PODCC)
 
 | Function         | Description                                                                |
@@ -56,6 +68,7 @@
 | **Controlling**  | Monitoring performance, comparing with standards, taking corrective action |
 
 ---
+
 ## Operative Functions
 
 | Function                   | Description                                     | Key Activities                                                                                                                     |
@@ -68,7 +81,9 @@
 | **Motivation**             | Encouraging employees to contribute effectively | Monetary and non-monetary benefits, incentives, recognition programs                                                               |
 
 ---
+
 ## Human Resource Management (HRM) Perspective
+
 **Personnel Management vs. HRM:**
 
 | Aspect              | Traditional Personnel Management | Modern HRM                           |
@@ -80,15 +95,19 @@
 | **Role**            | Welfare and administration       | Strategic partner in business        |
 
 ---
+
 # Personnel Policy (Employee Handbook)
 
 ## Definition and Purpose
+
 **Personnel Policy** (also called **Employee Handbook**) is a statement/document that explains:
+
 - What the employer expects from its employees
 - What employees may expect from the employer
-**Distribution:** Must be distributed to each employee at hiring and placement; should be reviewed and discussed during orientation and training sessions.
+  **Distribution:** Must be distributed to each employee at hiring and placement; should be reviewed and discussed during orientation and training sessions.
 
 ---
+
 ## Contents of a Personnel Policy/Employee Handbook
 
 | Section                    | Content                                                                      |
@@ -105,31 +124,43 @@
 | **Employee Benefits**      | Dental plans, family benefits, educational assistance, union information     |
 
 **Importance of Discussing Personnel Policy with New Hires:**
+
 - Sets clear expectations from the beginning
 - Reduces misunderstandings and conflicts
 - Ensures legal compliance
 - Builds trust and transparency
 - Provides reference for future disputes
 - Orients employees to organizational culture
+
 ---
+
 ## Why Personnel Policy is Important
+
 1. **Clarity:** Provides clear guidelines for employee behavior and expectations
 2. **Consistency:** Ensures uniform treatment of all employees
 3. **Legal Protection:** Protects organization from legal disputes
 4. **Communication:** Communicates organizational values and culture
 5. **Reference:** Provides reference for resolving conflicts and issues
 6. **Employee Security:** Makes employees aware of their rights and benefits
+
 ---
+
 # Manpower Planning (Human Resource Planning)
+
 ## Definition
+
 **Manpower** refers to the actual people working in an organization; the sum total of skills, talents, knowledge, qualifications, creativity, ability, and values of the workforce.
+
 **Manpower Planning** is the process of putting:
+
 - **Right number** of individuals
 - **Right kind** of individuals
 - At the **right place**
 - At the **right time**
 - Doing the **right job** they are suitable for
+
 ---
+
 ## Manpower Planning Procedure
 
 | Step                                        | Description                                                                                                                |
@@ -140,6 +171,7 @@
 | **4. Designing Training Programs**          | Develop training and development plans for new hires and existing employees to improve skills, capabilities, and knowledge |
 
 ---
+
 ## Importance of Manpower Planning
 
 | Importance                       | Description                                                                                      |
@@ -153,17 +185,23 @@
 | **Career Development**           | Provides opportunities for employee growth and advancement                                       |
 
 ---
+
 # Recruitment and Selection
 
 ## Definitions
-**Recruitment:** The process of searching for prospective employees and stimulating them to apply for jobs in the organization.
-**Selection:** The process of choosing the most suitable candidates from those who have applied.
-**Scientific Selection of Manpower:** A systematic, objective process for selecting employees based on job requirements and candidate qualifications.
+
+- **Recruitment:** The process of searching for prospective employees and stimulating them to apply for jobs in the organization.
+- **Selection:** The process of choosing the most suitable candidates from those who have applied.
+- **Scientific Selection of Manpower:** A systematic, objective process for selecting employees based on job requirements and candidate qualifications.
+
 **Key Concepts:**
+
 - **Job Analysis:** Determines the requirements and qualifications needed
 - **Job Description:** Describes duties and responsibilities
 - **Job Specification:** Lists qualifications and skills required
+
 ---
+
 ## Steps of Recruitment and Selection Process
 
 | Step                              | Description                                                                                                     |
@@ -182,6 +220,7 @@
 | **12. Placement**                 | Assign employee to specific job and responsibilities                                                            |
 
 ---
+
 ## Employee File Documentation
 
 | Document                           | Purpose                                |
@@ -195,8 +234,11 @@
 | **Medical Reports**                | Health status verification             |
 
 ---
+
 ## Interviewing Process
+
 **Definition:** An interview is an attempt to secure maximum information from the candidate concerning their suitability for the job.
+
 **Types of Interviews:**
 
 | Type                      | Description                                             |
@@ -209,8 +251,11 @@
 | **Behavioral Interview**  | Assess past behavior as predictor of future performance |
 
 ---
+
 ## Referral Approach for Manpower Recruitment
+
 **Definition:** Using current employees to refer potential candidates for job openings.
+
 **Advantages:**
 
 | Advantage              | Description                                                 |
@@ -231,17 +276,24 @@
 | **Unfair Advantage**  | Referred candidates may get preferential treatment    |
 
 ---
+
 # Training and Development of Manpower
-## Definition and Purpose
+
+## Definition & Purpose
+
 **Training:** An organized activity for increasing the knowledge and skills of people for a definite purpose.
+
 **Purpose of Training:**
+
 - Achieve change in behavior of those trained
 - Enable employees to do their jobs better
 - Increase motivation, job satisfaction, and morale
 - Increase efficiency and productivity
 - Reduce employee turnover
 - Increase technical skills and knowledge
+
 ---
+
 ## Benefits of Training
 
 | Benefit                      | Description                                                           |
@@ -255,6 +307,7 @@
 | **Adaptability**             | Helps employees adapt to new technologies and methods                 |
 
 ---
+
 ## Training Methods
 
 | Method                   | Description                                                |
@@ -271,8 +324,11 @@
 | **Role-Playing**         | Acting out job situations                                  |
 
 ---
+
 ## Identifying Training Needs
+
 **Methods to Identify Training Needs:**
+
 - Performance appraisal results
 - Job analysis findings
 - Employee feedback and requests
@@ -281,11 +337,17 @@
 - Changes in job requirements
 - Customer feedback
 - Observation of work processes
+
 ---
+
 # Job Analysis, Job Evaluation, and Merit Rating
+
 ## Job Analysis
+
 **Definition:** The systematic process of describing aspects of a job and specifying the skills and other requirements necessary to perform it.
+
 **Purpose:**
+
 - Determine why the job exists
 - Identify who is qualified to do the job
 - Understand how and when the job is done
@@ -305,6 +367,7 @@
 | **Job Evaluation**    | Systematic way of determining the value/worth of a job in relation to other jobs in the organization  |
 
 ---
+
 ## Job Analysis Methods
 
 | Method            | Description                                                                                    | Advantages                                          | Disadvantages                                 |
@@ -314,14 +377,20 @@
 | **Observation**   | Direct observation of job holders by job analyst                                               | First-hand knowledge; experience working conditions | Individuals may change behavior when observed |
 
 **Fields Using Observation Method:**
+
 - Machine operators
 - Construction workers
 - Flight attendants
 - Police and traffic workers
+
 ---
+
 ## Job Description
+
 **Definition:** A statement that tells what is to be done, how it is done, and why.
+
 **Purpose:**
+
 - Describes the job, not the job holder
 - Provides both organizational information (location, structure, authority)
 - Provides functional information (what the position is, what the work is, what is expected)
@@ -341,15 +410,20 @@
 | **Reporting**                | Who the employee reports to                                  |
 
 ---
+
 ## Job Evaluation
+
 **Definition:** Systematic way of determining the value/worth of a job in relation to other jobs in the organization.
+
 **Purpose:**
+
 - Evaluate skills, qualification, experience, and effort required
 - Create job hierarchy and pay differentials
 - Build rational and acceptable pay structure
 - Determine which jobs should get more pay than others
 
 **Key Point:** Job evaluation rates the **job**, not the person.
+
 **Job Evaluation Methods:**
 
 |                              | Description                                          |
@@ -362,21 +436,29 @@
 **Job Classes:** When jobs are grouped together, they form job classes. All jobs within a class are treated similarly monetarily.
 
 ---
+
 ## Merit Rating (Performance Appraisal)
+
 **Definition:** The process of evaluating employees to determine their effectiveness, personality, potential, and contribution to the organization.
+
 **Purpose:**
+
 - Provide feedback to each individual on performance
 - Serve as basis for improving or changing working habits
 - Provide data for future job assignments and compensation decisions
 - Improve organizational efficiency by mobilizing best possible efforts
 
 **Objectives:**
+
 1. Promotions
 2. Salary review
 3. Planning job rotation
 4. Development and training of individuals
+
 ---
+
 ## Methods of Merit Rating/Performance Appraisal
+
 **Traditional Methods:**
 
 | Method                          | Description                                                                                                                                                                                    |
@@ -397,14 +479,19 @@
 | **Critical Incident Method** | Records critical incidents of performance                                                                                                               |
 
 ---
+
 # Wages, Salary, and Incentives
+
 ## Wage and Salary Structure
+
 **Definitions:**
+
 - **Wage:** Monetary remuneration paid for labor services; computed on hourly, daily, weekly basis or per standard output
 - **Salary:** Remuneration paid on a weekly or monthly basis
 - **Common Application:** Wages in production, maintenance, labor industry; Salary in corporate, administrative, professional workforce
 
 **Components:**
+
 - Basic wage/salary
 - Allowances (family allowances, financial support, lunch allowances)
 - Holiday pay and overtime pay
@@ -418,6 +505,7 @@
 | **Indirect Compensation** | Life and health insurance, retirement allowances, pension, home allowance, family allowance, vehicle allowance, health welfare, social security benefits |
 
 ---
+
 ## Factors Affecting Wage/Salary Structure
 
 | Factor                             | Description                                                                                      |
@@ -434,9 +522,13 @@
 | **Employee Performance**           | Merit-based differentiation                                                                      |
 
 ---
+
 ## Incentives
+
 **Definition:** Something that motivates an individual to perform certain action.
+
 **Purpose of Incentive Programs:**
+
 - Increase productivity of employees
 - Help employees enjoy work
 - Motivate employees to perform better
@@ -453,16 +545,21 @@
 | **Employee Benefits**                     | Non-monetary benefits                   | Restaurant coupons, game tickets, movie tickets, gift vouchers, concert tickets, paid vacations                                    |
 
 **Advantages of Individual Incentives:**
+
 - Creates "Each Man for Himself" attitude
 - Improves efficiency
 - Increases job satisfaction
 
 **Advantages of Group Incentives:**
+
 - Effective when individual performance is difficult to measure
 - Increases productivity of the group
 - Efficient workers help slower workers meet deadlines
+
 ---
+
 # Separation and Exit Process
+
 ## Types of Separation
 
 | Type                    | Description                                     |
@@ -475,7 +572,9 @@
 | **Criminal Offence**    | Conviction on criminal charges                  |
 
 ---
+
 ## Disciplinary Actions and Penalties
+
 **1. Warning (Verbal/Written)**
 
 | Offence                  | Description                                     |
@@ -522,6 +621,7 @@
 | Harassment             | Engaging in harassment                                                    |
 
 ---
+
 ## Exit Process
 
 | Step                      | Description                                                             |

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "FPGA/Chapter 2 FPGA Logical Components, Architectures and Interfaces.md",
+                "file": "Organization and Management/Edited ones/Chapter 1 Introduction.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 2 FPGA Logical Components, Architectures and Interfaces"
+              "title": "Chapter 1 Introduction"
             }
           }
         ]
@@ -198,8 +198,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5adab0554968ab5d",
+  "active": "719d405be49c37cd",
   "lastOpenFiles": [
+    "FPGA/Chapter 2 FPGA Logical Components, Architectures and Interfaces.md",
     "FPGA/Chapter 1 FPGA Fundamentals.md",
     "Artificial Intelligence/Chapter 7 Applications of AI.md",
     "Artificial Intelligence/Chapter 4 Knowledge Representation, Inference & Reason.md",
@@ -237,7 +238,6 @@
     "Excalidraw/Drawing 2026-07-02 14.42.58.excalidraw.md",
     "CS-2nd July.md",
     "Excalidraw/Drawing 2026-06-24 06.56.08.excalidraw.md",
-    "Daily Notes/2026-06-03.md",
     "Excalidraw",
     "Daily Notes/attachments/Pasted image 20260601095816.png",
     "Daily Notes/attachments/Pasted image 20260519110803.png",
