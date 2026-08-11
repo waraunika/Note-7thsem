@@ -96,7 +96,7 @@
     -   compare the results achieved with the goals set
 
 ## ⁠e.2. Level of Management
-![[Pasted image 20260731115511.png]]
+![Pasted image](attachmnets/Pasted%20image%2020260731115511.png)
 -   Depends upon the size, complexity and the nature of organization
 -   Top level Management
     -   Higher Authority

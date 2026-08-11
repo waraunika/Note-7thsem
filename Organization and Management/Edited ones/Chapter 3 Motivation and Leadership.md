@@ -1,15 +1,20 @@
 # ⁠A. MOTIVATION
+
 ## ⁠A.1. Introduction to Motivation
+
 **Etymology:** Comes from Latin word _'Mover'_ which means "to move."
 
 **Definition:**  
 The process of influencing or stimulating a person to take action by creating a work atmosphere wherein the goals of the organization and needs of the person are satisfied.
 
 **Key Concepts:**
+
 - Internal and external factors that stimulate desire and energy in people
 - Makes people continually interested in and committed to their job
 - Different people have different forms of motivation (rewards, punishment, monetary incentives)
+
 ---
+
 ## ⁠A.2. Role of Management in Motivation
 
 | Role                           | Description                                                                                                |
@@ -25,7 +30,9 @@ The process of influencing or stimulating a person to take action by creating a 
 **Key Insight:** Better the motivation schemes, better the quality of work produced.
 
 ---
+
 ## ⁠A.3. Types of Motivation
+
 ### ⁠A.3.a. Intrinsic vs. Extrinsic Motivation
 
 | Aspect             | Intrinsic Motivation                              | Extrinsic Motivation                          |
@@ -41,6 +48,7 @@ The process of influencing or stimulating a person to take action by creating a 
 **Extrinsic Motivation:** Desires to perform tasks are controlled by an external source; someone else wants you to do something, offering certain rewards or fear of punishment.
 
 ---
+
 ### ⁠A.3.b. Positive vs. Negative Motivation
 
 | Aspect             | Positive Motivation               | Negative Motivation                   |
@@ -51,36 +59,52 @@ The process of influencing or stimulating a person to take action by creating a 
 | **Sustainability** | Long-term                         | Short-term                            |
 
 ---
+
 ## ⁠A.4. Types of Motivation by Focus
+
 ### ⁠A.4.a. Attitude Motivation
+
 **Definition:** About how people think and feel; self-confidence, belief in themselves, attitude to life (positive or negative).
 
 **Key Points:**
+
 - How people feel about their future
 - How they react to their past
 - If both employers and employees maintain **positive attitude** about themselves, others, and situations → leads to better performance
+
 ---
+
 ### ⁠A.4.b. Group Motivation
+
 **Definition:** Teams are the life of any organization; productivity and success depend upon employee performance as a team.
 
 **Key Points:**
+
 - Team leaders must understand how to influence team members' motivation
 - Bringing out the best in each individual and recognizing their performance increases motivation
 - Team building exercises, trainings, incentives, social recognition help motivate members
+
 ---
+
 ### ⁠A.4.c. Executive Motivation
+
 **Definition:** One of the key issues in organizations is motivating and keeping managerial talents.
 
 **Motivation Techniques for Executives:**
+
 - Profit sharing incentives
 - Bigger and challenging responsibilities
 - Share options
 - Benefits (medical, vehicle)
 - Public recognition
 - Better pay
+
 ---
+
 ## ⁠A.5. Motivation Theories
+
 ### ⁠A.5.a. Maslow's Hierarchy of Needs Theory
+
 **Theorist:** Abraham Maslow (1940s)
 
 **Core Idea:** Employee behavior is motivated by several needs arranged in a hierarchy. Lower needs must be at least partially satisfied before higher needs become motivating.
@@ -98,7 +122,9 @@ The process of influencing or stimulating a person to take action by creating a 
 **Key Point:** This is called the **"satisfaction progression process"** because once a need is satisfied, it no longer motivates, and the person progresses to the next level.
 
 ---
+
 ### ⁠A.5.b. Alderfer's ERG Theory
+
 **Theorist:** Clayton Alderfer (1969)
 
 **Core Idea:** Human needs are divided into three categories.
@@ -112,7 +138,9 @@ The process of influencing or stimulating a person to take action by creating a 
 **Key Point:** Unlike Maslow, ERG theory allows movement between levels and recognizes that if higher needs are frustrated, individuals may regress to lower needs.
 
 ---
+
 ### ⁠A.5.c. McClelland's Theory of Learned Needs
+
 **Theorist:** David McClelland (1960s)
 
 **Core Idea:** Three needs are important sources of motivation that are learned through life experiences.
@@ -124,7 +152,9 @@ The process of influencing or stimulating a person to take action by creating a 
 | **Need for Affiliation (nAff)** | Wants to belong to a group; forms better work relationships; wants to be liked and respected                                    | Avoids conflict; seeks harmony; prefers collaborative work      |
 
 ---
+
 ### ⁠A.5.d. McGregor's Theory X and Theory Y
+
 **Theorist:** Douglas McGregor (1960s)
 
 **Core Idea:** Managers' assumptions about human nature influence their management style.
@@ -154,15 +184,21 @@ The process of influencing or stimulating a person to take action by creating a 
 **Management Style Required:** Less control; gives employees more control and responsibility; creates environment for greater job satisfaction and high motivation.
 
 ---
+
 ### ⁠A.5.e. Fear and Punishment Theory (Reinforcement Theory)
+
 **Theorist:** B.F. Skinner
 
 **Core Idea:**
+
 - Just as Theory X assumes, some individuals dislike work, hate responsibility, and avoid challenging jobs
 - For these people, fear and punishment schemes are necessary to motivate them
 - Some people get motivated by rewards; some must be controlled through fear
+
 ---
+
 ### ⁠A.5.f. Herzberg's Two-Factor (Motivation-Hygiene) Theory
+
 **Theorist:** Frederick Herzberg (1959)
 
 **Core Idea:** Workplace has two separate sets of factors:
@@ -176,12 +212,16 @@ The process of influencing or stimulating a person to take action by creating a 
 | **Motivators**      | Higher-level needs; when present → satisfaction; when absent → no satisfaction           | Achievement, recognition, responsibility, growth opportunities, advancement      | Creates **satisfaction** and motivates             |
 
 **Key Insights:**
+
 - **Hygiene factors** prevent dissatisfaction but don't motivate
 - **Motivators** create satisfaction and genuine motivation
 - **Salary** is primarily a hygiene factor (prevents dissatisfaction)
 - **Recognition and achievement** are motivators
+
 ---
+
 ### ⁠A.5.g. Vroom's Expectancy (VIE) Theory
+
 **Theorist:** Victor Vroom (Yale School of Management)
 
 **Core Idea:** A person will decide to behave or act in a certain way based on what they expect the result of that behavior will be.
@@ -197,6 +237,7 @@ The process of influencing or stimulating a person to take action by creating a 
 **Important:** If any factor is zero, motivation becomes zero (M = 0).
 
 **Management Implications:**
+
 - **Expectancy:** Discover what resources, training, or supervision employees need
 - **Instrumentality:** Ensure promised rewards are fulfilled and employees are aware
 - **Valence:** Understand what employees value based on their needs, goals, and values
@@ -204,6 +245,7 @@ The process of influencing or stimulating a person to take action by creating a 
 **Why It's Called a Process Theory:** Explains the cognitive process through which needs are translated into behavior.
 
 ---
+
 ## ⁠A.6. Motivation Techniques
 
 | Technique                                    | Description                                                         |
@@ -218,14 +260,19 @@ The process of influencing or stimulating a person to take action by creating a 
 | **Recognition and Awards**                   | Formal acknowledgment of achievement                                |
 
 ---
+
 # ⁠B. LEADERSHIP
+
 ## ⁠B.1. Introduction to Leadership
+
 **Definition:**
+
 - The process of influencing people and providing an environment for them to achieve team or organizational activities
 - The activity of leading a group of people or an organization
 - An art of motivating a group of people to act towards achieving a common goal
 
 **Key Points:**
+
 - Leader is an inspiration and director of action
 - Leaders arrange the work environment (allocating resources, defining organizational goals)
 - Top management should have sharp leadership skills
@@ -245,6 +292,7 @@ The process of influencing or stimulating a person to take action by creating a 
 **Note:** All leaders are not necessarily managers; a leader might be any team member with strong influence over others.
 
 ---
+
 ## ⁠B.2. Qualities of a Good Leader
 
 | Quality                      | Description                                                                             |
@@ -263,21 +311,27 @@ The process of influencing or stimulating a person to take action by creating a 
 | **Empathy**                  | Understands and relates to others                                                       |
 
 ---
+
 ## ⁠B.3. Leadership Styles
+
 ### ⁠B.3.a. Autocratic (Authoritarian) Style
+
 **Characteristics:**
+
 - Gives orders which must be obeyed
 - Makes choices based on own ideas and judgments
 - Rarely accepts advice from followers
 - Little or no input from group members
 
 **When Beneficial:**
+
 - Decisions need to be made quickly
 - When consulting large groups is impractical
 - Emergency situations
 - Inexperienced employees
 
 **Drawbacks:**
+
 - Can be viewed as bossy, controlling, dictatorial
 - Leads to resentment among group members
 - Discourages creativity
@@ -293,8 +347,11 @@ The process of influencing or stimulating a person to take action by creating a 
 | Tells what to do     | Shows how to do      |
 
 ---
+
 ### ⁠B.3.b. Democratic (Participative) Style
+
 **Characteristics:**
+
 - Gives orders after consulting the group
 - Policies worked out in group discussions
 - Praise and blame shared by group members
@@ -302,55 +359,71 @@ The process of influencing or stimulating a person to take action by creating a 
 - Leader retains final say over decisions
 
 **Benefits:**
+
 - One of the most effective leadership styles
 - Higher productivity
 - Better contributions from group members
 - Increased group morale
 - Members feel more engaged
+
 ---
+
 ### ⁠B.3.c. Laissez-Faire (Free Rein) Style
+
 **Characteristics:**
+
 - Leader provides little or no direction
 - Gives employees maximum freedom
 - Depends on group to establish own goals and solve problems
 - Group members provide their own motivation
 
 **When Appropriate:**
+
 - Highly skilled professionals
 - Creative work
 - Self-motivated teams
 
 **Not Appropriate When:**
+
 - Group members lack knowledge or experience
 - Decisions need to be made quickly
 - Team lacks self-motivation
+
 ---
+
 ### ⁠B.3.d. Blake and Mouton's Managerial Grid
+
 **Theorists:** Robert R. Blake and Jake Mouton
 **Core Idea:** Leadership style is determined by two dimensions:
+
 - **X-axis:** Concern for Production (1 to 9)
 - **Y-axis:** Concern for People (1 to 9)
 
 **The Grid:**
 ![concern for production](attachmnets/concern%20for%20production.png)
 
-|Style|Grid Position|Description|Characteristics|
-|---|---|---|---|
-|**Impoverished**|1,1|Low concern for both production and people|Main concern: not be held responsible for mistakes; less innovation; minimal effort|
-|**Country Club**|1,9|Low concern for production; high concern for people|Pays attention to employee comfort; friendly atmosphere; not necessarily productive|
-|**Task/Perish**|9,1|High concern for production; low concern for people|Employee needs unimportant; provides money and expects performance; uses rules and punishments|
-|**Middle-of-the-Road**|5,5|Moderate concern for both|Tries to balance company goals and workers' needs; achieves adequate performance|
-|**Team/Sound**|9,9|High concern for both production and people|Encourages teamwork and commitment; most effective; maximum performance through committed people|
+| Style                  | Grid Position | Description                                         | Characteristics                                                                                  |
+| ---------------------- | ------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| **Impoverished**       | 1,1           | Low concern for both production and people          | Main concern: not be held responsible for mistakes; less innovation; minimal effort              |
+| **Country Club**       | 1,9           | Low concern for production; high concern for people | Pays attention to employee comfort; friendly atmosphere; not necessarily productive              |
+| **Task/Perish**        | 9,1           | High concern for production; low concern for people | Employee needs unimportant; provides money and expects performance; uses rules and punishments   |
+| **Middle-of-the-Road** | 5,5           | Moderate concern for both                           | Tries to balance company goals and workers' needs; achieves adequate performance                 |
+| **Team/Sound**         | 9,9           | High concern for both production and people         | Encourages teamwork and commitment; most effective; maximum performance through committed people |
 
 **Significance for Organization's Growth:**
+
 - **9,9 Team Management** is considered most effective
 - Promotes both productivity and employee satisfaction
 - Creates synergy where people work together effectively
 - Develops committed and motivated workforce
 - Leads to sustainable organizational growth
+
 ---
+
 ## ⁠B.4. Leadership Approaches/Theories
+
 ### ⁠B.4.a. Trait Approach
+
 **Core Idea:** Leadership is based on personal traits, abilities, personality, background, physical characteristics, intelligence, attitudes, learning behavior, and maturity.
 
 **Core Traits of Effective Leaders:**
@@ -368,7 +441,9 @@ The process of influencing or stimulating a person to take action by creating a 
 **Limitation:** Not all leaders share same traits; traits alone don't guarantee effectiveness.
 
 ---
+
 ### ⁠B.4.b. Behavioral Approach
+
 **Core Idea:** Focuses on what leaders do (behavior); argues great leaders are made, not born; leadership capability can be learned.
 
 **Two Distinguished Behaviors:**
@@ -381,7 +456,9 @@ The process of influencing or stimulating a person to take action by creating a 
 **Key Insight:** Initially thought leaders who are people-oriented are weak at task-oriented (and vice versa), but studies show effective leaders can exhibit **high levels of both**; these behaviors are independent.
 
 ---
+
 ### ⁠B.4.c. Contingency/Situational Approach
+
 **Core Idea:** Best approach to leadership depends upon the situation. What a leader does depends on characteristics of the situation.
 
 **Leadership Styles in Contingency Approach:**
@@ -394,8 +471,11 @@ The process of influencing or stimulating a person to take action by creating a 
 | **Achievement-Oriented** | Sets challenging goals; expects high performance; shows confidence in workers                              | When tasks are complex             |
 
 ---
+
 ### ⁠B.4.d. Integrated Approach to Leadership
+
 **Core Idea:** Integration of:
+
 - Characteristics, behavior, and experience of the **Leader**
 - Ability, experience, and maturity of **Followers**
 - Structure, technology, objectives, and external **Situation**
@@ -406,18 +486,23 @@ The process of influencing or stimulating a person to take action by creating a 
 ---
 
 # ⁠C. ENTREPRENEURSHIP
-### ⁠C.1.a. Introduction to Entrepreneurship
+
+## ⁠C.1. Introduction to Entrepreneurship
+
 **Etymology:** French word _'entrependre'_ which means "to undertake."
 
 **Definition:**  
 The capacity and willingness to develop, organize, and manage a business venture along with its risks in order to make a profit.
 
 **Key Concepts:**
+
 - In simple terms: starting a new business
 - Ranges from solo projects to major undertakings creating many job opportunities
 - An entrepreneur is a person of high aptitude who pioneers change
 - Someone who wants to work for themselves and start their own business with their knowledge and innovations
+
 ---
+
 ## ⁠C.2. Entrepreneurial Characteristics
 
 | Characteristic            | Description                                                               |
@@ -433,8 +518,11 @@ The capacity and willingness to develop, organize, and manage a business venture
 | **Strong Work Ethics**    | First to arrive, last to leave; mind constantly on work; motivates team   |
 
 ---
+
 ## ⁠C.3. Entrepreneurship Development
+
 **Role in Economic Development:**
+
 - Vital role in economic development of a country
 - Involves adoption of new business organizations, new technologies, new enterprises
 - Creates goods not previously available
@@ -451,6 +539,7 @@ The capacity and willingness to develop, organize, and manage a business venture
 | **Supportive Environment**    | Government policies, market conditions, and cultural acceptance         |
 
 ---
+
 ## ⁠C.4. Need for Promotion of Entrepreneurship
 
 | Reason                         | Description                                                                                                                        |
@@ -462,14 +551,18 @@ The capacity and willingness to develop, organize, and manage a business venture
 | **Youth Empowerment**          | Global Entrepreneurship Week exposes youth to benefits of entrepreneurship; motivates creativity and innovation                    |
 
 **Joseph Schumpeter's View:** Functions of entrepreneurship include:
+
 - Introduction of new methods of production
 - Developing new markets
 - Finding fresh sources of raw materials
 - Making and bringing changes
 
 ---
+
 ## ⁠C.5. Importance of Entrepreneurship in Nepali Context
+
 **For National Economy:**
+
 - Employment creation for young workforce
 - Economic diversification beyond agriculture
 - Innovation and technology development
@@ -479,6 +572,7 @@ The capacity and willingness to develop, organize, and manage a business venture
 - Self-sufficiency and reduced imports
 
 **For IT Sector in Nepal:**
+
 - Creates innovative software and services
 - Generates employment opportunities
 - Attracts investment and talent
@@ -486,15 +580,20 @@ The capacity and willingness to develop, organize, and manage a business venture
 - Contributes to economic growth
 - Reduces brain drain
 - Promotes digital transformation
+
 ---
+
 ## ⁠C.6. Steps for Establishing a Small Scale Unit
+
 **Who Can Start?**
+
 - Existing entrepreneur or fresh to business
 - With or without business background in family
 - Educated or uneducated
 - Rural/backward area persons, physically handicapped, minorities
 - **Key Requirements:** Strong will, essential skills, ability to work hard, ability to take calculated risks
-#### ⁠C.6.a.I. Step-by-Step Process:
+
+### ⁠C.6.a. Step-by-Step Process
 
 | Step                          | Description                                                                                                                                                             |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -509,8 +608,11 @@ The capacity and willingness to develop, organize, and manage a business venture
 **Key Advice:** Planning in advance is useful. Keep assessing and improving your plan at every stage.
 
 ---
+
 ## ⁠C.7. Risks and Challenges for Entrepreneurs
+
 **For Aspiring Entrepreneurs:**
+
 - Financial constraints (student loans, lack of capital)
 - Lack of experience and skills
 - Social stigma around failure
@@ -522,6 +624,7 @@ The capacity and willingness to develop, organize, and manage a business venture
 - Infrastructure challenges (unreliable electricity, internet)
 
 **For IT Sector Entrepreneurs in Nepal:**
+
 - Infrastructure challenges
 - Limited venture capital
 - Talent retention (brain drain)
@@ -531,4 +634,5 @@ The capacity and willingness to develop, organize, and manage a business venture
 - Payment systems limitations
 - Skills gap
 - Political instability
+
 ---
