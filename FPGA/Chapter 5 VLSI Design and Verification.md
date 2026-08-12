@@ -101,46 +101,38 @@ J --> P[P-Channel]
 
 ## VLSI Design Flow
 
-```mermaid
+![Design Flowchart](attachments/design-flow.png)
 
-flowchart LR
-    A[System Specification] --> B[Functional/<br>Architecture Design]
+### Four Levels of Design Representation
 
-    subgraph FrontEnd["Front End/Synthesis Phase"]
-        direction TB
-        B --> C
-        C
-        D
-        E
-    end
-    C[Functional Verification]
-    C --> B
-    C --> D[Logic Design]
-    D --> E[Logic Verification]
+- Behavioral Representation
+    - For functional blocks, FSM
+    - ![Behavioral Representation](./attachments/behavioral-representation.png)
+- Logic (Gate-Level) Representation
+    - For logic Blocks, Gates
+    - ![Logic Representation](attachments/logic-representation.png)
+- Circuit (Transistor-Level) Representation
+    - For Transistor Schematics
+    - ![Circuit Representation](attachments/transistor-schematics.png)
+- Layout Representation
+    - For Physical Devices
+    - ![Layout Representation](attachments/layout-representation.png)
 
-    subgraph Group1["Back End"]
-        F[Circuit Design]
-        G[Circuit Verification]
-        H[Physical Design]
-        I[Physical Verification]
-    end
+### Design Design Flow
 
-    E --> F
-    F --> G
-    G --> F
-    G --> H
-    H --> I
-    I --> H
-    I --> J
+There are two basic types of digital design methodologies in VLSI flow
 
-    subgraph Group2["Fabrication Phase"]
-        J[Tape Out<br>i.e. Lithogragraphy]
-        K[Packaging Testing<br>i.e. IC Level Testing]
-    end
+1. Top-Bottom design methodology
+    - Define top-levle block and identify the sub-blocks
+    - Divide sub-block until we come to leaf cells
+2. Bottom-Up design Methodology
+    - identify building block that are available for us
+    - build a bigger cell using these block
+    - continue building a cell until we build top level
 
-    J --> K
-```
+### Design Flow Simplified
 
+![As the name](attachments/simplified-design-flow.png)
 ## VLSI Design Styles
 
 ## VLSI Verification Methodologies
