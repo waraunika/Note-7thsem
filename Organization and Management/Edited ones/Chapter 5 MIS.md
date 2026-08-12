@@ -293,6 +293,16 @@ MIS can be recorded as old as human history.
 
 ### ⁠D.2.c. Information Support Flow Diagram
 
+```mermaid
+flowchart TD
+    A[Strategic Management] --> B[Policies Plans Budgets Objectives]
+    B --> C[Revenues Profits Costs]
+    C --> D[Tactical Management]
+    D --> E[Measurements Schedules]
+    E --> F[Operational Management]
+    F --> G[Goods Service Performances]
+```
+
 ---
 
 ## ⁠D.3. Computers and MIS
