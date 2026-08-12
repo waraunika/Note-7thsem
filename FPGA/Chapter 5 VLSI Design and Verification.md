@@ -64,8 +64,7 @@ J --> P[P-Channel]
 
 ### CMOS Logic Circuit
 
-
-<img src="./attachments/cmos.png" style="max-width: 400px; width: 100%; height: auto;"></img>
+<img src="./attachments/cmos-logic-circuit.png" style="max-width: 400px; width: 100%; height: auto;"></img>
 
 ## Processing Technology in VLSI
 
@@ -80,6 +79,11 @@ J --> P[P-Channel]
     - CMOS
         - low power consumption,
         - less fabrication steps
+- BiCMOS: Bipolar and CMOS (for high speed)
+- Ga-As: Gallium Arsenide (for high speed)
+- SOI: Silicon on Insulator (for high temperature applciation)
+
+
 
 
 ## CAD tools on VLSI
