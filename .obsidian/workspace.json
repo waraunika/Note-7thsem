@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "FPGA/Chapter 2 FPGA Logical Components, Architectures and Interfaces.md",
+                "file": "FPGA/PYQ.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 2 FPGA Logical Components, Architectures and Interfaces"
+              "title": "PYQ"
             }
           }
         ]
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "FPGA/Chapter 2 FPGA Logical Components, Architectures and Interfaces.md",
+                "file": "FPGA/PYQ.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -182,8 +182,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -200,6 +199,7 @@
   },
   "active": "fef968659ae83000",
   "lastOpenFiles": [
+    "FPGA/Chapter 2 FPGA Logical Components, Architectures and Interfaces.md",
     "FPGA/Chapter 1 FPGA Fundamentals.md",
     "FPGA/Chapter 5 VLSI Design and Verification.md",
     "FPGA/PYQ.md",
@@ -207,7 +207,6 @@
     "FPGA/daily-notes.md",
     "FPGA/Chapter 4 Advance RTL design approaches for FPGA.md",
     "FPGA/Refined/Chapter 1 FPGA Fundamentals.md",
-    "FPGA/Chapter 2 FPGA Logical Components, Architectures and Interfaces.md",
     "FPGA/Refined/Chapter 2 FPGA Logical Components.md",
     "FPGA/Refined",
     "Organization and Management/Edited ones/Chapter 3 Motivation and Leadership.md",
