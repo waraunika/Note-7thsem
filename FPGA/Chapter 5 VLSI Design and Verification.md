@@ -165,11 +165,83 @@ There are two basic types of digital design methodologies in VLSI flow
 #### Circuit Design
 
 - The purpose of the circuit design is to develop a circuit representation based on the logic design.
-- The Boolean expression can be converted into a circuit representation by taking into consideration
+- The Boolean expression can be converted into a circuit representation by taking into consideration the speed and power requirements of the original design.
+- Design the circuit including gates, transistors, interconnections, etc.
+- The outcome is called a netlist
+- Circuit simulation is used to verify the correctness and timing of component.
+
+#### Physical Design
+
+- Given a circuit after logic synthesis, to convert it into a layout
+
+### Agents in Designing
+
+| Designer          | Tasks                                                                     | Tools                                                            |
+| ----------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| Architect         | Define overall chip, C/RTL model, initial floorplan                       | Text Editor, C Compiler                                          |
+| Logic Designer    | Behavioral Simulation, Logic Simulation, Synthesis, Datapath Schematics   | RTL Simulator, Synthesis Tools, Timing Analyzer, Power Estimator |
+| Circuit Designer  | Cell Libraries, Circuit Schematics, Circuit Simulation, Megacell Blocks   | Schematic Editor, Circuit Simulator Router                       |
+| Physical Designer | Layout and Floorplan, Place and Route, Parasitics Extraction, DRC/LVS/ERC | Place/Rotue Tools, Physical Design and Evaluation Tools          |
 
 ## VLSI Design Styles
 
+1. Full Custom
+    - Each circuit element carefully "handcrafted"
+    - Huge design effort
+    - High design and NRE costs / low unit cost
+    - high performance
+    - typically used for high-volume applications
+
+2. Application-Specific Integrated Circuit
+    - constrained design using pre-designed (and sometimes pre-manufactured) components
+    - Also called semi-custom design
+    - CAD tools greatly reduce design effort
+    - Low Design Cost / High NRE Cost / Medium Unit Cost
+
+3. Programmable Logic (PLD, FPGA)
+    - Pre-manufactured components with programmable interconnect
+    - CAD tools greatly reduce design effort
+    - Low Design Cost / Low NRE Cost / High Unit Cost
+    - Lower Performance
+
+4. System-on-Chip
+    - Idea: Combine several large blocks
+        - predesigned custom cores, e.g., microcontroller, intellectual property (IP)
+        - ASIC logic for special-purpose hardware
+        - programmable logic (PLD, FPGA)
+        - analog
+    - Open issues
+        - keeping design cost low
+        - verifying correctness of design
+
 ## VLSI Verification Methodologies
+
+### Verification methods
+
+- Functional Verification
+    - Simulation
+- Emulation
+- Formal Verification
+    - Equivalence Checking
+    - Model Checking
+- Semiformal Verification
+    - Assertion Based Methods
+
+### Verification Techniques
+
+- Simulation (functional and timing)
+    - Behavioral
+    - RTL
+    - Gate-level (pre-layout and post-layout)
+    - Switch-level
+    - Transistor-level
+- Model Based Formal Verification (functional)
+    - Binary Decision Diagrams
+    - Equivalence checking
+    - Model checking
+- Static and Dynamic Timing Analysis (timing)
+
+### Verification
 
 # CMOS Circuit and Logic Design
 
