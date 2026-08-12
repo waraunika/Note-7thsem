@@ -382,5 +382,44 @@ Languages used in VLSI Verification
     - Graphical solution gives every good insight
 - Transfer Characteristics
     - ![Characteristics](attachments/transfer-characteristics-inverter.png)
+    - Voltage Transfer Characteristics (VTC) = DC Transfer for CMOS inverter
+
+## AC Analysis
+
+- DC analysis tells Vout if Vin is constant
+- AC analysis Vout(t) if Vin(t) changes
+    - requires solving differential equations
+- input is usually considered to be a step or ramp from 0 to Vdd or vice versa.
+- AC analysis = transient analysis = switching analysis = dynamic analysis
+- the switching characteristic (Vout(t) given Vin(t)) of a logic gate tells the speed at which the gate can operate
+- The switching speed of a logic gate can be measured in terms of the time required to charge and discharge a capacitive load
+- Critical paths
+    - timing analyzers automatically finds the slowest path in a logic design
+    - critical paths can be affected at various levels
+        - architecture / micro-architecture level
+        - logic level
+        - circuit level
+        - layout level
+
+## Transient Analysis Diagram
+
+![Diagram](attachments/transient-analysis.png)
 
 # Analog/Mixed Mode VLSI design concepts
+
+- A mixed signal in VLSI refers to the integration of both analog and digital circuit components on a single integrated circuit chip.
+- in a mixed signal design, the analog and digital sections of the circuit are designed and implemented together, allowing for efficient data conversion, procesisng, and communication between the two domanis
+- Example of mixed mode VLSI method are:
+    - Mobile smartphone, DSP, ADC and DAC
+- key aspects include:
+    - analog circuitry:
+        - the analog section of teh mixed signal design typically includes components like amplifiers, filters, ADCs, DACs, and other analog signal processing circuits
+    - Digital Circuitry:
+        - The digital section of the mixed signal design includes logic gates, memory elements, microprocessors, and other DSP components
+    - Integration:
+        - the analog and digital circuits are integrated on a single VLSI chip, allowing for efficient data transfer and control between the two domains
+    - Challenges:
+        - Designing a mixed signal VLSI circuit, requires careful consideration of issues like noise isolation, power supply management, layout techniques, and EMI to ensure the integrity of both analog and digital signals.
+    - Application:
+        - communication systems, sensor interaces, power management circuits, and data acquisition systems, where both analog and digital signal processing are required.
+        - the integration of analog and digital components on a single chip can provide benefits in terms of reduced size, power consumption, and cost, as well as improved performance and reliability
