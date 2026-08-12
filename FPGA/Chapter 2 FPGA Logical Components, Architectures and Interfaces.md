@@ -353,6 +353,21 @@ flowchart TD
 
 # ⁠E. Embedded SoC/MPSoC architectures detail and interfaces
 
+- Embedded SoC or MPSoC consists of processor or CPU in the same chip or device
+- SoC could have one or two processor or CPU in the FPGA device,
+    - while MPSoC could have more than two processor and different types of processing systems.
+- SoC and MPSoC architectures is targeted for handling different types of data such as audio, video, sensor data, file systems, etc.
+- So MPSoC architectures consists of interfaces from which we can receive and send different types of data.
+
 ## Architectures
+
 ![Interface expanded arch of MPSoC](attachments/interface-mpsoc.png)
 
+## Interfaces
+
+1. According to architectures, these SoC and MPSoC architectures are mainly used for low power and edge based applications.
+2. SoC/MPSoC architectures consists of two types of interfaces
+    - General interfaces: USB 2.0, CAN, UART, I2C, SPI, etc.
+    - High Speed (bandwidth) Interfaces: USB 3.0, LVDS, MIPI, HDMI, etc.
+3. These SoC/MPSoC devices mainly consists of interfaces which are low power and are also targeted for embedded/edgee based applications.
+4. SoC and MPSoC FPGAs can receive, process and send the data from these interfaces.
