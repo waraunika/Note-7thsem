@@ -2,7 +2,7 @@
 
 ## ⁠A.1. FPGA overview and its evolution
 
-## ⁠A.2. General FPGA Building Blocks: LUT, FF, DSP, BRAM, I/O, clocks etc.
+## ⁠A.2. General FPGA Building Blocks: LUT, FF, DSP, BRAM, I/O, clocks etc
 
 ### ⁠A.2.a. Questions
 
@@ -140,11 +140,11 @@ At a high level, every FPGA, regardless of vendor, is built from three classes o
 
 ### ⁠A.6.a. Questions
 
-#### ⁠A.6.a.I.i. Explain about FPGA design flow. \[4\]
+#### ⁠A.6.a.I. Explain about FPGA design flow. \[4\]
 
 ![Design Flow](attachments/design-flow.png)
 
-##### I.1. Overview
+##### ⁠A.6.a.I.i. I.1. Overview
 
 The FPGA design flow takes a design from an initial concept through HDL coding, verification, synthesis, and implementation, ending in a bitstream that configures physical hardware.
 
@@ -160,39 +160,39 @@ The FPGA design flow takes a design from an initial concept through HDL coding, 
 
 **Simulation-driven verification** (running alongside synthesis/implementation, not just at the start) is standard practice: it lets designers catch functional bugs early, much cheaper to fix in simulation than after synthesis or on hardware, by comparing the simulated HDL behavior against an expected/reference behavioral model.
 
-##### I.2. Detailed Steps
+##### ⁠A.6.a.I.ii. I.2. Detailed Steps
 
-###### I.2.a. Architecture Design
+###### ⁠A.6.a.I.ii.١. I.2.a. Architecture Design
 
 - Analyze project requirements and constraints (performance, area, power, interfaces).
 - Decompose the problem into functional blocks; define interfaces between them.
 - Capture the intended behavior with algorithms, flowcharts, or pseudocode before committing to RTL.
 
-###### HDL Design Entry
+###### ⁠A.6.a.I.ii.٢. HDL Design Entry
 
 - Translate the architecture into a formal **Hardware Description Language**, **VHDL** or **Verilog** (or increasingly, **SystemVerilog**, or **High-Level Synthesis (HLS)** from C/C++ for some flows).
 - This is the **RTL (Register-Transfer Level)** description of the design.
 
-###### Test Environment (Testbench) Design
+###### ⁠A.6.a.I.ii.٣. Test Environment (Testbench) Design
 
 - Develop testbenches and behavioral/reference models independent of the RTL implementation, used to apply stimulus and check correctness.
 - A good testbench should be reusable across simulation, and ideally also usable to check post-synthesis/post-implementation netlists (gate-level simulation).
 
-###### Behavioral (Functional) Simulation
+###### ⁠A.6.a.I.ii.٤. Behavioral (Functional) Simulation
 
 - Runs the HDL model against the testbench and compares its output to the expected/reference behavior.
 - The testbench is generally written around the **top module** of the design; simulation produces a **waveform** based on the defined stimulus/conditions.
 - The designer inspects the waveform to verify correct functional behavior.
 - If simulation reveals incorrect behavior, the designer corrects the RTL and re-simulates, this loop repeats until functional correctness is confirmed **before** proceeding to synthesis (fixing bugs later in the flow is far more costly).
 
-###### Synthesis
+###### ⁠A.6.a.I.ii.٥. Synthesis
 
 - A **synthesis tool** converts the HDL description into a **gate-level netlist**, mapping the design's logic to the specific primitives available on the target FPGA (LUTs, FFs, DSP slices, BRAM, carry chains, etc.).
 - Synthesis also performs logic optimization (e.g., inferring DSP slices from multiply/MAC patterns, inferring BRAM/distributed RAM from memory-style code, resource sharing) to make efficient use of the target device's hard blocks.
 
 ![Synthesis Process](attachments/synthesis-levels.png)
 
-###### Implementation
+###### ⁠A.6.a.I.ii.٦. Implementation
 
 - The synthesized netlist is mapped onto the **particular target device's physical structure**:
     - **Translate**: merge the netlist with design constraints (timing, placement, I/O) into a unified design database.
@@ -203,7 +203,7 @@ The FPGA design flow takes a design from an initial concept through HDL coding, 
 
 ![Placement and Routing Stages](attachments/placement-routing.png)
 
-###### Timing Analysis
+###### ⁠A.6.a.I.ii.٧. Timing Analysis
 
 - **Static Timing Analysis (STA)** checks whether the implemented (placed-and-routed) design meets all specified timing constraints: setup/hold time margins on every register-to-register path, I/O timing, and clock-domain-crossing constraints.
 - If timing is not met, the design typically needs to be re-optimized (pipelining, floorplanning/placement constraints, reducing logic levels, or lowering the target clock frequency) and re-implemented.
@@ -218,15 +218,15 @@ The FPGA design flow takes a design from an initial concept through HDL coding, 
 
 ### ⁠B.1.a. Questions
 
-##### ⁠B.1.a.I.i. Write about different routing architectures in FPGA \[4\]
+#### ⁠B.1.a.I. Write about different routing architectures in FPGA \[4\]
 
 ## ⁠B.2. AXI Interface Bus protocol
 
 ### ⁠B.2.a. Questions
 
-##### ⁠B.2.a.I.i. What is AXI Bus Protocol \[2\]
+#### ⁠B.2.a.I. What is AXI Bus Protocol \[2\]
 
-##### ⁠B.2.a.I.ii. Write about it and its types \[3\]
+#### ⁠B.2.a.II. Write about it and its types \[3\]
 
 ## ⁠B.3. High speed Interfaces and usage of those interfaces
 
@@ -236,23 +236,21 @@ The FPGA design flow takes a design from an initial concept through HDL coding, 
 
 ### ⁠B.5.a. Questions
 
-##### ⁠B.5.a.I.i. Write about SoC/MPSoC FPGA Architectures and some high speed interfacaes in those. \[4\]
+#### ⁠B.5.a.I. Write about SoC/MPSoC FPGA Architectures and some high speed interfacaes in those. \[4\]
 
 ---
 
 # ⁠C. Chapter 3 Digital design, simulation and verification with RTL (VHDL/Verilog) (6 hours)
 
-## ⁠C.1. Verilog HDL overview- syntax, semantics, datatypes, primitives, etc.
+## ⁠C.1. Verilog HDL overview- syntax, semantics, datatypes, primitives, etc
 
 ## ⁠C.2. Behavioral versus structural design modeling
 
 ### ⁠C.2.a. Questions
 
-##### ⁠C.2.a.I.i. What are different modeling techniques in Verilog \[5\]
+#### ⁠C.2.a.I. What are different modeling techniques in Verilog \[5\]
 
-### ⁠C.2.b. Questions
-
-##### ⁠C.2.b.I.i. Write on behavioral and structural modeling techniques with example in Verilog. \[5\]
+#### ⁠C.2.a.II. Write on behavioral and structural modeling techniques with example in Verilog. \[5\]
 
 ## ⁠C.3. Logical component design with RTL/Verilog and performing simulation: combinational/sequential blocks, FSM, ALU, processor and DSP algorithms
 
@@ -266,9 +264,9 @@ The FPGA design flow takes a design from an initial concept through HDL coding, 
 
 ### ⁠C.7.a. Questions
 
-##### ⁠C.7.a.I.i. Write a Verilog code for 4-bit subtractor and also write testbench for it. \[6\]
+#### ⁠C.7.a.I. Write a Verilog code for 4-bit subtractor and also write testbench for it. \[6\]
 
-##### ⁠C.7.a.I.ii. Write a Verilog code for 8-bit ALU by including 8 common arithmetic & logical operation
+#### ⁠C.7.a.II. Write a Verilog code for 8-bit ALU by including 8 common arithmetic & logical operation
 
 _Acc to Me and DragonLord, there will be 8 total opcodes, not 8+8_
 
@@ -282,11 +280,9 @@ _Acc to Me and DragonLord, there will be 8 total opcodes, not 8+8_
 
 ### ⁠D.2.a. Questions
 
-##### ⁠D.2.a.I.i. Explain about latency and throughput optimization Verilog RTL with examples. \[7\]
+#### ⁠D.2.a.I. Explain about latency and throughput optimization Verilog RTL with examples. \[7\]
 
-### ⁠D.2.b. Questions
-
-##### ⁠D.2.b.I.i. Explain about different optimization techniques in RTL, targeting to latency, throughput and power optimization \[7\]
+#### ⁠D.2.a.II. Explain about different optimization techniques in RTL, targeting to latency, throughput and power optimization \[7\]
 
 ## ⁠D.3. Considerations/approaches for Implementing RTL design in a real-world scenario
 
@@ -300,21 +296,21 @@ _Acc to Me and DragonLord, there will be 8 total opcodes, not 8+8_
 
 ### ⁠E.2.a. Questions
 
-##### ⁠E.2.a.I.i. Explain about VLSI design flow in detail \[6\]
+#### ⁠E.2.a.I. Explain about VLSI design flow in detail \[6\]
 
-##### ⁠E.2.a.I.ii. Explain about verification methodologies in VLSI \[3\]
+#### ⁠E.2.a.II. Explain about verification methodologies in VLSI \[3\]
 
 ## ⁠E.3. CMOS Circuit and Logic Design
 
 ### ⁠E.3.a. Questions
 
-##### ⁠E.3.a.I.i. Detail about CMOS inverter design and its analysis \[7\]
+#### ⁠E.3.a.I. Detail about CMOS inverter design and its analysis \[7\]
 
-##### ⁠E.3.a.I.ii. Create CMOS inverter and explain about it \[3\]
+#### ⁠E.3.a.II. Create CMOS inverter and explain about it \[3\]
 
-##### ⁠E.3.a.I.iii. Explain about DC analysis of CMOS inverter \[4\]
+#### ⁠E.3.a.III. Explain about DC analysis of CMOS inverter \[4\]
 
-##### ⁠E.3.a.I.iv. Explain about CMOS circuit design \[3\]
+#### ⁠E.3.a.IV. Explain about CMOS circuit design \[3\]
 
 ## ⁠E.4. Design and analysis of the CMOS inverter
 
