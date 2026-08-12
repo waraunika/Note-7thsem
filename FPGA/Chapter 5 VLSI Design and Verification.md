@@ -43,13 +43,48 @@ VLSI Design Cycle starts with a formal specification of a VLSI chip.
 ### Types of Transistors
 
 ```mermaid
-flowchart TD
+flowchart LR
+A[Transistor Types] --> B[BJT]
+A --> C[FET]
+B --> D[NPN]
+B --> E[PNP]
 
+C --> F[JFET]
+C --> G[MOSFET]
+F --> H[Depletion<br>Mode]
+G --> I[Depletion<br>Mode]
+G --> J[Enhancement<br>Mode]
+H --> K[N-Channel]
+H --> L[P-Channel]
+I --> M[N-Channel]
+I --> N[P-Channel]
+J --> O[N-Channel]
+J --> P[P-Channel]
 ```
+
+### CMOS Logic Circuit
+
+
+<img src="./attachments/cmos.png" style="max-width: 400px; width: 100%; height: auto;"></img>
+
+## Processing Technology in VLSI
+
+- Bipolar
+    - TTL (Transistor to Transistor Logic)
+    - ECL (Emitter Coupled Logic)
+- MOS
+    - NMOS
+        - less masking steps,
+        - denser,
+        - less power
+    - CMOS
+        - low power consumption,
+        - less fabrication steps
+
 
 ## CAD tools on VLSI
 
-# VLSI Design
+# VLSI Designing
 
 ## VLSI Design Flow
 
