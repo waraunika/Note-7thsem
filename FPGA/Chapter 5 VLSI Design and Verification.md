@@ -241,10 +241,146 @@ There are two basic types of digital design methodologies in VLSI flow
     - Model checking
 - Static and Dynamic Timing Analysis (timing)
 
-### Verification
+### Verification approaches on RTL
+
+1. Simulation
+    - verifying the functionality via testbench based simulation
+    - where we introduce different test cases
+    - or input scenario
+    - and analyze the output
+2. Structural Analysis
+    - structural analysis is used to analyze the structure of the RTL code.
+    - In addition to the Language Reference Manual, checking the tool analysis,
+    - the code structural patterns which may lead to issues like terminal states in state machines, mismatched assignments, reset and clocking structures
+    - Structural analysis allows you to enter simulation, focusing on functional performance and not identifying issue which could have been found faster earlier
+3. Formal Methods
+    - Formal methods methematically prove design functions as expected.
+    - The mathematical models used are varied but includes bounded model checkers and mathematical induction.
+4. Timing Analysis
+    - Most timing analysis is performed using tools and controlled via constraints.
+
+## VLSI Verification Methodology
+
+Languages used in VLSI Verification
+
+- SystemVerilog (SV) verification
+    - SV provides an extensive set of verification features, including object oriented programming, constrained random testing, and functional coverage
+- Universal Verification Methodology (UVM)
+    - standardized methodlogy built on top of SV that enables scalable and reusable verification environments, promiting design verification efficiency and flexibility
+- VHDL
+    - VHSIC Hardware Descriptive Language
+    - used for design entry and verificaiton in the VLSI industry
+    - offer strong support for hardware modeling, simulation and synthesis
+- e
+    - Specman
+    - verification language developed by Yoav Hollander for his Specman software
+    - offers powerful verification capabilities, such as constraint-driven random testing and transaction-level modeling.
+    - later it was renamed as Verisity, which was acquired by Cadence Design Systems
+- C/C++ and Python
+    - these are often used for building verification frameworks, test benches, and script-based verificaiton flows.
 
 # CMOS Circuit and Logic Design
 
+- CMOS overview
+    - CMOS
+        - Complementary metal-oxide semiconductor
+        - semiconductor technology used in the transistors
+        - that are manufactured into most of today's computer microchips
+    - in CMOS tech,
+        - both kinds of transistors are used in a complementary way to form a current gate that forms an effective means of electrical control.
+
+![Example of Not gate in CMOS](attachments/inverter-cmos.png)
+
+- CMOS Working Principle
+    - In CMOS tech, both N-type and P-type transistors are used to design logic functions.
+    - the same signal that turns ON a transistor of one type is used to turn OFF a transistor of the other type.
+    - This characteristic allows the design of logic devices using only simple switches, withotu the need for a pull-up resistor.
+- CMOS Characteristics
+    - Low static power utilization, huge noise immunity.
+        - when the single transistor from the pair of MOSFET transistor is switched OFF, then the series combination uses significant power throughout switching among the 2 states like ON and OFF.
+        - as a result, these devices,:
+    - do not generate waste heat
+        - as compared with other types of logic circuits such as TTL or NMOS logic
+        - which usually use some standing current even when they don't chang etheir state.
+        - these CMOS characteristics allow for
+    - integrating logic functions with high density
+        - on an integreting circuit.
+        - because of this, CMOS has become the most frequently used technology to be executed within VLSI chips
+    - the phrase MOS is a reference to the MOSFET's physical structure which includes an electrode with a metal gate that is located on top of an oxide insulator of semiconductor material
+    - a material like Aliminuim is used only once however the material is now polysilicon.
+        - the designing of other metal gates can be done using a comeback through the arrival of high-k dielectric materials within the process of the CMOS process.
+- Advantages
+    - Uses a single power supply like +VDD
+    - these gates are very simple
+    - input impedance is high
+    - CMOS logic uses less power whenever it is held in a set state
+    - power dissipation is negligible
+    - Fan out is high
+    - TTL compatibility
+    - Stability of temperature
+    - Noise immunity is good
+    - compact
+    - designing is very well
+    - robus mechanically
+    - logic swing is large (VDD)
+- Applications
+    - CMOS tech has been used for the following IC designs:
+    - Computer memories, CPUs
+    - microprocessor designs
+    - Flash memory chip designing
+    - USed to design ASICs
+- Disadvantages
+    - The cost will be increased once the processing steps increases, however, it can be resolved
+    - the packing density of CMOS is low as compared to NMOS
+    - MOS chips should be secured from getting static charges by placing the leads shorted otherwise, the static charges obtained within leads will damage the chip.
+        - this problem can be solved by including protective circuits otherwise devices
+    - it utilizes two transisstors as opposed to 1 NMOS to build an inverter, which means that the CMOS uses more space over the chip.
+- NMOS Working
+    - When a positive voltage (logic HIGH) is applied
+        - to the gate terminal of an NMOS transistor with respect to source
+    - it creates an electric field that attracts electrons towards the interface between gate and the semiconductor substrate
+    - when voltage is higher than source voltage by V$_{th}$, the n-channel MOSFET turns on.
+- PMOS Working
+    - When a negative voltage (logic LOW) is applied
+        - to the gate terminal of an NMOS transistor with respect to source
+    - it creates an electric field that repels holes away from the interface between gate and the semiconductor substrate
+    - when voltage is lower than source voltage by V$_{th}$, the p-channel MOSFET turns on.
+
 # Design and analysis of CMOS inverter
+
+## Figure
+
+- ![NMOS Inverter](attachments/nmos-inverter.png)
+- The inverter circuit as shown in the figure above.
+- consists of PMOS and NMOS FET
+- A serves as gate voltage for both transistors
+- the NMOS transistor has input from Vss (gronud)
+- the PMOS has input from Vdd
+- Y is output
+
+## Working
+
+- when a high voltage (~Vdd) is given at input terminal (A) of the inverter, the PMOS becomes an open circuit, and NMOS switched OFF so the output will be pulled down to Vss.
+- When a low level voltage (<Vdd, ~0V) applied to the inverter,
+    - the NMOS switch OFF and PMOS switched ON
+    - so the output becomes Vdd or the circuit is pulled up to Vdd
+- Truth Table
+    - ![Truth Table](attachments/truth-table-inverter.png)
+
+## DC Working
+
+- Figure
+    - ![DC analysis](attachments/input-output-voltage.png)
+- DC Response: V$_{out}$ vs. V$_{in}$ for a gate
+- Inverter
+    - when V$_{in}$ = 0 -> V$_{out}$ = Vdd
+    - when V$_{in}$ = Vdd -> V$_{out}$ = 0
+    - in betwen, V$_{out}$ depends on transistor current
+    - By KCL, must settle that
+    - I$_{dsn}$ = | I$_{dsp}$ |
+    - We can solve equations
+    - Graphical solution gives every good insight
+- Transfer Characteristics
+    - ![Characteristics](attachments/transfer-characteristics-inverter.png)
 
 # Analog/Mixed Mode VLSI design concepts
