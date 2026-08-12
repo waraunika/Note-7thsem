@@ -140,7 +140,75 @@ At a high level, every FPGA, regardless of vendor, is built from three classes o
 
 ### ⁠A.6.a. Questions
 
-##### ⁠A.6.a.I.i. Explain about FPGA design flow. \[4\]
+#### ⁠A.6.a.I.i. Explain about FPGA design flow. \[4\]
+
+![Design Flow](attachments/design-flow.png)
+
+##### I.1. Overview
+
+The FPGA design flow takes a design from an initial concept through HDL coding, verification, synthesis, and implementation, ending in a bitstream that configures physical hardware.
+
+**High-level steps:**
+
+1. **High-level description** of the logic design (architecture/algorithm definition)
+2. **HDL design entry** (VHDL/Verilog)
+3. **Simulate the design** (functional/behavioral verification)
+4. **Synthesize** into a netlist (Boolean logic representation, technology-mapped to the target FPGA's primitives)
+5. **Implementation**: translate → map → place → route, targeting the specific FPGA device
+6. **Timing analysis**: verify the implemented design meets its clock constraints
+7. **Generate the bitstream** and program the FPGA
+
+**Simulation-driven verification** (running alongside synthesis/implementation, not just at the start) is standard practice: it lets designers catch functional bugs early, much cheaper to fix in simulation than after synthesis or on hardware, by comparing the simulated HDL behavior against an expected/reference behavioral model.
+
+##### I.2. Detailed Steps
+
+###### I.2.a. Architecture Design
+
+- Analyze project requirements and constraints (performance, area, power, interfaces).
+- Decompose the problem into functional blocks; define interfaces between them.
+- Capture the intended behavior with algorithms, flowcharts, or pseudocode before committing to RTL.
+
+###### HDL Design Entry
+
+- Translate the architecture into a formal **Hardware Description Language**, **VHDL** or **Verilog** (or increasingly, **SystemVerilog**, or **High-Level Synthesis (HLS)** from C/C++ for some flows).
+- This is the **RTL (Register-Transfer Level)** description of the design.
+
+###### Test Environment (Testbench) Design
+
+- Develop testbenches and behavioral/reference models independent of the RTL implementation, used to apply stimulus and check correctness.
+- A good testbench should be reusable across simulation, and ideally also usable to check post-synthesis/post-implementation netlists (gate-level simulation).
+
+###### Behavioral (Functional) Simulation
+
+- Runs the HDL model against the testbench and compares its output to the expected/reference behavior.
+- The testbench is generally written around the **top module** of the design; simulation produces a **waveform** based on the defined stimulus/conditions.
+- The designer inspects the waveform to verify correct functional behavior.
+- If simulation reveals incorrect behavior, the designer corrects the RTL and re-simulates, this loop repeats until functional correctness is confirmed **before** proceeding to synthesis (fixing bugs later in the flow is far more costly).
+
+###### Synthesis
+
+- A **synthesis tool** converts the HDL description into a **gate-level netlist**, mapping the design's logic to the specific primitives available on the target FPGA (LUTs, FFs, DSP slices, BRAM, carry chains, etc.).
+- Synthesis also performs logic optimization (e.g., inferring DSP slices from multiply/MAC patterns, inferring BRAM/distributed RAM from memory-style code, resource sharing) to make efficient use of the target device's hard blocks.
+
+![Synthesis Process](attachments/synthesis-levels.png)
+
+###### Implementation
+
+- The synthesized netlist is mapped onto the **particular target device's physical structure**:
+    - **Translate**: merge the netlist with design constraints (timing, placement, I/O) into a unified design database.
+    - **Map**: pack logic into device-specific primitives (e.g., grouping LUTs/FFs into physical slices).
+    - **Place**: assign each mapped primitive to a specific physical location on the die.
+    - **Route**: configure the programmable interconnect (switch boxes, connection boxes) to realize all required signal connections between placed elements.
+- This step allocates the actual hardware resources (logic cells, connection wires) needed to realize the design, and the resulting configuration data is written out as the **bitstream**.
+
+![Placement and Routing Stages](attachments/placement-routing.png)
+
+###### Timing Analysis
+
+- **Static Timing Analysis (STA)** checks whether the implemented (placed-and-routed) design meets all specified timing constraints: setup/hold time margins on every register-to-register path, I/O timing, and clock-domain-crossing constraints.
+- If timing is not met, the design typically needs to be re-optimized (pipelining, floorplanning/placement constraints, reducing logic levels, or lowering the target clock frequency) and re-implemented.
+
+---
 
 ---
 
