@@ -54,7 +54,7 @@ Reliable, low-skew, low-jitter clock distribution is critical since virtually ev
 
 ##### ⁠A.2.a.II.iv. LUT (Look-Up Table)
 
-- The core combinational-logic primitive. A **k-input LUT** contains \(2^k\) SRAM configuration cells, each holding one row of a truth table, so a k-input LUT can implement **any** Boolean function of up to k variables simply by loading the right bit pattern.
+- The core combinational-logic primitive. A **k-input LUT** contains $2^k$ SRAM configuration cells, each holding one row of a truth table, so a k-input LUT can implement **any** Boolean function of up to k variables simply by loading the right bit pattern.
 - **4-input LUTs** were the traditional mainstream size for many years; modern high-performance families (e.g., Xilinx 7-Series and later) use **6-input LUTs**, often with two outputs (an LUT6 can be split into two LUT5s sharing inputs), improving logic density and reducing the number of levels of logic (and hence delay) needed for wide functions.
 - LUTs can also be repurposed as small **distributed RAM** or **shift registers (SRL)** when not needed purely for logic, a technique the tools use automatically or that a designer can infer explicitly.
 
@@ -618,13 +618,13 @@ CMOS technology is used across the large majority of modern digital IC design, i
 
 - When a **positive voltage** (logic HIGH) is applied to the **gate terminal**, relative to the source, of an NMOS transistor:
     - It creates an **electric field** that **attracts electrons** toward the interface between the gate oxide and the semiconductor substrate, forming a conductive n-type channel.
-    - Once the gate-source voltage exceeds the **threshold voltage** \(V_{th}\), the **N-channel MOSFET turns ON**, allowing current to flow between drain and source.
+    - Once the gate-source voltage exceeds the **threshold voltage** $V_{th}$, the **N-channel MOSFET turns ON**, allowing current to flow between drain and source.
 
 ##### ⁠E.3.a.I.viii. PMOS Transistor: Working Principle
 
 - When a **negative voltage** (logic LOW), relative to the source, is applied to the **gate terminal** of a PMOS transistor:
     - It creates an **electric field** that **repels holes** away from the gate-oxide/substrate interface, forming a conductive p-type channel.
-    - Once the gate-source voltage is more negative than (i.e., the source-gate voltage exceeds) the threshold \(V_{th}\), the **P-channel MOSFET turns ON**.
+    - Once the gate-source voltage is more negative than (i.e., the source-gate voltage exceeds) the threshold $V_{th}$, the **P-channel MOSFET turns ON**.
 - In a CMOS inverter, the complementary switching behavior of NMOS and PMOS (D.2, D.7, D.8) is exactly what produces correct inverting logic, see Section E.
 
 ## ⁠E.4. Design and analysis of the CMOS inverter
@@ -671,51 +671,51 @@ CMOS technology is used across the large majority of modern digital IC design, i
 
 ![DC analysis](../attachments/input-output-voltage.png)
 
-- **DC analysis** answers the question: "given a _constant_ input voltage \(V_{in}\), what is the resulting _constant_ output voltage \(V_{out}\)?", i.e., it characterizes the inverter's steady-state behavior, ignoring switching transients (which are instead covered by AC analysis, Section E.4).
+- **DC analysis** answers the question: "given a _constant_ input voltage V$\large_\text{in}$, what is the resulting _constant_ output voltage $_{out}$?", i.e., it characterizes the inverter's steady-state behavior, ignoring switching transients (which are instead covered by AC analysis, Section E.4).
 - **At the extremes**:
-    - When \(V_{in} = 0\) → NMOS OFF, PMOS ON → \(V_{out} = V_{DD}\).
-    - When \(V_{in} = V_{DD}\) → NMOS ON, PMOS OFF → \(V_{out} = 0\).
-- **In between** these extremes, both transistors can be partially or fully ON simultaneously, and \(V_{out}\) depends on the actual transistor currents, not just their ON/OFF state.
+    - When $V_{in} = 0$ → NMOS OFF, PMOS ON → $V_{out} = V_{DD}$.
+    - When $V_{in} = V_{DD}$ → NMOS ON, PMOS OFF → $V_{out} = 0$.
+- **In between** these extremes, both transistors can be partially or fully ON simultaneously, and $V_{out}$ depends on the actual transistor currents, not just their ON/OFF state.
 - By **Kirchhoff's Current Law (KCL)**, since the NMOS and PMOS are in series between VDD and ground, the same current must flow through both, so at every point on the DC transfer curve, the circuit must settle such that:
   $$I_{DSn} = |I_{DSp}|$$
-    - Setting the NMOS drain current expression equal to the magnitude of the PMOS drain current expression (using the standard MOSFET current equations for whichever region, cutoff, linear/triode, or saturation, each transistor is operating in at that particular \(V_{in}\)) gives the equations that can be solved analytically for \(V_{out}\) as a function of \(V_{in}\).
-    - A **graphical solution**: plotting \(I_{DSn}\) vs. \(V_{out}\) and \(I_{DSp}\) vs. \(V_{out}\) (transformed onto the same axes) for a given \(V_{in}\), and finding their intersection, gives excellent intuition for how the operating point moves as \(V_{in}\) sweeps from 0 to VDD, even without working through the full algebra.
+    - Setting the NMOS drain current expression equal to the magnitude of the PMOS drain current expression (using the standard MOSFET current equations for whichever region, cutoff, linear/triode, or saturation, each transistor is operating in at that particular $V_{in}$) gives the equations that can be solved analytically for $V_{out}$ as a function of $V_{in}$.
+    - A **graphical solution**: plotting $I_{DSn}$ vs. $V_{out}$ and $I_{DSp}$ vs. $V_{out}$ (transformed onto the same axes) for a given $V_{in}$, and finding their intersection, gives excellent intuition for how the operating point moves as $V_{in}$ sweeps from 0 to VDD, even without working through the full algebra.
 
 ##### ⁠E.4.a.II.iv. Voltage Transfer Characteristics (VTC)
 
 ![Characteristics](../attachments/transfer-characteristics-inverter.png)
 
-- The **Voltage Transfer Characteristic (VTC)** is exactly this DC transfer curve, \(V_{out}\) plotted against \(V_{in}\), for the CMOS inverter (or any logic gate).
-- The VTC is commonly divided into **five distinct regions**, based on which region (cutoff, linear/triode, or saturation) each transistor is operating in as \(V_{in}\) sweeps from 0 to VDD:
-    1. **Region A** (\(V_{in}\) near 0): NMOS is in **cutoff** (OFF), PMOS is in the **linear/triode** region → output is pulled fully to \(V_{out} = V_{DD}\).
-    2. **Region B**: NMOS enters **saturation**, PMOS remains in the **linear** region → \(V_{out}\) begins to fall, but is still relatively high.
+- The **Voltage Transfer Characteristic (VTC)** is exactly this DC transfer curve, $V_{out}$ plotted against $V_{in}$, for the CMOS inverter (or any logic gate).
+- The VTC is commonly divided into **five distinct regions**, based on which region (cutoff, linear/triode, or saturation) each transistor is operating in as $V_{in}$ sweeps from 0 to VDD:
+    1. **Region A** ($V_{in}$ near 0): NMOS is in **cutoff** (OFF), PMOS is in the **linear/triode** region → output is pulled fully to $V_{out} = V_{DD}$.
+    2. **Region B**: NMOS enters **saturation**, PMOS remains in the **linear** region → $V_{out}$ begins to fall, but is still relatively high.
     3. **Region C** (around the midpoint): **Both** transistors are in **saturation** simultaneously, this is the steep, high-gain transition region where the output switches rapidly from HIGH to LOW for a small change in input.
-    4. **Region D**: NMOS enters the **linear** region, PMOS is in **saturation** → \(V_{out}\) continues falling toward 0.
-    5. **Region E** (\(V_{in}\) near VDD): NMOS is in the **linear** region, PMOS is in **cutoff** (OFF) → output is pulled fully to \(V_{out} = 0\).
+    4. **Region D**: NMOS enters the **linear** region, PMOS is in **saturation** → $V_{out}$ continues falling toward 0.
+    5. **Region E** ($V_{in}$ near VDD): NMOS is in the **linear** region, PMOS is in **cutoff** (OFF) → output is pulled fully to $V_{out} = 0$.
 - **Key VTC-derived design metrics**:
-    - **\(V\_{OH}\)**: the nominal output HIGH voltage (ideally \(V_{DD}\)).
-    - **\(V\_{OL}\)**: the nominal output LOW voltage (ideally 0 V).
-    - **\(V\_{IL}\)**: the maximum input voltage still reliably interpreted as a logic LOW (defined as the input voltage where the VTC slope \(dV_{out}/dV_{in} = -1\), on the high-output side).
-    - **\(V\_{IH}\)**: the minimum input voltage still reliably interpreted as a logic HIGH (the input voltage where the VTC slope \(dV_{out}/dV_{in} = -1\), on the low-output side).
-    - **Switching threshold, \(V_M\)**: the point on the VTC where \(V_{out} = V_{in}\) (the curve crosses the unity line); at this exact point, both transistors are in saturation and, by design, \(I_{Dn} = I_{Dp}\). For a "balanced" inverter, sizing the PMOS wider than the NMOS (to compensate for hole mobility being lower than electron mobility) places \(V_M\) near \(V_{DD}/2\), giving symmetric noise margins and switching behavior.
+    - **$V\_{OH}$**: the nominal output HIGH voltage (ideally $V_{DD}$).
+    - **$V\_{OL}$**: the nominal output LOW voltage (ideally 0 V).
+    - **$V\_{IL}$**: the maximum input voltage still reliably interpreted as a logic LOW (defined as the input voltage where the VTC slope $dV_{out}/dV_{in} = -1$, on the high-output side).
+    - **$V_{IH}$**: the minimum input voltage still reliably interpreted as a logic HIGH (the input voltage where the VTC slope $dV_{out}/dV_{in} = -1$, on the low-output side).
+    - **Switching threshold, $V_M$**: the point on the VTC where $V_{out} = V_{in}$ (the curve crosses the unity line); at this exact point, both transistors are in saturation and, by design, $I_{Dn} = I_{Dp}$. For a "balanced" inverter, sizing the PMOS wider than the NMOS (to compensate for hole mobility being lower than electron mobility) places $V_M$ near $V_{DD}/2$, giving symmetric noise margins and switching behavior.
     - **Noise Margins**: quantify how much noise/voltage error the inverter's input can tolerate before the output is affected:
         - $$NM_H = V_{OH} - V_{IH}$$ (high-side noise margin)
         - $$NM_L = V_{IL} - V_{OL}$$ (low-side noise margin)
         - Larger noise margins mean better **noise immunity**: a key reason (alongside low static power) that CMOS is favored for dense, robust digital design.
-    - **Voltage gain** in the transition region (the maximum magnitude of \(dV_{out}/dV_{in}\)): a steeper transition (higher gain) means a sharper, more well-defined switching point and better signal regeneration between cascaded stages.
+    - **Voltage gain** in the transition region (the maximum magnitude of $dV_{out}/dV_{in}$): a steeper transition (higher gain) means a sharper, more well-defined switching point and better signal regeneration between cascaded stages.
 
 ##### ⁠E.4.a.II.v. AC (Dynamic / Transient / Switching) Analysis
 
 ![Transient Analysis Diagram](../attachments/transient-analysis.png)
 
-- **DC analysis** (Section E.3) tells us \(V_{out}\) for a **constant** \(V_{in}\).
-- **AC analysis** tells us \(V_{out}(t)\) given a **time-varying** \(V_{in}(t)\): this generally requires solving differential equations describing how the output node's parasitic/load capacitance charges and discharges through the transistors' time-varying resistance.
-- The input is usually modeled as a **step** or a **ramp** transitioning between 0 and \(V_{DD}\) (or vice versa), approximating a realistic logic transition.
+- **DC analysis** (Section E.3) tells us $V_{out}$ for a **constant** $V_{in}$.
+- **AC analysis** tells us $V_{out}(t)$ given a **time-varying** $V_{in}(t)$: this generally requires solving differential equations describing how the output node's parasitic/load capacitance charges and discharges through the transistors' time-varying resistance.
+- The input is usually modeled as a **step** or a **ramp** transitioning between 0 and $V_{DD}$ (or vice versa), approximating a realistic logic transition.
 - **AC analysis** is also referred to, interchangeably, as **transient analysis**, **switching analysis**, or **dynamic analysis**: all describing the same underlying study of time-domain switching behavior.
-- The **switching characteristic**: \(V_{out}(t)\) given \(V_{in}(t)\): of a logic gate directly determines **how fast the gate can operate**, i.e., its maximum usable clock frequency in a larger design.
+- The **switching characteristic**: $V_{out}(t)$ given $V_{in}(t)$: of a logic gate directly determines **how fast the gate can operate**, i.e., its maximum usable clock frequency in a larger design.
 - The **switching speed** of a gate is fundamentally measured by the **time required to charge and discharge its capacitive load**: every gate output drives some combination of the next stage's gate capacitance and the interconnect (wire) capacitance, and the RC-like charge/discharge time of that load, through the driving transistor's ON resistance, sets the propagation delay.
-    - Two standard delay metrics: **\(t\_{PHL}\)** (propagation delay for a HIGH-to-LOW output transition, measured between the 50% points of input and output) and **\(t\_{PLH}\)** (propagation delay for a LOW-to-HIGH output transition).
-    - **Short-circuit power**: during the brief period of a transition when \(V_{in}\) is near the switching region (Region C of the VTC, Section E.3), **both** NMOS and PMOS can be simultaneously partially ON, creating a brief direct current path from VDD to ground, this "short-circuit current" is a real (though typically smaller than switching/dynamic) component of total CMOS power consumption, distinct from the capacitive charge/discharge power.
+    - Two standard delay metrics: **$t_{PHL}$** (propagation delay for a HIGH-to-LOW output transition, measured between the 50% points of input and output) and **$t_{PLH}$** (propagation delay for a LOW-to-HIGH output transition).
+    - **Short-circuit power**: during the brief period of a transition when $V_{in}$ is near the switching region (Region C of the VTC, Section E.3), **both** NMOS and PMOS can be simultaneously partially ON, creating a brief direct current path from VDD to ground, this "short-circuit current" is a real (though typically smaller than switching/dynamic) component of total CMOS power consumption, distinct from the capacitive charge/discharge power.
 
 ## ⁠E.5. Analog/ Mixed Mode VLSI design concepts
 
