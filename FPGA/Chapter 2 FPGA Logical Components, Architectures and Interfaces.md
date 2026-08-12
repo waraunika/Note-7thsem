@@ -132,6 +132,8 @@ flowchart TD
     - Xilinx AXI IP only supports 32-bits
 - Very small footprint
 - In Xilinx VIVADO Bridging to AXI4 handheld automatically by
+
+## ⁠B.6. The AXI Interface - AXI4
 - AXI_Interconnect (if needed)
 - Sometimes called "Full AXI" or "AXI Memory Mapped"
     - Not ARM-sanctioned names
@@ -139,6 +141,9 @@ flowchart TD
     - Burst up to 256 data beats
 - Data Width parameterizable
     - 1024 bits
+
+## ⁠B.7. The AXI Interface - AXI4-Stream
+
 - No address channel, no read and write, always just master to slave
     - Effectively an AXI4 "write data" channel
 - Unlimited burst length
@@ -147,15 +152,17 @@ flowchart TD
 - Virtually same signaling as AXI Data Channels
     - Protocol allows merging, packing, width conversion
     - Supports sparse, continuous, aligned, unaligned streams
-- Signaling
-    - AXI4-lite
-        - ![AXI4-lite](attachments/axi4-lite.png)
-    - AXI4
-        - ![AXI4](attachments/axi4.png)
-    - AXI4-Stream
-        - ![AXI4-Stream Transfer](attachments/axi4-stream.png)
 
-## ⁠B.6. Streaming Applications
+## ⁠B.8. Signaling
+
+- AXI4-lite
+    - ![AXI4-lite](attachments/axi4-lite.png)
+- AXI4
+    - ![AXI4](attachments/axi4.png)
+- AXI4-Stream
+    - ![AXI4-Stream Transfer](attachments/axi4-stream.png)
+
+## ⁠B.9. Streaming Applications
 
 - May not packets
     - E.g., Digital up converter
@@ -167,7 +174,7 @@ flowchart TD
         - Their packets may contain different information
         - Typically bridge logic of some sort is needed
 
-## ⁠B.7. Memory Mapped vs Stream Data Transfer
+## ⁠B.10. Memory Mapped vs Stream Data Transfer
 
 - Number of channel on Memory Mapped are 5 \[3 channel for write transaction and 2 channel for read transaction\].
 - Number of channel needed for streaming mode is just 1.
@@ -175,12 +182,12 @@ flowchart TD
     - ![Streaming Channel Details](attachments/streaming-channel-details.png)
     - ![AXI-MM vs AXI-S](attachments/aximm-axis.png)
 
-## ⁠B.8. Memory Mapped into Stream Data or Vice Versa
+## ⁠B.11. Memory Mapped into Stream Data or Vice Versa
 
 - In general DMA (Dynamic Memory Access) IP in different FPGA Design tools or platform perform conversion of "streaming into Memory mapped" and vice versa.
 - According to vendor, theere could have DMA, Video DMA (VDMA), CDMA, QDMA and different types of DMA according to type of data handling and purpose.
 
-## ⁠B.9. Importance of AXI VDMA or Central DMA
+## ⁠B.12. Importance of AXI VDMA or Central DMA
 
 - When there is need of storing or writing streaming data into memory \[DRAM\].
 - The streaming data need to convert into memory mapped, which is done by VDMA.
@@ -189,7 +196,7 @@ flowchart TD
 - VDMA can Interrupt host CPU when transfer completes.
 - ![AXI Data Mover](attachments/axi-data-mover.png)
 
-## ⁠B.10. Additional Information: VDMA Overview
+## ⁠B.13. Additional Information: VDMA Overview
 
 - AXI Video Direct Memory Access provides high-bandwidth direct memory access between memory and AXI4-Stream video type target peripherals including which support the AXI4-Stream Video protcol
 - Many video applications require frame buffers to handle frame rate changes or changes to the image dimensions (scaling or cropping).
@@ -205,21 +212,21 @@ flowchart TD
 - As FPGA can process or process large amount of data when there is need to sending data or receiving data from external devices or platform we have to use different high speed bus protocols.
 - According to FPGA architecture there could have few or many high speed interfaces.
 
-## Usage of High Speed Interfaces
+## ⁠C.2. Usage of High Speed Interfaces
 
 - Handling large amount of data/to from FPGA to external device.
 - Achieving high speed and high performance data transfer between the computing platform.
 
 # ⁠D. High Speed Bus Protocols in FPGA
 
-## HSBP Overview
+## ⁠D.1. HSBP Overview
 
 - As FPGA can process or process large amount of data when there is need to sending data or receiving data from external devices or platform we have to use different high speed bus protocols.
 - According to FPGA architecture there could have few or many high speed interfaces.
 - For high speed interfaces FPGA consists of Gigabit transreceivers along with the FPGA chip architectures.
 - High speed interfaces can be of serial or parallel data communication channels.
 
-## ⁠D.1. USB
+## ⁠D.2. USB
 
 - SUB is high speed serial bus protocol used for sharing data between two computing platform or devices.
 - USB can be of different revisions, based on the revision the performance or speed will increase.
@@ -280,7 +287,7 @@ flowchart TD
     </tr>
 </table>
 
-## ⁠D.2. PCIe
+## ⁠D.3. PCIe
 
 - PCIe (Peripheral Component Interconnect Express) is high speed serial bus protocol used in different processing platforms including CPU, GPU and FPGA.
 - PCIe offers very high speed of data transfer to/from the platform.
@@ -335,16 +342,16 @@ flowchart TD
 
 </table>
 
-## ⁠D.3. Ethernet
+## ⁠D.4. Ethernet
 
-## ⁠D.4. MIPI
+## ⁠D.5. MIPI
 
 - MIPI (Mobile Industry Processor Interface) is one of popular bus interface
 - for handling media data
 - MIPI has DSI and CSI support for Display and Camera sensor
 - It used in many camera based designs and also where there is display is used.
 
-## LVDS
+## ⁠D.6. LVDS
 
 - Low voltage differential signaling (LVDS) bus interfaces are used to interfaces are used to interface camera and different sensor data to FPGA.
 - The LVDS interface carry signals in differential signaling manner.
@@ -359,11 +366,11 @@ flowchart TD
 - SoC and MPSoC architectures is targeted for handling different types of data such as audio, video, sensor data, file systems, etc.
 - So MPSoC architectures consists of interfaces from which we can receive and send different types of data.
 
-## Architectures
+## ⁠E.1. Architectures
 
 ![Interface expanded arch of MPSoC](attachments/interface-mpsoc.png)
 
-## Interfaces
+## ⁠E.2. Interfaces
 
 1. According to architectures, these SoC and MPSoC architectures are mainly used for low power and edge based applications.
 2. SoC/MPSoC architectures consists of two types of interfaces
