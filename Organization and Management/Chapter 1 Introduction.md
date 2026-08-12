@@ -24,7 +24,6 @@
 -   fulfill basic needs
 -   its better to work in group than work alone
 -   better resources, diverse views and knowledge, more experiences, great potentials
-
 -   the objective must be common for the organization
 -   rules and regulations must be organized, so no conflicts and confusion occur
 -   people related should be willing to cooperate with each other
@@ -75,7 +74,7 @@
 -   Brain of an organization
 -   Coordination of human, material resources and technology
 -   Management's existence as old as the human origin
-    -   General Sun Tzu, the art of war, 6\th century BC
+    -   General Sun Tzu, the art of war, 6$^\text{th}$ century BC
     -   Chanakya's Arthashastra, 300 BC
 
 ## ⁠e.1. Function of Management

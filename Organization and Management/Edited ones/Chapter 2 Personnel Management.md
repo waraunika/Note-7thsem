@@ -10,7 +10,8 @@
 - Obtaining, using, and maintaining a satisfied workforce
 - Concerned with the welfare and well-being of employees
 - Often referred to as **Human Resource Management (HRM)**
-  **Scope of Personnel Management:**
+
+**Scope of Personnel Management:**
 - Company policies and procedures
 - Staffing, hiring, and firing
 - Orientation and induction
@@ -104,7 +105,8 @@
 
 - What the employer expects from its employees
 - What employees may expect from the employer
-  **Distribution:** Must be distributed to each employee at hiring and placement; should be reviewed and discussed during orientation and training sessions.
+
+**Distribution:** Must be distributed to each employee at hiring and placement; should be reviewed and discussed during orientation and training sessions.
 
 ---
 

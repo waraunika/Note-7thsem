@@ -253,13 +253,18 @@ For an organization to run smoothly, the following principles must be followed:
 ---
 # ⁠D. Forms of Ownership
 ## ⁠D.1. Single Ownership (Sole Proprietorship)
-**Definition:** Oldest, simplest, and most popular form; owned and controlled by single person; formed to fulfill own goals using own resources.
+**Definition:**
+- Oldest, simplest, and most popular form;
+- owned and controlled by single person;
+- formed to fulfill own goals using own resources.
+
 **Key Features:**
 - Total control and freedom to run business in owner's own way
 - Owner bears all profit or loss
 - Unlimited liability (owner assumes all debts)
 - Government has limited control
 - Usually profit motive
+
 **Advantages:**
 
 | Advantage                      | Description                                                      |
@@ -273,6 +278,7 @@ For an organization to run smoothly, the following principles must be followed:
 | **Flexibility in Operation**   | Single owner makes all decisions, takes all risks, assigns tasks |
 | **Personal Relations**         | Direct contact with customers and employees; better feedback     |
 | **Limited Government Control** | Minimum government involvement                                   |
+
 **Disadvantages:**
 
 | Disadvantage                      | Description                                                                  |
@@ -285,12 +291,16 @@ For an organization to run smoothly, the following principles must be followed:
 
 ---
 ## ⁠D.2. Partnership
-**Definition:** Formed when two or more people join hands to work together, sharing profit and loss equally or as per agreement.
+**Definition:**
+- Formed when two or more people join hands to work together,
+- sharing profit and loss equally or as per agreement.
+
 **Key Features:**
 - Mutual understanding between partners
 - Partnership deed (written agreement) contains terms and conditions
 - Private organization
 - Increases resources, capital, skills, and manpower
+
 **Advantages:**
 
 | Advantage                     | Description                                                  |
@@ -299,6 +309,7 @@ For an organization to run smoothly, the following principles must be followed:
 | **Large Resources**           | More capital than single ownership                           |
 | **Better Skills and Ability** | Diversity in skills and knowledge                            |
 | **Quick Decisions**           | Partners can meet in person for quick decisions              |
+
 **Disadvantages:**
 
 | Disadvantage                | Description                                       |
@@ -309,13 +320,17 @@ For an organization to run smoothly, the following principles must be followed:
 
 ---
 ## ⁠D.3. Joint Stock Company
-**Definition:** Association of individuals for carrying on trade or business; also called corporations or limited companies.
+**Definition:** 
+- Association of individuals for carrying on trade or business;
+- also called corporations or limited companies.
+
 **Key Features:**
 - Capital collected by selling shares to shareholders
 - Certificate of shares provided; flexibility to sell or transfer shares
 - Profit shared proportionally to shares
 - Managed by Board of Directors elected at Annual General Meeting
 - Limited liability for shareholders
+
 **Advantages:**
 
 | Advantage                     | Description                                                       |
@@ -344,6 +359,7 @@ For an organization to run smoothly, the following principles must be followed:
 2. **Incorporation Stage:** Apply for company registration with the Office of Company Registrar; submit required documents (Memorandum of Association, Articles of Association)
 3. **Capital Subscription Stage:** Issue prospectus; collect share capital from public
 4. **Commencement of Business Stage:** Obtain Certificate of Commencement of Business; start operations
+
 **Required Documents for Private Company Registration in Nepal:**
 - Memorandum of Association
 - Articles of Association
@@ -355,6 +371,7 @@ For an organization to run smoothly, the following principles must be followed:
 ---
 ## ⁠D.4. Cooperative Societies
 **Definition:** Voluntary association of individuals for mutual social, economic, and cultural benefit; not primarily for profit motive but for rendering services.
+
 **Key Features:**
 - At least 10 members; maximum up to 100
 - Membership open to anyone
@@ -364,6 +381,7 @@ For an organization to run smoothly, the following principles must be followed:
 - **"One Man One Vote"** principle regardless of shares owned
 - Fixed rate of dividend
 - Part of profit for social welfare; part as bonus based on effort
+
 **Types of Cooperatives:**
 
 | Type                             | Description                                                                                                    |
@@ -397,6 +415,7 @@ For an organization to run smoothly, the following principles must be followed:
 ---
 ## ⁠D.5. Public Corporation
 **Definition:** Organization formed by the government for social welfare and non-profit objectives. Historical: 20 formed between 1936-1939.
+
 **Advantages:**
 
 | Advantage                   | Description                                                          |
@@ -422,6 +441,7 @@ Refers to division of labor and patterns of coordination, communication, workflo
 ---
 ## ⁠E.2. Line Organization
 **Definition:** Simplest form; represents direct vertical relationships with authority flowing from topmost executive to lower supervisor levels. Authority decreases with each successive level.
+
 **Diagram:**
 ```mermaid
 flowchart TD
@@ -439,6 +459,7 @@ C --> G[Supervisor]
 - Ensures better discipline
 - Facilitates unity of command
 - Prompt decision making possible
+
 **Disadvantages:**
 - Authority concentrated at top; poor performance at top affects organization
 - Lack of effectiveness as firm grows; top executive overloaded
@@ -447,6 +468,7 @@ C --> G[Supervisor]
 ---
 ## ⁠E.3. Functional Organization
 **Definition:** Developed by F.W. Taylor; organization divided into units based on functions (production, marketing, finance, personnel). Each unit under charge of different person. If a person performs several functions, they report to multiple functional heads.
+
 **Diagram:**
 ```mermaid
 flowchart TD
@@ -465,6 +487,7 @@ flowchart TD
 - Functional incharge expert in their area
 - Easier to develop executives
 - Reduces burden on top executives
+
 **Disadvantages:**
 - Can be too complicated for employees
 - Violates unity of command principle
@@ -502,9 +525,12 @@ flowchart TD
 **Advantages:**
 - Brings together wide range of ideas, expertise, and interests
 - Ensures all aspects of organization are considered in decision making
+
 **Disadvantages:**
 - Delay in decision making
 - Decisions may be based on compromise rather than what's best
+
+## ⁠E.6. Engineering Projects Structure 
 **Which Structure is Best for Temporary Engineering Projects?**
 - **Project-based Organization** or **Matrix Organization**
 - **Reasons:**
@@ -518,6 +544,7 @@ flowchart TD
 # ⁠F. Purchasing and Marketing Management
 ## ⁠F.1. Purchasing Management
 **Definition:** Activity of acquiring goods and services by payment to accomplish organizational goals. Includes procurement of materials, machines, tools, and equipment.
+
 **Key Responsibility:** Buy materials of **right quality**, **right quantity**, at **right time**, from **right sources**, with delivery at **right place**.
 
 | Function                  | Description                           |
@@ -535,6 +562,7 @@ flowchart TD
 | **Direct Purchase Procedure** | Immediate purchase of materials directly from suppliers                                                    |
 | **Quotation Procedure**       | Collect price quotations from at least three suppliers; evaluate and choose suitable supplier              |
 | **Tender Procedure**          | Advertise requirements in newspapers/media; collect tenders from interested suppliers; evaluate and choose |
+
 **Tender:** Written document provided by suppliers consisting of price quotations, terms, and conditions for supply of goods.
 
 **Steps of Purchasing Process:**
@@ -552,6 +580,7 @@ flowchart TD
 ---
 ## ⁠F.2. Marketing Management
 **Definition:** Process of communicating the value of products or services to consumers; organizational function for creating, delivering, and communicating value to customers; managing customer relationships for mutual benefit.
+
 **Four P's of Marketing:**
 1. **Product:** Developed based on market research; should meet user needs
 2. **Pricing:** Setting price for the product
@@ -564,6 +593,7 @@ flowchart TD
     1. **Customer Oriented:** Company should be customer-focused
     2. **Profit Oriented:** Profitable sales volume should be goal
     3. **Satisfaction of Customers:** Products based on customer satisfaction
+
 **Marketing Research:**
 - Activity to gain information about potential buyers
 - Four key elements:
@@ -571,6 +601,7 @@ flowchart TD
     2. **Market Intelligence:** Know what competitors are planning
     3. **Market Analysis:** Gather customer reactions to products/ pricing
     4. **Product Evaluation:** Determine strategy effectiveness; analyze needed changes
+
 **Functions of Marketing:**
 
 | Function                          | Description                                                                                       |
@@ -583,6 +614,7 @@ flowchart TD
 | **Product/Service Management**    | Designing, developing, maintaining, acquiring products meeting consumer needs                     |
 | **Market Information Management** | Obtaining, managing information about customer wants; improving decision making                   |
 | **Promotion**                     | Communicating with customers; includes advertising, personal selling, publicity, public relations |
+
 **Importance of Marketing in Modern Digital Era:**
 - Digital marketing expands reach globally
 - Social media enables direct customer engagement
@@ -599,6 +631,7 @@ flowchart TD
 ---
 ## ⁠F.3. Advertising
 **Definition:** Form of marketing used to encourage or persuade consumers to take action upon a product.
+
 **Forms:** Newspapers, magazines, media, online sources, TV, door-to-door selling, billboards, sales promotions
 **Importance of Advertising:**
 - Increases sales by creating awareness
@@ -607,6 +640,7 @@ flowchart TD
 - Informs customers about product features and benefits
 - Builds brand recognition and loyalty
 - Differentiates products from competitors
+
 **Advertising as Best Form of Marketing:**
 - Reaches large audiences
 - Creates product awareness
