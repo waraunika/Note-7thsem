@@ -34,7 +34,7 @@
 
 ### A.3.1. Island-Style Routing Architecture
 
-![Island Routing](attachments/2026-08-10-21-39-35.png)
+![Island Routing](../attachments/2026-08-10-21-39-35.png)
 
 - The **classic / traditional** FPGA routing architecture — also called a **"mesh"-style** design — and still the most widely used approach in commercial SRAM-based FPGAs today (Xilinx, Intel/Altera, etc. are fundamentally island-style at the top level).
 - Structure: logic blocks (CLBs) are laid out on a **2D grid**, appearing as "islands" surrounded by a "sea" of routing channels — hence the name.
@@ -45,7 +45,7 @@
 
 ### A.3.2. Hierarchical Routing Architecture
 
-![Hierarchical](attachments/hierarchical-arch.png)
+![Hierarchical](../attachments/hierarchical-arch.png)
 
 - Also called a **tree-based** routing architecture.
 - Structure: logic blocks are grouped into **clusters** (and clusters of clusters, recursively), rather than being uniformly connected through a flat grid of channels.
@@ -56,7 +56,7 @@
 
 ### A.3.3. Xilinx Routing Architecture (worked example)
 
-![Xilinx](attachments/xilinx-routing.png)
+![Xilinx](../attachments/xilinx-routing.png)
 
 - Illustrated here using the classic **Xilinx Virtex-II** routing scheme as a concrete example of an island-style architecture in a real commercial device.
 - Connections are made from a logic block into the routing channel through a **connection block**.
@@ -89,8 +89,8 @@
 - The AXI3/AXI4 specifications are freely available from ARM.
 - AXI is used for **high-speed, high-throughput on-chip communication** between processing components — CPUs, DMA engines, custom logic in the FPGA fabric, memory controllers, and peripherals — inside SoC/MPSoC-class FPGA devices (e.g., linking the Zynq Processing System to custom logic in the Programmable Logic, see Chapter 1 Section F).
 
-![AMBA](attachments/amba.png)
-![AXI](attachments/axi.png)
+![AMBA](../attachments/amba.png)
+![AXI](../attachments/axi.png)
 
 ### AMBA Protocol Family
 
@@ -135,7 +135,7 @@ flowchart TD
 - AXI supports **single-master/multi-slave**, **multi-master/single-slave**, and full **multi-master/multi-slave** system topologies, using an **AXI Interconnect** block to arbitrate and route transactions between multiple masters and slaves.
 - Being part of the AMBA family means AXI IP designed by different vendors/teams can interoperate at the protocol level, which is a large part of its popularity for SoC integration.
 
-![AXI Protocol](attachments/axi-protcol.png)
+![AXI Protocol](../attachments/axi-protcol.png)
 
 ## B.4. The Three AXI4-Family Interfaces
 
@@ -174,9 +174,9 @@ flowchart TD
 - The protocol explicitly supports **merging, packing, and width conversion**, and supports sparse, continuous, aligned, or unaligned data streams — this flexibility is why it's the standard choice for DSP pipelines, video pipelines, and packet-processing datapaths inside FPGA fabric.
 
 **Signaling references** (see linked figures):
-- AXI4-Lite signaling: `attachments/axi4-lite.png`
-- AXI4 (full) signaling: `attachments/axi4.png`
-- AXI4-Stream transfer signaling: `attachments/axi4-stream.png`
+- AXI4-Lite signaling: `../attachments/axi4-lite.png`
+- AXI4 (full) signaling: `../attachments/axi4.png`
+- AXI4-Stream transfer signaling: `../attachments/axi4-stream.png`
 
 ## B.5. Basic AXI Signaling — The Five Channels
 
@@ -188,7 +188,7 @@ Both AXI4 and AXI4-Lite are built from **five independent channels**, each with 
 4. **Write Data Channel** (W) — master sends the write data (one or more beats, with byte strobes).
 5. **Write Response Channel** (B) — slave confirms completion/status of the write transaction.
 
-![AXI Signaling](attachments/axi-signaling.png)
+![AXI Signaling](../attachments/axi-signaling.png)
 
 - A **read transaction** uses only the Read Address and Read Data channels.
 - A **write transaction** uses the Write Address, Write Data, and Write Response channels (three channels, versus two for a read).
@@ -199,8 +199,8 @@ Both AXI4 and AXI4-Lite are built from **five independent channels**, each with 
 - **Memory-Mapped (AXI4 / AXI4-Lite)**: **5 channels total** — 3 for a write transaction (AW, W, B) and 2 for a read transaction (AR, R).
 - **Streaming (AXI4-Stream)**: only **1 channel** is needed, since there's no address phase and no separate read/write direction — just a continuous data channel with its handshake and sideband signals.
 
-![Streaming Channel Details](attachments/streaming-channel-details.png)
-![AXI-MM vs AXI-S](attachments/aximm-axis.png)
+![Streaming Channel Details](../attachments/streaming-channel-details.png)
+![AXI-MM vs AXI-S](../attachments/aximm-axis.png)
 
 ## B.7. Streaming Application Patterns
 
@@ -224,15 +224,15 @@ AXI4-Stream is used differently depending on whether the underlying data natural
 - In both directions, the VDMA engine must first be **configured and triggered by the host CPU** (via its AXI4-Lite control-register interface).
 - VDMA can **interrupt the host CPU** once a transfer completes, so software doesn't need to poll for completion.
 
-![AXI Data Mover](attachments/axi-data-mover.png)
+![AXI Data Mover](../attachments/axi-data-mover.png)
 
 ## B.10. AXI VDMA — Additional Detail
 
 - **AXI Video Direct Memory Access (VDMA)** provides high-bandwidth, direct memory access between system memory and AXI4-Stream **video**-type target peripherals (i.e., peripherals implementing the AXI4-Stream Video protocol convention, which adds frame/line-boundary signaling on top of plain AXI4-Stream).
 - Many video applications need **frame buffers** in DRAM to absorb changes in frame rate, or to support scaling/cropping between producer and consumer — VDMA is specifically designed to give efficient, high-bandwidth access between the AXI4-Stream video interface side and the AXI4 memory-mapped side to support exactly this use case.
 
-![AXI VDMA](attachments/axi-vdma.png)
-![AXI Video Direct Memory Access](attachments/axi-vdma-memory-acess.png)
+![AXI VDMA](../attachments/axi-vdma.png)
+![AXI Video Direct Memory Access](../attachments/axi-vdma-memory-acess.png)
 
 ---
 
@@ -330,7 +330,7 @@ AXI4-Stream is used differently depending on whether the underlying data natural
 
 ## E.2. Representative MPSoC Interface Architecture
 
-![Interface expanded architecture of MPSoC](attachments/interface-mpsoc.png)
+![Interface expanded architecture of MPSoC](../attachments/interface-mpsoc.png)
 
 ## E.3. Interface Categories in SoC/MPSoC
 

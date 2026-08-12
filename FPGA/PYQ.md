@@ -284,7 +284,108 @@ _Acc to Me and DragonLord, there will be 8 total opcodes, not 8+8_
 
 #### ⁠D.2.a.II. Explain about different optimization techniques in RTL, targeting to latency, throughput and power optimization \[7\]
 
+##### ⁠D.2.a.II.i. Latency
+
+![Removing Pipeline registers](../attachments/latency-opt.png)
+
+- **Goal**: minimize the time from a specific input arriving to its corresponding output being available — i.e., pass data from input to output with **minimal internal processing delay**.
+- A low-latency design generally uses **parallelism** (doing more work per cycle, in combinational logic) instead of relying on deep pipelining, and looks to **remove unnecessary pipeline register stages** wherever timing allows.
+- **Pipelined version** (from Section C.2) — latency: **3 cycles**, because each of the three stages is separated by a register.
+- **Fully combinational / minimal-register version** — latency: **1 cycle** (with a single output register):
+
+```verilog
+reg [31:0] x1, x2;
+reg [63:0] pow1;
+
+// Process 1: x1 <= x
+always @(x) begin
+    x1 <= x;
+end
+
+always @(x1) begin
+    x2   <= x1;
+    pow1 <= x1 * x1;
+end
+
+always @(*) begin
+    pow <= pow1 * x2;
+end
+```
+
+- Here, all the multiplication logic is combinational (`always @(x)` / `always @(x1)` / `always @(*)` — note this style, using blocking-style continuous evaluation without a clock edge, is meant to illustrate a purely combinational datapath collapsing three pipeline stages into one; in synthesizable RTL this combinational chain would typically be captured with `assign` statements or a single combinational `always @(*)` block feeding one output register, rather than several separate always blocks).
+- The trade-off versus the pipelined version: **latency drops from 3 cycles to effectively 1**, but the **combinational path is now much longer** (three levels of multiplication happen in a single clock period instead of being spread across three), which **reduces the maximum achievable clock frequency** — so "low latency" in cycles doesn't automatically mean low latency in absolute time if the achievable clock speed drops enough.
+- This illustrates the fundamental **latency-vs-throughput-vs-clock-speed trade-off**: you can shrink cycle count (latency in cycles) by removing pipeline registers, but only at the cost of a longer combinational path per cycle, which either lowers Fmax or, if Fmax must be held constant, may fail timing altogether.
+
+##### ⁠D.2.a.II.ii. Throughput
+
+![Throughput](../attachments/throughput-opt.png)
+
+- **Goal**: minimize the time elapsed **between successive input reads**, even if the time to fully process any single input (its own latency) is comparatively unimportant.
+- The key idea is that **data item n+1 can begin being read/processed while data item n is still being processed** further down the pipeline — this is the essence of pipelining for throughput.
+- **Un-pipelined / iterative implementation** (low throughput):
+
+```verilog
+reg [3:0] count;
+
+always @(posedge CLK) begin
+    if (start) begin
+        count <= 4'b0010; // count <- 2
+        pow   <= x;
+    end else if (!stop) begin
+        count <= count - 1;
+        pow   <= pow * x;
+    end
+end
+
+assign stop_out = (count == 0) ? 1'b1 : 1'b0;
+```
+
+- This computes `x^n` iteratively over multiple cycles per input, reusing the same multiplier repeatedly.
+- Because a new `x` cannot be accepted until the current computation's `count` reaches zero, throughput is low relative to the number of cycles needed per result.
+- Illustrative figures: **throughput ≈ 10.7 bits/cycle** (32-bit result over ~3 cycles of _this stage of the pipeline_), **latency = 3 cycles** — treat these as illustrative teaching numbers for the specific bit-widths/cycle counts assumed in the example, not universal constants.
+
+- **Pipelined implementation** (high throughput):
+
+```verilog
+reg [31:0] x1, x2;
+reg [63:0] pow1;
+
+always @(posedge CLK or posedge RST) begin
+    if (RST) begin
+        x1   <= 0;
+        x2   <= 0;
+        pow1 <= 0;
+        pow  <= 0;
+    end else begin
+        // stage 1
+        x1 <= x;
+
+        // stage 2
+        x2   <= x1;
+        pow1 <= x1 * x1;
+
+        // stage 3
+        pow <= pow1 * x2;
+    end
+end
+```
+
+- By splitting the computation into three pipeline **stages**, each with its own register layer, a **new input `x` can be accepted every single clock cycle**, because each stage is only ever working on one "slice" of the overall pipeline at a time.
+- Illustrative figures: **throughput = 32 bits/cycle** (a full new 32-bit result's worth of _work_ advances every cycle), **latency = 3 cycles** (any individual input still takes 3 cycles to fully emerge as output — latency is unchanged by pipelining, only throughput improves).
+- This is the classic trade-off: pipelining **does not reduce the latency of any single item**, but it dramatically increases the **rate** at which new items can be started and finished, because the hardware is kept busy on multiple items simultaneously rather than sitting idle waiting for one item to finish.
+
+##### ⁠D.2.a.II.iii. Power
+
+Power optimization is, to a significant degree, an **implication** of the area/resource optimizations described above: fewer active logic resources and shorter/less-toggling combinational paths generally translate directly into lower **dynamic power** (which scales with switching activity, capacitance, and clock frequency)
+
+- Power usage is primarily driven by the **amount of FPGA area/logical resources** the design actually uses and switches — see Section D.5.
+- For **lower power**, favor **algorithmic optimization** or **pipelining** over full unrolled parallelism where possible — a fully parallel/unrolled implementation typically maximizes area (and thus static + dynamic power) in exchange for maximum throughput; a more modestly pipelined or resource-shared (Section D.2) implementation trades some throughput for meaningfully lower power.
+- Power consumption also depends on the **FPGA architecture itself** and precisely **how** logical resources are used (e.g., using a hardened DSP slice for a multiply is typically both faster _and_ lower-power than the equivalent function built from general LUT fabric).
+- The **synthesis/implementation tool's placement decisions** also affect power — where different operational blocks end up physically placed on the die affects routing length/capacitance and can be influenced by power-oriented synthesis/implementation strategies (again, e.g., Vivado's power-optimization strategies, which specifically target reduced switching activity and clock-gating opportunities).
+
 ## ⁠D.3. Considerations/approaches for Implementing RTL design in a real-world scenario
+
+---
 
 ---
 
@@ -304,17 +405,21 @@ _Acc to Me and DragonLord, there will be 8 total opcodes, not 8+8_
 
 ### ⁠E.3.a. Questions
 
-#### ⁠E.3.a.I. Detail about CMOS inverter design and its analysis \[7\]
-
-#### ⁠E.3.a.II. Create CMOS inverter and explain about it \[3\]
-
-#### ⁠E.3.a.III. Explain about DC analysis of CMOS inverter \[4\]
-
-#### ⁠E.3.a.IV. Explain about CMOS circuit design \[3\]
+#### ⁠E.3.a.I. Explain about CMOS circuit design \[3\]
 
 ## ⁠E.4. Design and analysis of the CMOS inverter
 
+### ⁠E.4.a. Questions
+
+#### ⁠E.4.a.I. Detail about CMOS inverter design and its analysis \[7\]
+
+#### ⁠E.4.a.II. Create CMOS inverter and explain about it \[3\]
+
 ## ⁠E.5. Analog/ Mixed Mode VLSI design concepts
+
+---
+
+---
 
 # ⁠F. Yo kaa ko ho?
 

@@ -61,7 +61,7 @@ These three are related but **independently tunable**: a design can have high th
 
 ## C.2. Throughput Optimization — Loop Unrolling / Pipelining
 
-![Throughput](attachments/throughput-opt.png)
+![Throughput](../attachments/throughput-opt.png)
 
 - **Goal**: minimize the time elapsed **between successive input reads**, even if the time to fully process any single input (its own latency) is comparatively unimportant.
 - The key idea is that **data item n+1 can begin being read/processed while data item n is still being processed** further down the pipeline — this is the essence of pipelining for throughput.
@@ -119,7 +119,7 @@ end
 
 ## C.3. Latency Optimization — Removing Pipeline Registers
 
-![Removing Pipeline registers](attachments/latency-opt.png)
+![Removing Pipeline registers](../attachments/latency-opt.png)
 
 - **Goal**: minimize the time from a specific input arriving to its corresponding output being available — i.e., pass data from input to output with **minimal internal processing delay**.
 - A low-latency design generally uses **parallelism** (doing more work per cycle, in combinational logic) instead of relying on deep pipelining, and looks to **remove unnecessary pipeline register stages** wherever timing allows.
@@ -151,7 +151,7 @@ end
 
 ## C.4. Logic Delay Optimization — Register Layers (Retiming for Delay Reduction)
 
-![Local Datapaths](attachments/optimizing-datapath.png)
+![Local Datapaths](../attachments/optimizing-datapath.png)
 
 - **Local datapath**: the combinational logic sitting between two sequential elements (registers). The delay of the **slowest** local datapath in the whole design sets the **maximum clock frequency** the entire design can run at (this is the definition of the "critical path").
 - Local datapath delay can be reduced by inserting **additional register layers**, breaking one long combinational chain into two or more shorter ones — at the cost of one additional cycle of latency per inserted register layer.
@@ -196,7 +196,7 @@ end
 
 ## C.5. Logic Delay Optimization — Register Balancing
 
-![Register Balancing](attachments/register-balancing.png)
+![Register Balancing](../attachments/register-balancing.png)
 
 - **Register balancing** redistributes the logic _between_ existing register stages so as to **minimize the worst-case delay between any pair of registers** — rather than adding new register layers (as in C.4), this technique rearranges where, within the existing pipeline structure, computation happens.
 - **Unoptimized** (three separate input registers, then a single-cycle three-input add):
@@ -242,7 +242,7 @@ end
 
 ## D.2. Minimizing Area — Control-Based Logic Reuse
 
-![Control based logic reuse](attachments/fsm-control-signals.png)
+![Control based logic reuse](../attachments/fsm-control-signals.png)
 
 - Control-based logic reuse is conceptually the **opposite** of loop unrolling/pipelining (Section C.2): instead of duplicating hardware to run multiple operations in parallel (which improves throughput at the cost of area), a single piece of hardware is **reused sequentially**, controlled by an FSM or control signals, across multiple operations.
 - **Pipelining requires additional data-storage resources and extra control/routing logic** to implement its parallel operation — that hardware cost is real and scales with the degree of parallelism.
@@ -250,7 +250,7 @@ end
 
 ## D.3. Minimizing Area — Priority Encoders (Exploiting Mutual Exclusion)
 
-![Priority Encoders](attachments/mutex-usage.png)
+![Priority Encoders](../attachments/mutex-usage.png)
 
 - Resource requirements can often be reduced by **exploiting mutual exclusion** between conditions, rather than assuming they must be checked in priority order.
 - The `else if` chain should be used **only when a genuine priority encoder is actually required** — i.e., when the conditions are _not_ mutually exclusive and a defined priority between them matters. If the conditions **are** mutually exclusive (only one can ever be true at a time), using `else if` unnecessarily forces the synthesis tool to build **priority logic** (a chain of muxes/comparators evaluated in sequence), which costs more area and often more delay than necessary.

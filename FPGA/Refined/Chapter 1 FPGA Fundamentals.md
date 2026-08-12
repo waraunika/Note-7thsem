@@ -86,7 +86,7 @@ FPGAs are used wherever reconfigurable, parallel, low-latency hardware is valuab
 
 # B. General Architecture of FPGA
 
-![General Architecture of Xilinx](attachments/example-architecture-xilinx.png)
+![General Architecture of Xilinx](../attachments/example-architecture-xilinx.png)
 
 At a high level, every FPGA, regardless of vendor, is built from three classes of resources arranged in a regular, repeating grid (an **"island-style"** layout):
 
@@ -115,7 +115,7 @@ At a high level, every FPGA, regardless of vendor, is built from three classes o
   - **Medium-grained**: LUT/MUX-based or small RAM/ROM-based blocks (the mainstream commercial approach).
   - **Coarse-grained**: larger fixed function units such as floating-point blocks or embedded processor cores.
 
-![CLB](attachments/clb.png)
+![CLB](../attachments/clb.png)
 
 ## B.2. Switch Matrix / Connection & Switch Boxes
 
@@ -162,7 +162,7 @@ At a high level, every FPGA, regardless of vendor, is built from three classes o
 
 ## C.4. DSP Slices (Dedicated Arithmetic Blocks)
 
-![DSP Block](attachments/dsp-block.png)
+![DSP Block](../attachments/dsp-block.png)
 
 - Because arithmetic-heavy operations (multiply, multiply-accumulate, filtering) are extremely inefficient to build purely from LUTs, modern FPGAs embed **hardened DSP blocks** directly in the fabric.
 - **Xilinx DSP48E2** (UltraScale/UltraScale+ family, successor to DSP48E1 in 7-Series, DSP48A/A1 in Spartan-6, and the original DSP48 in Virtex-4) is a representative example. A single DSP48E2 slice contains:
@@ -176,7 +176,7 @@ At a high level, every FPGA, regardless of vendor, is built from three classes o
 - DSP slices are typically arranged in **columns**, physically adjacent to BRAM columns, so that data can move between memory and arithmetic with minimal routing delay, important for high-throughput filters and matrix operations.
 - Using DSP slices instead of LUT-built arithmetic gives higher clock frequency, lower latency, and dramatically lower LUT utilization for the same function.
 
-![DSP Operation](attachments/dsp-operation.png)
+![DSP Operation](../attachments/dsp-operation.png)
 
 
 ## C.5. Block RAM (BRAM)
@@ -249,7 +249,7 @@ Different FPGA families store their configuration using different underlying mem
 ## D.1. Open-Source FPGA Architecture (context/example)
 
 - Projects such as the **OpenFPGA** project publish fully open FPGA architecture descriptions and toolchains, used mainly for architecture research and education rather than commercial silicon.
-- ![OpenFPGA](attachments/open-sourced-fpga-arch.png)
+- ![OpenFPGA](../attachments/open-sourced-fpga-arch.png)
 
 ## D.2. SRAM-Based Programming Technology
 
@@ -261,7 +261,7 @@ Different FPGA families store their configuration using different underlying mem
 - Relatively **short configuration time** compared to some alternative technologies.
 - Occupies a **relatively larger silicon area** per configuration bit than fuse-based alternatives (six-transistor SRAM cells are larger than a fuse/antifuse element).
 - **Xilinx and Intel (Altera)** FPGA product lines are predominantly SRAM-based, this is by far the dominant technology in mainstream commercial FPGAs today because it scales well with modern CMOS process nodes and supports full reprogrammability.
-- ![SRAM Architecture](attachments/sram-arch.png)
+- ![SRAM Architecture](../attachments/sram-arch.png)
 
 ## D.3. Antifuse Programming Technology
 
@@ -316,7 +316,7 @@ Modern high-end FPGAs are no longer "just" programmable logic, they integrate a 
   - **High-Performance (HP) AXI ports**: wider, buffered, higher-bandwidth data-plane ports for PL masters to move bulk data to/from memory.
   - **Accelerator Coherency Port (ACP)**: a low-latency path for PL masters that optionally maintains **cache coherency** with the APU's L1/L2 caches, useful when a PL accelerator needs to share data structures with software running on the ARM cores without manual cache-flush overhead.
 - Scalable programmable logic density lets the same PS be paired with different PL sizes across the Zynq-7000 product range.
-- ![Zynq Architecture](attachments/zynq-arch.png)
+- ![Zynq Architecture](../attachments/zynq-arch.png)
 
 ## F.2. Xilinx Zynq UltraScale+ MPSoC (next generation)
 
@@ -346,7 +346,7 @@ A genuine **MPSoC** because it integrates *multiple, heterogeneous* processor ty
   - A hardened **ARM-based processor subsystem** paired with the programmable fabric (similar SoC concept to Zynq)
   - **High-speed interfaces**, notably **PCIe** for host connectivity
   - **High-bandwidth memory (HBM)** integration on select variants, for workloads needing very high memory bandwidth (e.g., large-model AI inference, HPC)
-    - ![Altera Architecture](attachments/altera-arch.png)
+    - ![Altera Architecture](../attachments/altera-arch.png)
 
 ## F.4. Microchip (Microsemi) FPGA Architecture
 
@@ -425,7 +425,7 @@ In short: the PS/APU/RPU provide **general-purpose and real-time compute**, the 
   - **Higher cost** reflecting the larger die and processing capability.
   - Typical applications: genome sequencing, large-scale AI/math problem acceleration, and massively parallel data processing (e.g., processing feeds from hundreds of cameras for smart-city applications).
   - **Intel Stratix 10 SoC FPGA** (Section F.3) is a representative cloud-class device.
-    - ![General Architectures - AMD (Xilinx) and Intel (Alterra)](attachments/cloud-based-arch.png)
+    - ![General Architectures - AMD (Xilinx) and Intel (Alterra)](../attachments/cloud-based-arch.png)
 
 ### Cloud FPGA Usage by Provider (illustrative, as commonly reported)
 
@@ -447,7 +447,7 @@ In short: the PS/APU/RPU provide **general-purpose and real-time compute**, the 
 
 # I. FPGA Design Flow
 
-![Design Flow](attachments/design-flow.png)
+![Design Flow](../attachments/design-flow.png)
 
 ## I.1. Overview
 
@@ -489,7 +489,7 @@ The FPGA design flow takes a design from an initial concept through HDL coding, 
 - A **synthesis tool** converts the HDL description into a **gate-level netlist**, mapping the design's logic to the specific primitives available on the target FPGA (LUTs, FFs, DSP slices, BRAM, carry chains, etc.).
 - Synthesis also performs logic optimization (e.g., inferring DSP slices from multiply/MAC patterns, inferring BRAM/distributed RAM from memory-style code, resource sharing) to make efficient use of the target device's hard blocks.
 
-![Synthesis Process](attachments/synthesis-levels.png)
+![Synthesis Process](../attachments/synthesis-levels.png)
 
 ### I.2.f. Implementation
 - The synthesized netlist is mapped onto the **particular target device's physical structure**:
@@ -499,7 +499,7 @@ The FPGA design flow takes a design from an initial concept through HDL coding, 
   - **Route**: configure the programmable interconnect (switch boxes, connection boxes) to realize all required signal connections between placed elements.
 - This step allocates the actual hardware resources (logic cells, connection wires) needed to realize the design, and the resulting configuration data is written out as the **bitstream**.
 
-![Placement and Routing Stages](attachments/placement-routing.png)
+![Placement and Routing Stages](../attachments/placement-routing.png)
 
 ### I.2.g. Timing Analysis
 - **Static Timing Analysis (STA)** checks whether the implemented (placed-and-routed) design meets all specified timing constraints: setup/hold time margins on every register-to-register path, I/O timing, and clock-domain-crossing constraints.
@@ -516,5 +516,5 @@ The FPGA design flow takes a design from an initial concept through HDL coding, 
   - **Timing Analysis / Bitstream Generation**: final signoff and bitstream creation
 - Vivado also provides interactive tools throughout the flow (e.g., the **Clocking Wizard**, **IP Integrator** for building block-diagram-based SoC designs such as Zynq PS+PL systems, and the **Timing Analyzer** for detailed STA reports), which is especially relevant when building SoC/MPSoC designs that combine PS configuration with custom PL logic.
 
-![Vivado Processes](attachments/vivado-toolchain.png)
-![Vivado Tool Flow](attachments/vivado-toolflow.png)
+![Vivado Processes](../attachments/vivado-toolchain.png)
+![Vivado Tool Flow](../attachments/vivado-toolflow.png)
