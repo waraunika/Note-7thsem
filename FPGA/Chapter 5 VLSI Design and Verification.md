@@ -78,19 +78,68 @@ J --> P[P-Channel]
         - less power
     - CMOS
         - low power consumption,
-        - less fabrication steps
+        - less fabricatiheaderon steps
 - BiCMOS: Bipolar and CMOS (for high speed)
 - Ga-As: Gallium Arsenide (for high speed)
 - SOI: Silicon on Insulator (for high temperature applciation)
 
-
-
-
 ## CAD tools on VLSI
+
+| CAD Tool            | OS/License  | Type                    | Function                      |
+| ------------------- | ----------- | ----------------------- | ----------------------------- |
+| Cadence EDA         | Licensed    | Analog and Mixed Signal | Complete CAD Flow             |
+| Master Graphics EDA | Licensed    | ""                      | ""                            |
+| Synopsys EDA        | ""          | ""                      | ""                            |
+| Tanner EDA          | ""          | ""                      | ""                            |
+| Alliance            | Open Source | Mixed Signal            | Logic to Layout"              |
+| Electric CAD        | ""          | ""                      | ""                            |
+| Magic               | ""          | ""                      | Circuit Layout                |
+| SystemC             | ""          | Electronic System Level | Library for Digital Deisng    |
+| myHDL               | ""          | ""                      | Hardware Description Language |
 
 # VLSI Designing
 
 ## VLSI Design Flow
+
+```mermaid
+
+flowchart LR
+    A[System Specification] --> B[Functional/<br>Architecture Design]
+
+    subgraph FrontEnd["Front End/Synthesis Phase"]
+        direction TB
+        B --> C
+        C
+        D
+        E
+    end
+    C[Functional Verification]
+    C --> B
+    C --> D[Logic Design]
+    D --> E[Logic Verification]
+
+    subgraph Group1["Back End"]
+        F[Circuit Design]
+        G[Circuit Verification]
+        H[Physical Design]
+        I[Physical Verification]
+    end
+
+    E --> F
+    F --> G
+    G --> F
+    G --> H
+    H --> I
+    I --> H
+    I --> J
+
+    subgraph Group2["Fabrication Phase"]
+        J[Tape Out<br>i.e. Lithogragraphy]
+        K[Packaging Testing<br>i.e. IC Level Testing]
+    end
+
+    J --> K
+```
 
 ## VLSI Design Styles
 

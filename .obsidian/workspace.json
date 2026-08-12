@@ -1,20 +1,24 @@
 {
   "main": {
-    "id": "e37fe421e48516a3",
+    "id": "54d6fe4a5c3e3356",
     "type": "split",
     "children": [
       {
-        "id": "f776864cd934c9f0",
+        "id": "408ffe3d35b7a447",
         "type": "tabs",
         "children": [
           {
-            "id": "9faf468d4097ed51",
+            "id": "fef968659ae83000",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "FPGA/Chapter 2 FPGA Logical Components, Architectures and Interfaces.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Chapter 2 FPGA Logical Components, Architectures and Interfaces"
             }
           }
         ]
@@ -23,22 +27,22 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "ed2c38cc56fd3337",
+    "id": "02f9cf61f9c47880",
     "type": "split",
     "children": [
       {
-        "id": "933fa586fa92dcb9",
+        "id": "e04105504cc0da94",
         "type": "tabs",
         "children": [
           {
-            "id": "17cd566a79d46b82",
+            "id": "719d405be49c37cd",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
                 "autoReveal": false,
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
@@ -46,7 +50,7 @@
             }
           },
           {
-            "id": "bee0683c54721f8c",
+            "id": "10c49973aced0d5e",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -63,14 +67,11 @@
             }
           },
           {
-            "id": "cb801de473920833",
+            "id": "0b2ff247b4fcb483",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {
-                "showSearch": false,
-                "searchQuery": ""
-              },
+              "state": {},
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
@@ -82,19 +83,20 @@
     "width": 300
   },
   "right": {
-    "id": "5e58705db28a099c",
+    "id": "46db94f0435341e0",
     "type": "split",
     "children": [
       {
-        "id": "048a6e2eb4e2f565",
+        "id": "6505080d943581fb",
         "type": "tabs",
         "children": [
           {
-            "id": "dd3300333f798a37",
+            "id": "73422fe2df594a9a",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Organization and Management.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,24 +106,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for Organization and Management"
             }
           },
           {
-            "id": "8831378d8632d19f",
+            "id": "1959531eb0b7ac13",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Organization and Management.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from Organization and Management"
             }
           },
           {
-            "id": "bd5686aeb18f7cd2",
+            "id": "e74a5f5f5be64ba0",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -136,7 +139,7 @@
             }
           },
           {
-            "id": "d3362851dd7b3a76",
+            "id": "a70773fd9c10d39c",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -150,11 +153,12 @@
             }
           },
           {
-            "id": "8066daa8382fcf77",
+            "id": "1369f8e2e7d2d0e0",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
+                "file": "FPGA/Chapter 2 FPGA Logical Components, Architectures and Interfaces.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -162,8 +166,19 @@
               "icon": "lucide-list",
               "title": "Outline"
             }
+          },
+          {
+            "id": "9fc8c76a21ac0a39",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -183,6 +198,53 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9faf468d4097ed51",
-  "lastOpenFiles": []
+  "active": "fef968659ae83000",
+  "lastOpenFiles": [
+    "FPGA/Chapter 1 FPGA Fundamentals.md",
+    "FPGA/Chapter 5 VLSI Design and Verification.md",
+    "FPGA/PYQ.md",
+    "FPGA/Refined/Chapter 4 Advanced RTL Design Approaches.md",
+    "FPGA/daily-notes.md",
+    "FPGA/Chapter 4 Advance RTL design approaches for FPGA.md",
+    "FPGA/Refined/Chapter 1 FPGA Fundamentals.md",
+    "FPGA/Chapter 2 FPGA Logical Components, Architectures and Interfaces.md",
+    "FPGA/Refined/Chapter 2 FPGA Logical Components.md",
+    "FPGA/Refined",
+    "Organization and Management/Edited ones/Chapter 3 Motivation and Leadership.md",
+    "Organization and Management/Edited ones/Chapter 5 MIS.md",
+    "Organization and Management/Edited ones/Chapter 2 Personnel Management.md",
+    "Organization and Management/Edited ones/Chapter 1 Introduction.md",
+    "Artificial Intelligence/Chapter 7 Applications of AI.md",
+    "Artificial Intelligence/Chapter 4 Knowledge Representation, Inference & Reason.md",
+    "Artificial Intelligence/Chapter 3 Search Techniques.md",
+    "Artificial Intelligence/Chapter 1 Introduction to Artificial Intelligence.md",
+    "Excalidraw/RF-2nd July.md",
+    "Excalidraw/Drawing 2026-08-06 15.27.27.excalidraw.md",
+    "Organization and Management/interview.md",
+    "Excalidraw/Drawing 2026-08-01 09.46.07.excalidraw.md",
+    "Artificial Intelligence/attachments/Pasted image 20260801101720.png",
+    "Organization and Management/Chapter 5 Management Information System.md",
+    "Artificial Intelligence/attachments/Pasted image 20260801101702.png",
+    "Excalidraw/Drawing 2026-08-01 10.08.46.excalidraw.md",
+    "Artificial Intelligence/attachments/2026-08-01-09-44-04.png",
+    "Artificial Intelligence/attachments/agent with sensor effectors.png",
+    "Artificial Intelligence/attachments/Pasted image 20260801095108.png",
+    "Artificial Intelligence/attachments",
+    "Artificial Intelligence/Attachments/Pasted image 20260801095028.png",
+    "Artificial Intelligence/Attachments",
+    "Excalidraw/Untitled.md",
+    "Organization and Management/Chapter 3 Motivating and Leading People.md",
+    "Organization and Management/Chapter 2 Personal Management.md",
+    "Organization and Management/Edited ones",
+    "Organization and Management/Attachments/Pasted image 20260731115511.png",
+    "Organization and Management/Attachments",
+    "Clippings",
+    "Excalidraw",
+    "Daily Notes/attachments/Pasted image 20260601095816.png",
+    "Daily Notes/attachments/Pasted image 20260519110803.png",
+    "Daily Notes/attachments/Pasted image 20260601095233.png",
+    "Daily Notes/attachments",
+    "syllabus-reference",
+    "major project"
+  ]
 }
