@@ -133,6 +133,40 @@ There are two basic types of digital design methodologies in VLSI flow
 ### Design Flow Simplified
 
 ![As the name](attachments/simplified-design-flow.png)
+
+### Detailing VLSI Design Flow
+
+##### System Specification
+
+- First step of design process is to lay down the specification of the system.
+- High level representation of the system
+- Factors considered:
+    - Performance, Functionality
+    - Physical Dimension
+    - Desing Technique
+    - Technological and Economical Viability
+- The end results are specifications of
+    - Size, Speed, Power and Functionality
+    - Basic architecture of VLSI system
+
+#### Functional Design
+
+- Main functional units, Interconnect requirements of the system are identified
+- The area, power and other parameters of each unit are estimated
+- The key idea is to specify behavior, in terms of Input, Output, Timing of each unit
+- The outcome of functionality design is usually timing diagram
+- This information leads to improvement of the overall design process and reduction of complexity of the subsequent phases
+
+#### Logic Design
+
+- Design Logic, that is,
+- Boolean expressions, word width, register allocation, etc.
+
+#### Circuit Design
+
+- The purpose of the circuit design is to develop a circuit representation based on the logic design.
+- The Boolean expression can be converted into a circuit representation by taking into consideration
+
 ## VLSI Design Styles
 
 ## VLSI Verification Methodologies
