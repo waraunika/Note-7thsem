@@ -227,7 +227,7 @@ flowchart TD
 
 ## ⁠D.2. USB
 
-- SUB is high speed serial bus protocol used for sharing data between two computing platform or devices.
+- USB is high speed serial bus protocol used for sharing data between two computing platform or devices.
 - USB can be of different revisions, based on the revision the performance or speed will increase.
 - Most of FPGA consists of USB 3.0 and USB 2.0 interface bus for handling data.
 
