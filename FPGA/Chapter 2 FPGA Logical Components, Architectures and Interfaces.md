@@ -43,7 +43,7 @@
     - As SRAM technology is used to implement Lookup Tables, connection sites are large.
     - A logic block is surrounding by connection blocks on all four sides.
     - They connect logic block pins to wire segments.
-    - Pass transistors are used to implement connection for output pins, while use fo multiplexers for input pins saves the number of SRAM cells required per pin.
+    - Pass transistors are used to implement connection for output pins, while use of multiplexers for input pins saves the number of SRAM cells required per pin.
     - ![Xilinx](attachments/xilinx-routing.png)
     - The logic block pins connecting to connection blocks can then be connected to any number of wire segments through switching blocks.
     - There are four types of wire segments available:
@@ -67,7 +67,6 @@
     - The AXI3/AXI4 specification are freely-available on the ARM website.
 - As of its specification mentioned, AXI is used for high speed communication between different processing component in the "Processing device like FPGA, GPU and other".
     - AXI Offers high performance and frequency based communication or data handling between on-chip processing components.
-
 - Figures
     - ![AMBA](attachments/amba.png)
     - ![AXI](attachments/axi.png)

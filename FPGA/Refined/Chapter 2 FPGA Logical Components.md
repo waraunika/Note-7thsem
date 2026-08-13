@@ -9,8 +9,6 @@
 
 # A. Logical Interconnection and Routing Architectures in FPGA
 
-> **Focus topic 1 — Explain routing architectures in FPGA**
-
 ## A.1. Logical Interconnection — Basics
 
 - **Logical interconnection** is the configurable/programmable wiring that connects CLBs (logic blocks) to each other, to I/O blocks, and to other embedded resources (BRAM, DSP) inside the FPGA fabric.
@@ -79,8 +77,6 @@
 ---
 
 # B. AXI Interface Bus Protocol
-
-> **Focus topic 2 — AXI Bus Protocol details and its types**
 
 ## B.1. Overview
 
@@ -319,7 +315,6 @@ AXI4-Stream is used differently depending on whether the underlying data natural
 
 # E. Embedded SoC/MPSoC Architectures — Detail and Interfaces
 
-> **Focus topic 3 (part 2) — SoC/MPSoC architectures**
 
 ## E.1. SoC vs. MPSoC — Definitions
 

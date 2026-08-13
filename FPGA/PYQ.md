@@ -1,16 +1,9 @@
 # ⁠A. Chapter 1 FPGA Fundamentals (5 hours)
+## ⁠A.2.a.I. What are the building blocks of FPGA? Explain in detail \[6\]
 
-## ⁠A.1. FPGA overview and its evolution
+## ⁠A.2.a.II. Explain about DSP, BRAM and clock resources of it in detail \[3\]
 
-## ⁠A.2. General FPGA Building Blocks: LUT, FF, DSP, BRAM, I/O, clocks etc
-
-### ⁠A.2.a. Questions
-
-#### ⁠A.2.a.I. What are the building blocks of FPGA? Explain in detail \[6\]
-
-#### ⁠A.2.a.II. Explain about DSP, BRAM and clock resources of it in detail \[3\]
-
-##### ⁠A.2.a.II.i. DSP Slices (Dedicated Arithmetic Blocks)
+### ⁠A.2.a.II.i. DSP Slices (Dedicated Arithmetic Blocks)
 
 ![DSP Block](attachments/dsp-block.png)
 
@@ -28,7 +21,7 @@
 
 ![DSP Operation](attachments/dsp-operation.png)
 
-##### ⁠A.2.a.II.ii. Block RAM (BRAM)
+### ⁠A.2.a.II.ii. Block RAM (BRAM)
 
 - **BRAM** is dedicated, hardened on-chip memory distributed throughout the fabric (again, usually column-aligned near DSP columns for locality).
 - Typical Xilinx BRAM is organized as **36 Kb dual-port tiles**, each splittable into two independent **18 Kb** blocks, giving designers flexibility between one large memory or two smaller/independent ones.
@@ -38,7 +31,7 @@
 - Beyond BRAM/URAM, small amounts of memory can also be built from LUTs configured as **distributed RAM**, useful for small, fast, register-file-like storage where a full BRAM tile would be wasteful.
 - Typical uses: FIFOs and elastic buffers, packet/line buffers for video or networking, coefficient/lookup tables, cache-like structures for soft processors, and shift-register-style delay lines.
 
-##### ⁠A.2.a.II.iii. Clock Resources
+### ⁠A.2.a.II.iii. Clock Resources
 
 Reliable, low-skew, low-jitter clock distribution is critical since virtually every FPGA resource (FF, BRAM, DSP, transceiver) is clocked.
 
@@ -52,19 +45,19 @@ Reliable, low-skew, low-jitter clock distribution is critical since virtually ev
 - Clocking resources are organized hierarchically by **clock region** (a fixed grid of CLB rows/I/O banks), with global clocks reaching the whole device and regional/local buffers (BUFR, BUFIO, BUFH) serving smaller areas with even lower latency for things like I/O-adjacent high-speed logic.
 - **Design guidance**: use the vendor's **Clocking Wizard** IP to configure MMCM/PLL settings correctly, minimize the number of distinct clock domains, avoid cascading clock buffers unnecessarily (adds skew/delay), and use proper clock-domain-crossing (CDC) synchronizers/FIFOs whenever signals cross between asynchronous clock domains.
 
-##### ⁠A.2.a.II.iv. LUT (Look-Up Table)
+### ⁠A.2.a.II.iv. LUT (Look-Up Table)
 
 - The core combinational-logic primitive. A **k-input LUT** contains $2^k$ SRAM configuration cells, each holding one row of a truth table, so a k-input LUT can implement **any** Boolean function of up to k variables simply by loading the right bit pattern.
 - **4-input LUTs** were the traditional mainstream size for many years; modern high-performance families (e.g., Xilinx 7-Series and later) use **6-input LUTs**, often with two outputs (an LUT6 can be split into two LUT5s sharing inputs), improving logic density and reducing the number of levels of logic (and hence delay) needed for wide functions.
 - LUTs can also be repurposed as small **distributed RAM** or **shift registers (SRL)** when not needed purely for logic, a technique the tools use automatically or that a designer can infer explicitly.
 
-##### ⁠A.2.a.II.v. Flip-Flops (FF)
+### ⁠A.2.a.II.v. Flip-Flops (FF)
 
 - Provide the sequential storage element paired with each LUT, capturing the LUT's combinational output on a clock edge to build synchronous logic (registers, counters, state machines, pipelines).
 - Typically D-type flip-flops, with configurable set/reset polarity, clock-enable, and sometimes selectable as latches.
 - Every slice contains multiple LUT+FF pairs, wired through local multiplexers so a designer can freely mix combinational-only, sequential-only, or fully-pipelined logic within one slice.
 
-##### ⁠A.2.a.II.vi. Configurable Logic Block (CLB): Composition
+### ⁠A.2.a.II.vi. Configurable Logic Block (CLB): Composition
 
 - A CLB packages together: **LUTs**, **flip-flops**, **multiplexers** (for local signal steering/selection), and dedicated **carry-chain logic** (for fast ripple-carry addition/subtraction/comparison).
 - LUTs implement the combinational logic function; MUXes select/route between LUT outputs, carry logic, or wide-function combining paths; FFs register the result.
@@ -75,9 +68,8 @@ Reliable, low-skew, low-jitter clock distribution is critical since virtually ev
 
 ## ⁠A.3. FPGA Architectures: general architecture, vendor specific architecture summary
 
-### ⁠A.3.a. Questions
 
-#### ⁠A.3.a.I. Create the general architecture of FPGA \[3\]
+### ⁠A.3.a.I. Create the general architecture of FPGA \[3\]
 
 ![General Architecture of Xilinx](attachments/example-architecture-xilinx.png)
 
@@ -99,7 +91,7 @@ At a high level, every FPGA, regardless of vendor, is built from three classes o
         IOB   IOB   IOB   IOB
 ```
 
-##### ⁠A.3.a.I.i. Logic Blocks (CLBs / LABs / ALMs)
+#### ⁠A.3.a.I.i. Logic Blocks (CLBs / LABs / ALMs)
 
 - The CLB is the fundamental logic-building unit. Internally it contains **LUTs**, **flip-flops**, and **multiplexers**, connected through a small **local routing matrix**.
 - CLBs are grouped in **slices** (Xilinx), e.g., a Virtex/UltraScale CLB contains multiple slices, each with several 6-input LUTs, associated flip-flops, and fast carry-chain logic for efficient arithmetic.
@@ -110,21 +102,21 @@ At a high level, every FPGA, regardless of vendor, is built from three classes o
 
 ![CLB](attachments/clb.png)
 
-##### ⁠A.3.a.I.ii. Switch Matrix / Connection & Switch Boxes
+#### ⁠A.3.a.I.ii. Switch Matrix / Connection & Switch Boxes
 
 - Each CLB sits next to a **switch matrix** (switch box) that connects it into the **general routing fabric**.
 - **Connection boxes** attach a logic block's inputs/outputs to nearby routing tracks; **switch boxes** connect horizontal and vertical routing tracks to each other so a signal can turn corners and travel across the die.
 - Routing tracks come in different lengths, short "local" segments for nearby connections and long "longlines" that span most of the device for wide/global signals.
 - Routing/interconnect typically consumes the **majority of the chip's die area** (on the order of 80–90% in many academic architecture studies), which is why routing-aware placement and routing algorithms matter so much in the design-tool flow.
 
-##### ⁠A.3.a.I.iii. I/O Blocks (IOBs)
+#### ⁠A.3.a.I.iii. I/O Blocks (IOBs)
 
 - Sit at the periphery of the fabric (and increasingly inside high-speed I/O columns) and translate between the FPGA's internal logic levels and external voltage/signalling standards.
 - Contain input and output buffers, often with edge-triggered flip-flops in the I/O path for fast, well-timed data transfer to/from the pin.
 - Configurable for many single-ended (LVCMOS, LVTTL) and differential (LVDS, etc.) I/O standards, with programmable drive strength, slew rate, and on-chip termination.
 - I/O blocks and their support circuitry occupy a large fraction of overall device area, especially on smaller devices.
 
-##### ⁠A.3.a.I.iv. Configuration Interface
+#### ⁠A.3.a.I.iv. Configuration Interface
 
 - Every FPGA needs a way to load its **bitstream** (the file that sets every SRAM configuration cell that defines the LUT contents, routing switches, and I/O settings).
 - Configuration interfaces are typically **serial** (e.g., JTAG, SPI-based configuration from flash) or **parallel** (SelectMAP-style), depending on device family and required configuration speed.
@@ -132,19 +124,14 @@ At a high level, every FPGA, regardless of vendor, is built from three classes o
 
 ---
 
-## ⁠A.4. Recent developments in FPGA Architecture: heterogeneous architectures
-
-## ⁠A.5. FPGA Architecture targeted for cloud and edge platforms
-
 ## ⁠A.6. FPGA Design Flow - summary
 
-### ⁠A.6.a. Questions
 
-#### ⁠A.6.a.I. Explain about FPGA design flow. \[4\]
+### ⁠A.6.a.I. Explain about FPGA design flow. \[4\]
 
 ![Design Flow](attachments/design-flow.png)
 
-##### ⁠A.6.a.I.i. I.1. Overview
+#### ⁠A.6.a.I.i. Overview
 
 The FPGA design flow takes a design from an initial concept through HDL coding, verification, synthesis, and implementation, ending in a bitstream that configures physical hardware.
 
@@ -160,39 +147,39 @@ The FPGA design flow takes a design from an initial concept through HDL coding, 
 
 **Simulation-driven verification** (running alongside synthesis/implementation, not just at the start) is standard practice: it lets designers catch functional bugs early, much cheaper to fix in simulation than after synthesis or on hardware, by comparing the simulated HDL behavior against an expected/reference behavioral model.
 
-##### ⁠A.6.a.I.ii. I.2. Detailed Steps
+#### ⁠A.6.a.I.ii. Detailed Steps
 
-###### ⁠A.6.a.I.ii.١. I.2.a. Architecture Design
+##### ⁠A.6.a.I.ii.١. Architecture Design
 
 - Analyze project requirements and constraints (performance, area, power, interfaces).
 - Decompose the problem into functional blocks; define interfaces between them.
 - Capture the intended behavior with algorithms, flowcharts, or pseudocode before committing to RTL.
 
-###### ⁠A.6.a.I.ii.٢. HDL Design Entry
+##### ⁠A.6.a.I.ii.٢. HDL Design Entry
 
 - Translate the architecture into a formal **Hardware Description Language**, **VHDL** or **Verilog** (or increasingly, **SystemVerilog**, or **High-Level Synthesis (HLS)** from C/C++ for some flows).
 - This is the **RTL (Register-Transfer Level)** description of the design.
 
-###### ⁠A.6.a.I.ii.٣. Test Environment (Testbench) Design
+##### ⁠A.6.a.I.ii.٣. Test Environment (Testbench) Design
 
 - Develop testbenches and behavioral/reference models independent of the RTL implementation, used to apply stimulus and check correctness.
 - A good testbench should be reusable across simulation, and ideally also usable to check post-synthesis/post-implementation netlists (gate-level simulation).
 
-###### ⁠A.6.a.I.ii.٤. Behavioral (Functional) Simulation
+##### ⁠A.6.a.I.ii.٤. Behavioral (Functional) Simulation
 
 - Runs the HDL model against the testbench and compares its output to the expected/reference behavior.
 - The testbench is generally written around the **top module** of the design; simulation produces a **waveform** based on the defined stimulus/conditions.
 - The designer inspects the waveform to verify correct functional behavior.
 - If simulation reveals incorrect behavior, the designer corrects the RTL and re-simulates, this loop repeats until functional correctness is confirmed **before** proceeding to synthesis (fixing bugs later in the flow is far more costly).
 
-###### ⁠A.6.a.I.ii.٥. Synthesis
+##### ⁠A.6.a.I.ii.٥. Synthesis
 
 - A **synthesis tool** converts the HDL description into a **gate-level netlist**, mapping the design's logic to the specific primitives available on the target FPGA (LUTs, FFs, DSP slices, BRAM, carry chains, etc.).
 - Synthesis also performs logic optimization (e.g., inferring DSP slices from multiply/MAC patterns, inferring BRAM/distributed RAM from memory-style code, resource sharing) to make efficient use of the target device's hard blocks.
 
 ![Synthesis Process](attachments/synthesis-levels.png)
 
-###### ⁠A.6.a.I.ii.٦. Implementation
+##### ⁠A.6.a.I.ii.٦. Implementation
 
 - The synthesized netlist is mapped onto the **particular target device's physical structure**:
     - **Translate**: merge the netlist with design constraints (timing, placement, I/O) into a unified design database.
@@ -203,7 +190,7 @@ The FPGA design flow takes a design from an initial concept through HDL coding, 
 
 ![Placement and Routing Stages](attachments/placement-routing.png)
 
-###### ⁠A.6.a.I.ii.٧. Timing Analysis
+##### ⁠A.6.a.I.ii.٧. Timing Analysis
 
 - **Static Timing Analysis (STA)** checks whether the implemented (placed-and-routed) design meets all specified timing constraints: setup/hold time margins on every register-to-register path, I/O timing, and clock-domain-crossing constraints.
 - If timing is not met, the design typically needs to be re-optimized (pipelining, floorplanning/placement constraints, reducing logic levels, or lowering the target clock frequency) and re-implemented.
@@ -216,33 +203,192 @@ The FPGA design flow takes a design from an initial concept through HDL coding, 
 
 ## ⁠B.1. Logical Interconnection and Routing architectures in FPGA
 
-### ⁠B.1.a. Questions
 
-#### ⁠B.1.a.I. Write about different routing architectures in FPGA \[4\]
+### ⁠B.1.a.I. Write about different routing architectures in FPGA \[4\]
+
+#### ⁠Popular Routing Architecture
+
+1. Island Style Routing Architecture
+    - This is old fashioned routing architecture.
+    - It is also one of the popular architecture
+    - Here every CLB has route channel at all sides via Connection Box.
+    - This architecture is most crowded or complex architecture.
+    - It consists of vertical and horizontal routing which is consistent in switch boxes (SB)
+    - ![Island Routing](attachments/2026-08-10-21-39-35.png)
+2. Hierarchical Routing Architecture
+    - It is also called as tree-based architecture
+    - Here logical blocks of FPGA are divided into clusters.
+    - This architecture reduce the routing lanes and increase the speed between the configurable clusters or groups
+    - ![Hierarchical](attachments/hierarchical-arch.png)
+3. Xilinx Routing Architecture
+    - In Xilinx routing in Virtex II FPGAs: connections are made from logic block into the channel through a connection block.
+    - As SRAM technology is used to implement Lookup Tables, connection sites are large.
+    - A logic block is surrounding by connection blocks on all four sides.
+    - They connect logic block pins to wire segments.
+    - Pass transistors are used to implement connection for output pins, while use of multiplexers for input pins saves the number of SRAM cells required per pin.
+    - ![Xilinx](attachments/xilinx-routing.png)
+    - The logic block pins connecting to connection blocks can then be connected to any number of wire segments through switching blocks.
+    - There are four types of wire segments available:
+        - general purpose segments, the ones that pass through switches in the switch block
+        - Direct interconnect: ones which connect logic block pins to four surrounding connecting blocks
+        - long line: high fan out uniform delay connections
+        - clock lines: clock signal provider which runs all over the chip.
+4. Other Routing Architectures
+    1. Vendor Specific Routing Architecture
+        - Altera and Actel FPGA architectures uses different routing architecture.
+        - Based in logical blocks placement and the connection/routing channel availability in FPGA architecture the routing methods is determined
+            - For example, Xilinx and major FPGA vendor has number of types of FPGA in which the organization of different logical components is different so as of that organization the routing architecture is determined.
 
 ## ⁠B.2. AXI Interface Bus protocol
 
-### ⁠B.2.a. Questions
 
-#### ⁠B.2.a.I. What is AXI Bus Protocol \[2\]
+### ⁠B.2.a.I. What is AXI Bus Protocol \[2\]
 
-#### ⁠B.2.a.II. Write about it and its types \[3\]
+### ⁠B.2.a.II. Write about it and its types \[3\]
 
-## ⁠B.3. High speed Interfaces and usage of those interfaces
+#### ⁠ Overview
 
-## ⁠B.4. High speed bus protocols in FPGA : USB, PCIe, Ethernet, MIPI etc
+- AXI, which means **A**dvanced e**X**tensible **I**nterface, is an interface protocol defined by ARM as part of the AMBA (Advanced Microcontroller Bus Architecture) standard.
+    - The AXI3/AXI4 specification are freely-available on the ARM website.
+- As of its specification mentioned, AXI is used for high speed communication between different processing component in the "Processing device like FPGA, GPU and other".
+    - AXI Offers high performance and frequency based communication or data handling between on-chip processing components.
+- Figures
+    - ![AMBA](attachments/amba.png)
+    - ![AXI](attachments/axi.png)
+
+#### ⁠ Features
+
+- Burst-Based transactions with only one address
+- Supports unaligned data-transfer (Strobes)
+- Separate the read and write data channels
+- Supports optional low-power operation
+- Ability to issue multiple outstanding address and out-of-order transaction completion
+- Separate the address phase from the data phase
+
+#### ⁠ AXI Protocol System
+
+- AXI protocol supports single master multi-slave and multi-master and multi-slave configuration by using AXI interconnect engine or block.
+- AXI is part of AMBA
+- ![AXI Protocol](attachments/axi-protcol.png)
+
+```mermaid
+flowchart TD
+    A[AMBA] --> B[APB]
+    A --> C[AHB]
+    A --> D[AXI]
+    A --> E[ATB]
+
+    subgraph Group1["Enhacements for FPGAs"]
+        I[AXI-4<br>Stream]
+        F[AXI-4<br>Memory Map]
+    end
+
+    subgraph Group2["Same Spec"]
+        H[AXI-4<br>Lite]
+        G[AXI-4<br>Stream]
+    end
+
+    D --> F
+    D --> G
+    D --> H
+```
+
+| Interface                | Features                                                             | Similar To                                      |
+| ------------------------ | -------------------------------------------------------------------- | ----------------------------------------------- |
+| Memory Map / Full (AXI4) | Traditional Address / Data Burst<br>(single address, multiple data)  | PLBv46, PCI                                     |
+| Streaming (AXI4-Stream)  | Data-Only, Burst                                                     | Local Link / DSP Interfaces / <br> / FIFO / FSL |
+| Lite<br>(AXI4-Lite)      | Traditional Address/Data: No Burst <br>(single address, single data) | PLBv46-single<br>OPB                            |
+
+#### ⁠ Basic AXI Signaling - 5 Channels
+
+1. Read Address Channel
+2. Read Data Channel
+3. Write Address Channel
+4. Write Data Channel
+5. Write Response Channel
+
+![AXI Signaling](attachments/axi-signaling.png)
+
+## ⁠ The AXI INterface - AX4-Lite
+
+- No burst
+- Data width 32 or 64 only
+    - Xilinx AXI IP only supports 32-bits
+- Very small footprint
+- In Xilinx VIVADO Bridging to AXI4 handheld automatically by
+
+## ⁠ The AXI Interface - AXI4
+- AXI_Interconnect (if needed)
+- Sometimes called "Full AXI" or "AXI Memory Mapped"
+    - Not ARM-sanctioned names
+- Single address multiple data
+    - Burst up to 256 data beats
+- Data Width parameterizable
+    - 1024 bits
+
+#### ⁠ The AXI Interface - AXI4-Stream
+
+- No address channel, no read and write, always just master to slave
+    - Effectively an AXI4 "write data" channel
+- Unlimited burst length
+    - AXI4 max 256
+    - AXI4-Lite does not burst
+- Virtually same signaling as AXI Data Channels
+    - Protocol allows merging, packing, width conversion
+    - Supports sparse, continuous, aligned, unaligned streams
+
+#### ⁠ Signaling
+
+- AXI4-lite
+    - ![AXI4-lite](attachments/axi4-lite.png)
+- AXI4
+    - ![AXI4](attachments/axi4.png)
+- AXI4-Stream
+    - ![AXI4-Stream Transfer](attachments/axi4-stream.png)
+
 
 ## ⁠B.5. Embedded SoC/MPSoC architectures detail and interfaces
 
-### ⁠B.5.a. Questions
 
-#### ⁠B.5.a.I. Write about SoC/MPSoC FPGA Architectures and some high speed interfacaes in those. \[4\]
+### ⁠B.5.a.I. Write about SoC/MPSoC FPGA Architectures and some high speed interfacaes in those. \[4\]
+
+#### SoC vs. MPSoC — Definitions
+
+- An embedded **SoC** (System-on-Chip) integrates a **processor/CPU together with the FPGA fabric** on the same physical chip/device — this is the architecture covered in depth in Chapter 1, Section F (e.g., Xilinx Zynq-7000).
+  - An SoC-class FPGA could have **one or two** processor cores.
+- An **MPSoC** (Multi-Processor SoC) extends this concept further: it integrates **more than two processors**, often of **different types** (e.g., an applications-class CPU cluster *and* a real-time CPU cluster *and* a GPU, as in Zynq UltraScale+ MPSoC — see Chapter 1, Section F.2).
+- Both SoC and MPSoC architectures are designed to handle diverse data types simultaneously — **audio, video, sensor data, file-system/storage traffic**, and more — which is exactly why they need a rich mix of interfaces (below) to get all of that heterogeneous data on and off the chip.
+
+#### Representative MPSoC Interface Architecture
+
+![Interface expanded architecture of MPSoC](./attachments/interface-mpsoc.png)
+
+#### Interface Categories in SoC/MPSoC
+
+1. SoC and MPSoC architectures of this kind are **mainly targeted at low-power and edge-based applications** — embedded vision, industrial control, instrumentation, automotive, and similar use cases where a full datacenter-class cloud FPGA (Chapter 1, Section H.2) would be overkill on power and cost.
+2. These devices generally expose **two broad classes of interface**:
+
+| Interface Class                            | Examples                                          | Typical Role                                                                                          |
+| ------------------------------------------ | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **General-purpose interfaces**             | USB 2.0, CAN, UART, I2C, SPI                      | Low-speed control, configuration, sensor polling, simple peripheral communication                     |
+| **High-speed (high-bandwidth) interfaces** | USB 3.0, LVDS, MIPI, HDMI, PCIe, Gigabit Ethernet | Bulk data movement — camera/video streams, display output, storage, high-rate sensor data, networking |
+
+3. The general-purpose interfaces listed are chosen specifically because they are **low-power** and well-suited to **embedded/edge-based applications**, where power and board-space budgets are much tighter than in a server or datacenter environment.
+4. In an SoC/MPSoC FPGA, these interfaces are what let the device **receive, process, and send** data across all of the diverse data types mentioned in E.1 — the PS (or APU/RPU/GPU in an MPSoC) typically manages the general-purpose/control-plane interfaces, while high-bandwidth data streams are routed either directly through hardened peripheral controllers or via AXI4-Stream/VDMA (Section B) into the PL for custom processing, and/or into DDR memory for buffering.
+
+#### How This Ties Together
+
+A typical SoC/MPSoC data path illustrates why Sections B, C/D, and E are closely linked:
+1. A **high-speed interface** (e.g., a MIPI CSI camera or an LVDS sensor) brings raw data onto the chip.
+2. The interface's PHY/controller presents that data to the fabric as an **AXI4-Stream**.
+3. An **AXI VDMA** (Section B.9–B.10) converts the stream into **AXI4 memory-mapped** writes into DDR, or feeds it directly to PL processing logic.
+4. The **PS** (via **AXI4-Lite**, Section B.4.2) configures and triggers the VDMA and any custom PL accelerators, and is interrupted on completion.
+5. Processed results may then leave the chip again via another high-speed interface — e.g., **HDMI/DisplayPort** for display, or **PCIe/Ethernet** (Section D) to a host or network — completing the receive-process-send cycle described in E.4.
 
 ---
 
 # ⁠C. Chapter 3 Digital design, simulation and verification with RTL (VHDL/Verilog) (6 hours)
 
-## ⁠C.1. Verilog HDL overview- syntax, semantics, datatypes, primitives, etc
 
 ## ⁠C.2. Behavioral versus structural design modeling
 
@@ -252,41 +398,163 @@ The FPGA design flow takes a design from an initial concept through HDL coding, 
 
 #### ⁠C.2.a.II. Write on behavioral and structural modeling techniques with example in Verilog. \[5\]
 
-## ⁠C.3. Logical component design with RTL/Verilog and performing simulation: combinational/sequential blocks, FSM, ALU, processor and DSP algorithms
-
-## ⁠C.4. Verification approaches on RTL
-
-## ⁠C.5. RTL design methodologies for FPGA and VLSI Design
-
-## ⁠C.6. Design optimization on RTL for FPGA and VLSI Design
-
 ## ⁠C.7. Verilog Programming
 
-### ⁠C.7.a. Questions
 
-#### ⁠C.7.a.I. Write a Verilog code for 4-bit subtractor and also write testbench for it. \[6\]
+### ⁠C.7.a.I. Write a Verilog code for 4-bit subtractor and also write testbench for it. \[6\]
 
-#### ⁠C.7.a.II. Write a Verilog code for 8-bit ALU by including 8 common arithmetic & logical operation
+```verilog
+module subtractor (
+    input [3:0] A, B,
+    output [3:0] Y,
+    output B_out
+);
 
-_Acc to Me and DragonLord, there will be 8 total opcodes, not 8+8_
+    assign {B_out, Y} = A - B;
+endmodule
+```
+
+testbench
+```verilog
+`timescale 1ns / 1ps
+module subtractor_tb();
+    reg [3:0] x, y;
+    wire [3:0] z;
+    wire bo;
+
+    subtractor uut(
+        .A(x), .B(y),
+        .Y(z), .B_out(bo)
+    );
+
+    initial begin
+        $dumpfile("subtractor.vcd");
+        $dumpvars(0, uut);
+
+        x = 4'b0010; y = 4'b0100; #10;
+        x = 4'b1010; y = 4'b0110; #10;
+        x = 4'b1001; y = 4'b1110; #10;
+    end
+endmodule
+```
+
+
+### ⁠C.7.a.II. Write a Verilog code for 8-bit ALU by including 8 common arithmetic & logical operation
+
+```verilog
+module alu_behavioral (
+    input [7:0] A,
+    B,
+    input [2:0] ALU_OP,
+    output reg [7:0] OUT,
+    output reg carry
+);
+  always @(*) begin
+    OUT   = 8'h00;
+    carry = 1'b0;
+    case (ALU_OP)
+      3'b000: {carry, OUT} = A + B;  // ADD
+      3'b001: {carry, OUT} = A - B;  // SUB
+      3'b010: OUT = {A[7], A[7:1]};  // Right Arithmetic Shift
+      3'b011: {carry, OUT} = {A[6:0], 1'b0};  // Left Arithmetic Shift
+
+      3'b100: OUT = A & B;
+      3'b101: OUT = A | B;
+      3'b110: OUT = ~(A | B);
+      3'b111: OUT = ~A;
+
+      default: ;
+    endcase
+  end
+
+endmodule
+
+module alu_dataflow (
+    input [7:0] A,
+    B,
+    input [2:0] ALU_OP,
+    output [7:0] OUT,
+    output carry
+);
+
+  // intermediary wires
+  wire [7:0] SUM, DIFF, ARSHIFT, ALSHIFT;
+  wire [7:0] lAND, lOR, lNOR, lNOT;
+  wire cout, bout;
+
+  assign {cout, SUM} = A + B;
+  assign {bout, DIFF} = A - B;
+
+  assign ARSHIFT = {A[7], A[7:1]};
+  assign ALSHIFT = {A[6:0], 1'b0};
+
+  assign lAND = A & B;
+  assign lOR = A | B;
+
+  assign lNOR = ~lOR;
+  assign lNOT = ~A;
+
+  assign OUT = (ALU_OP == 3'b000) ? SUM:
+        (ALU_OP == 3'b001) ? DIFF:
+        (ALU_OP == 3'b010) ? ARSHIFT:
+        (ALU_OP == 3'b011) ? ALSHIFT:
+        (ALU_OP == 3'b100) ? lAND:
+        (ALU_OP == 3'b101) ? lOR:
+        (ALU_OP == 3'b110) ? lNOR:
+        (ALU_OP == 3'b111) ? lNOT : 8'h00;
+
+
+  assign carry = (ALU_OP == 3'b000) ? cout : (ALU_OP == 3'b001) ? cout : 1'b0;
+
+  assign carry = bout;
+
+endmodule
+```
+
+testbench
+```verilog
+`timescale 1ns / 1ps
+module alu_tb();
+    reg [7:0] A, B;
+    reg [2:0] ALU_OP;
+    wire [7:0] OUT;
+    wire carry;
+
+    alu_behavioral uut(
+        .A(A), .B(B), .ALU_OP(ALU_OP),
+        .OUT(OUT), .carry(carry)
+    );
+
+    initial begin
+        $dumpfile("alu.vcd");
+        $dumpvars(0, uut);
+
+        A = 8'h0F; B = 8'h05; ALU_OP = 3'b000; #10;  // ADD
+        A = 8'h0F; B = 8'h05; ALU_OP = 3'b001; #10;  // SUB
+        A = 8'hC3; B = 8'h00; ALU_OP = 3'b010; #10;  // Right Arithmetic Shift
+        A = 8'hC3; B = 8'h00; ALU_OP = 3'b011; #10;  // Left Arithmetic Shift
+        A = 8'hF0; B = 8'h0F; ALU_OP = 3'b100; #10;  // AND
+        A = 8'hF0; B = 8'h0F; ALU_OP = 3'b101; #10;  // OR
+        A = 8'hF0; B = 8'h0F; ALU_OP = 3'b110; #10;  // NOR
+        A = 8'hF0; B = 8'h0F; ALU_OP = 3'b111; #10;  // NOT
+    end
+endmodule
+```
 
 ---
 
 # ⁠D. Chapter 4 Advance RTL design approaches for FPGA (4 hours)
 
-## ⁠D.1. Advance RTL design for latency critical and resource critical designs- overview
-
 ## ⁠D.2. Resource, latency, clock and power optimization methodologies
 
-### ⁠D.2.a. Questions
 
-#### ⁠D.2.a.I. Explain about latency and throughput optimization Verilog RTL with examples. \[7\]
+### ⁠D.2.a.I. Explain about latency and throughput optimization Verilog RTL with examples. \[7\]
 
-#### ⁠D.2.a.II. Explain about different optimization techniques in RTL, targeting to latency, throughput and power optimization \[7\]
+### ⁠D.2.a.II. Explain about different optimization techniques in RTL, targeting to latency, throughput and power optimization \[7\]
 
-##### ⁠D.2.a.II.i. Latency
+#### ⁠D.2.a.II.i. Latency
 
-![Removing Pipeline registers](../attachments/latency-opt.png)
+![Removing Pipeline registers](./attachments/latency-opt.png)
 
 - **Goal**: minimize the time from a specific input arriving to its corresponding output being available — i.e., pass data from input to output with **minimal internal processing delay**.
 - A low-latency design generally uses **parallelism** (doing more work per cycle, in combinational logic) instead of relying on deep pipelining, and looks to **remove unnecessary pipeline register stages** wherever timing allows.
@@ -316,9 +584,9 @@ end
 - The trade-off versus the pipelined version: **latency drops from 3 cycles to effectively 1**, but the **combinational path is now much longer** (three levels of multiplication happen in a single clock period instead of being spread across three), which **reduces the maximum achievable clock frequency** — so "low latency" in cycles doesn't automatically mean low latency in absolute time if the achievable clock speed drops enough.
 - This illustrates the fundamental **latency-vs-throughput-vs-clock-speed trade-off**: you can shrink cycle count (latency in cycles) by removing pipeline registers, but only at the cost of a longer combinational path per cycle, which either lowers Fmax or, if Fmax must be held constant, may fail timing altogether.
 
-##### ⁠D.2.a.II.ii. Throughput
+#### ⁠D.2.a.II.ii. Throughput
 
-![Throughput](../attachments/throughput-opt.png)
+![Throughput](./attachments/throughput-opt.png)
 
 - **Goal**: minimize the time elapsed **between successive input reads**, even if the time to fully process any single input (its own latency) is comparatively unimportant.
 - The key idea is that **data item n+1 can begin being read/processed while data item n is still being processed** further down the pipeline — this is the essence of pipelining for throughput.
@@ -383,21 +651,16 @@ Power optimization is, to a significant degree, an **implication** of the area/r
 - Power consumption also depends on the **FPGA architecture itself** and precisely **how** logical resources are used (e.g., using a hardened DSP slice for a multiply is typically both faster _and_ lower-power than the equivalent function built from general LUT fabric).
 - The **synthesis/implementation tool's placement decisions** also affect power — where different operational blocks end up physically placed on the die affects routing length/capacitance and can be influenced by power-oriented synthesis/implementation strategies (again, e.g., Vivado's power-optimization strategies, which specifically target reduced switching activity and clock-gating opportunities).
 
-## ⁠D.3. Considerations/approaches for Implementing RTL design in a real-world scenario
-
 ---
 
 ---
 
 # ⁠E. Chapter 5 VLSI Design and Verification (6 hours)
 
-## ⁠E.1. VLSI Design, IC technology, CAD tools on VLSI- overview
-
 ## ⁠E.2. VLSI Design flow, design styles and verification methodologies
 
-### ⁠E.2.a. Questions
 
-#### ⁠E.2.a.I. Explain about VLSI design flow in detail \[6\]
+### ⁠E.2.a.I. Explain about VLSI design flow in detail \[6\]
 
 #### ⁠E.2.a.II. Overview
 
@@ -409,7 +672,7 @@ Power optimization is, to a significant degree, an **implication** of the area/r
 
 ![Design Flowchart](./attachments/design-flow.png)
 
-##### ⁠E.2.a.II.i. Design Methodology: Top-Down vs. Bottom-Up
+#### ⁠E.2.a.II.i. Design Methodology: Top-Down vs. Bottom-Up
 
 There are two basic approaches to structuring a digital VLSI design:
 
@@ -425,13 +688,13 @@ There are two basic approaches to structuring a digital VLSI design:
 
 - In practice, real projects generally use a **combination of both**: a top-down architectural decomposition guided by, and reconciled against, a bottom-up inventory of available reusable blocks.
 
-![Design Flow Simplified](../attachments/simplified-design-flow.png)
+![Design Flow Simplified](./attachments/simplified-design-flow.png)
 
-##### ⁠E.2.a.II.ii. Detailed Steps of the VLSI Design Flow
+#### ⁠E.2.a.II.ii. Detailed Steps of the VLSI Design Flow
 
 The canonical VLSI design flow is typically described as an **eight-step process**: system specification, architectural design, functional/behavioral design, logic design, circuit design, physical design, fabrication, and packaging/testing. Each is detailed below.
 
-###### ⁠E.2.a.II.ii.١. System Specification
+##### ⁠E.2.a.II.ii.١. System Specification
 
 - The **first step** of the design process: laying down the specification of the system as a whole.
 - This is a **high-level representation** of the system, considering:
@@ -441,12 +704,12 @@ The canonical VLSI design flow is typically described as an **eight-step process
     - **Technological and economical viability**
 - **Outcome**: a specification covering **size, speed, power, and functionality**, along with the **basic architecture** of the VLSI system, this document is what every later stage is validated against.
 
-###### ⁠E.2.a.II.ii.٢. Architectural Design
+##### ⁠E.2.a.II.ii.٢. Architectural Design
 
 - Using the system specification, the **design engineer/architect** works out the chip's architecture: major subsystems, datapaths, memory organization, and how they interconnect.
 - This step produces an initial **C-model or high-level RTL model** and an initial **floorplan** sketch (a rough estimate of how major blocks will be arranged on the die).
 
-###### ⁠E.2.a.II.ii.٣. Functional (Behavioral) Design
+##### ⁠E.2.a.II.ii.٣. Functional (Behavioral) Design
 
 - The system's **main functional units** and their **interconnect requirements** are identified.
 - The **area, power, and other parameters** of each functional unit are **estimated** at this stage (before detailed implementation), to catch infeasible designs early.
@@ -454,12 +717,12 @@ The canonical VLSI design flow is typically described as an **eight-step process
 - **Outcome**: usually a **timing diagram** describing how each unit's signals behave over time.
 - This early behavioral information feeds forward into later phases, generally **improving the overall design process and reducing the complexity** of subsequent stages (since major architectural mistakes are caught before detailed logic/circuit work begins).
 
-###### ⁠E.2.a.II.ii.٤. Logic Design
+##### ⁠E.2.a.II.ii.٤. Logic Design
 
 - Converts the functional/behavioral description into actual **logic**: Boolean expressions, word widths, register allocation, arithmetic and logic operations.
 - This is where **register-transfer level (RTL)** descriptions (in VHDL/Verilog) are typically produced and verified: the RTL is what represents the functional design as testable, synthesizable logic.
 
-###### ⁠E.2.a.II.ii.٥. Circuit Design
+##### ⁠E.2.a.II.ii.٥. Circuit Design
 
 - **Purpose**: develop a **circuit representation** based on the logic design.
 - The Boolean expressions from the logic design are converted into a circuit representation, this conversion takes into account the **speed and power requirements** of the original specification, since the same Boolean function can be implemented with circuits of very different speed/power/area trade-offs.
@@ -467,7 +730,7 @@ The canonical VLSI design flow is typically described as an **eight-step process
 - **Outcome**: a **netlist**, a structural description of all components and their connections.
 - **Circuit simulation** is used at this stage to verify the **correctness and timing** of each component before committing to physical implementation.
 
-###### ⁠E.2.a.II.ii.٦. Physical Design
+##### ⁠E.2.a.II.ii.٦. Physical Design
 
 - Takes the circuit (post logic-synthesis) and converts it into an actual **layout**, the geometric mask patterns that will be fabricated.
 - Physical design itself has several well-known sub-steps (industry-standard terminology, expanding on the original notes):
@@ -478,25 +741,25 @@ The canonical VLSI design flow is typically described as an **eight-step process
     - **Parasitic extraction**: extracting the real resistance/capacitance of the routed wires for accurate post-layout timing analysis.
     - **Physical verification**: **DRC** (Design Rule Check, verifies the layout obeys the foundry's manufacturing rules), **LVS** (Layout-Versus-Schematic, verifies the layout is electrically identical to the source netlist/schematic; "LVS clean" means they match), and **ERC** (Electrical Rule Check, checks for electrical issues like floating nodes or shorted supplies).
 
-###### ⁠E.2.a.II.ii.٧. Fabrication (and Tape-Out)
+##### ⁠E.2.a.II.ii.٧. Fabrication (and Tape-Out)
 
 - After physical verification, the design is ready for fabrication.
 - **Tape-out** is the milestone marking the handoff of the final, signed-off design (as a **GDSII** layout file) to the semiconductor foundry, historically named for the era when designs were physically delivered on magnetic tape.
 - **Fabrication** itself is a multi-step process at the foundry, including: **wafer growth, epitaxial growth, masking, etching, doping, deposition, and diffusion** of various materials onto the wafer, with a separate photomask used at each masking step. Each fabricated wafer yields hundreds of individual chips ("dies").
 
-###### ⁠E.2.a.II.ii.٨. Packaging, Testing, and Debugging
+##### ⁠E.2.a.II.ii.٨. Packaging, Testing, and Debugging
 
 - Individual dies are diced from the wafer, then **packaged** into their final form factor (e.g., BGA, QFN).
 - **Automated Test Equipment (ATE)** and techniques such as **burn-in testing** are used to verify functionality and performance and to screen out defective parts before the chip ships.
 
-#### ⁠E.2.a.III. Explain about verification methodologies in VLSI \[3\]
+### ⁠E.2.a.III. Explain about verification methodologies in VLSI \[3\]
 
-##### ⁠E.2.a.III.i. Why Verification Matters
+#### ⁠E.2.a.III.i. Why Verification Matters
 
 - Verification is widely reported to consume roughly **70% of total VLSI design time** in modern projects, catching functional bugs before an expensive, slow silicon fabrication run is far cheaper than discovering them after tape-out, where a bug may require a costly re-spin.
 - Verification spans **multiple levels** of the design (behavioral, RTL, gate-level, transistor-level) and **multiple aspects** of correctness (functional behavior _and_ timing).
 
-##### ⁠E.2.a.III.ii. Verification Methods (Broad Categories)
+#### ⁠E.2.a.III.ii. Verification Methods (Broad Categories)
 
 - **Functional Verification**
     - **Simulation**: the dominant method: exercise the design model against test stimuli and check the resulting outputs against expected behavior.
@@ -508,7 +771,7 @@ The canonical VLSI design flow is typically described as an **eight-step process
 - **Semiformal Verification**
     - **Assertion-Based Methods**: embeds formal-style assertions (e.g., SystemVerilog Assertions/SVA) directly into the design or testbench, which are then checked continuously _during_ simulation, blending the exhaustiveness of formal reasoning (for the specific property asserted) with the practicality of simulation-based flows.
 
-##### ⁠E.2.a.III.iii. Verification Techniques (By Abstraction Level)
+#### ⁠E.2.a.III.iii. Verification Techniques (By Abstraction Level)
 
 - **Simulation** (functional and timing), applied at multiple abstraction levels:
     - **Behavioral**: validates high-level algorithmic/architectural correctness.
@@ -523,7 +786,7 @@ The canonical VLSI design flow is typically described as an **eight-step process
     - **Static Timing Analysis (STA)**: analyzes every timing path in the design without requiring simulation vectors, checking setup/hold margins exhaustively across the whole design; the standard sign-off timing methodology in modern VLSI flows.
     - **Dynamic Timing Analysis**: timing verification performed via simulation with real (or extracted) delays, useful for scenarios STA handles less naturally (e.g., certain asynchronous or multi-cycle timing exceptions).
 
-##### ⁠E.2.a.III.iv. Verification Approaches on RTL (Detailed)
+#### ⁠E.2.a.III.iv. Verification Approaches on RTL (Detailed)
 
 1. **Simulation**
     - Verifying functionality via **testbench-based simulation**: different **test cases** or **input scenarios** are applied to the design, and the resulting output is analyzed against expected behavior.
@@ -541,7 +804,7 @@ The canonical VLSI design flow is typically described as an **eight-step process
 4. **Timing Analysis**
     - Most timing analysis in modern flows is performed using dedicated **STA tools**, driven and controlled via **timing constraints** (SDC-format constraints specifying clock periods, I/O delays, false paths, multicycle paths, etc.) supplied by the design team.
 
-##### ⁠E.2.a.III.v. VLSI Verification Methodology: Languages and Frameworks
+#### ⁠E.2.a.III.v. VLSI Verification Methodology: Languages and Frameworks
 
 | Language / Methodology                       | Description                                                                                                                                                                                                                                                                                                                                                                                                           |
 | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -553,25 +816,24 @@ The canonical VLSI design flow is typically described as an **eight-step process
 
 ## ⁠E.3. CMOS Circuit and Logic Design
 
-### ⁠E.3.a. Questions
 
-#### ⁠E.3.a.I. Explain about CMOS circuit design \[3\]
+### ⁠E.3.a.I. Explain about CMOS circuit design \[3\]
 
-##### ⁠E.3.a.I.i. CMOS Overview
+#### ⁠E.3.a.I.i. CMOS Overview
 
 - **CMOS** = **C**omplementary **M**etal-**O**xide **S**emiconductor.
 - A semiconductor technology used to build the transistors found in the vast majority of today's computer microchips.
 - In CMOS technology, **both** transistor types, **NMOS** and **PMOS**, are used together in a **complementary** arrangement, forming a switching structure that provides effective, low-power electrical control of the output.
 
-![Example of NOT gate in CMOS](../attachments/inverter-cmos.png)
+![Example of NOT gate in CMOS](./attachments/inverter-cmos.png)
 
-##### ⁠E.3.a.I.ii. CMOS Working Principle
+#### ⁠E.3.a.I.ii. CMOS Working Principle
 
 - Both **N-type** and **P-type** MOSFETs are used together to implement logic functions.
 - The defining characteristic of CMOS: **the same input signal that turns ON a transistor of one type simultaneously turns OFF the transistor of the other type.**
 - This complementary switching behavior is what allows CMOS logic gates to be built from **simple switches alone**, with **no need for a separate pull-up resistor** (unlike NMOS-only logic, which requires a pull-up device that draws current even in steady state, see A.5).
 
-##### ⁠E.3.a.I.iii. CMOS Characteristics
+#### ⁠E.3.a.I.iii. CMOS Characteristics
 
 - **Low static power dissipation, high noise immunity.**
     - In steady state, for any valid logic input, **one of the two series-connected transistors (NMOS/PMOS) is always OFF**, meaning essentially no DC current path exists from VDD to ground, this is the fundamental reason CMOS static power is so low.
@@ -582,7 +844,7 @@ The canonical VLSI design flow is typically described as an **eight-step process
     - Historically, the gate material was a metal such as **aluminum**; for several decades the industry instead used **polysilicon** gates (more compatible with high-temperature CMOS process steps).
     - With the introduction of **high-k dielectric materials** in advanced process nodes, true **metal gates made a comeback**, replacing polysilicon in modern high-performance CMOS processes (the "high-k metal gate," or HKMG, transition).
 
-##### ⁠E.3.a.I.iv. Advantages of CMOS
+#### ⁠E.3.a.I.iv. Advantages of CMOS
 
 - Operates from a **single power supply** (VDD).
 - **Simple gate structures.**
@@ -598,7 +860,7 @@ The canonical VLSI design flow is typically described as an **eight-step process
 - **Mechanically robust.**
 - **Large logic swing**: output voltage swings essentially rail-to-rail, from ~0 V to ~VDD, giving good noise margins (see Section E.3).
 
-##### ⁠E.3.a.I.v. Applications of CMOS
+#### ⁠E.3.a.I.v. Applications of CMOS
 
 CMOS technology is used across the large majority of modern digital IC design, including:
 
@@ -607,20 +869,20 @@ CMOS technology is used across the large majority of modern digital IC design, i
 - **Flash memory chip design**
 - **ASIC design** more broadly
 
-##### ⁠E.3.a.I.vi. Disadvantages of CMOS
+#### ⁠E.3.a.I.vi. Disadvantages of CMOS
 
 - **Cost increases** as the number of processing steps increases, though this can often be mitigated through process optimization and volume.
 - **Packing density** is lower compared to NMOS-only logic (which needs only one transistor per logic input rather than a complementary pair).
 - **Electrostatic discharge (ESD) sensitivity**: MOS chips must be protected from static-charge buildup (e.g., by shorting leads during handling); without protection, static discharge through the leads can damage the chip. This is generally addressed by including **on-chip ESD protection circuitry**.
 - **Uses two transistors instead of one** to build a basic inverter (one NMOS + one PMOS, versus a single NMOS plus a passive/active load in NMOS-only logic): meaning CMOS logic gates generally consume **more silicon area** per gate than the NMOS-only equivalent, for the density benefit traded away against much lower static power.
 
-##### ⁠E.3.a.I.vii. NMOS Transistor: Working Principle
+#### ⁠E.3.a.I.vii. NMOS Transistor: Working Principle
 
 - When a **positive voltage** (logic HIGH) is applied to the **gate terminal**, relative to the source, of an NMOS transistor:
     - It creates an **electric field** that **attracts electrons** toward the interface between the gate oxide and the semiconductor substrate, forming a conductive n-type channel.
     - Once the gate-source voltage exceeds the **threshold voltage** $V_{th}$, the **N-channel MOSFET turns ON**, allowing current to flow between drain and source.
 
-##### ⁠E.3.a.I.viii. PMOS Transistor: Working Principle
+#### ⁠E.3.a.I.viii. PMOS Transistor: Working Principle
 
 - When a **negative voltage** (logic LOW), relative to the source, is applied to the **gate terminal** of a PMOS transistor:
     - It creates an **electric field** that **repels holes** away from the gate-oxide/substrate interface, forming a conductive p-type channel.
@@ -629,15 +891,13 @@ CMOS technology is used across the large majority of modern digital IC design, i
 
 ## ⁠E.4. Design and analysis of the CMOS inverter
 
-### ⁠E.4.a. Questions
+### ⁠E.4.a.I. Detail about CMOS inverter design and its analysis \[7\]
 
-#### ⁠E.4.a.I. Detail about CMOS inverter design and its analysis \[7\]
+### ⁠E.4.a.II. Create CMOS inverter and explain about it \[3\]
 
-#### ⁠E.4.a.II. Create CMOS inverter and explain about it \[3\]
+#### ⁠E.4.a.II.i. Circuit Structure
 
-##### ⁠E.4.a.II.i. Circuit Structure
-
-![NMOS/PMOS Inverter](../attachments/nmos-inverter.png)
+![NMOS/PMOS Inverter](./attachments/nmos-inverter.png)
 
 - The CMOS inverter is the **simplest and most fundamental CMOS logic gate**, and serves as the building block for understanding every other CMOS gate.
 - The circuit consists of **one PMOS and one NMOS transistor**, connected as follows:
@@ -646,7 +906,7 @@ CMOS technology is used across the large majority of modern digital IC design, i
     - The **NMOS transistor** is connected between the output node and **VSS/ground**, it acts as the **pull-down** device.
     - The shared drain connection of both transistors is the circuit's **output, Y**.
 
-##### ⁠E.4.a.II.ii. Working (Switching Behavior)
+#### ⁠E.4.a.II.ii. Working (Switching Behavior)
 
 - **When A is HIGH (≈ VDD)**:
     - The **PMOS** transistor's gate-source voltage is such that it is turned **OFF** (behaves as an open circuit).
@@ -660,16 +920,16 @@ CMOS technology is used across the large majority of modern digital IC design, i
 
 **Truth Table**:
 
-![Truth Table](../attachments/truth-table-inverter.png)
+![Truth Table](./attachments/truth-table-inverter.png)
 
 | A (Input)       | Y (Output)      |
 | --------------- | --------------- |
 | 0 (LOW)         | 1 (HIGH, ≈ VDD) |
 | 1 (HIGH, ≈ VDD) | 0 (LOW)         |
 
-##### ⁠E.4.a.II.iii. DC (Static) Analysis: Voltage Transfer Characteristic (VTC)
+#### ⁠E.4.a.II.iii. DC (Static) Analysis: Voltage Transfer Characteristic (VTC)
 
-![DC analysis](../attachments/input-output-voltage.png)
+![DC analysis](./attachments/input-output-voltage.png)
 
 - **DC analysis** answers the question: "given a _constant_ input voltage V$\large_\text{in}$, what is the resulting _constant_ output voltage $_{out}$?", i.e., it characterizes the inverter's steady-state behavior, ignoring switching transients (which are instead covered by AC analysis, Section E.4).
 - **At the extremes**:
@@ -681,9 +941,9 @@ CMOS technology is used across the large majority of modern digital IC design, i
     - Setting the NMOS drain current expression equal to the magnitude of the PMOS drain current expression (using the standard MOSFET current equations for whichever region, cutoff, linear/triode, or saturation, each transistor is operating in at that particular $V_{in}$) gives the equations that can be solved analytically for $V_{out}$ as a function of $V_{in}$.
     - A **graphical solution**: plotting $I_{DSn}$ vs. $V_{out}$ and $I_{DSp}$ vs. $V_{out}$ (transformed onto the same axes) for a given $V_{in}$, and finding their intersection, gives excellent intuition for how the operating point moves as $V_{in}$ sweeps from 0 to VDD, even without working through the full algebra.
 
-##### ⁠E.4.a.II.iv. Voltage Transfer Characteristics (VTC)
+#### ⁠E.4.a.II.iv. Voltage Transfer Characteristics (VTC)
 
-![Characteristics](../attachments/transfer-characteristics-inverter.png)
+![Characteristics](./attachments/transfer-characteristics-inverter.png)
 
 - The **Voltage Transfer Characteristic (VTC)** is exactly this DC transfer curve, $V_{out}$ plotted against $V_{in}$, for the CMOS inverter (or any logic gate).
 - The VTC is commonly divided into **five distinct regions**, based on which region (cutoff, linear/triode, or saturation) each transistor is operating in as $V_{in}$ sweeps from 0 to VDD:
@@ -699,14 +959,14 @@ CMOS technology is used across the large majority of modern digital IC design, i
     - **$V_{IH}$**: the minimum input voltage still reliably interpreted as a logic HIGH (the input voltage where the VTC slope $dV_{out}/dV_{in} = -1$, on the low-output side).
     - **Switching threshold, $V_M$**: the point on the VTC where $V_{out} = V_{in}$ (the curve crosses the unity line); at this exact point, both transistors are in saturation and, by design, $I_{Dn} = I_{Dp}$. For a "balanced" inverter, sizing the PMOS wider than the NMOS (to compensate for hole mobility being lower than electron mobility) places $V_M$ near $V_{DD}/2$, giving symmetric noise margins and switching behavior.
     - **Noise Margins**: quantify how much noise/voltage error the inverter's input can tolerate before the output is affected:
-        - $$NM_H = V_{OH} - V_{IH}$$ (high-side noise margin)
-        - $$NM_L = V_{IL} - V_{OL}$$ (low-side noise margin)
+        - $NM_H = V_{OH} - V_{IH}$ (high-side noise margin)
+        - $NM_L = V_{IL} - V_{OL}$ (low-side noise margin)
         - Larger noise margins mean better **noise immunity**: a key reason (alongside low static power) that CMOS is favored for dense, robust digital design.
     - **Voltage gain** in the transition region (the maximum magnitude of $dV_{out}/dV_{in}$): a steeper transition (higher gain) means a sharper, more well-defined switching point and better signal regeneration between cascaded stages.
 
-##### ⁠E.4.a.II.v. AC (Dynamic / Transient / Switching) Analysis
+#### ⁠E.4.a.II.v. AC (Dynamic / Transient / Switching) Analysis
 
-![Transient Analysis Diagram](../attachments/transient-analysis.png)
+![Transient Analysis Diagram](./attachments/transient-analysis.png)
 
 - **DC analysis** (Section E.3) tells us $V_{out}$ for a **constant** $V_{in}$.
 - **AC analysis** tells us $V_{out}(t)$ given a **time-varying** $V_{in}(t)$: this generally requires solving differential equations describing how the output node's parasitic/load capacitance charges and discharges through the transistors' time-varying resistance.
@@ -716,8 +976,6 @@ CMOS technology is used across the large majority of modern digital IC design, i
 - The **switching speed** of a gate is fundamentally measured by the **time required to charge and discharge its capacitive load**: every gate output drives some combination of the next stage's gate capacitance and the interconnect (wire) capacitance, and the RC-like charge/discharge time of that load, through the driving transistor's ON resistance, sets the propagation delay.
     - Two standard delay metrics: **$t_{PHL}$** (propagation delay for a HIGH-to-LOW output transition, measured between the 50% points of input and output) and **$t_{PLH}$** (propagation delay for a LOW-to-HIGH output transition).
     - **Short-circuit power**: during the brief period of a transition when $V_{in}$ is near the switching region (Region C of the VTC, Section E.3), **both** NMOS and PMOS can be simultaneously partially ON, creating a brief direct current path from VDD to ground, this "short-circuit current" is a real (though typically smaller than switching/dynamic) component of total CMOS power consumption, distinct from the capacitive charge/discharge power.
-
-## ⁠E.5. Analog/ Mixed Mode VLSI design concepts
 
 ---
 
