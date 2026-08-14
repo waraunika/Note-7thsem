@@ -42,7 +42,7 @@
 ## Impedance Matrix
 
 - The total voltages and currents at the terminals of the microwave network are related by the impedance matrix \[Z\].
-    $$\begin{bmatrix}
+    $$\begin{equation}\begin{bmatrix}
         V_1 \\
         V_2 \\
         \vdots \\
@@ -57,7 +57,7 @@
         I_2 \\
         \vdots \\
         I_N
-    \end{bmatrix}$$
+    \end{bmatrix}\end{equation}$$
 - in short matrix formm
     $$\begin{equation}
         [V] = [Z] [I]
@@ -95,7 +95,7 @@ $$\begin{align}
     b_n = \dfrac{V_n^-}{\sqrt{Z_0}}
 \end{align}$$
 - The scattering matrix, denoted as \[S\] relates these two voltage variables.
-    $$\begin{bmatrix}
+    $$\begin{equation}\begin{bmatrix}
         b_1 \\
         b_2 \\
         \vdots \\
@@ -110,13 +110,112 @@ $$\begin{align}
         a_2 \\
         \vdots \\
         a_N
-    \end{bmatrix}$$
+    \end{bmatrix}\end{equation}$$
 - or in short form 
     $$\begin{equation}
         [b] = [S] [a]
     \end{equation}$$
-- The diagonal and off-diagonal elements of the scattering matrix can be obtained from
-$$\begin{align}
-    S_{ii} = \left. \dfrac{b_i}{a_i} \right|_{a_j = 0} = \left. \dfrac{V_i^-}{V_j^+} \right|_{V_j^+=0}\ j = 1, 2, ... N, j \ne i
-    S_{ij} = \left. \dfrac{b_i}{a_i} \right|_{a_j = 0} = \left. \dfrac{V_i^-}{V_j^+} \right|_{V_j^+=0}\ j = 1, 2, ... N, j \ne i
-\end{align}$$
+- The elements of the scattering matrix can be obtained from (Prof. NBA has complicated this slightly)
+    $$\begin{equation}
+        S_{ij} = \left. \dfrac{b_i}{a_i} \right|_{a_k = 0} = \left. \dfrac{V_i^-}{V_j^+} \right|_{V_k^+=0}\ V_k^+ = 0 \text{ for } k \ne j\\
+    \end{equation}$$
+- S$_{ii}$ is the reflection coefficient at the port $i$.
+- S$_{ij}$ is the transmission coefficient from port $j$ to port $i$
+- For a reciprocal network,
+    $$\begin{equation}
+        [S] = [S]^t
+    \end{equation}$$
+- For lossless and reciprocal network,
+    $$\begin{equation}
+        [S]^t [S] = [U]
+    \end{equation}$$
+- Where $t$ denotes transpose and \[U\] is a unit matrix (also called identity matrix).
+- Eqn (11) is known as unitary condition.
+
+## Relation between \[S\] and \[Z\]
+
+- We have seen that \[Z\] relates to thte total voltages and currents at the various ports,
+    - and these voltages and currents can be expressed as the sum
+    - of the incident and reflected voltagee waves and current waves, respectively.
+- Further, \[S\] relates the incident and reflected voltages waves at the various ports.
+- Therefore, there exists a relation between \[S\] \[S\].
+- It is given by,
+    $$\begin{align}
+        [S] = ([Z] + [U])^{-1}\ ([Z] - [U])\\
+        [S] = ([Z] - [U])\ ([Z] + [U])^{-1}
+    \end{align}$$
+- Alternatively, if the elements of the scattering matrix are known, the impedance matrix can be obtained from,
+    $$\begin{equation}
+        [Z] = ([U] - [S])^{-1}\ ([U] + [S])
+    \end{equation}$$
+
+## Average Power in terms of scattering variables
+
+- Referring to figure above, the average power flowing into port $n$ can be determined using (7, 8).
+- Using (7, 8), we can express the total voltage and current at port n as
+    $$\begin{align}
+        V_n = \sqrt{Z_0}\ (a_n + b_n)\\
+        V_n = \dfrac{1}{\sqrt{Z_0}}\ (a_n - b_n)
+    \end{align}$$
+- the avg power delivered to port $n$ is given by
+    $$\begin{equation}
+        P_n = \dfrac12 \Re \left[ V_n I_n^* \right] = \dfrac12 \Re \left[ (a_n a_n^* - b_n b_n^*) + (b_n a_n^* - a_n b_n^*) \right]
+    \end{equation}$$
+- The second term within the bracket on the RHS of (19) is purely imaginary and simplifies to:
+    $$\begin{equation}
+        P_n = \dfrac12 \left[ |a_n|^2 - |b_n|^2 \right]
+    \end{equation}$$
+- (20) gives the power flow into the network through port $n$ in terms of the normalized incident and reflected voltage variables.
+- The first term in (20) gives the incident power and the second term gives reflected power.
+
+# Two-Port Networks
+
+- The significance of the scattering parameters can be understood more clearly by considering a 2-port network.
+    - Fig
+    - ![2 Port Network](attachments/2-port-networks.png)
+- The euqations governing the incident and reflected voltage wave variables are given by
+    $$\begin{align}
+        b_1 = S_{11}a_1 + S_{12}a_2\\
+        b_2 = S_{21}a_1 + S_{22}a_2
+    \end{align}$$
+- So from (21, 22), we can write
+    $$\begin{equation}
+        S_{11} = \left. \dfrac{b_1}{a_1} \right|_{a_2 = 0},\
+        S_{21} = \left. \dfrac{b_2}{a_1} \right|_{a_2 = 0},\
+        S_{12} = \left. \dfrac{b_1}{a_2} \right|_{a_1 = 0},\
+        S_{22} = \left. \dfrac{b_2}{a_2} \right|_{a_1 = 0}
+    \end{equation}$$
+- S$_{11}$ is the reflection coefficient at port 1 when port 2 is terminated with a matched load
+    - (a$_2$ = 0, i.e., there is no incident wave at port 2)
+- and similarly for other s-parameters.
+
+## Insertion Loss (or Transmission Loss)
+
+- Supposing P$\large_{in,\ 1}$ is the power fed to port 1 from a matched source
+- P$\large_{out,\ 2}$ is the power output measured by a power meter (matched to output port), then
+    $$\begin{equation}
+        \dfrac{P_{out, 2}}{P_{in, 1}} = \dfrac{|b_2|^2}{|a_1|^2} = |S_{21}|^2
+    \end{equation}$$
+- The insertion loss (aka transmission loss), expressed in dB can be obtained as:
+    $$\begin{equation}
+        S_{21}\ \text{(dB)} = - 20 \log_{10} |S_{21}| = -10 \log_{10}\left( \dfrac{P_{out, 2}}{P_{in, 1}}\right)
+    \end{equation}$$
+
+## Return Loss (or Refelection Loss)
+- Let P$_{in1}$ be the power fed to port 1 from a matched source
+- P$_{r1}$ is the reflected back power from the device at port 1, when port 2 is terminated in a matched load.
+- The magnitude of the reflection coefficient at port 1, denoted as $|S_{11}|$ can be obtained from,
+    $$\begin{equation}
+        \dfrac{P_{r1}}{P_{in1}} = \dfrac{|b_1|^2}{|a_1|^2} = |S_{11}|^2
+    \end{equation}$$
+- The return loss (or reflection loss) of the device expressed in dB is given by
+    $$\begin{equation}
+        S_{11}\ \text{(dB)} = - 20 \log_{10} |S_{11}| = -10 \log_{10}\left( \dfrac{P_{r1}}{P_{in1}}\right)
+    \end{equation}$$
+- The input VSWR of a device when the output port is matched terminated, is given by:
+    $$\begin{equation}
+        \text{VSWR} = \dfrac{1 + |S_{11}|}{1 - |S_{11}|}
+    \end{equation}$$
+- Note that for a passive device the transmission and reflection coeffients are less than unity.
+- Thus when expressed in dB using (25) and (27), they assume positive values.
+
