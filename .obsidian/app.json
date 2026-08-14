@@ -2,5 +2,11 @@
   "vimMode": true,
   "tabSize": 2,
   "attachmentFolderPath": "./attachments",
-  "readableLineLength": false
+  "readableLineLength": false,
+  "pdfExportSettings": {
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 64
+  }
 }

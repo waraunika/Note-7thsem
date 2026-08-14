@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "FPGA/PYQ.md",
+                "file": "content.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PYQ"
+              "title": "content"
             }
           }
         ]
@@ -80,7 +80,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "46db94f0435341e0",
@@ -158,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "FPGA/PYQ.md",
+                "file": "content.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -200,8 +201,8 @@
   },
   "active": "fef968659ae83000",
   "lastOpenFiles": [
-    "FPGA/Chapter 2 FPGA Logical Components, Architectures and Interfaces.md",
     "FPGA/PYQ.md",
+    "FPGA/Chapter 2 FPGA Logical Components, Architectures and Interfaces.md",
     "FPGA/Chapter 1 FPGA Fundamentals.md",
     "FPGA/Chapter 5 VLSI Design and Verification.md",
     "FPGA/Refined/Chapter 4 Advanced RTL Design Approaches.md",
