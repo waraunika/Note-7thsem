@@ -139,3 +139,23 @@ Now let us consider a unilateral case for which $S_{12}$ = 0. Under such conditi
     $$\begin{equation}
         \left.G_{T}\right|_{S_{12}=0}=\frac{\left|S_{21}\right|^{2}\cdot\left(1-\left|\Gamma_{L}\right|^{2}\right)\cdot\left(1-\left|\Gamma_{S}\right|^{2}\right)}{\left|1-S_{11}\Gamma_{S}\right|^{2}\cdot\left|1-S_{22}\Gamma_{L}\right|^{2}}
     \end{equation}$$
+- Since S$_{12}$ = 0 and S$_{21} \ne$, the system is non-reciprocal
+- Such non-reciprocal characteristic is often used in amplifier circuits.
+
+## Further Generalization
+
+- Figure:
+    - ![Simplified/Generalized Transistor Amp](attachments/transistor-amp-ckt-diagram.png)
+- The most suitable gain definition is the total transducer power gain which can be written as $G_T = G_S G_0 G_L$.
+- where $G_S$ is the gain of the input matching network, $G_0$ is the gain of the transistor and $G_L$ is the gain of the output matching network which are given as 
+    $$\begin{align}
+        G_{S}&=\frac{1-\left|\Gamma_{S}\right|^{2}}{\left|1-\Gamma_{S}\Gamma_{in}\right|^{2}}\\
+        G_{0}&=\left|S_{21}\right|^{2}\\
+        G_{L}&=\frac{1-\left|\Gamma_{L}\right|^{2}}{\left|1-\Gamma_{L}\Gamma_{out}\right|^{2}}
+    \end{align}$$
+- If we assume that the amplifier is unilateral, i.e., $S_{12}$ = 0 or its small enough to ignore. Then
+    $$\begin{align}
+        G_{S}&=\frac{1-\left|\Gamma_{S}\right|^{2}}{\left|1-S_{11}\Gamma_{s}\right|^{2}}\\
+        G_{0}&=\left|S_{21}\right|^{2}\\
+        G_{L}&=\frac{1-\left|\Gamma_{L}\right|^{2}}{\left|1-S_{22}\Gamma_{L}\right|^{2}}
+    \end{align}$$
