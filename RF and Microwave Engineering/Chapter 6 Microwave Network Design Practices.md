@@ -126,9 +126,13 @@ For reflection coefficient, from Ch-2/3, we write them as:
     $$\begin{equation}
         P_{Avn}=\frac{\left|V_{s}\right|^{2}\cdot\left|S_{21}\right|^{2\ }\cdot\left|1-\Gamma_{s}\right|^{2}}{8Z_{0}\cdot\left|1-S_{11}\Gamma_{s}\right|^{2} \cdot \left(1-\left|\Gamma_{out}\right|^{2}\right)}
     \end{equation}$$
-- Using (15) and (2), we obtain maximum available gain as
+- Using (15) and (20), we obtain maximum available gain as
     $$\begin{equation}
-        G_{A}=\frac{P_{Avn}}{P_{avs}}=\frac{\left|S_{21}\right|^{2}\left(1-\left|\Gamma_{L}\right|^{2}\right)\left(1-\left|\Gamma_{S}\right|^{2}\right)}{\left|1-\Gamma_{S}\Gamma_{in}\right|^{2}\left|1-S_{22}\Gamma_{L}\right|^{2}}
+        G_{A}=\frac{P_{Avn}}{P_{avs}}=\frac{\left|S_{21}\right|^{2}\cdot\left(1-\left|\Gamma_{S}\right|^{2}\right)}{\left|1-S_{11}\Gamma_{S}\right|^{2}\cdot\left(1-\left|\Gamma_{out}\right|^{2}\right)}
+    \end{equation}$$
+- Similarly, the total gain will be
+    $$\begin{equation}
+        G_{T}=\frac{P_{Avn}}{P_{avs}}=\frac{\left|S_{21}\right|^{2}\left(1-\left|\Gamma_{L}\right|^{2}\right)\left(1-\left|\Gamma_{S}\right|^{2}\right)}{\left|1-\Gamma_{S}\Gamma_{in}\right|^{2}\left|1-S_{22}\Gamma_{L}\right|^{2}}
     \end{equation}$$
 
 When both input and output are perfectly matched, $\Gamma_L = \Gamma_S = 0$, then $G_T = |S_{21}|^2$
@@ -158,4 +162,98 @@ Now let us consider a unilateral case for which $S_{12}$ = 0. Under such conditi
         G_{S}&=\frac{1-\left|\Gamma_{S}\right|^{2}}{\left|1-S_{11}\Gamma_{s}\right|^{2}}\\
         G_{0}&=\left|S_{21}\right|^{2}\\
         G_{L}&=\frac{1-\left|\Gamma_{L}\right|^{2}}{\left|1-S_{22}\Gamma_{L}\right|^{2}}
+    \end{align}$$
+
+## Stability Analysis
+
+- Stability over a band of frequencies in an amplifier is a crticial parameter.
+- Oscillation results in instability which in due to negative resistance component meaning $|\Gamma_{in}| > 1$ or $|\Gamma_{out}|$ > 1.
+- This is the condition of instability.
+- For thee unilateral model, this condition would be $|S_{11}| > 1$ or $|S_{22}| > 1$.
+- Stability can be of conditional and unconditional categories.
+
+### Unconditional Stability
+
+- Unconditional stability exists when $|\Gamma_{in}| < 1$ and $|\Gamma_{out}| < 1$.
+    - for unilateral: $|S_{11}| < 1$ or $|S_{22}| < 1$
+- Condition needs to hold for all passive source and load impedance available within the entire Smith Chart.
+
+### Conditional Stability
+
+- If the conditions $|\Gamma_{in}| < 1$ and $|\Gamma_{out}| < 1$ (or $|S_{11}| > 1$ or $|S_{22}| > 1$) are valid for only a portion of impedance within the Smith Chart,
+    - then the transistor acts as conditionally stable.
+- Sometimes it is possible that the reason of stability never present at the input or output of the devices.
+- However, since the stability is frequency dependent, it is very possible that an amplifier is stable in the pass band and unstable elsewhere.
+- These inequalities define a range of $\Gamma_S$ and $\Gamma_L$ where the amplifier will be stable.
+- This range can be found by using Smith Chart and plotting stability circle.
+- The stability circles are defined as the loci of $\Gamma_S$ or $\Gamma_L$ plane for which $|\Gamma_{in}| = 1$ or $\Gamma_{out} = 1$.
+
+To find the equation of stability circle for input matching network let us start with $\Gamma_{in} = 1$.
+- Using (7), we can write:
+    $$\begin{equation}
+        \left|S_{11}+\frac{S_{12}S_{21}\Gamma_{L}}{1-S_{22}\Gamma_{L}}\right|=1
+    \end{equation}$$
+- (30) can be simplified further as
+    $$\begin{equation}
+        \left|S_{11}-\Delta\Gamma_{L}\right|=\left|1-S_{22}\Gamma_{L}\right|
+    \end{equation}$$
+- Where $\Delta = S_{11}S_{22} - S_{12}S_{21}$, is the determinant of S-matrix.
+- Squaring both sides of (31) gives
+    $$\begin{equation}
+        \left|S_{11}\right|^{2}+\left|\Delta\right|^{2}\left|\Gamma_{L}\right|^{2}-\left(\Delta\Gamma_{L}S_{11}^{*}+\Delta^{*}\Gamma_{L}^{*}S_{11}\right)=1+\left|S_{22}\right|^{2}\left|\Gamma_{L}\right|^{2}-\left(S_{22}^{*}\Gamma_{L}^{*}+S_{22}\Gamma_{L}\right)
+    \end{equation}$$
+- After some manipulation, (32) can be written as:
+    $$\begin{align}
+        \left|\Gamma_{L}-\frac{\left(S_{22}-\Delta S_{11}^{*}\right)^*}{\left|S_{22}\right|^{2}-\left|\Delta\right|^{2}}\right|^{2}
+        &=\frac{\left|S_{12}\right|^{2}\left|S_{21}\right|^{2}}{\left(\left|S_{22}\right|^{2}-\left|\Delta\right|^{2}\right)^{2}}
+        =\frac{\left(\left|S_{12}\right|\left|S_{21}\right|\right)^{2}}{\left(\left|S_{22}\right|^{2}-\left|\Delta\right|^{2}\right)^{2}}\\
+        \left|\Gamma_{L}-\frac{\left(S_{22}-\Delta S_{11}^{*}\right)^{*}}{\left|S_{22}\right|^{2}-\left|\Delta\right|^{2}}\right|
+        &= \left|\frac{S_{12}S_{21}}{\left|S_{22}\right|^{2}-\left|\Delta\right|^{2}}\right|
+    \end{align}$$
+- In a complex $\Gamma$ plane, (33) reveals a circle with center $C_L$ and radius $R_L$ given as
+    $$\begin{align}
+        C_{L}&=\frac{\left(S_{22}-\Delta S_{11}^{*}\right)^{*}}{\left|S_{22}\right|^{2}-\left|\Delta\right|^{2}}\\
+        R_{L}&=\left|\frac{S_{12}S_{21}}{\left|S_{22}\right|^{2}-\left|\Delta\right|^{2}}\right|
+    \end{align}$$
+- The circle is known as output stability circle.
+- Similar expression for input stability circle can be obtained.
+- For the input stability circle we get,
+    $$\begin{align}
+        C_{S}&=\frac{\left(S_{11}-\Delta S_{22}^{*}\right)^{*}}{\left|S_{11}\right|^{2}-\left|\Delta\right|^{2}}\\
+        R_{S}&=\left|\frac{S_{12}S_{21}}{\left|S_{11}\right|^{2}-\left|\Delta\right|^{2}}\right|
+    \end{align}$$
+
+The above equations reveal that if the S-parameter are given, then we can draw the input and output stbaility circles.
+
+- On one side of the input stability circle, we have $|\Gamma_{out} > 1$ while on the other side we have $|\Gamma_{out} < 1$.
+- Similarly, on one side of the output stability circle, we have $|\Gamma_{in}| > 1$ while on the other side we have $|\Gamma_{in}| < 1$.
+- Therefore it is important to identify the regions for $|\Gamma_{out}| < 1$ and $|\Gamma_{in}| < 1$.
+- To do this let us consider that output stability circle has been drawn in the $\Gamma$-plane for $S_{11} < 1$ and $S_{11} > 1$.
+
+Now, if we set $Z_L = Z_0$, then we can write $|\Gamma_{in}| = |S_{11}|$
+
+- Above equations reveal that if $|S_{11}| < 1$, then $|\Gamma_{in}| < 1$.
+- Therefore we can conclude that the center of the Smith Chart ($|\Gamma_{L}| = 0$) must be in the stable region for $S_{11} < 1$.
+- More precisely, we can say that all the region of the Smith Chart that is exterier to the output stability circle, corresponding to $S_{11} < 1$, defines the stable range of $\Gamma_L$, depicted as in fig:
+    - ![Region of conditional stabiltiy of output matching network](attachments/Stability-circles.png)
+    - Left: Stable, if $|\Gamma_{out} < 1$
+    - Right: Unstable if $\Gamma_{out} > 1$
+- Now, if we set $Z_L = Z_0$ and $S_{11} > 1$ then $|\Gamma_{in}| > 1|$ and $\Gamma_L$ = 0 must be in the unstable region.
+- Alternatively, we can say that the center oft eh Smith Chart is in the unstable region.
+- Thus all the region of the Smith Chart that is exterior to the output stability circle, corresponding to $S_{11} > 1$, defines the unstable range of $\Gamma_L$.
+- A similar argument holds for the input stability circle.
+- To make a device unconditionally stable, the stability circles must be completely outside or totally enclose the Smith Chart.
+- This condition can be expressed as: $\left| |C_L| - R_L \right| > 1$ for $|S_{11}| < 1$ and $\left| |C_S| - R_S \right| > 1$ for $|S_{22}| < 1$
+- It may be noted that $S_{11} > 1$ or $S_{22} > 1$ can never lead to unconditional stability
+    - because we can always have a soruce and load impedance that will result in $\Gamma_L = 0$ or $\Gamma_S = 0$
+    - and hence $|\Gamma_{in} > 1$ or $|\Gamma_{out}| > 1|.
+
+### Test of Unconditioanl Stability
+
+- The above stability conditions can be manipulated and solved in such a way 
+    - that we can find test parameters (K and $|\Delta|$ tests given as below) for unconditional stability.
+- An amplifier will be unconditionally stable if it meets the following both conditions.
+    $$\begin{align}
+        K=\frac{1-\left|S_{11}\right|^{2}-\left|S_{22}\right|^{2}+\left|\Delta\right|^{2}}{2\left|S_{12}S_{21}\right|}>1\\
+        \left|\Delta\right|=\left|S_{11}S_{22}-S_{12}S_{2}\right|<1
     \end{align}$$
