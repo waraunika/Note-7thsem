@@ -130,4 +130,12 @@ For reflection coefficient, from Ch-2/3, we write them as:
     $$\begin{equation}
         G_{A}=\frac{P_{Avn}}{P_{avs}}=\frac{\left|S_{21}\right|^{2}\left(1-\left|\Gamma_{L}\right|^{2}\right)\left(1-\left|\Gamma_{S}\right|^{2}\right)}{\left|1-\Gamma_{S}\Gamma_{in}\right|^{2}\left|1-S_{22}\Gamma_{L}\right|^{2}}
     \end{equation}$$
-- When both input and output are perfectly matched, $\Gamma_L = \Gamma_S = 0$, then $G_T = |S_{21}|
+
+When both input and output are perfectly matched, $\Gamma_L = \Gamma_S = 0$, then $G_T = |S_{21}|^2$
+
+Now let us consider a unilateral case for which $S_{12}$ = 0. Under such condition, we can write $\Gamma_{in} = S_{11}$.
+
+- Then the unilateral transducer power gain will be
+    $$\begin{equation}
+        \left.G_{T}\right|_{S_{12}=0}=\frac{\left|S_{21}\right|^{2}\cdot\left(1-\left|\Gamma_{L}\right|^{2}\right)\cdot\left(1-\left|\Gamma_{S}\right|^{2}\right)}{\left|1-S_{11}\Gamma_{S}\right|^{2}\cdot\left|1-S_{22}\Gamma_{L}\right|^{2}}
+    \end{equation}$$
