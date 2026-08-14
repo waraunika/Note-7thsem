@@ -108,3 +108,7 @@ Each parameter is defined with suitable expression subsequently in following sec
     $$\begin{equation}
         Z_0 = \sqrt{\dfrac{L}{C}} = \dfrac{1}{vC}
     \end{equation}$$
+
+### Terminated Lossless Line
+
+- Consider a transmission line of characterisitcads
