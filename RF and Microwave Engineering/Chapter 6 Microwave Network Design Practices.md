@@ -257,3 +257,23 @@ Now, if we set $Z_L = Z_0$, then we can write $|\Gamma_{in}| = |S_{11}|$
         K=\frac{1-\left|S_{11}\right|^{2}-\left|S_{22}\right|^{2}+\left|\Delta\right|^{2}}{2\left|S_{12}S_{21}\right|}>1\\
         \left|\Delta\right|=\left|S_{11}S_{22}-S_{12}S_{2}\right|<1
     \end{align}$$
+- We can consider both the K-factor and $\Delta$-parameter into a single test called $\mu$-test for unconditional stability as
+    $$\begin{equation}
+        \mu=\frac{1-\left|S_{11}\right|^{2}}{\left|S_{22}-S_{11}^{*}\Delta\right|+\left|S_{12}S_{21}\right|}>1
+    \end{equation}$$
+- If $\mu$ > 1, then the amplifier is unconditionally staable.
+- Larger value of $\mu$ provides larger degree of stability.
+
+## Single Stage Transistor Amplifier Design for Maximum Gain
+
+- Once stability of transistor is determined and the stable region for $\Gamma_L$ and $\Gamma_S$ have been located the task of determining the maximum gains,
+    - namely, $G_S, G_0, G_L$ is performed.
+- Then the designing of the input and output matching networks is followed.
+- The design of the input and output matching section of a transistor amplifier plays an important role on the stbaility of the amplifier as well as on the total gain.
+- Since for a given transistor $G_0$ is fixed, the overall gain of the amplifier is controlled by $G_S$ and $G_L$ of the matching section.
+- Maximum gain is realized when these section provide a conjugate match,
+    - i.e., $\Gamma_S = \Gamma_{in}^*$ (or $\Gamma_{in} = \Gamma_{s}^*$
+    - and $\Gamma_L = \Gamma_{out}^*$ (or $\Gamma_{out} = \Gamma_{L}^*$)
+    - between the source or load impedance and the transistor
+- With the conjugate matching there occurs maximum power transfer from the input matching section to the transistor and from transistor to output matching network.
+- Therefore we can write the total maximum gain as
