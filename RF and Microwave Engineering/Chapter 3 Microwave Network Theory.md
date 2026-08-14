@@ -1,4 +1,4 @@
-# Introduction
+# ⁠A. Introduction
 
 - Microwave Network is formed when microwave component devices, module,s etc. are coupled together by transmission lines for the desired transmission of microwave signal through ports.
 - Here the term port is defined as **point of interconection** of two or more networks, simply junctions or terminals.
@@ -19,7 +19,7 @@
 
 ---
 
-# Microwave N-Port
+# ⁠B. Microwave N-Port
 
 - A microwave network consists of:
     - a nunmber of transmission line sections
@@ -39,7 +39,7 @@
         I_n = \dfrac{1}{Z_0} (V_n^+ + V_n^-)
     \end{align}$$
 
-## Impedance Matrix
+## ⁠B.1. Impedance Matrix
 
 - The total voltages and currents at the terminals of the microwave network are related by the impedance matrix \[Z\].
     $$\begin{equation}\begin{bmatrix}
@@ -78,7 +78,7 @@
     - For a lossless network,
         - all the elements of \[Z\] and \[Y\] are purely imaginary.
 
-## Scattering Matrix
+## ⁠B.2. Scattering Matrix
 
 - For circuits operating at $\mu$wave frequencies,
     - network representation in terms of admittance or impedance matrix is not very convinient.
@@ -132,7 +132,7 @@ $$\begin{align}
 - Where $t$ denotes transpose and \[U\] is a unit matrix (also called identity matrix).
 - Eqn (11) is known as unitary condition.
 
-## Relation between \[S\] and \[Z\]
+## ⁠B.3. Relation between \[S\] and \[Z\]
 
 - We have seen that \[Z\] relates to thte total voltages and currents at the various ports,
     - and these voltages and currents can be expressed as the sum
@@ -149,7 +149,7 @@ $$\begin{align}
         [Z] = ([U] - [S])^{-1}\ ([U] + [S])
     \end{equation}$$
 
-## Average Power in terms of scattering variables
+## ⁠B.4. Average Power in terms of scattering variables
 
 - Referring to figure above, the average power flowing into port $n$ can be determined using (7, 8).
 - Using (7, 8), we can express the total voltage and current at port n as
@@ -168,7 +168,9 @@ $$\begin{align}
 - (20) gives the power flow into the network through port $n$ in terms of the normalized incident and reflected voltage variables.
 - The first term in (20) gives the incident power and the second term gives reflected power.
 
-# Two-Port Networks
+---
+
+# ⁠C. Two-Port Networks
 
 - The significance of the scattering parameters can be understood more clearly by considering a 2-port network.
     - Fig
@@ -189,7 +191,7 @@ $$\begin{align}
     - (a$_2$ = 0, i.e., there is no incident wave at port 2)
 - and similarly for other s-parameters.
 
-## Insertion Loss (or Transmission Loss)
+## ⁠C.1. Insertion Loss (or Transmission Loss)
 
 - Supposing P$\large_{in,\ 1}$ is the power fed to port 1 from a matched source
 - P$\large_{out,\ 2}$ is the power output measured by a power meter (matched to output port), then
@@ -201,7 +203,7 @@ $$\begin{align}
         S_{21}\ \text{(dB)} = - 20 \log_{10} |S_{21}| = -10 \log_{10}\left( \dfrac{P_{out, 2}}{P_{in, 1}}\right)
     \end{equation}$$
 
-## Return Loss (or Refelection Loss)
+## ⁠C.2. Return Loss (or Refelection Loss)
 - Let P$_{in1}$ be the power fed to port 1 from a matched source
 - P$_{r1}$ is the reflected back power from the device at port 1, when port 2 is terminated in a matched load.
 - The magnitude of the reflection coefficient at port 1, denoted as $|S_{11}|$ can be obtained from,
