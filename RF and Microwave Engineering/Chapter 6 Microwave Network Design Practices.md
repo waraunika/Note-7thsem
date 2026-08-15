@@ -272,8 +272,57 @@ Now, if we set $Z_L = Z_0$, then we can write $|\Gamma_{in}| = |S_{11}|$
 - The design of the input and output matching section of a transistor amplifier plays an important role on the stbaility of the amplifier as well as on the total gain.
 - Since for a given transistor $G_0$ is fixed, the overall gain of the amplifier is controlled by $G_S$ and $G_L$ of the matching section.
 - Maximum gain is realized when these section provide a conjugate match,
-    - i.e., $\Gamma_S = \Gamma_{in}^*$ (or $\Gamma_{in} = \Gamma_{s}^*$
+    - i.e., $\Gamma_S = \Gamma_{in}^*$ (or $\Gamma_{in} = \Gamma_{s}^*$)
     - and $\Gamma_L = \Gamma_{out}^*$ (or $\Gamma_{out} = \Gamma_{L}^*$)
     - between the source or load impedance and the transistor
 - With the conjugate matching there occurs maximum power transfer from the input matching section to the transistor and from transistor to output matching network.
 - Therefore we can write the total maximum gain as
+    $$\begin{equation}
+        G_{T,\ max}=\frac{1}{1-\left|\Gamma_{S}\right|^{2}}\cdot\left|S_{21}\right|^{2}\cdot\frac{1-\left|\Gamma_{L}\right|^{2}}{\left|1-S_{22}\Gamma_{L}\right|^{2}}
+    \end{equation}$$
+- Now using the relations $\Gamma_{in} = \Gamma_{s}^*$ and $\Gamma_{out} = \Gamma_{L}^*$:
+    $$\begin{align}
+        \Gamma_{S}=S_{11}^{*}+\frac{S_{12}^{*}S_{21}^{*}}{\left(\frac{1}{\Gamma_{L}^{*}}\right)-S_{22}^{*}}\\
+        \Gamma_{L}^{*}=S_{22}+\frac{S_{12}S_{21}\Gamma_{S}}{1-S_{11}\Gamma_{S}}
+    \end{align}$$
+- Substituting the expression of $\Delta$ in (44):
+    $$\begin{equation}
+        \Gamma_{L}^{*}=\frac{S_{12}-\Delta\Gamma_{S}}{1-S_{11}\Gamma_{S}}
+    \end{equation}$$
+- After the further simplification (46) with (43) gives:
+    $$\begin{equation}
+        \Gamma_{S}=S_{11}^{*}+\frac{S_{12}^{*}S_{21}^{*}}{\frac{1-S_{11}\Gamma_{S}}{S_{12}-\Delta\Gamma_{S}}-S_{22}^{*}}
+    \end{equation}$$
+- solving (46) we get
+    $$\begin{equation}
+        \left(S_{11}-\Delta S_{22}^{*}\right)\Gamma_{S}^{2}
+        +\left(\left|\Delta\right|^{2}-\left|S_{11}\right|^{2}
+        +\left|S_{22}\right|^{2}-1\right)\Gamma_{S}
+        +\left(S_{11}^{*}-\Delta^{*}S_{22}\right)=0
+    \end{equation}$$
+- Finally, solving (47) we get
+    $$\begin{equation}
+        \Gamma_{S}=\frac{B_{1}\pm\sqrt{B_{1}^{2}-4\left|C_{1}\right|^{2}}}{2C_{1}}
+    \end{equation}$$
+- Where,
+    $$\begin{align}
+        B_{1}=1+\left|S_{11}\right|^{1}-\left|S_{22}\right|^{2}-\left|\Delta\right|^{2}\\
+        C_{1}=S_{11}-\Delta S_{22}^{*}
+    \end{align}$$
+- Similarly, we can get
+    $$\begin{equation}
+        \Gamma_{L}=\frac{B_{2}\pm\sqrt{B_{2}^{2}-4\left|C_{2}\right|^{2}}}{2C_{2}}
+    \end{equation}$$
+- where
+    $$\begin{align}
+        B_{2}=1+\left|S_{2}\right|^{1}-\left|S_{11}\right|^{2}-\left|\Delta\right|^{2}\\
+        C_{2}=S_{22}-\Delta S_{11}^{*}
+    \end{align}$$
+
+For unilateral case, $S_{12} = 0$ and we can write $\Gamma_S = S_{11}^*$ and $\Gamma_L = S_{22}^*$
+
+- Therefore the unilateral transducer gain can be expressed as
+    $$\begin{equation}
+        G_{TU,max}=\frac{1}{1-\left|S_{11}\right|^{2}}\cdot\left|S_{21}\right|^{2}\cdot\frac{1}{1-\left|S_{22}\right|^{2}}
+    \end{equation}$$
+
