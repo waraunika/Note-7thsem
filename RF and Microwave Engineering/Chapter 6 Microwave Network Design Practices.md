@@ -1,8 +1,8 @@
-# Introduction
+# ⁠A. Introduction
 
 - Depending on application, microwave networks vary from single port like transmission lines, two port like amplifiers, filters, oscillators and multi-port devices (mixers, modulators, multiplexers).
 
-# Microwave Amplifiers
+# ⁠B. Microwave Amplifiers
 
 - Microwave amplifiers can be classified into three braod categories:
     - reflection amplifier, parametric amplifier and two port amplifiers
@@ -17,7 +17,7 @@ Two port amplifiers only in syllabus
 - Present day microwave transistor amplifies can work upto 100 GHz and have attractive characteristics, like
     - broad bandwidth, low noise figure and medium power characteristics with desirable stability and gain factors.
 
-## Amplifier Gain Analysis
+## ⁠B.1. Amplifier Gain Analysis
 
 - Figure for analysis
     - ![2 Port network model of transistor](attachments/2-port-gain.png)
@@ -111,7 +111,7 @@ For reflection coefficient, from Ch-2/3, we write them as:
         P_{Avs} = P_{in}|_{\Gamma_{in} = \Gamma_S^*}
         = \left. \dfrac{|V_S|^2}{8Z_0} \cdot \dfrac{|1-\Gamma_s|^2}{|1-\Gamma_S\Gamma_{in}|^2} (1 - |\Gamma_{in}|^2) \right|_{\Gamma_{in} = \Gamma_S^*}
         = \dfrac{|V_S|^2 \cdot |1-\Gamma_S|^2}{8Z_0 (1 - |\Gamma_S|^2)}
-    \end{equation}$$
+    \end{equation}
     $$
 - Again, the power available from the network is defined as maximum power that can be delivered to the load.
 - Following maximum power transfer theorem, we can say that this happens when $\Gamma_L$ = $\Gamma_{out}^*$.
@@ -168,7 +168,7 @@ Now let us consider a unilateral case for which $S_{12}$ = 0. Under such conditi
 - Since S$_{12}$ = 0 and S$_{21} \ne$, the system is non-reciprocal
 - Such non-reciprocal characteristic is often used in amplifier circuits.
 
-## Further Generalization
+## ⁠B.2. Further Generalization
 
 - Figure:
     - ![Simplified/Generalized Transistor Amp](attachments/transistor-amp-ckt-diagram.png)
@@ -188,7 +188,7 @@ Now let us consider a unilateral case for which $S_{12}$ = 0. Under such conditi
     \end{align}$$
     $$
 
-## Stability Analysis
+## ⁠B.3. Stability Analysis
 
 - Stability over a band of frequencies in an amplifier is a crticial parameter.
 - Oscillation results in instability which in due to negative resistance component meaning $|\Gamma_{in}| > 1$ or $|\Gamma_{out}|$ > 1.
@@ -196,13 +196,13 @@ Now let us consider a unilateral case for which $S_{12}$ = 0. Under such conditi
 - For thee unilateral model, this condition would be $|S_{11}| > 1$ or $|S_{22}| > 1$.
 - Stability can be of conditional and unconditional categories.
 
-### Unconditional Stability
+### ⁠B.3.a. Unconditional Stability
 
 - Unconditional stability exists when $|\Gamma_{in}| < 1$ and $|\Gamma_{out}| < 1$.
     - for unilateral: $|S_{11}| < 1$ or $|S_{22}| < 1$
 - Condition needs to hold for all passive source and load impedance available within the entire Smith Chart.
 
-### Conditional Stability
+### ⁠B.3.b. Conditional Stability
 
 - If the conditions $|\Gamma_{in}| < 1$ and $|\Gamma_{out}| < 1$ (or $|S_{11}| > 1$ or $|S_{22}| > 1$) are valid for only a portion of impedance within the Smith Chart,
     - then the transistor acts as conditionally stable.
@@ -279,7 +279,7 @@ Now, if we set $Z_L = Z_0$, then we can write $|\Gamma_{in}| = |S_{11}|$
     - because we can always have a soruce and load impedance that will result in $\Gamma_L = 0$ or $\Gamma_S = 0$
     - and hence $|\Gamma_{in} > 1$ or $|\Gamma_{out}| > 1|.
 
-### Test of Unconditioanl Stability
+### ⁠B.3.c. Test of Unconditioanl Stability
 
 - The above stability conditions can be manipulated and solved in such a way
     - that we can find test parameters (K and $|\Delta|$ tests given as below) for unconditional stability.
@@ -297,7 +297,7 @@ Now, if we set $Z_L = Z_0$, then we can write $|\Gamma_{in}| = |S_{11}|$
 - If $\mu$ > 1, then the amplifier is unconditionally staable.
 - Larger value of $\mu$ provides larger degree of stability.
 
-## Single Stage Transistor Amplifier Design for Maximum Gain
+## ⁠B.4. Single Stage Transistor Amplifier Design for Maximum Gain
 
 - Once stability of transistor is determined and the stable region for $\Gamma_L$ and $\Gamma_S$ have been located the task of determining the maximum gains,
     - namely, $G_S, G_0, G_L$ is performed.
@@ -371,7 +371,7 @@ For unilateral case, $S_{12} = 0$ and we can write $\Gamma_S = S_{11}^*$ and $\G
 
 ---
 
-# Microwave Filters
+# ⁠C. Microwave Filters
 
 **Introduction**
 
@@ -437,7 +437,7 @@ Synthesis of a filter
 - The periodic impedance behavior of a transmission line produces these re-entrant modes.
 - Tackling these re-entrant modes is a big challenge in $\mu$wave filter design.
 
-## Filter Model
+## ⁠C.1. Filter Model
 
 - A two port network model shown represents a microwave filter.
 - Among different filter parameters the insertion loss, return loss and group delay plaays key role in filter synthesis.
@@ -458,7 +458,7 @@ Synthesis of a filter
 - Alternatively any deviation from constant group delay will cause an FM signal to become distorted.
 - An ideal filter should have zero insertion loss and constant group delay over the PB and infinite rejection everywhere else.
 
-## Microwave Filter Desing Using ILM
+## ⁠C.2. Microwave Filter Desing Using ILM
 
 - IL is given by
     $$ \begin{equation}
@@ -485,7 +485,7 @@ Synthesis of a filter
 - In practice, filters are commonly designed to give either aa maximally flat (Butterworth) responses or an equi-ripple (Chebyshev) responses.
 - Both these types of low pass characteristics are shown above.
 
-### Butterworth Response
+### ⁠C.2.a. Butterworth Response
 
 - For a maximally flat, i.e., the Butterworth response, LPF design we choose the following expression.
     $$ \begin{equation}
@@ -498,7 +498,7 @@ Synthesis of a filter
 - The maximum insertion loss in the pass band is 3 dB at with $a_m = 1$
 - For $\omega > \omega_c$, IL increases monotonically depending on the exponent of 2N.
 
-### Chebyshev Response
+### ⁠C.2.b. Chebyshev Response
 
 - To obtain a Chebyshev response we choose the insertion loss as
     $$ \begin{equation}
@@ -533,7 +533,7 @@ Synthesis of a filter
     \end{equation}$$
     $$
 
-## Low Pass Filter Prototype
+## ⁠C.3. Low Pass Filter Prototype
 
 ![Common LPF Prototype Circuit](attachments/prototype-circuit.png)
 
@@ -572,11 +572,54 @@ Prototyping
     - $\omega_C$ is the angualr cut-off frequency and $R_0$ is the generator resistance of the filter.
 - The transform the value of $g_k$ into the values of the desired filter elements are given as in the following table.
 
-| P_LPF | LPF | HPF | BPF | BSF |
-| Series arm | Lk | Ck | Lk | Lk |
-
 | P_LPF         | LPF                                                                               | HPF                                                                               | BPF                                                                                                                                        | BSF                                                                                                                                         |
 | ------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | Series<br>arm | $L_k = \dfrac{g_k Z_L}{\omega_C}$<br> $C_{k}=\dfrac{Z_{L}}{g_{k}\omega_{C}}$      | $C_{k}=\dfrac{1}{g_{k}Z_{L}\omega_{C}}$<br>$L_{k}=\dfrac{g_{k}}{Z_{L}\omega_{C}}$ | $L_{k}=\dfrac{g_{k}Z_{L}}{\omega_{2}-\omega_{1}}$<br>$C_{k}=\dfrac{\omega_{2}-\omega_{1}}{\omega_{C}-g_{k}Z_{L}}$                          | $L_{k}=\dfrac{g_{k}Z_{L}\left(\omega_{2}-\omega_{1}\right)}{\omega_{C}}$<br>$C_{k}=\dfrac{1}{g_{k}Z_{L}\left(\omega_{2}-\omega_{1}\right)}$ |
 | Shunt Arm     | $L_{k}=\dfrac{1}{g_{k}Z_{L}\omega_{C}}$<br>$C_{k}=\dfrac{g_{k}}{Z_{L}\omega_{C}}$ | $L_{k}=\dfrac{Z_{L}}{g_{k}\omega_{C}}$<br>$C_k = \dfrac{g_k Z_L}{\omega_C}$       | $L_{k}=\dfrac{Z_{L}}{g_{k}\left(\omega_{2}-\omega_{1}\right)}$<br>$C_{k}=\dfrac{g_{k}\left(\omega_{2}-\omega_{1}\right)}{Z_{L}\omega_{C}}$ | $L_{k}=\dfrac{g_{k}\left(\omega_{2}-\omega_{1}\right)}{Z_{L}\omega_{C}}$<br>$L_{k}=\dfrac{Z_{L}}{g_{k}\left(\omega_{2}-\omega_{1}\right)}$  |
 
+### ⁠C.3.a. Realization of Inductors and Capacitors
+
+- In order to design the filter in microstrip configuration, we need to translate the inductors and capacitors in microstrip.
+- At microwave frequencies, these can be realized using short sections of transmission lines, typically less than $\lambda/4$, where $\lambda$ is the guide wavelength.
+- In order to illustrate this, consider $\pi$ and $T$ equivalent networks of a section of transmission line shown in fig:
+    - ![Equivalent model of transmission line](attachments/pi-and-t-model.png)
+- From ABCD matrix of a section of transmission line, we can obtain the elements of Z and Y matrices.
+- These in turn can be used to obtain the values of the $\pi$ and $T$ equivalent network in terms of the transmission propagation parameters (Z$_0$ and $\beta$).
+- They are given as follows
+    $$ \begin{align}
+        \omega L&=Z_{0}\sin\left(\beta l\right)_{L}=\frac{\lambda}{2\pi}\sin^{-1}\left(\frac{\omega L}{Z_{0}}\right)\\
+        \omega C_{P}&= \frac{1}{Z_{0}}\tan\left(\frac{\beta l}{2}\right)
+    \end{align}$$
+    $$
+- For T equivalent network
+    $$ \begin{align}
+        \omega C&=\frac{1}{Z_{0}}\sin\left(\beta l\right)\\
+        \omega L_{S}&=\frac{1}{Z_{0}}\tan\left(\frac{\beta l}{2}\right)
+    \end{align}$$
+    $$
+- Examination of the $\pi$-equivalent network shows that a short section of transmission of large characteristic impedance $Z_0$ behaves predominantly like a series inductance.
+- This is realized by a strip conductor of narrow width terminated in a relatively low impedance as shown above.
+- Using (84), one can relate the length $l_L$ of the inductive line to the inductance $L$ by the formula
+    $$ \begin{equation}
+        l_{L}=\frac{\lambda}{2\pi}\sin^{-1}\left(\frac{\omega L}{Z_{0}}\right)
+    \end{equation}$$
+    $$
+- The value of the shunt susceptance $\omega C_P$ is very small.
+- Hence, $C_P$ can be considered as the capacitive end correction of the inductive line and can be obtained from the expression,
+    $$ \begin{equation}
+        C_{P}=\frac{1}{\omega Z_{0}}\tan\left(\frac{\pi l_{L}}{\lambda}\right)
+    \end{equation}$$
+    $$
+- Similarly, from the T equivalent network, a short length of low impedance line terminated at either end in relatively high impedance produces the effect of essentially a shunt capacitance.
+- This is realized by having a wide rectangular patch as shown above.
+- The length $l_C$ of the rectangular patch is related to the capacitance C by the formula
+    $$ \begin{equation}
+        l_{C}=\frac{\lambda}{2\pi}\sin^{-1}\left(\omega CZ_{0}\right)
+    \end{equation}$$
+    $$
+- The end inductance $L_S$ can be obtained using the relation
+    $$ \begin{equation}
+        L_{S}=\frac{Z_{0}}{\omega}\tan\left(\frac{\pi l_{L}}{\lambda}\right)
+    \end{equation}$$
+    $$
+- Generally, the value of this inductance small enough to ignore
