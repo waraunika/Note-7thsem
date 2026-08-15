@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "RF and Microwave Engineering/Chapter 2 Transmission Line Theory.md",
+                "file": "RF and Microwave Engineering/Chapter 6 Microwave Network Design Practices.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 2 Transmission Line Theory"
+              "title": "Chapter 6 Microwave Network Design Practices"
             }
           }
         ]
@@ -200,8 +200,8 @@
   },
   "active": "2555ba50be15ba85",
   "lastOpenFiles": [
-    "RF and Microwave Engineering/Chapter 3 Microwave Network Theory.md",
     "RF and Microwave Engineering/Chapter 2 Transmission Line Theory.md",
+    "RF and Microwave Engineering/Chapter 3 Microwave Network Theory.md",
     "RF and Microwave Engineering/Chapter 6 Microwave Network Design Practices.md",
     "RF and Microwave Engineering/Microwave Network Theory.md",
     "Mathjax globals.md",
