@@ -329,3 +329,92 @@ For unilateral case, $S_{12} = 0$ and we can write $\Gamma_S = S_{11}^*$ and $\G
 ---
 
 # Microwave Filters
+
+**Introduction**
+
+- Microwave filters are two port reciprocal passive linear devices which attenuate heavily the unwanted signal frequencies while permitting the transmission of the wanted signal frequency.
+- A Microwave filter is designed to operate between resistive sources and load impedances using mostly reactive elemnts.
+
+**Other Info**
+
+- Depending on the nature of pass band and stop band, a filter can be classified as:
+    - low pass (LPF), high pass (HPF), band pass (BPF) or band stop (BSF) filter.
+- however from the operation point of view, filters are classified as
+    - reflective, absorptive and lossy filters.
+    - **Reflective**: consists of inductive and capacitive elements
+        - produces ideally zero reflection loss in PB
+        - produces heavy loss in SB.
+    - **Absorptive**: dissipates unwanted signal internally and passes the unwanted signal.
+    - **Lossy**: use lossy materials to produce heavy loss in SB and low loss in PB.
+- The operation of a $\mu$wave filter is mainly based on the properties of periodic structures.
+- Waveguide and transmission lines, loaded with identical obstacles at periodic intervals forms a periodic structure.
+- Such periodic structures have two interesting properties, namely **PB and SB characteristics**, and **phase velocity**, much less than speed of light.
+- In filter designing, the first property of periodic structures is used.
+- Performance of a filter is commonly characterized by following parameters:
+    - Pass bandwidth
+    - Stop bandwidth
+    - I/O impedances
+    - Return Loss (RL)
+    - Insertion Loss (IL)
+    - Group Delay (GD)
+
+Ideal/Practical Filters
+
+- In practice, an ideal filter should provide transmission over the PB region and infinite attenuation over SB region.
+- However, such filter never exists, and we need to approximate the ideal behavior within an acceptable tolerance.
+- Next, we need to develop a network that shows this approximated frequency response.
+- The procedure is called filter synthesis.
+- There are two filter synthesis techniques, namely
+    1. Image Parameter Method (**IPM**) (a conventional low frequency filter design technique)
+   2. Insertion Loss Method (**ILM**)
+- Image Paraameter provides a filter design that requires PB and SB characteristics but does not specify the exact frequency response over these regions.
+- Cut and try procedures are also often required in such synthesis procedure to get an overall acceptable frequency response.
+- In comparison, Insertion Loss method begins with a complete specification of thee filter frequency response and need not any cut and try procedure.
+- Hence it is often preferred.
+- Additionally,
+    - IPM employes step-by-step calaculation f image parameters of their inputs of 2-port find the output parameters.
+    - This is a simple conventional method, commonly for low frequency filter design.
+    - It gives quite poor frequency response responses.
+    - Main disadv that is associated with IPM is that arbitrary frequency response cannot be incorporated in teh design.
+    - In addition, there is also no clear cut way for design improvement.
+    - Therefore if we require a specific frequency response characteristic, IPM doesn't work and we need to switch to ILM
+- ILM
+    - allows the control over PB and SB characteristics and also a systematic way to synthesize a desired frequency response.
+    - Since teh IL parameter has frequency dependency, this method gives a complete specification of frequnecy responses.
+    - the filters frequency is defined by IL or Power Loss ratio ($P_{LR}$)
+
+
+Synthesis of a filter
+
+- The effort involved in the synthesis of aa filter can be largely reduced by the use of impedance and frequency transformation and element normalization.
+- These enables the synthesis of HPF, BPF/BSF, operating over an arbitrary frequency bandwidth with an aarbitrary resistive load termination from an LPF prototype with unit cut-off frequency and unit resistive load.
+- Both the IPM and ILM result in a filter that is basaed on lumped inductor and capacitor.
+- Since these lumped elements are not useful at high frequencies, we need to replace them by distributed circuit elements.
+- This can be done with the help of **Richard's transformation**, **Kuroda identities** and **impedance and admittance inverters**.
+- It may be noted, at some point, beyond the SB frequency, the response of a distributed circuit filter pop back even if the response of the equivalent lumped circuit filter monotonically decays.
+- The periodic impedance behavior of a transmission line produces these re-entrant modes.
+- Tackling these re-entrant modes is a big challenge in $\mu$wave filter design.
+
+## Filter Model
+
+- A two port network model shown represents a microwave filter.
+- Among different filter parameters the insertion loss, return loss and group delay plaays key role in filter synthesis.
+- The model used to define these prameters as per the figure
+    - ![2 Port filter network](attachments/2-port-filter-model.png)
+    $$\begin{align}
+        \text{IL}\ &=\ -10\log_{10}\left(\frac{P_{L}}{P_{in}}\right) &&=-10\log_{10}\left(1-\left|\Gamma\right|^{2}\right)\\
+        \text{RL}\ &=-10\log_{10}\left(\frac{P_{R}}{P_{in}}\right) &&=-10\log_{10}\left(\left|\Gamma\right|^{2}\right)\\
+        \tau_{d}\ &=\frac{d\ \phi_{T}}{d\omega} &&=\frac{1}{2\pi}\ \frac{d\phi_{T}}{df}
+    \end{align}$$
+- Where, 
+    - $P_{in}$ is the input power to the network from source,
+    - $P_{R}$ is the return power to the network to source,
+    - $\phi_{T}$ is the transmission phase.
+- The group delay measures how long a signal takes to propagate through a filter.
+- If group delay is constant then component of multi-frequency signal will travel at the same velocity through the device and hence there will be no frequency dispersion.
+- Alternatively any deviation from constant group delay will cause an FM signal to become distorted.
+- An ideal filter should have zero insertion loss and constant group delay over the PB and infinite rejection everywhere else.
+
+## Microwave Filter Desing Using ILM
+
+- IL is given by
