@@ -418,3 +418,61 @@ Synthesis of a filter
 ## Microwave Filter Desing Using ILM
 
 - IL is given by
+    $$\begin{equation}
+        \text{IL}=10\log_{10}\left(P_{LR}\right)=10\log_{10}\left(\frac{1}{1-\left|\Gamma\left(\omega\right)\right|^{2}}\right)
+    \end{equation}$$
+- Here $|\Gamma\left(\omega\right)|$ is an even function of $\omega$ therefore it can be expressed as a polynomial of $\omega^2$ as
+    $$\begin{equation}
+        \left|\Gamma\left(\omega\right)\right|^{2}=\frac{M\left(\omega^{2}\right)}{M\left(\omega^{2}\right)+N\left(\omega^{2}\right)}
+    \end{equation}$$
+- where M and N are real polynomials.
+- Using (59) in (58):
+    $$\begin{equation}
+        P_{LR}=\frac{1}{1-\left|\Gamma\left(\omega\right)\right|^{2}}=1+\frac{M\left(\omega^{2}\right)}{N\left(\omega^{2}\right)}
+    \end{equation}$$
+- Therefore, for a filter to be physically realized its power loss must be in the form of (60),
+    - which simultaneously constrains the reflection coefficient, $\Gamma(\omega)$
+
+![Example responses](attachments/butterworth-chebyshev-responses.png)
+
+- The power loss ratio (attenuation) as a function of frequency characterizes different filter responses.
+- In practice, filters are commonly designed to give either aa maximally flat (Butterworth) responses or an equi-ripple (Chebyshev) responses.
+- Both these types of low pass characteristics are shown above.
+
+### Butterworth Response
+
+- For a maximally flat, i.e., the Butterworth response, LPF design we choose the following expression.
+    $$\begin{equation}
+        IL=1+a_{m}^{2}\left(\frac{\omega}{\omega_{c}}\right)^{2N}
+    \end{equation}$$
+- where, N is the order of the filter section of N reactive elements, $\omega_c$ is the cut-off frequency, and $a_m$ is the constant corresponding to $\omega_c$.
+- The pass band varies from $\omega = 0$ to $\omega = \omega_c$.
+- Butterworth approximation exhibits flat resposne in the pass band and a monastically increasing attenuation in the stop band.
+- The maximum insertion loss in the pass band is 3 dB at with $a_m = 1$
+- For $\omega > \omega_c$, IL increases monotonically depending on the exponent of 2N.
+
+### Chebyshev Response
+
+- To obtain a Chebyshev response we choose the insertion loss as
+    $$\begin{equation}
+        IL=1+a_{m}^{2}T_N^2\left(\frac{\omega}{\omega_{c}}\right)
+    \end{equation}$$
+- Where, $a_m$ (in dB) determines the passband ripple level, $N$ denotes the degree of approximation (i.e.) number of reactive elements.
+- $T_N^2\left(\frac{\omega}{\omega_{c}}\right)$ is the Chebyshev polynomial of degree $N$ gives as
+    $$\begin{align}
+        T_{1}\left(\frac{\omega}{\omega_{c}}\right)&=\frac{\omega}{\omega_{c}}\\
+        T_{2}\left(\frac{\omega}{\omega_{c}}\right)&=2\left(\frac{\omega}{\omega_{c}}\right)^{2}-1\\
+        T_{3}\left(\frac{\omega}{\omega_{c}}\right)&=4\left(\frac{\omega}{\omega_{c}}\right)^{3}-3\left(\frac{\omega}{\omega_{c}}\right)\\
+        T_{4}\left(\frac{\omega}{\omega_{c}}\right)&=8\left(\frac{\omega}{\omega_{c}}\right)^{4}-8\left(\frac{\omega}{\omega_{c}}\right)^{2}+1\\
+        T_{N}\left(\frac{\omega}{\omega_{c}}\right)&=2T_{N-1}\left(\frac{\omega}{\omega_{c}}\right)-T_{N-2}\left(\frac{\omega}{\omega_{c}}\right)
+    \end{align}$$
+- And
+    $$\begin{align}
+        T_{N}\left(\frac{\omega}{\omega_{c}}\right)&=\cos\left(N\cos^{-1}\left(\frac{\omega}{\omega_{c}}\right)\right)\ \operatorname{for}\ \frac{\omega}{\omega_{c}}<1\\
+        T_{N}\left(\frac{\omega}{\omega_{c}}\right)&=\cos\left(N\cosh^{-1}\left(\frac{\omega}{\omega_{c}}\right)\right)\ \operatorname{for}\ \frac{\omega}{\omega_{c}}>1
+    \end{align}$$
+- Since at PB, $T_N$ oscillates between $\pm 1$, therefore maximum pass band gain is $1 + a_m^2$.
+- For $\omega >> \omega_c$,
+    $$\begin{equation}
+        T_{N}\left(\frac{\omega}{\omega_{c}}\right)=\frac{1}{2}\left(\frac{2\omega}{\omega_{c}}\right)^{N}
+    \end{equation}$$
