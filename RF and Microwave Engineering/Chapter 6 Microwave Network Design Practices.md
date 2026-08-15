@@ -476,3 +476,45 @@ Synthesis of a filter
     $$\begin{equation}
         T_{N}\left(\frac{\omega}{\omega_{c}}\right)=\frac{1}{2}\left(\frac{2\omega}{\omega_{c}}\right)^{N}
     \end{equation}$$
+- So, we get,
+    $$\begin{equation}
+        IL\ =\ 1\ +\ \frac{a_{m}^{2}}{4}\left(\frac{2\omega}{\omega_{c}}\right)^{2N}
+    \end{equation}$$
+
+## Low Pass Filter Prototype
+
+![Common LPF Prototype Circuit](attachments/prototype-circuit.png)
+
+- For filter with Butterworth response, $g_k$ is given as
+    $$\begin{align}
+        g_{0}=g_{N+1}=1,\\
+        g_{k}=2\sin\left(\frac{\left(2k-1\right)\pi}{2N}\right)\ for\ k = 1, 2, 3, \dots
+    \end{align}$$
+- For the filter with Chebyshev responses, $g_k$ is given as
+    $$\begin{align}
+        g_{0}&=1;\ \text{for all N}\\
+        g_{N}&=1;\ \text{for all odd N}\\
+        g_{N+1}&=\coth^{2}\left(\frac{\beta}{4}\right);\ \text{for all even N}\\
+        \beta&=\ln\left(\coth\left(\frac{a_{m}}{17.87}\right)\right);\ \text{for } a_{m}\text{ in dB}\\
+        g_{1}&=\ \frac{P_{1}}{\sinh\left(\frac{\beta}{2N}\right)},\\
+        g_{k}&=\frac{4P_{k-1}-P_{k}}{g_{k-i}-g_{k-j}};\ k\ =\ 2,\ 3,\ ...\ N;\\
+        g_{k}&=2\sin\left(\frac{\left(2k-1\right)\pi}{2N}\right),\text{for all odd N; k =1,2,3}\\
+        g_{k}&=\sinh^{2}\left(\frac{\beta}{2N}\right)+\sin^{2}\left(\frac{k\pi}{N}\right);\ \text{for all even N}
+    \end{align}$$
+
+The value of $g_k$ can be obtained using a lookup table for different values of $a_m$ and IL.
+
+Prototyping
+- The element values of the prototype filter are normalized to make $g_0$ = 1 and $\omega/\omega_c$ = 1.
+- This prototype forms the basis for designing the filter with the desired band-edge and input impedance.
+- If $g_R,\ g_L\ and\ g_C$ are the $g$ corresponding to resistances, inductances and capacitances of the normalized prototype filter, then the corresponding elements of the actual filter are obtained from the following relations
+    $$\begin{equation}
+        R=R_{0}g_{R};\ L=R_{0}\ \frac{g_{L}}{\omega_{1}};\ \text{and}\ C\ =\ \frac{g_{c}}{R_{0}\omega_{1}}
+    \end{equation}$$
+- Where,
+    - $\omega_1,\ \omega_2$ are the angular frequency corresponding to the band edge,
+    - $\omega_C$ is the angualr cut-off frequency and $R_0$ is the generator resistance of the filter.
+- The transform the value of $g_k$ into the values of the desired filter elements are given as in the following table.
+
+| P_LPF | LPF | HPF | BPF | BSF |
+| Series arm | Lk | Ck | Lk | Lk |

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "RF and Microwave Engineering/Chapter 3 Microwave Network Theory.md",
+                "file": "RF and Microwave Engineering/Chapter 6 Microwave Network Design Practices.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 3 Microwave Network Theory"
+              "title": "Chapter 6 Microwave Network Design Practices"
             }
           }
         ],
@@ -95,7 +95,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "46db94f0435341e0",
@@ -215,6 +216,7 @@
   },
   "active": "77e313c1e69bef64",
   "lastOpenFiles": [
+    "RF and Microwave Engineering/Chapter 3 Microwave Network Theory.md",
     "RF and Microwave Engineering/Chapter 2 Transmission Line Theory.md",
     "RF and Microwave Engineering/Microwave Network Theory.md",
     "Mathjax globals.md",
@@ -242,7 +244,6 @@
     "Organization and Management/interview.md",
     "Excalidraw/Drawing 2026-08-01 09.46.07.excalidraw.md",
     "Artificial Intelligence/attachments/Pasted image 20260801101720.png",
-    "Organization and Management/Chapter 5 Management Information System.md",
     "Artificial Intelligence/attachments/Pasted image 20260801101702.png",
     "Artificial Intelligence/attachments/2026-08-01-09-44-04.png",
     "Artificial Intelligence/attachments/agent with sensor effectors.png",
