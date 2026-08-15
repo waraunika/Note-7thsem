@@ -15,14 +15,14 @@ Two port amplifiers only in syllabus
 - Microwave amplifiers can be of BJTs, FETs, Heterojunction Bipolar Transistors (HBTs) and High Electron Mobility Transistors (HEMTs).
 - Microwave transistor amplifiers are rugged, reliable and low cost and can also be integrated in both hybrid and monolithic microwave integrated circuits (MMICs).
 - Present day microwave transistor amplifies can work upto 100 GHz and have attractive characteristics, like
-     - broad bandwidth, low noise figure and medium power characteristics with desirable stability and gain factors.
+    - broad bandwidth, low noise figure and medium power characteristics with desirable stability and gain factors.
 
 ## Amplifier Gain Analysis
 
 - Figure for analysis
     - ![2 Port network model of transistor](attachments/2-port-gain.png)
 - The gain of the amplifier will be divided into the gain available at the input and ports, and transducer gain which can be defined as:
-    - Power Gain: 
+    - Power Gain:
         - the **ratio of power dissipated in the load** to the **power delivered to the input** P$_{in}$ of the two port network
         - G = P$_L$/P$_{in}$
     - Available Gain:
@@ -37,112 +37,134 @@ Two port amplifiers only in syllabus
 - if the source and load are both conjugately matched to the port network then gain is maximum and we can write G = G$_A$ = G$_T$
 
 For reflection coefficient, from Ch-2/3, we write them as:
+
 - $\Gamma_s$ (looking towards the source) and $\Gamma_L$ (looking towards load)
-    $$\begin{align}
+    $$ \begin{align}
         \Gamma_s = \dfrac{Z_s - Z_0}{Z_s + Z_0}\\
         \Gamma_L = \dfrac{Z_L - Z_0}{Z_L + Z_0}
     \end{align}$$
+    $$
 - where Z$_S$, Z$_L$ and Z$_0$ are source, load and characteristic impedance.
 - as per definition of S-parameter,
-    $$\begin{align}
+    $$ \begin{align}
         V_1^- = S_{11}V_1^+ + S_{12}V_{2}^+ = S_{11}V_1^+ + S_{12}\Gamma_L V_{2}^-\\
         V_2^- = S_{21}V_1^+ + S_{22}V_{2}^+ = S_{21}V_1^+ + S_{22}\Gamma_L V_{2}^-
     \end{align}$$
+    $$
 - From (4) we get:
-    $$\begin{equation}
+    $$ \begin{equation}
         \dfrac{V_2^-}{V_1^+} = \dfrac{S_{21}}{1-S_{22}\Gamma_L}
     \end{equation}$$
+    $$
 - where we have used the relation $V_2^+ = \Gamma_L + V_2^-$
 - now from the expression of V_1^- we get
-    $$\begin{equation}
+    $$ \begin{equation}
         \Gamma_{in} =\ \dfrac{Z_{in} - Z_0}{Z_{in} + Z_0} =\ S_{11} + S_{12} \Gamma_L \dfrac{V_2^-}{V_1^+}
     \end{equation}$$
+    $$
 - Substituting (5) in (6) gives the reflection coefficient to the input terminal fo the transducer $\Gamma_{in}$ as:
-    $$\begin{equation}
+    $$ \begin{equation}
         \Gamma_{in} =\ \dfrac{Z_{in} - Z_0}{Z_{in} + Z_0} =\ S_{11} + \dfrac{S_{12} S_{21} \Gamma_L}{1- S_{22}\Gamma_L}
     \end{equation}$$
+    $$
 - Similarly it can be shown that the reflection coefficient to the output terminal of the transducer $\Gamma_{out}$ as
-    $$\begin{equation}
+    $$ \begin{equation}
         \Gamma_{out} =\ \dfrac{V_2^-}{V_2^+} =\ S_{22} +\dfrac{S_{12} S_{21} \Gamma_S}{1- S_{11}\Gamma_S}
     \end{equation}$$
+    $$
 - Using the voltage division rule, we can write
-    $$\begin{equation}
+    $$ \begin{equation}
         V_1 = V_s \dfrac{Z_{in}}{Z_s + Z_{in}} = V_1^+ + V_1^- = V_1^+ (1 + \Gamma_{in})
     \end{equation}$$
+    $$
 - Using (7) in (9), we get:
-    $$\begin{equation}
+    $$ \begin{equation}
         V_1^+ = \dfrac{V_S}{2} \left( \dfrac{1-\Gamma_S}{1-\Gamma_s\Gamma_{in}} \right)
     \end{equation}$$
+    $$
 - If peak values are assumed for all voltages then the average power delivered to the network can be given as
-    $$\begin{equation}
+    $$ \begin{equation}
         P_{in} = \dfrac{1}{2Z_0} |V_1^+| (1 - | \Gamma_{in} |^2 )
     \end{equation}$$
+    $$
 - Using (10) in (11), we get
-    $$\begin{equation}
+    $$ \begin{equation}
         P_{in} = \dfrac{|V_s|^2}{8Z_0} \dfrac{|1 - \Gamma_s|^2}{|1-\Gamma_S\Gamma_{in}|^2} (1-|\Gamma_{in}|^2)
     \end{equation}$$
+    $$
 - Similarly, the power delivered to the load can be given as
-    $$\begin{equation}
+    $$ \begin{equation}
         P_L = \dfrac{|V_s|^2\cdot|S_{21}|^2\cdot|1-\Gamma_S|^2\cdot(1-|\Gamma_L|)^2}{8Z_0\cdot|1-\Gamma_s\Gamma_{in}|^2\cdot|1-S_{22}\Gamma_{L}|^2}
     \end{equation}$$
+    $$
 - Therefore, from (12) and (13), the total gain is:
-    $$\begin{equation}
+    $$ \begin{equation}
         G = \dfrac{P_L}{P_{in}} = \dfrac{|S_{21}|^2\cdot(1 - |\Gamma_L|^2)}{|1-S_{22}\Gamma_L|^2\cdot(1 - |\Gamma_{in}|^2)}
     \end{equation}$$
+    $$
 - The power available from the source P$_S$ is defined as:
     - the maximum power that can be delivered to the network.
 - Following maximum power transfer theorem, we can say that this happens when
     - $\Gamma_{in}$ = $\Gamma_s^*$
 - Therefore
-    $$\begin{equation}
+    $$ \begin{equation}
         P_{Avs} = P_{in}|_{\Gamma_{in} = \Gamma_S^*}
         = \left. \dfrac{|V_S|^2}{8Z_0} \cdot \dfrac{|1-\Gamma_s|^2}{|1-\Gamma_S\Gamma_{in}|^2} (1 - |\Gamma_{in}|^2) \right|_{\Gamma_{in} = \Gamma_S^*}
         = \dfrac{|V_S|^2 \cdot |1-\Gamma_S|^2}{8Z_0 (1 - |\Gamma_S|^2)}
     \end{equation}$$
+    $$
 - Again, the power available from the network is defined as maximum power that can be delivered to the load.
 - Following maximum power transfer theorem, we can say that this happens when $\Gamma_L$ = $\Gamma_{out}^*$.
 - So
-    $$\begin{equation}
+    $$ \begin{equation}
         P_{Avn} = P_L |_{\Gamma_L = \Gamma_{out}^*}
         = \left. \dfrac{|V_s|^2 \cdot |S_{21}|^2 \cdot (1-|\Gamma_S|^2)}{8Z_0 \cdot |1-\Gamma_s\Gamma_{in}|^2 \cdot |1-S_{22}\Gamma_L|^2} \right|_{\Gamma_L = \Gamma_{out}^*}
     \end{equation}$$
+    $$
 - Now,
-    $$\begin{equation}
+    $$ \begin{equation}
         \Gamma_{in}|_{\Gamma_L = \Gamma_{out}^*}
         = S_{11} + \dfrac{S_{12}S_{21}\Gamma_L}{1-S_{22}\Gamma_L}
         = S_{11} + \dfrac{S_{12}S_{21}\Gamma_{out}^*}{1-S_{22}\Gamma_{out}^*}
     \end{equation}$$
+    $$
 - Therefore,
-    $$\begin{equation}
+    $$ \begin{equation}
         \left. \left|1-\Gamma_{S}\Gamma_{in}\right|^{2} \right|_{\Gamma_L = \Gamma_{out}^*}
         = \left| 1-\Gamma_{s}S_{11}-\frac{S_{12}S_{21}\Gamma_{s}\Gamma_{out}^{*}}{1-S_{22}\Gamma_{out}^{*}} \right|^2
         = \left|\frac{\left(1-S_{11}\Gamma_{s}\right)-\Gamma_{out}^{*}\left(1-S_{11}\Gamma_{S}\right)\left(S_{22}+\frac{S_{12}S_{21}\Gamma_{S}}{1-S_{11}\Gamma_{S}}\right)}{1-S_{22}\Gamma_{out}^{*}}\right|^{2}
     \end{equation}$$
+    $$
 - Using (8) in (18) gives:
-    $$\begin{equation}
+    $$ \begin{equation}
         \left.\left|1-\Gamma_{s}\Gamma_{in}\right|^{2}\right|_{\Gamma_{L}=\Gamma_{out}^{*}}=\frac{\left|1-S_{11}\Gamma_{s}\right|^{2}\cdot\left(1-\left|\Gamma_{out}\right|^{2}\right)^{2}}{\left|1-S_{22}\Gamma_{out}^{*}\right|^{2}}
     \end{equation}$$
+    $$
 - Therefore,
-    $$\begin{equation}
+    $$ \begin{equation}
         P_{Avn}=\frac{\left|V_{s}\right|^{2}\cdot\left|S_{21}\right|^{2\ }\cdot\left|1-\Gamma_{s}\right|^{2}}{8Z_{0}\cdot\left|1-S_{11}\Gamma_{s}\right|^{2} \cdot \left(1-\left|\Gamma_{out}\right|^{2}\right)}
     \end{equation}$$
+    $$
 - Using (15) and (20), we obtain maximum available gain as
-    $$\begin{equation}
+    $$ \begin{equation}
         G_{A}=\frac{P_{Avn}}{P_{avs}}=\frac{\left|S_{21}\right|^{2}\cdot\left(1-\left|\Gamma_{S}\right|^{2}\right)}{\left|1-S_{11}\Gamma_{S}\right|^{2}\cdot\left(1-\left|\Gamma_{out}\right|^{2}\right)}
     \end{equation}$$
+    $$
 - Similarly, the total gain will be
-    $$\begin{equation}
+    $$ \begin{equation}
         G_{T}=\frac{P_{Avn}}{P_{avs}}=\frac{\left|S_{21}\right|^{2}\left(1-\left|\Gamma_{L}\right|^{2}\right)\left(1-\left|\Gamma_{S}\right|^{2}\right)}{\left|1-\Gamma_{S}\Gamma_{in}\right|^{2}\left|1-S_{22}\Gamma_{L}\right|^{2}}
     \end{equation}$$
+    $$
 
 When both input and output are perfectly matched, $\Gamma_L = \Gamma_S = 0$, then $G_T = |S_{21}|^2$
 
 Now let us consider a unilateral case for which $S_{12}$ = 0. Under such condition, we can write $\Gamma_{in} = S_{11}$.
 
 - Then the unilateral transducer power gain will be
-    $$\begin{equation}
+    $$ \begin{equation}
         \left.G_{T}\right|_{S_{12}=0}=\frac{\left|S_{21}\right|^{2}\cdot\left(1-\left|\Gamma_{L}\right|^{2}\right)\cdot\left(1-\left|\Gamma_{S}\right|^{2}\right)}{\left|1-S_{11}\Gamma_{S}\right|^{2}\cdot\left|1-S_{22}\Gamma_{L}\right|^{2}}
     \end{equation}$$
+    $$
 - Since S$_{12}$ = 0 and S$_{21} \ne$, the system is non-reciprocal
 - Such non-reciprocal characteristic is often used in amplifier circuits.
 
@@ -151,18 +173,20 @@ Now let us consider a unilateral case for which $S_{12}$ = 0. Under such conditi
 - Figure:
     - ![Simplified/Generalized Transistor Amp](attachments/transistor-amp-ckt-diagram.png)
 - The most suitable gain definition is the total transducer power gain which can be written as $G_T = G_S G_0 G_L$.
-- where $G_S$ is the gain of the input matching network, $G_0$ is the gain of the transistor and $G_L$ is the gain of the output matching network which are given as 
-    $$\begin{align}
+- where $G_S$ is the gain of the input matching network, $G_0$ is the gain of the transistor and $G_L$ is the gain of the output matching network which are given as
+    $$ \begin{align}
         G_{S}&=\frac{1-\left|\Gamma_{S}\right|^{2}}{\left|1-\Gamma_{S}\Gamma_{in}\right|^{2}}\\
         G_{0}&=\left|S_{21}\right|^{2}\\
         G_{L}&=\frac{1-\left|\Gamma_{L}\right|^{2}}{\left|1-\Gamma_{L}\Gamma_{out}\right|^{2}}
     \end{align}$$
+    $$
 - If we assume that the amplifier is unilateral, i.e., $S_{12}$ = 0 or its small enough to ignore. Then
-    $$\begin{align}
+    $$ \begin{align}
         G_{S}&=\frac{1-\left|\Gamma_{S}\right|^{2}}{\left|1-S_{11}\Gamma_{s}\right|^{2}}\\
         G_{0}&=\left|S_{21}\right|^{2}\\
         G_{L}&=\frac{1-\left|\Gamma_{L}\right|^{2}}{\left|1-S_{22}\Gamma_{L}\right|^{2}}
     \end{align}$$
+    $$
 
 ## Stability Analysis
 
@@ -189,39 +213,46 @@ Now let us consider a unilateral case for which $S_{12}$ = 0. Under such conditi
 - The stability circles are defined as the loci of $\Gamma_S$ or $\Gamma_L$ plane for which $|\Gamma_{in}| = 1$ or $\Gamma_{out} = 1$.
 
 To find the equation of stability circle for input matching network let us start with $\Gamma_{in} = 1$.
+
 - Using (7), we can write:
-    $$\begin{equation}
+    $$ \begin{equation}
         \left|S_{11}+\frac{S_{12}S_{21}\Gamma_{L}}{1-S_{22}\Gamma_{L}}\right|=1
     \end{equation}$$
+    $$
 - (30) can be simplified further as
-    $$\begin{equation}
+    $$ \begin{equation}
         \left|S_{11}-\Delta\Gamma_{L}\right|=\left|1-S_{22}\Gamma_{L}\right|
     \end{equation}$$
+    $$
 - Where $\Delta = S_{11}S_{22} - S_{12}S_{21}$, is the determinant of S-matrix.
 - Squaring both sides of (31) gives
-    $$\begin{equation}
+    $$ \begin{equation}
         \left|S_{11}\right|^{2}+\left|\Delta\right|^{2}\left|\Gamma_{L}\right|^{2}-\left(\Delta\Gamma_{L}S_{11}^{*}+\Delta^{*}\Gamma_{L}^{*}S_{11}\right)=1+\left|S_{22}\right|^{2}\left|\Gamma_{L}\right|^{2}-\left(S_{22}^{*}\Gamma_{L}^{*}+S_{22}\Gamma_{L}\right)
     \end{equation}$$
+    $$
 - After some manipulation, (32) can be written as:
-    $$\begin{align}
+    $$ \begin{align}
         \left|\Gamma_{L}-\frac{\left(S_{22}-\Delta S_{11}^{*}\right)^*}{\left|S_{22}\right|^{2}-\left|\Delta\right|^{2}}\right|^{2}
         &=\frac{\left|S_{12}\right|^{2}\left|S_{21}\right|^{2}}{\left(\left|S_{22}\right|^{2}-\left|\Delta\right|^{2}\right)^{2}}
         =\frac{\left(\left|S_{12}\right|\left|S_{21}\right|\right)^{2}}{\left(\left|S_{22}\right|^{2}-\left|\Delta\right|^{2}\right)^{2}}\\
         \left|\Gamma_{L}-\frac{\left(S_{22}-\Delta S_{11}^{*}\right)^{*}}{\left|S_{22}\right|^{2}-\left|\Delta\right|^{2}}\right|
         &= \left|\frac{S_{12}S_{21}}{\left|S_{22}\right|^{2}-\left|\Delta\right|^{2}}\right|
     \end{align}$$
+    $$
 - In a complex $\Gamma$ plane, (33) reveals a circle with center $C_L$ and radius $R_L$ given as
-    $$\begin{align}
+    $$ \begin{align}
         C_{L}&=\frac{\left(S_{22}-\Delta S_{11}^{*}\right)^{*}}{\left|S_{22}\right|^{2}-\left|\Delta\right|^{2}}\\
         R_{L}&=\left|\frac{S_{12}S_{21}}{\left|S_{22}\right|^{2}-\left|\Delta\right|^{2}}\right|
     \end{align}$$
+    $$
 - The circle is known as output stability circle.
 - Similar expression for input stability circle can be obtained.
 - For the input stability circle we get,
-    $$\begin{align}
+    $$ \begin{align}
         C_{S}&=\frac{\left(S_{11}-\Delta S_{22}^{*}\right)^{*}}{\left|S_{11}\right|^{2}-\left|\Delta\right|^{2}}\\
         R_{S}&=\left|\frac{S_{12}S_{21}}{\left|S_{11}\right|^{2}-\left|\Delta\right|^{2}}\right|
     \end{align}$$
+    $$
 
 The above equations reveal that if the S-parameter are given, then we can draw the input and output stbaility circles.
 
@@ -250,17 +281,19 @@ Now, if we set $Z_L = Z_0$, then we can write $|\Gamma_{in}| = |S_{11}|$
 
 ### Test of Unconditioanl Stability
 
-- The above stability conditions can be manipulated and solved in such a way 
+- The above stability conditions can be manipulated and solved in such a way
     - that we can find test parameters (K and $|\Delta|$ tests given as below) for unconditional stability.
 - An amplifier will be unconditionally stable if it meets the following both conditions.
-    $$\begin{align}
+    $$ \begin{align}
         K=\frac{1-\left|S_{11}\right|^{2}-\left|S_{22}\right|^{2}+\left|\Delta\right|^{2}}{2\left|S_{12}S_{21}\right|}>1\\
         \left|\Delta\right|=\left|S_{11}S_{22}-S_{12}S_{2}\right|<1
     \end{align}$$
+    $$
 - We can consider both the K-factor and $\Delta$-parameter into a single test called $\mu$-test for unconditional stability as
-    $$\begin{equation}
+    $$ \begin{equation}
         \mu=\frac{1-\left|S_{11}\right|^{2}}{\left|S_{22}-S_{11}^{*}\Delta\right|+\left|S_{12}S_{21}\right|}>1
     \end{equation}$$
+    $$
 - If $\mu$ > 1, then the amplifier is unconditionally staable.
 - Larger value of $\mu$ provides larger degree of stability.
 
@@ -277,54 +310,64 @@ Now, if we set $Z_L = Z_0$, then we can write $|\Gamma_{in}| = |S_{11}|$
     - between the source or load impedance and the transistor
 - With the conjugate matching there occurs maximum power transfer from the input matching section to the transistor and from transistor to output matching network.
 - Therefore we can write the total maximum gain as
-    $$\begin{equation}
+    $$ \begin{equation}
         G_{T,\ max}=\frac{1}{1-\left|\Gamma_{S}\right|^{2}}\cdot\left|S_{21}\right|^{2}\cdot\frac{1-\left|\Gamma_{L}\right|^{2}}{\left|1-S_{22}\Gamma_{L}\right|^{2}}
     \end{equation}$$
+    $$
 - Now using the relations $\Gamma_{in} = \Gamma_{s}^*$ and $\Gamma_{out} = \Gamma_{L}^*$:
-    $$\begin{align}
+    $$ \begin{align}
         \Gamma_{S}=S_{11}^{*}+\frac{S_{12}^{*}S_{21}^{*}}{\left(\frac{1}{\Gamma_{L}^{*}}\right)-S_{22}^{*}}\\
         \Gamma_{L}^{*}=S_{22}+\frac{S_{12}S_{21}\Gamma_{S}}{1-S_{11}\Gamma_{S}}
     \end{align}$$
+    $$
 - Substituting the expression of $\Delta$ in (44):
-    $$\begin{equation}
+    $$ \begin{equation}
         \Gamma_{L}^{*}=\frac{S_{12}-\Delta\Gamma_{S}}{1-S_{11}\Gamma_{S}}
     \end{equation}$$
+    $$
 - After the further simplification (46) with (43) gives:
-    $$\begin{equation}
+    $$ \begin{equation}
         \Gamma_{S}=S_{11}^{*}+\frac{S_{12}^{*}S_{21}^{*}}{\frac{1-S_{11}\Gamma_{S}}{S_{12}-\Delta\Gamma_{S}}-S_{22}^{*}}
     \end{equation}$$
+    $$
 - solving (46) we get
-    $$\begin{equation}
+    $$ \begin{equation}
         \left(S_{11}-\Delta S_{22}^{*}\right)\Gamma_{S}^{2}
         +\left(\left|\Delta\right|^{2}-\left|S_{11}\right|^{2}
         +\left|S_{22}\right|^{2}-1\right)\Gamma_{S}
         +\left(S_{11}^{*}-\Delta^{*}S_{22}\right)=0
     \end{equation}$$
+    $$
 - Finally, solving (47) we get
-    $$\begin{equation}
+    $$ \begin{equation}
         \Gamma_{S}=\frac{B_{1}\pm\sqrt{B_{1}^{2}-4\left|C_{1}\right|^{2}}}{2C_{1}}
     \end{equation}$$
+    $$
 - Where,
-    $$\begin{align}
+    $$ \begin{align}
         B_{1}=1+\left|S_{11}\right|^{1}-\left|S_{22}\right|^{2}-\left|\Delta\right|^{2}\\
         C_{1}=S_{11}-\Delta S_{22}^{*}
     \end{align}$$
+    $$
 - Similarly, we can get
-    $$\begin{equation}
+    $$ \begin{equation}
         \Gamma_{L}=\frac{B_{2}\pm\sqrt{B_{2}^{2}-4\left|C_{2}\right|^{2}}}{2C_{2}}
     \end{equation}$$
+    $$
 - where
-    $$\begin{align}
+    $$ \begin{align}
         B_{2}=1+\left|S_{2}\right|^{1}-\left|S_{11}\right|^{2}-\left|\Delta\right|^{2}\\
         C_{2}=S_{22}-\Delta S_{11}^{*}
     \end{align}$$
+    $$
 
 For unilateral case, $S_{12} = 0$ and we can write $\Gamma_S = S_{11}^*$ and $\Gamma_L = S_{22}^*$
 
 - Therefore the unilateral transducer gain can be expressed as
-    $$\begin{equation}
+    $$ \begin{equation}
         G_{TU,max}=\frac{1}{1-\left|S_{11}\right|^{2}}\cdot\left|S_{21}\right|^{2}\cdot\frac{1}{1-\left|S_{22}\right|^{2}}
     \end{equation}$$
+    $$
 
 ---
 
@@ -366,7 +409,7 @@ Ideal/Practical Filters
 - The procedure is called filter synthesis.
 - There are two filter synthesis techniques, namely
     1. Image Parameter Method (**IPM**) (a conventional low frequency filter design technique)
-   2. Insertion Loss Method (**ILM**)
+    2. Insertion Loss Method (**ILM**)
 - Image Paraameter provides a filter design that requires PB and SB characteristics but does not specify the exact frequency response over these regions.
 - Cut and try procedures are also often required in such synthesis procedure to get an overall acceptable frequency response.
 - In comparison, Insertion Loss method begins with a complete specification of thee filter frequency response and need not any cut and try procedure.
@@ -382,7 +425,6 @@ Ideal/Practical Filters
     - allows the control over PB and SB characteristics and also a systematic way to synthesize a desired frequency response.
     - Since teh IL parameter has frequency dependency, this method gives a complete specification of frequnecy responses.
     - the filters frequency is defined by IL or Power Loss ratio ($P_{LR}$)
-
 
 Synthesis of a filter
 
@@ -401,12 +443,13 @@ Synthesis of a filter
 - Among different filter parameters the insertion loss, return loss and group delay plaays key role in filter synthesis.
 - The model used to define these prameters as per the figure
     - ![2 Port filter network](attachments/2-port-filter-model.png)
-    $$\begin{align}
+    $$ \begin{align}
         \text{IL}\ &=\ -10\log_{10}\left(\frac{P_{L}}{P_{in}}\right) &&=-10\log_{10}\left(1-\left|\Gamma\right|^{2}\right)\\
         \text{RL}\ &=-10\log_{10}\left(\frac{P_{R}}{P_{in}}\right) &&=-10\log_{10}\left(\left|\Gamma\right|^{2}\right)\\
         \tau_{d}\ &=\frac{d\ \phi_{T}}{d\omega} &&=\frac{1}{2\pi}\ \frac{d\phi_{T}}{df}
     \end{align}$$
-- Where, 
+    $$
+- Where,
     - $P_{in}$ is the input power to the network from source,
     - $P_{R}$ is the return power to the network to source,
     - $\phi_{T}$ is the transmission phase.
@@ -418,18 +461,21 @@ Synthesis of a filter
 ## Microwave Filter Desing Using ILM
 
 - IL is given by
-    $$\begin{equation}
+    $$ \begin{equation}
         \text{IL}=10\log_{10}\left(P_{LR}\right)=10\log_{10}\left(\frac{1}{1-\left|\Gamma\left(\omega\right)\right|^{2}}\right)
     \end{equation}$$
+    $$
 - Here $|\Gamma\left(\omega\right)|$ is an even function of $\omega$ therefore it can be expressed as a polynomial of $\omega^2$ as
-    $$\begin{equation}
+    $$ \begin{equation}
         \left|\Gamma\left(\omega\right)\right|^{2}=\frac{M\left(\omega^{2}\right)}{M\left(\omega^{2}\right)+N\left(\omega^{2}\right)}
     \end{equation}$$
+    $$
 - where M and N are real polynomials.
 - Using (59) in (58):
-    $$\begin{equation}
+    $$ \begin{equation}
         P_{LR}=\frac{1}{1-\left|\Gamma\left(\omega\right)\right|^{2}}=1+\frac{M\left(\omega^{2}\right)}{N\left(\omega^{2}\right)}
     \end{equation}$$
+    $$
 - Therefore, for a filter to be physically realized its power loss must be in the form of (60),
     - which simultaneously constrains the reflection coefficient, $\Gamma(\omega)$
 
@@ -442,9 +488,10 @@ Synthesis of a filter
 ### Butterworth Response
 
 - For a maximally flat, i.e., the Butterworth response, LPF design we choose the following expression.
-    $$\begin{equation}
+    $$ \begin{equation}
         IL=1+a_{m}^{2}\left(\frac{\omega}{\omega_{c}}\right)^{2N}
     \end{equation}$$
+    $$
 - where, N is the order of the filter section of N reactive elements, $\omega_c$ is the cut-off frequency, and $a_m$ is the constant corresponding to $\omega_c$.
 - The pass band varies from $\omega = 0$ to $\omega = \omega_c$.
 - Butterworth approximation exhibits flat resposne in the pass band and a monastically increasing attenuation in the stop band.
@@ -454,44 +501,50 @@ Synthesis of a filter
 ### Chebyshev Response
 
 - To obtain a Chebyshev response we choose the insertion loss as
-    $$\begin{equation}
+    $$ \begin{equation}
         IL=1+a_{m}^{2}T_N^2\left(\frac{\omega}{\omega_{c}}\right)
     \end{equation}$$
+    $$
 - Where, $a_m$ (in dB) determines the passband ripple level, $N$ denotes the degree of approximation (i.e.) number of reactive elements.
 - $T_N^2\left(\frac{\omega}{\omega_{c}}\right)$ is the Chebyshev polynomial of degree $N$ gives as
-    $$\begin{align}
+    $$ \begin{align}
         T_{1}\left(\frac{\omega}{\omega_{c}}\right)&=\frac{\omega}{\omega_{c}}\\
         T_{2}\left(\frac{\omega}{\omega_{c}}\right)&=2\left(\frac{\omega}{\omega_{c}}\right)^{2}-1\\
         T_{3}\left(\frac{\omega}{\omega_{c}}\right)&=4\left(\frac{\omega}{\omega_{c}}\right)^{3}-3\left(\frac{\omega}{\omega_{c}}\right)\\
         T_{4}\left(\frac{\omega}{\omega_{c}}\right)&=8\left(\frac{\omega}{\omega_{c}}\right)^{4}-8\left(\frac{\omega}{\omega_{c}}\right)^{2}+1\\
         T_{N}\left(\frac{\omega}{\omega_{c}}\right)&=2T_{N-1}\left(\frac{\omega}{\omega_{c}}\right)-T_{N-2}\left(\frac{\omega}{\omega_{c}}\right)
     \end{align}$$
+    $$
 - And
-    $$\begin{align}
+    $$ \begin{align}
         T_{N}\left(\frac{\omega}{\omega_{c}}\right)&=\cos\left(N\cos^{-1}\left(\frac{\omega}{\omega_{c}}\right)\right)\ \operatorname{for}\ \frac{\omega}{\omega_{c}}<1\\
         T_{N}\left(\frac{\omega}{\omega_{c}}\right)&=\cos\left(N\cosh^{-1}\left(\frac{\omega}{\omega_{c}}\right)\right)\ \operatorname{for}\ \frac{\omega}{\omega_{c}}>1
     \end{align}$$
+    $$
 - Since at PB, $T_N$ oscillates between $\pm 1$, therefore maximum pass band gain is $1 + a_m^2$.
 - For $\omega >> \omega_c$,
-    $$\begin{equation}
+    $$ \begin{equation}
         T_{N}\left(\frac{\omega}{\omega_{c}}\right)=\frac{1}{2}\left(\frac{2\omega}{\omega_{c}}\right)^{N}
     \end{equation}$$
+    $$
 - So, we get,
-    $$\begin{equation}
+    $$ \begin{equation}
         IL\ =\ 1\ +\ \frac{a_{m}^{2}}{4}\left(\frac{2\omega}{\omega_{c}}\right)^{2N}
     \end{equation}$$
+    $$
 
 ## Low Pass Filter Prototype
 
 ![Common LPF Prototype Circuit](attachments/prototype-circuit.png)
 
 - For filter with Butterworth response, $g_k$ is given as
-    $$\begin{align}
+    $$ \begin{align}
         g_{0}=g_{N+1}=1,\\
         g_{k}=2\sin\left(\frac{\left(2k-1\right)\pi}{2N}\right)\ for\ k = 1, 2, 3, \dots
     \end{align}$$
+    $$
 - For the filter with Chebyshev responses, $g_k$ is given as
-    $$\begin{align}
+    $$ \begin{align}
         g_{0}&=1;\ \text{for all N}\\
         g_{N}&=1;\ \text{for all odd N}\\
         g_{N+1}&=\coth^{2}\left(\frac{\beta}{4}\right);\ \text{for all even N}\\
@@ -501,16 +554,19 @@ Synthesis of a filter
         g_{k}&=2\sin\left(\frac{\left(2k-1\right)\pi}{2N}\right),\text{for all odd N; k =1,2,3}\\
         g_{k}&=\sinh^{2}\left(\frac{\beta}{2N}\right)+\sin^{2}\left(\frac{k\pi}{N}\right);\ \text{for all even N}
     \end{align}$$
+    $$
 
 The value of $g_k$ can be obtained using a lookup table for different values of $a_m$ and IL.
 
 Prototyping
+
 - The element values of the prototype filter are normalized to make $g_0$ = 1 and $\omega/\omega_c$ = 1.
 - This prototype forms the basis for designing the filter with the desired band-edge and input impedance.
 - If $g_R,\ g_L\ and\ g_C$ are the $g$ corresponding to resistances, inductances and capacitances of the normalized prototype filter, then the corresponding elements of the actual filter are obtained from the following relations
-    $$\begin{equation}
+    $$ \begin{equation}
         R=R_{0}g_{R};\ L=R_{0}\ \frac{g_{L}}{\omega_{1}};\ \text{and}\ C\ =\ \frac{g_{c}}{R_{0}\omega_{1}}
     \end{equation}$$
+    $$
 - Where,
     - $\omega_1,\ \omega_2$ are the angular frequency corresponding to the band edge,
     - $\omega_C$ is the angualr cut-off frequency and $R_0$ is the generator resistance of the filter.
@@ -518,3 +574,9 @@ Prototyping
 
 | P_LPF | LPF | HPF | BPF | BSF |
 | Series arm | Lk | Ck | Lk | Lk |
+
+| P_LPF         | LPF                                                                               | HPF                                                                               | BPF                                                                                                                                        | BSF                                                                                                                                         |
+| ------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Series<br>arm | $L_k = \dfrac{g_k Z_L}{\omega_C}$<br> $C_{k}=\dfrac{Z_{L}}{g_{k}\omega_{C}}$      | $C_{k}=\dfrac{1}{g_{k}Z_{L}\omega_{C}}$<br>$L_{k}=\dfrac{g_{k}}{Z_{L}\omega_{C}}$ | $L_{k}=\dfrac{g_{k}Z_{L}}{\omega_{2}-\omega_{1}}$<br>$C_{k}=\dfrac{\omega_{2}-\omega_{1}}{\omega_{C}-g_{k}Z_{L}}$                          | $L_{k}=\dfrac{g_{k}Z_{L}\left(\omega_{2}-\omega_{1}\right)}{\omega_{C}}$<br>$C_{k}=\dfrac{1}{g_{k}Z_{L}\left(\omega_{2}-\omega_{1}\right)}$ |
+| Shunt Arm     | $L_{k}=\dfrac{1}{g_{k}Z_{L}\omega_{C}}$<br>$C_{k}=\dfrac{g_{k}}{Z_{L}\omega_{C}}$ | $L_{k}=\dfrac{Z_{L}}{g_{k}\omega_{C}}$<br>$C_k = \dfrac{g_k Z_L}{\omega_C}$       | $L_{k}=\dfrac{Z_{L}}{g_{k}\left(\omega_{2}-\omega_{1}\right)}$<br>$C_{k}=\dfrac{g_{k}\left(\omega_{2}-\omega_{1}\right)}{Z_{L}\omega_{C}}$ | $L_{k}=\dfrac{g_{k}\left(\omega_{2}-\omega_{1}\right)}{Z_{L}\omega_{C}}$<br>$L_{k}=\dfrac{Z_{L}}{g_{k}\left(\omega_{2}-\omega_{1}\right)}$  |
+
