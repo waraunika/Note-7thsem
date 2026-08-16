@@ -1,6 +1,6 @@
 # ⁠A. Introduction
 
-- Microwave Network is formed when microwave component devices, module,s etc. are coupled together by transmission lines for the desired transmission of microwave signal through ports.
+- Microwave Network is formed when microwave component devices, modules, etc. are coupled together by transmission lines for the desired transmission of microwave signal through ports.
 - Here the term port is defined as **point of interconection** of two or more networks, simply junctions or terminals.
 - At low frequency, the physical length of a network is much smaller than the electrical wavelength of the signal.
 - Therefore the measurable input and output variabel are votlage or current which can be related in terms of ABCD, Y-, Z-, or h-parameters.
@@ -13,7 +13,7 @@
         - It means, the **network analysis is distributive**
     - These parameters often **change the biasing conditions to junction capacitors**.
         - Therefore, ABCD, Y-, Z- and h-parameters based analyses are not suitable for micwoaves.
-        - Instead, scattering parameters, aka S-parameters aka S-matrix, are used to analyze the microwave networks, where the incident and reflected wave parameters are linearly related.d
+        - Instead, scattering parameters, aka S-parameters aka S-matrix, are used to analyze the microwave networks, where the incident and reflected wave parameters are linearly related.
 - Microwave networks **can be of 1-port** like transmission line, **2-port** like amplifier or **multiport** like modulator.
 - Any microwave network can be analyzed based on their respective port models.
 
@@ -33,7 +33,7 @@
 **Consider an arbitrary N-Port network**
 - Figure:
     - ![Arbitrary N-Port network representation](attachments/N-port%20network.png)
-- The voltage V$_n$ and the current at the terminal plane T$_n$ are given by
+- The voltage V$_n$ and the current at the terminal plane t$_n$ are given by
     $$\begin{align}
         V_n = V_n^+ + V_n^- \\
         I_n = \dfrac{1}{Z_0} (V_n^+ + V_n^-)
@@ -82,7 +82,7 @@
 
 - For circuits operating at $\mu$wave frequencies,
     - network representation in terms of admittance or impedance matrix is not very convinient.
-    - since voltage, currents and impedances cannot be emasured directly.
+    - since voltage, currents and impedances cannot be measured directly.
 - Parameters that can be measured directly are the incident and reflected power levels
     - that are related to the incident and reflected voltage waves.
 - The matrix that reflects the incident and reflected voltage waves at the various ports of the network is known as the scattering matrix.
@@ -130,7 +130,7 @@ $$\begin{align}
         [S]^t [S] = [U]
     \end{equation}$$
 - Where $t$ denotes transpose and \[U\] is a unit matrix (also called identity matrix).
-- Eqn (11) is known as unitary condition.
+- Eqn (13) is known as unitary condition.
 
 ## ⁠B.3. Relation between \[S\] and \[Z\]
 
@@ -138,7 +138,7 @@ $$\begin{align}
     - and these voltages and currents can be expressed as the sum
     - of the incident and reflected voltagee waves and current waves, respectively.
 - Further, \[S\] relates the incident and reflected voltages waves at the various ports.
-- Therefore, there exists a relation between \[S\] \[S\].
+- Therefore, there exists a relation between \[S\] and \[Z\].
 - It is given by,
     $$\begin{align}
         [S] = ([Z] + [U])^{-1}\ ([Z] - [U])\\
