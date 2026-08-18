@@ -3,7 +3,7 @@
 - Microwave Network is formed when microwave component devices, modules, etc. are coupled together by transmission lines for the desired transmission of microwave signal through ports.
 - Here the term port is defined as **point of interconection** of two or more networks, simply junctions or terminals.
 - At low frequency, the physical length of a network is much smaller than the electrical wavelength of the signal.
-- Therefore the measurable input and output variabel are votlage or current which can be related in terms of ABCD, Y-, Z-, or h-parameters.
+- Therefore the measurable input and output variable are votlage or current which can be related in terms of ABCD, Y-, Z-, or h-parameters.
 - These parameters can be measured under short or open circuited conditions.
 - But **in microwaves**:
     - Open or short-circuited conditions are not easily achieved.
@@ -22,7 +22,7 @@
 # ⁠B. Microwave N-Port
 
 - A microwave network consists of:
-    - a nunmber of transmission line sections
+    - a number of transmission line sections
     - interconnected or coupled to each other
     - with passive/active devices
     - incorporated at appropriate locations.

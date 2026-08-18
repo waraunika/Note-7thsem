@@ -53,8 +53,8 @@ For reflection coefficient, from Ch-2/3, we write them as:
     $$\begin{equation}
         \dfrac{V_2^-}{V_1^+} = \dfrac{S_{21}}{1-S_{22}\Gamma_L}
     \end{equation}$$
-- where we have used the relation $V_2^+ = \Gamma_L + V_2^-$
-- now from the expression of V_1^- we get
+- where we have used the relation $V_2^+ = \Gamma_L \cdot V_2^-$
+- now from the expression of $V_1^-$ we get
     $$\begin{equation}
         \Gamma_{in} =\ \dfrac{Z_{in} - Z_0}{Z_{in} + Z_0} =\ S_{11} + S_{12} \Gamma_L \dfrac{V_2^-}{V_1^+}
     \end{equation}$$
