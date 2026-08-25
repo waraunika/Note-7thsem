@@ -144,4 +144,81 @@
 
 - The objective of LP analysis is to estimate parameters of an all-pole model of the vocal tract.
 - Several methods have been devised for generating the excitation sequence for speech synthesizers.
-- LPC-type of speech analysis and synthesis are different 
+- LPC-type of speech analysis and synthesis are different in primarily in the type of excitation signal that is generated for speech synthesis.
+
+## Linear Predictive Coders
+
+- The time domain class of vocoders
+- Attempts to extract the significant features of speech from the time waveform
+- Computationally intensive, but by far the msot popular among the class of low bit rate vocoders.
+- Possible to transmit good quality voice at **4.8kbps**
+- It models the vocal tract as an all pole linear filter with a transfer function described by
+    $$\begin{equation}
+        H(z) = \frac{G}{1 + \sum_{k=1}^{M} b_k z^{-k}}
+    \end{equation}$$
+    - where G is the gain of the filter.
+
+# GSM Codec
+
+- Origin
+    - The original speech coder used in the pan-European digital cellular standard GSM goves by a rather grandiose name of Regular Pulse Excited Long-Term Prediction (RPE-LTP) codec.
+    - This codec has a net bit rate of 13 kbps and was chosen after conducting exhaustive subjective tests on various competing codecs.
+    - More recent GSM upgrades have improved upon the original codec specification.
+- Comparision
+    - The RPE-LTP codec combines the adv of the earlier French proposed baseband RELP codec with those of the multipulse excited long-term prediction (MPE-LTP) codec proposed by germany.
+    - The adv of the baseband RELP codec is that it porvides good quality spech at low complexity.
+    - The speech quality of a RELP codec is however limited due to the tonal noise introduced by the process of high frequency regeneration and by the bit errors introduced during transmission.
+    the MPE-LTP technique on the other hand produces excellent speech quality at high complixty and is not much affected by bit errors in the channel.
+    - By modifying the RELP codec to incorporate certain features of the MPE-LTP codec, the net bit rate was reduced from 14.77 kkbps to 13.0 kbps without loss of quality.
+    - The most important modification was the addition of a long-term prediction loop.
+- Explanation: Encoder
+    - The GSM codec is relatively complex and power hingry.
+    - The block diagram is given below:
+        - ![Encoder Block Diagram](attachments/gsm-codec-encoder.png)
+    - the encoder is comprised of four major processing blocks.
+    - the speech sequence is first pre-emphasize, ordered into segments of 20ms duration, and tehn hamming-windowed.
+    - This is followed by a short-term prdiction (STP) filtering analysis where the logarithmic area ratio (LARs) of the reflection coefficients $r_n (k)$ (eight in number) are computed
+    - The eight LAR parameters have different dynamic ranges and probability distribution functions, and hence all of them are not encoded with the same number of bits for transmission. the LAR parameter are also decoded by the LPC inverse filter so as to minimize the error $e_n$.
+- Analysis
+    - LTP analysis which involves finding the pitch period $p_n$ and gain factor $g_n$ is then carried out such that the LTP residual $r_n$ is minimized.
+    - To minimze $r_n$, pitch extraction is done by the LTP by determining the value of delay, $D$, which maximizes the cross-correlation between the current STP error sample, $e_n$ and a previous error sample $e_{n-D}.
+    - The extracted pitch $p_n$ and gain are transmitted and encoded at a rate of 3.6 kbps.
+    - The LTP residual, $r_n$ is weighted and decomposed into three candidate excitation sequences.
+    - The energy is selected to represent the LTP residual.
+    - The pulses in the excitation sequence are normalized to the highest amplitude, quantized and transmitted at 9.6 kbps.
+- Decoder
+    - Block diagram of GSM decoder
+    - ![Decoder Block Diagram](attachments/gsm-codec-decoder.png)
+    - Decoder consists of 4 blocks which perform operations complementary to those of teh encoder.
+    - The received excitation parameters are RPE decoded and passed to the LTP synthesis filter which which uses the pitch and gain parameter to synthesize the long-term signal.
+    - Short-term synthesis is carried out using the received reflection coefficients to recreate the original spech.
+- Forming Speech:
+    - Every 260 bits of the coder output (i.e. 20ms blocks of speech) are ordered, depending on their importance, into groups of 50, 132 and 78 bits each.
+    - the bits in the first group are very iportant bits called type $Ia$ bits.
+    - The next 132 bits are important bits called $Ib$ bits, and the last 78 bits are called type $II$ bits.
+    - Since type $Ia$ bits are the ones which effect the speech quality the most, they have error detection CRC bits added.
+    - Both $Ia$ and $Ib$ bits are convolutionally encoded for forward error correction.
+    - The least signficant type $II$ bits have no error correction or detection.
+
+# Block Code
+
+- A block code consists of a set of fixed length codewords.
+- The fixed length of these codewords is called the block length and is typically denoted by $n$.
+- A block code of size $M$ defined over an alphabet with $q$ symbols is a set of $M$ $q$-ary sequences, each of length $n$.
+- In the special case that $q = 2$, the symbols are called bits and the code is said to be a binary code.
+- Usually $M = q^k$ for some integer k, and we such a code an $(n, k)$ code.
+
+## Some helpful definitions
+
+- The minimum distance of a code is the minimum hamming distance between any two codewords
+- If the code C consist of the set of codewords $\{c_i, i = 0, 1, \dots, M-1\}$ then the minimum distance of the code is given by $d' = \text{min } d(c_i, c_j)$
+- The code rate of an (n, k) code is defined as teh ratio (k/n), and reflects the fraction of the codeword that consist of the information symbols.
+
+## Linear Block Code (LBC)
+
+- A linear code has the following properties
+    - the sum of 2 codewords belonging to the code is also codeword belonging to the code.
+    - the all-zero codeword is always a codeword
+    - the minimum hamming distance between two codewords of a linear code is equal to the minimum weight of any non-zero codeword, i.e. $d' = w'$
+- the minimum weight of a code is the smallest weight of any non-zero codeword, and is denoted by w'.
+- the presence of an all-zero codeword is necessary but not a sufficient condition for linearity.
