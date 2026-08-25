@@ -222,3 +222,76 @@
     - the minimum hamming distance between two codewords of a linear code is equal to the minimum weight of any non-zero codeword, i.e. $d' = w'$
 - the minimum weight of a code is the smallest weight of any non-zero codeword, and is denoted by w'.
 - the presence of an all-zero codeword is necessary but not a sufficient condition for linearity.
+
+### Matrix Description of LBC
+
+- The generator G converts (encodes) a vector of length $k$ to a vector of length $n$.
+- Let the input vector (uncoded symbols) be represented by $i$.
+- The coded symbols will be given by
+    $$\begin{equation}
+        c = i G
+    \end{equation}$$
+    - where $c$ is called the codeword and i is called the information word
+- The generator matrix will be a k x n matrix.
+
+## Hamming Code
+
+- Hamming Codes is a block code capable of identifying and correcting single-bit error occuring within the block.
+- It is defined as an (n, k) Hamming code.
+- Hamming codes employ module-2 arithmetic (Ex-OR)
+- Offers little protection against burst errors.
+- Parameters:
+    - Code length: $n \le 2^{n-k} - 1$
+    - Number of message bits: $k \le n - \log_2 (n+1)$
+    - error-correcting capability: $t_c = \dfrac{d_{min} - 1}2$
+
+### Structure
+
+- Parity bits are inserted in between data bits
+- Commonly 7 bits Hamming Code is used
+- Structure:
+    - ![Structure](attachments/hamming-structure.png)
+
+### Examples
+
+- Simple 1011
+    - ![1011 Example](attachments/hamming-example-1011.png)
+- received codeword= 1011011, locate (if) error
+    - ![1011011 example](attachments/hamming-example-1011011.png)
+
+## Hadamard Code
+
+- These cde produce by hadamard matrix $n x n$ square matrix
+- $n$ code vector of $n$-bit, if the message vector contains $k$-bits:
+    $$\begin{equation}
+        n = 2^k
+    \end{equation}$$
+- No. of check bits (q) in (n, k) block code:
+    - $q = n - k$
+    - $q = 2^n -k$
+- Code rate shown as r = $\dfrackn = \dfrac{k}{2^k}$
+    - Code rate will be smaller with increase in k.
+
+### Conditions
+
+- On code vector, row of matrix consist of all zero elements
+- 2$^{nd}$ row, equal to no. of 1's and 0's.
+    - i.e. half no. of $n/2$ 1's, and 0's.
+- Each code different from each other.
+- If single msg bit, k = 1
+    - $n = 2^k = 2^1 = 2$
+- If single message bit k = 2
+    - $n = 2^k = 2^2 = 4$
+- Hadmard matrix n x n = 2 x 2:
+    - $\begin{bmatrix}
+        0 & 0 \\
+        0 & 1
+    \end{bmatrix}$
+- Hadamard matrix n x n = 4 x 4:
+    - $\begin{bmatrix}
+        0 & 0 & 0 & 0\\
+        0 & 1 & 0 & 1 \\
+        0 & 0 & 1 & 1\\
+        0 & 1 & 1 & 0
+    \end{bmatrix}$
+
