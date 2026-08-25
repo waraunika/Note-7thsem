@@ -1,97 +1,101 @@
+# High-Frequency Exam Questions
+
+|Topic|Typical Marks|Frequency|
+|---|---|---|
+|Characteristics of Speech Signal|4 - 8|Very High|
+|Linear Predictive Coding (LPC)|5 - 8|Very High|
+|Vocoders (Operation & Types)|4 - 6|High|
+|GSM Codec (Block Diagram & Operation)|4 - 6|High|
+|Viterbi Decoding Algorithm|3 - 5|High|
+|Convolutional Encoding & Decoding|5 - 8|Medium|
+|Hamming Code (with Example)|5|Medium|
+|Sub-band Coding|6|Medium|
+|Turbo Coding|2 - 5|Low|
+
+---
+
 # Characteristics of Speech Signal
 
+The properties of a speech signal are exploited by coders to achieve compression.
+
 ## Autocorrelation Function (ACF)
-- In speech signal there exists much correlation between adjacent samples of the segment of speech.
-    - This implies that in every sample of speech, there is a large componnet  that is easily predicted from the value of the precious samples with a small random error.
-    - All differential and predictive coding schemes are based on exploiting this property.
-- Formula:
-    $$\begin{equation}
+
+- **Definition:** There is a high correlation between adjacent samples in a speech segment.
+- **Significance:** This implies a large component of any sample can be predicted from previous samples with a small random error. This property is the basis for differential and predictive coding schemes.
+- **Formula:**  
+   $$\begin{equation}
         C(k) = \dfrac1N \sum_{n=0}^{N-|k|-1} x(n)\cdot x(n+|k|)
-    \end{equation}$$
-    - Here, x(k) is k$^{th}$ sample of speech signal.
-    - Typical signals have an adjacent sample correlation
-    - as high as 0.85 to 0.9.
+    \end{equation}$$ 
+- **Observation:** Typical speech signals have an adjacent sample correlation as high as **0.85 to 0.9**.
 
-## PSDF
+### Probability Density Function (PDF)
 
-- Speech signal amplitude has a non-uniform probability density function (pdf) denoted by
-
-    $$\begin{equation}
+- The amplitude of a speech signal has a non-uniform probability density function.
+- **Formula:**  
+   $$\begin{equation}
         p(x) = \frac{1}{\sqrt{2\sigma_x}} \exp\left(\frac{-\sqrt{2} |x|}{\sigma_x}\right)
-    \end{equation}$$
-- The pdf of a speech signal is in general characterized by a very high probability of near-zero amplitudes, a significant probability of very high amplitudes, and a monotonically decreasing function of amplitudes between these extremes.
-- Non-uniform quantizers, including vector quantizers, are used to match the distribution by allocating more quanitization levels in the regions of high probability and fewer levels in the region where the probability is low.
+    \end{equation}$$ 
+- **Characteristics of PDF:**
+    - High probability of near-zero amplitudes.
+    - Significant probability of very high amplitudes.
+    - Monotonically decreasing function between these extremes.
+- **Coding Implication:** Non-uniform quantizers (including vector quantizers) are used to allocate more levels to high-probability regions and fewer levels to low-probability regions.
 
 ## Power Spectral Density Function (PSD)
 
-- Non-flat characteristic of the power spectral density of speech makes it possible to obtain significant compression by coding speech in the frequency domain.
-- That is, coding the speech signal separately in different frequency bands can lead to significant coding gain.
-- it should be noted that the high frequency components, through insignificant in energy are very important carrier of speech information and hence need to be adequately represented in the coding system.
-- This can be called **Frequency Domain Coding of Speech**
+- **Non-flat Characteristic:** The PSD of speech is non-flat.
+- **Coding Implication:** This allows for significant compression by coding different frequency bands separately (Frequency Domain Coding). This distributes quantization noise across the spectrum.
+- **Critical Note:** High-frequency components, though low in energy, are very important for speech intelligibility and must be adequately represented.
+
+---
 
 # Frequency Domain Coding of Speech
 
-- This coding can be thought of as a method of distributing quantization noise across the signal spectrum.
-- The speech signal is divided into a set of frequency components which are quantized and encoded separately.
-- The number of bits used to encode each frequency component can be dynammically varied and shared among the different bands.
-- Different frequency domain coding algorithms are as follows.
+This method divides the speech signal into frequency components which are quantized and encoded separately. The bit allocation can be dynamically varied among different bands.
 
 ## Sub-band Coding
-
-- The speech signal is divided into many smaller sub-bands and encodes each band separately.
-- The sub-band coding aims on controlling and distributing the quanitzation noise over the entire signal spectrum.
-- Speech is typically divided into 4 or 8 sub-bands by a bank of filters and then sampled at bandpass Nyquist rate and finally encoded.
-- Can be used for coding speech at bit rates in the range of **9.6 kbps to 32kbps**
-- There are various schemes available to process sub-bands but one of the better method is to do low-pass translation of sub-band signals to zero frequency value by applying a modulation scheme that is similar to single sideband modulation.
-    - By this method, it helps in sampling rate reduction.
-- Figure
+- **Method:** The speech signal is divided into several smaller sub-bands (typically 4 or 8) using a bank of filters.
+- **Process:** Each sub-band is sampled at its bandpass Nyquist rate and then encoded.
+- **Bit Rate:** Operates in the range of **9.6 kbps to 32 kbps**.
+- **Key Technique:** Low-pass translation of sub-band signals to zero frequency (similar to single sideband modulation) is used to reduce the sampling rate effectively.
+- **Block Diagram:**  
     - ![Sub band coding with 4 frequency range](attachments/sub-band-coding.png)
-    - LP transistor is a simple low-pass filter with **4 frequency ranges**.
-    - Decimation (signal processing) in digital processing:
-        - decimation is the process of reducing the sampling rate of a signal.
-        - Complementary to interpolation, which increases sampling rate
-        - it is a specific case of sample rate conversion in a multi-rate digital signal processing system.
+    _(4 frequency ranges shown)_
 
 ## Adaptive Transform Coding (ATC)
 
-- Involves block transformations of window input segments of the speech waveform
-    - i.e. a sequence of samples.
-- Each segment is represented by a set of transform coefficients, which are spearately quantized with number of bits proportional to its perceptual significance.
-- Can be used to encode speech at bit rates in the range **9.6 kbps to 20 kbps**
-- One of the most frequently used transforms:
-    - **The Discrete cosine transform**
+- **Method:** Involves block transformations (e.g., Discrete Cosine Transform) of windowed segments of speech.
+- **Process:** Each segment is represented by a set of transform coefficients. These are quantized with bits allocated based on perceptual significance.
+- **Bit Rate:** Operates in the range of **9.6 kbps to 20 kbps**.
+- **Common Transform:**
+    - **Discrete Cosine Transform (DCT):**  
     $$\begin{equation}
         X_C (k) = \sum_{n=0}^{N-1} x(n) g(k) \cos\left[\frac{(2n+1)k\pi}{2N} \right]\ \text{for } k = 0, 1, 2, \dots N-1
-    \end{equation}$$
+    \end{equation}$$  
     - Where g(0) = 1 and g(k) = $\sqrt{2}$, k = 1, 2, $\dots$ N-1
-    - The inverse DCT is defined as:
-    $$\begin{equation}
+    - **Inverse DCT:**  
+   $$\begin{equation}
         x(n) = \frac1N \sum_{k=0}^{N-1} X_C (k) \cos\left[ \frac{(2n+1)k\pi}{2N} \right]\ \text{for } n = 0, 1, 2, \dots N-1
-    \end{equation}$$
+    \end{equation}$$ 
 
-# Vocoders
+---
 
-- Analyze the voice signal at transmitter
-- Transmit parameters derived from analysis
-- Then synthesize the voice at the receiver using those parameters.
-- All vocoder systems try to model the speech generation process as a dynamic system and attempt to quantify certain physical constraints of the system.
-- These physical constraints are then used to provide a faint description of the speech signal.
-- In general, much more complex than the waveform coders and achieve high economy in transmission bit rate.
-- However, less robust, and the performance tends to be talker dependent.
-- The most popular among the voding schemes is the linear predictive coder (**LPC**)
+# Vocoders (Analysis-Synthesis Systems)
 
-## Channel Vocoders
+Vocoders analyze the voice signal at the transmitter, transmit derived parameters, and synthesize the voice at the receiver using these parameters. They model the speech generation process to provide a compact description of the signal.
 
-- First analysis-synthesis system.
-- It is a frequency domain vocoder that determines the envelope of speech signal for a number of frequency bands
-    - then sample, encode and multiplex these samples
-    - with the encoded output of other filters
-- In addition to energy details about each frequency band
-    - the voice/unvoiced decision and the pitch frequency for voiced speech are transmitted.
-- The sampling is done at every 10ms to 30ms.
+- **Advantages:** High economy in transmission bit rate.
+- **Disadvantages:** More complex than waveform coders, less robust, and performance tends to be talker-dependent.
+- **Most Popular Type:** Linear Predictive Coder (LPC).
 
-### Analyzer
+## Channel Vocoder
 
+- **Type:** A frequency domain vocoder.
+- **Principle:** Determines the envelope of the speech signal for a number of frequency bands, samples, encodes, and multiplexes these samples.
+- **Parameters Transmitted:** Energy details per frequency band, a voice/unvoiced decision, and pitch frequency (for voiced speech).
+- **Sampling:** Performed every 10ms to 30ms.
+
+### Analyzer Block Diagram
 - The channel vocoder employs a number of bandpass filters
     - each having a bandwidth between 100 Hz and 300 Hz
 - The output of each filter is rectified and lowpass filtered.
@@ -101,7 +105,8 @@
 - Block Diagram
     - ![Analyzer block diagram](attachments/channel-vocoder-analyzer.png)
 
-### Synthesizer
+
+### Synthesizer Block Diagram
 
 - At the receiver the signal samples are passed through D/A converters.
 - The outputs of the D/As are multiplied by the voiced or unvoiced signal sources.
@@ -112,23 +117,13 @@
 
 ## Formant Vocoder
 
-- Format meaning, as described by the figure:
+- **Definition:** Formants are spectral peaks with a high degree of energy, corresponding to resonances in the vocal tract (especially prominent in vowels).  
     - ![Formant Vocoder](attachments/vocoder-formant.png)
-- Formants:
-    - Formants are frequenc peaks which have, in the spectrum, a high degree of energy.
-    - They are specially prominent in vowels.
-    - Each formant corresponds to a resonance in the vocal tract
-    - roughly speaking, the spectrum has a formant every 1000 Hz.
-- Example:
-    - Spectral envelope of an \[i\] pronounced by a male speaker.
-    - F1, F2, and F3 are the first 3 formants.
+    
+- **Example:** Spectral envelope of an [i] pronounced by a male speaker, showing the first three formants (F1, F2, F3).  
     - ![Example of i](attachments/formants-example.png)
-- The spectral peaks of the sound spectrum | P(f) | are called formants.
-- The formant vocoder can be viewed as a type of channel vocoder that:
-    - estimates the first three or four formants in a segment of the speech.
-- It is this information plus the pitch period that is encoded and transmitted to the receiver.
-- Instead of sending samples of the power spectrum envelope,, the formant vocoder attempts to transmit the position of the peaks (formants) of the spectral envelope.
-- Typically it must be able to identify at least three formants for representing the speech sounds, and also control the intensities of the formants.
+    
+- **Working:** Instead of sending the entire power spectrum envelope, it estimates and transmits the positions (frequencies) of the first 3 or 4 formants and their intensities, along with pitch information. This is more efficient than transmitting the full spectral samples.
 
 ### Analyzer
 
@@ -139,140 +134,110 @@
 
 - Block Diagram
     - ![Synthesizer Block Diagram](attachments/vocoder-formant-synthesizer.png)
+ttps://attachments/vocoder-formant-synthesizer.png)
 
 # Linear Predictive Coding (LPC)
 
-- The objective of LP analysis is to estimate parameters of an all-pole model of the vocal tract.
-- Several methods have been devised for generating the excitation sequence for speech synthesizers.
-- LPC-type of speech analysis and synthesis are different in primarily in the type of excitation signal that is generated for speech synthesis.
-
-## Linear Predictive Coders
-
-- The time domain class of vocoders
-- Attempts to extract the significant features of speech from the time waveform
-- Computationally intensive, but by far the msot popular among the class of low bit rate vocoders.
-- Possible to transmit good quality voice at **4.8kbps**
-- It models the vocal tract as an all pole linear filter with a transfer function described by
+- **Type:** A time-domain class of vocoder.
+- **Significance:** The most popular class of low-bit-rate vocoders; computationally intensive.
+- **Bit Rate:** Capable of good quality voice at **4.8 kbps**.
+- **Principle:** Models the vocal tract as an all-pole linear filter. The objective is to estimate the parameters of this model.  
     $$\begin{equation}
         H(z) = \frac{G}{1 + \sum_{k=1}^{M} b_k z^{-k}}
-    \end{equation}$$
-    - where G is the gain of the filter.
+    \end{equation}$$ 
+    - where `G` is the gain of the filter.
+
+---
 
 # GSM Codec
 
-- Origin
-    - The original speech coder used in the pan-European digital cellular standard GSM goves by a rather grandiose name of Regular Pulse Excited Long-Term Prediction (RPE-LTP) codec.
-    - This codec has a net bit rate of 13 kbps and was chosen after conducting exhaustive subjective tests on various competing codecs.
-    - More recent GSM upgrades have improved upon the original codec specification.
-- Comparision
-    - The RPE-LTP codec combines the adv of the earlier French proposed baseband RELP codec with those of the multipulse excited long-term prediction (MPE-LTP) codec proposed by germany.
-    - The adv of the baseband RELP codec is that it porvides good quality spech at low complexity.
-    - The speech quality of a RELP codec is however limited due to the tonal noise introduced by the process of high frequency regeneration and by the bit errors introduced during transmission.
-    the MPE-LTP technique on the other hand produces excellent speech quality at high complixty and is not much affected by bit errors in the channel.
-    - By modifying the RELP codec to incorporate certain features of the MPE-LTP codec, the net bit rate was reduced from 14.77 kkbps to 13.0 kbps without loss of quality.
-    - The most important modification was the addition of a long-term prediction loop.
-- Explanation: Encoder
-    - The GSM codec is relatively complex and power hingry.
-    - The block diagram is given below:
-        - ![Encoder Block Diagram](attachments/gsm-codec-encoder.png)
-    - the encoder is comprised of four major processing blocks.
-    - the speech sequence is first pre-emphasize, ordered into segments of 20ms duration, and tehn hamming-windowed.
-    - This is followed by a short-term prdiction (STP) filtering analysis where the logarithmic area ratio (LARs) of the reflection coefficients $r_n (k)$ (eight in number) are computed
-    - The eight LAR parameters have different dynamic ranges and probability distribution functions, and hence all of them are not encoded with the same number of bits for transmission. the LAR parameter are also decoded by the LPC inverse filter so as to minimize the error $e_n$.
-- Analysis
-    - LTP analysis which involves finding the pitch period $p_n$ and gain factor $g_n$ is then carried out such that the LTP residual $r_n$ is minimized.
-    - To minimze $r_n$, pitch extraction is done by the LTP by determining the value of delay, $D$, which maximizes the cross-correlation between the current STP error sample, $e_n$ and a previous error sample $e_{n-D}.
-    - The extracted pitch $p_n$ and gain are transmitted and encoded at a rate of 3.6 kbps.
-    - The LTP residual, $r_n$ is weighted and decomposed into three candidate excitation sequences.
-    - The energy is selected to represent the LTP residual.
-    - The pulses in the excitation sequence are normalized to the highest amplitude, quantized and transmitted at 9.6 kbps.
-- Decoder
-    - Block diagram of GSM decoder
-    - ![Decoder Block Diagram](attachments/gsm-codec-decoder.png)
-    - Decoder consists of 4 blocks which perform operations complementary to those of teh encoder.
-    - The received excitation parameters are RPE decoded and passed to the LTP synthesis filter which which uses the pitch and gain parameter to synthesize the long-term signal.
-    - Short-term synthesis is carried out using the received reflection coefficients to recreate the original spech.
-- Forming Speech:
-    - Every 260 bits of the coder output (i.e. 20ms blocks of speech) are ordered, depending on their importance, into groups of 50, 132 and 78 bits each.
-    - the bits in the first group are very iportant bits called type $Ia$ bits.
-    - The next 132 bits are important bits called $Ib$ bits, and the last 78 bits are called type $II$ bits.
-    - Since type $Ia$ bits are the ones which effect the speech quality the most, they have error detection CRC bits added.
-    - Both $Ia$ and $Ib$ bits are convolutionally encoded for forward error correction.
-    - The least signficant type $II$ bits have no error correction or detection.
+The original GSM speech coder is the **Regular Pulse Excited Long-Term Prediction (RPE-LTP)** codec, with a net bit rate of **13 kbps**.
 
-# Block Code
+## Principle
 
-- A block code consists of a set of fixed length codewords.
-- The fixed length of these codewords is called the block length and is typically denoted by $n$.
-- A block code of size $M$ defined over an alphabet with $q$ symbols is a set of $M$ $q$-ary sequences, each of length $n$.
-- In the special case that $q = 2$, the symbols are called bits and the code is said to be a binary code.
-- Usually $M = q^k$ for some integer k, and we such a code an $(n, k)$ code.
+- It combines the low complexity and good quality of the baseband RELP codec with the excellent quality and error resilience of the MPE-LTP codec.
+- A key modification was the addition of a long-term prediction loop, reducing the bit rate from 14.77 kbps to 13.0 kbps without quality loss.
 
-## Some helpful definitions
+## Encoder Block Diagram
 
-- The minimum distance of a code is the minimum hamming distance between any two codewords
-- If the code C consist of the set of codewords $\{c_i, i = 0, 1, \dots, M-1\}$ then the minimum distance of the code is given by $d' = \text{min } d(c_i, c_j)$
-- The code rate of an (n, k) code is defined as teh ratio (k/n), and reflects the fraction of the codeword that consist of the information symbols.
+![Encoder Block Diagram](attachments/gsm-codec-encoder.png)
+
+- **Steps:**
+    1. Speech is pre-emphasized and segmented into 20ms blocks.
+    2. **Short-Term Prediction (STP):** Eight reflection coefficients (Logarithmic Area Ratios - LARs) are computed.
+    3. **Long-Term Prediction (LTP):** Determines the pitch period and gain factor to minimize the residual error.
+    4. **RPE Encoding:** The LTP residual is weighted, decomposed into candidate excitation sequences, and quantized.
+
+## Decoder Block Diagram
+
+![Decoder Block Diagram](attachments/gsm-codec-decoder.png)
+
+- Performs complementary operations to the encoder using the received parameters to synthesize the original speech.
+
+## Frame Structure (260 Bits)
+
+The 260 bits of output for every 20ms speech block are ordered by importance:
+- **Class Ia (50 bits):** Very important bits. Protected with CRC for error detection.
+- **Class Ib (132 bits):** Important bits. Convolutionally encoded for forward error correction.
+- **Class II (78 bits):** Least significant bits. Have no error correction or detection.
+
+---
+
+# Block Codes
+
+A block code is a set of fixed-length codewords. A binary block code of length `n` and size `M` is a set of `M` binary sequences.
+
+- **Important Terms:**
+    - **Block length (n):** The length of each codeword.
+    - **Code Rate (k/n):** The fraction of the codeword that consists of information symbols.
+    - **Minimum Distance (d'):** The minimum Hamming distance between any two codewords. Determines the error-correcting capability.
 
 ## Linear Block Code (LBC)
 
-- A linear code has the following properties
-    - the sum of 2 codewords belonging to the code is also codeword belonging to the code.
-    - the all-zero codeword is always a codeword
-    - the minimum hamming distance between two codewords of a linear code is equal to the minimum weight of any non-zero codeword, i.e. $d' = w'$
-- the minimum weight of a code is the smallest weight of any non-zero codeword, and is denoted by w'.
-- the presence of an all-zero codeword is necessary but not a sufficient condition for linearity.
-
-### Matrix Description of LBC
-
-- The generator G converts (encodes) a vector of length $k$ to a vector of length $n$.
-- Let the input vector (uncoded symbols) be represented by $i$.
-- The coded symbols will be given by
-    $$\begin{equation}
-        c = i G
-    \end{equation}$$
-    - where $c$ is called the codeword and i is called the information word
-- The generator matrix will be a k x n matrix.
+- **Properties:**
+    - The sum (mod-2) of any two codewords is also a codeword.
+    - The all-zero codeword is always present.
+    - For a linear code, the minimum distance (`d'`) equals the minimum weight (`w'`) of any non-zero codeword.
+- **Representation:**
+    - **Generator Matrix (G):** A `k x n` matrix that encodes the information word (`i`) of length `k` into a codeword (`c`) of length `n`.  
+        c=iGc=iG
 
 ## Hamming Code
 
-- Hamming Codes is a block code capable of identifying and correcting single-bit error occuring within the block.
-- It is defined as an (n, k) Hamming code.
-- Hamming codes employ module-2 arithmetic (Ex-OR)
-- Offers little protection against burst errors.
-- Parameters:
-    - Code length: $n \le 2^{n-k} - 1$
+- **Type:** A linear block code capable of correcting single-bit errors within a block.
+- **Structure:** Employs modulo-2 arithmetic (Ex-OR) and inserts parity bits between data bits. Offers little protection against burst errors.
+- **Parameters:**
+    -Code length: $n \le 2^{n-k} - 1$
     - Number of message bits: $k \le n - \log_2 (n+1)$
-    - error-correcting capability: $t_c = \dfrac{d_{min} - 1}2$
+    - error-correcting capability: $t_c = \dfrac{d_{min} - 1}2$ 
 
-### Structure
+### Structure Diagram
 
-- Parity bits are inserted in between data bits
-- Commonly 7 bits Hamming Code is used
-- Structure:
-    - ![Structure](attachments/hamming-structure.png)
+![Structure](attachments/hamming-structure.png)
 
-### Examples
+### Example: Encoding 1011
 
-- Simple 1011
-    - ![1011 Example](attachments/hamming-example-1011.png)
-- received codeword= 1011011, locate (if) error
-    - ![1011011 example](attachments/hamming-example-1011011.png)
+![1011 Example](attachments/hamming-example-1011.png)
+
+### Example: Error Location in 1011011
+
+![1011011 example](attachments/hamming-example-1011011.png)
 
 ## Hadamard Code
 
-- These cde produce by hadamard matrix $n x n$ square matrix
-- $n$ code vector of $n$-bit, if the message vector contains $k$-bits:
-    $$\begin{equation}
-        n = 2^k
-    \end{equation}$$
-- No. of check bits (q) in (n, k) block code:
-    - $q = n - k$
-    - $q = 2^n -k$
-- Code rate shown as r = $\dfrackn = \dfrac{k}{2^k}$
-    - Code rate will be smaller with increase in k.
+- **Generation:** Produced by an `n x n` Hadamard matrix.
+- **Relation:** If the message has `k` bits, then `n = 2^k`.
+- **Code Rate:** r = $\dfrac{k}{n} = \dfrac{k}{2^k}$
+- The code rate decreases with an increase in `k`.
 
-### Conditions
+### Conditions for Hadamard Code Vectors
+
+1. The first row consists of all zeros.
+2. The second row has an equal number of 1s and 0s (i.e., n/2 of each).
+3. Every pair of rows differs in exactly n/2 positions (orthogonal property).
+4. Each code is distinct.
+
+### Matrix Construction
 
 - On code vector, row of matrix consist of all zero elements
 - 2$^{nd}$ row, equal to no. of 1's and 0's.
@@ -300,76 +265,73 @@
         H2 & H2'
     \end{bmatrix}$
 
-## Convolution Codes
+---
 
-- In convolution codes, Block of 'n' code digits generated by the encoder in time unit depends on not only block of $k$ message digits.
-- Example:
+# Convolutional Codes
+
+In convolutional codes, the block of `n` code digits generated in a time unit depends not only on the current block of `k` message digits but also on the previous `L` blocks. The encoder has memory.
+
+- **Example Encoder:** (Figure shows a typical convolutional encoder structure)  
     - ![Example](attachments/convolutional-code.png)
 
-### Code Tree
+## Representations
 
-- Each branch of the tree represents an i/p symbol with the corresponding pair of o/p binary symbol indicating on the branch
-- Input '0' ... upper branch
-- Input '1' ... lower branch
-- Example
+### Code Tree
+- Each branch represents an input symbol. The corresponding output symbols are indicated on the branch.
+- Input '0' typically takes the upper branch; Input '1' takes the lower branch.
+- **Example (Message: 110):**  
     - ![110 message](attachments/convolutional-example-110.png)
 
 ### Code Trellis
 
-- It is compact representation of the code tree
-- Figure:
+- A compact representation of the code tree. It is a state diagram that is unrolled in time.  
     - ![Code Trellist](attachments/convolutional-code-trellist.png)
 
 ### State Diagram
 
-- Example:
+- A single diagram showing all possible states and transitions of the encoder.  
     - ![State Diagram](attachments/convolutional-state-diagram.png)
 
-### Viterbi Algorithm
+## Viterbi Algorithm
 
-- It is used for decoding of convolution codes.
-- Also known as maximum likelihood decoding
-- Problem of optimum decoding is to find the minimum distance path from the initial state back to the initial state (below from $S_0$ to $S_0$).
-- The minimum distance is one of the sums of all path metrics from $S_0$ to $S_0$
-- Exhaustive maximum likelihood method must search all the paths in phase trellis ($2^k$ paths emerging/entering from $2^{L+1}$ states for an $(n, k, L) code)
-- The viterbi algorithm gets improvement in computational efficiency via concentrating into survivor paths of the trellis.
+- **Purpose:** A maximum likelihood decoding algorithm used for convolutional codes.
+- **Principle:** It finds the most probable transmitted sequence by searching for the minimum distance path through the code trellis. It improves computational efficiency by comparing and discarding non-optimal paths (survivor paths) at each state.
+- **Process:**
+    1. At each time step, calculate the branch metric for each possible transition.
+    2. For each state, add the branch metric to the previous path metric.
+    3. Select the path with the best (minimum) metric to be the survivor for that state.
+    4. At the end, trace back to find the most likely transmitted sequence.
 
-### Example - Viterbi Algorithm
+### Example: Decoding Y = 11 01 10
 
 - For Y = 11 01 10:
-    - ![Example of Viterbi](attachments/convolutional-viterbi-example.png)
-    - ![Error found during Viterbi](attachments/convolutional-viterbi-error.png)
+- ![Example of Viterbi](attachments/convolutional-viterbi-example.png)
+- ![Error found during Viterbi](attachments/convolutional-viterbi-error.png)
 
-# Tubro Coding
+---
 
-- Turbo codes are combination of Block and Convolutional Codes
-- They require a block to be formed before encoding can begin, but for encoding shift registers are used, just like in Convolutional code instead of computing parity bits.
-- Turbo codes use at least two convolutional component encoders and two maximum a posteriori (MAP) algorithm component decoders.
-- Turbo coders perform well in the low SNR environment.
-- At high SNRs, Reed-Solomon Code have better performance than Turbo Codes.
-- Turbo code combines the capability of convolutional codes with channel estimation theory, and can be thought of as nested or parallel convolutional codes.
-- When implemented properly, turbo codes allow coding gains which are far superior to all the previous error correcting codes and allow a wireless communication link to come amazingly close to realizing the shannon capacity bound.
+# Turbo Coding
 
-## Working
+- **Type:** A powerful error-correcting code combining features of both block and convolutional codes.
+- **Key Components:** Uses two or more **Recursive Systematic Convolutional (RSC)** encoders operating in parallel, separated by an **interleaver**.
+- **Performance:** Performs very well in low Signal-to-Noise Ratio (SNR) environments, allowing performance close to the Shannon capacity bound.
+- **Comparison:** At high SNRs, Reed-Solomon codes may have better performance.
 
-- Block Diagram
-    - ![Encoding BLock Diagram](attachments/turbo-encoding.png)
-- In the figure, $M$ is a memory register.
-- The delay line and interleaver (Reorder of Information bits) force input bits $d_k$ to appear in different sequences.
-- At first iteration, the input sequence $d_k$ appears at both outputs of the encoder.
-- $x_k$ and $y_k$ or $y_{2k}$ due to the encoder's systematic nature.
-- If the encoders $C_1$ and $C_2$ are used in $n_1$ and $n_2$ iterations
+## Encoder Block Diagram
 
-## Recusrive Systematic Convolutional (RSC) codes
+![Encoding BLock Diagram](attachments/turbo-encoding.png)
 
-- Block Diagram
+- `M` = Memory Register.
+- The **Interleaver** reorders the input bits `d_k`, feeding the second encoder with a different, uncorrelated sequence.
+- The systematic structure means the input bit `d_k` is passed directly as output `x_k`, along with parity bits `y_k` and `y_{2k}` from the two encoders.
+
+## Recursive Systematic Convolutional (RSC) Code
+
+- The component encoders used in turbo codes are Recursive Systematic Convolutional (RSC) encoders.
+- Each RSC encoder produces a parity bit based on the current input and its internal state.  
     - ![Block Diagram for RSC](attachments/turbo-rsc-block.png)
-- Turbo code uses two or more RSC codes working in parallel on the same information.
-- There is a parallel structure that uses two or more RSC codes, each with different interleaver.
-- Different interleaver for each RSC encoder produces uncorrelated version of the same input information, in order to produce parity bits from each RSC encoder that are independent.
-- The independence of the parity bits depend on the type and length of the interleaver.
 
-## Example: 1/3 Turbo encoder
+### Example: 1/3 Turbo Encoder
 
 - Block Diagram
     - ![1/3 Turbo Encoder](attachments/turbo-example.png)
