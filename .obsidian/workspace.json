@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content.md",
+                "file": "Wireless Communication/Chapter 6.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "content"
+              "title": "Chapter 6"
             }
           }
         ],
@@ -215,8 +215,9 @@
   },
   "active": "174d832be16e0de3",
   "lastOpenFiles": [
-    "RF and Microwave Engineering/Untitled.md",
     "content.md",
+    "Wireless Communication/Chapter 6.md",
+    "RF and Microwave Engineering/Untitled.md",
     "trial.excalidraw.svg",
     "rf and microwave.excalidraw.svg",
     "README.md",
@@ -243,7 +244,6 @@
     "Organization and Management/Edited ones/Chapter 2 Personnel Management.md",
     "Organization and Management/Edited ones/Chapter 1 Introduction.md",
     "Artificial Intelligence/Chapter 7 Applications of AI.md",
-    "Artificial Intelligence/Chapter 4 Knowledge Representation, Inference & Reason.md",
     "Artificial Intelligence/attachments/Pasted image 20260801101720.png",
     "Artificial Intelligence/attachments/Pasted image 20260801101702.png",
     "Artificial Intelligence/attachments/2026-08-01-09-44-04.png",
