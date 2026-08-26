@@ -539,5 +539,102 @@ Based on Doppler Spread
     \dfrac{r}{\sigma^2} e^{-\dfrac{r^2+A^2}{2\sigma^2}} I_0\left( \dfrac{Ar}{\sigma^2} \right)\ &(0 \le r \lt \infty)\\
     0 & (r \le 0)
     \end{cases}$$
-    
+    - where A denotes the peak amplitude of the dominant signal, and
+    - I0 denotes the zeroth order bessel function of the first kind.
+- the ricean distribution is often described in terms of paraketer K (ricean k-factor)
+- K = A^2/(2$\sigma^2$)
+- in terms of dB, K(dB) = 10log($\dfrac{A^2}{2\sigma^2}) dB
+- for K >> 1, the ricean distributino tends to gaussian distribution about the mean.
+- Its graph looks like
+    - ![Riciean Distribution](attachments/riciean%20distribution.png)
+
+# Large Scale Propagation models
+
+- As the mobile moves away from the transmitter over large distances, the local average received signal will gradually decrease.
+- This is called large-scale path loss
+- Typically the local average received power is computed by averaging signal measurements over a measurement track of 5$\lambda$ to 40$\lambda$
+    - this means 1m - 10 m track
+- the models that predict the mean signal strength for an arbitrary-receiver transmitter (T-R) separation distance are called large-scale propagation models.
+- Large T-R separation distances (several hundreds of thousands of meters)
+- Main propagation mechanism: reflections
+- attenuation of signal strength due to power loss along distance traveled: shadowing
+- small fluctuations around a slowly varying mean
+- useful in estimating the radio coverage of a transmitter
+
+### Need for propagation models
+
+- determining the coverage area of a transmitter
+    - determine the transmitter power requiremenet
+    - determine the battery lifetime
+- finding modulation adn coding schemes to improve the channel quality
+
+# Practical Link Budget Design Using Path Loss Models
+
+- Log distance path model
+    - Both Theoretical and measruement based models show that the received signal power decreaes logaithmically with distance.
+    - both for indoor and outdoor channels
+    - the average large scale path loss for an arbitrary T-R separation is expressed as a functino of distance by using a path loss exponent n.
+- n characterized the propagation environment
+    - for free space it is 2.
+    - when obstructions are present, it has a larger value.
+- the link budget is a summary of the transmitted power long with all the gains and losses in teh sytem and this enables the strength of the received signal to be calculated.
+
+## Log-distance path loss model
+
+- Average large-scale path loss at
+    $$\overline{PL} (d) \propto \left(\frac{d}{d_{0}}\right)^{n}\ d\ge d_{0}$$
+- in dB form
+    $$\overline{PL} (dB) = \overline{PL}(d_0) + 10n \log \left(\frac{d}{d_{0}}\right)$$
+- where
+    - $\overline{PL}$ is the total path loss measured in decibel
+    - $d$ is the length of the path
+    - $d_0$ is the reference distance, usually 1km or 1 mile for large cell and 1m to 10m for microcell
+- path loss exponent
+
+| Environment | Path Loss exponent |
+| --- | --- | 
+| Free space | 2 | 
+| Urban area cellular radio | 2.7 to 3.5|
+| Shadowed urban cellular radio | 3 to 5 |
+|in building LoS | 1.6 to 1.8 |
+| obstructed in building | 4 to 6 |
+| obstructed in factories | 2 to 3 |
+
+
+# Log-normal Shadowing
+
+- The path loss equation for log-distance model does not consider the fact the surrounding environment may be vastly different at two locations having the same T-R separation.
+- This leads to measurements that are different than the predicted average values obtained using the equations shown
+- Measurements show that for any value d, the path loss PL(d) in dBm at a location is random and distributed log-normally.
+- The log normal distributino describes the random shadowing effects due to cluttering on the propagation path, a factor is added as follows:
+    $$PL(d)(d) = \overline{PL}(d) + X_\sigma$$
+- in dB form
+    $$PL(d)(dB) = \overline{PL}(d_0) + 10n \log\left(\frac{d}{d_0}\right) + X_\sigma$$
+- $X_\sigma$ is a zero mean gaussian (normal) distributed random variable (in dB) with standard deviation $\sigma$ (also in dB)
+    $$P_r(d)(dBm) = P_t(dBm) - PL(d)(dB)$$
+- and
+    $$P_r(d)(dBm) = P_t(dBm) - \left[ \overline{PL}(d_0)(dB) + 10n\log\left(\frac{d}{d_0}\right) + X_\sigma(dB)\right]
+
+# Outdoor Propagation models
+
+- outdoor radio transmission takes place over irregular terrain
+- the terrain profile must be taken into consideration for estimating path loss
+- trees, buildings, hill etc. must be taken into consideration.
+- in early days, the models were based on empirical studeies
+- okumura did comprehensive measurements in 1968 and came up with a model
+- discovered that a good model for path loss was a simple power law where the exponent n is  afunction of frequency, antenna heights, etc.
+- one of the most widely used models for signal predition in urban areas
+- applicable to
+    - frequencies: 150 MHz to 1920 MHz
+    - can be extrapolated up-to 3GHz
+    - Distance: 1km to 100 km
+    - Base station antenna heights: 30m to 100m
+- Okumura developed a set of curves giving the medium attenuation relative to free space in an urban area over quasi-smooth terrain.
+- Formula
+    $$L_{50}\left(dB\right)=L_{F}+A_{mu}\left(f,d\right)-G\left(h_{te}\right)-G\left(h_{re}\right)-G_{AREA}$$
+- where
+    - $L_{50}$ = 50\% of propagation path loss (median)
+    - $L_{F}$ = free space propagation loss
+    - $A_{mu}\left(f,d\right)$ = median attenuation relative to  -G\left(h_{te}\right)-G\left(h_{re}\right)-G_{AREA}
+
 
