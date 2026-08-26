@@ -268,3 +268,136 @@ Real world planning
 
 - Interference from adjacent in frequency to the desired signal.
 - imperfect receiver filters allow nearby frequencies to leak into the passband
+    - ![Improper Filtering of signal causing leakage](attachments/interference-adjacent-leaking-signal.png)
+- This can be avoided by:
+    1. Suitable channel allocation scheme
+        - a cell should not be assigned channels which are adjacent in frequency, rather keeping frequency separation as large as possible
+    2. Carefeul filtering
+        - desing of a carefully built band pass filter at the receiver end, by using proper modulation schemes, that have low out band radiation
+    3. Separate Multiplexing
+        - uplink and downlink channels might use multiplexing technique in order to avoid interference.
+
+### Near-Far Problem
+- Figure demonstrating the issue:
+    - ![Channel quality affected by near-far problem](attachments/inteference-adjacent-near-far.png)
+- The near-far problem is a condition in which a receiver captures a strong signal and thereby makes it impossible for the receiver to detect a weaker signal.
+- This problem can be avoided by using power control mechanism, in which the nearer MS will transmit low power signal so that the base station can still acknowledge MS in far distance.
+- Power control for reducing interference
+    - Ensure each mobile transmits the smallest power necessary to maintain a good quality link on the reverse channel.
+    - long battery life
+    - increase SIR
+    -solve the near-far problem
+
+# Trunking
+
+- In cellular systems, a relatively small number of radio channels are used to serve a large population of mobile users, which is made possible by cellular design (i.e. frequency reuse) and by trunking.
+- Trunking allows the mobile users share the radio channels in each cell on a demand basiss.
+- A trunk is a communication line or link designed to carry multiple signals simultaneously to provide network access between two points.
+- Trunks typically connect switching center in a communications systems
+- Based on the traffic load, the number of radio channels in each cell hsould be determined in such a away that
+    - All the channels are utilized efficiently
+    - Call blcoking rate is below a pre-determined threshold.
+- The measure of traffic efficiency:
+    - 1 Erlang is defined as the amount of traffic intensity carried by a channel that is completely occupied
+    - .e.g, a radio channle that is occupied for 30 minutes during an hour carries 0.5 erlangs of traffic per hour.
+
+## Types of Trunked Systems
+
+- If no channels are available
+    - the requesting user is blocked without access,
+        - the call request is cleared and the user is free to try again later
+        - i.e. blocked calls cleared
+    - the call request is delayed until a channel becomes available
+        - blocked calls delayed
+
+## Numerical
+
+### Example-1
+
+- Given a cellular system for 415 radio channels availabel for handling traffic
+- Assume that 21 of this channels are designed as control channels
+- Let the average channel holding time of a call be 3 minutes
+- the probability during busy hours be 2\%, and the frequency factor be 9.
+- then determine:
+    - the number of call per cell per hour
+    - the signal to co-channel interferences S/I in dB
+- Solution
+    - The number of voice channels = 416 - 21 = 395
+    - Frequency factor: N = 9
+    - Number of voice channel per cell is: $\dfrac{395}{N} \approx 44$
+    - from look-up table,
+        - with 44 available channels and $P_B$ = 0.02,
+        - traffic intensity is 34.684 Erlangs.
+    - So, number of calls per cell per minute:
+        - $\dfrac{34.683}{3} \approx 12$ calls per cell per minute
+        - $\dfrac{34.683}{3} \times 60 \approx 693$ calls per cell per hour
+    - Frequency reuse ratio q = $\sqrt{3N} = \sqrt{3\times 9} = 5.1962$
+    - for k = 4, the signal-to-co-channel interference ratio will be given by:
+        - $S/I = \dfrac{q^k}{6} = \dfrac{(5.1962)^4}{6} = 121.5 = 20.485 dB$
+
+### Example-2
+
+- An urban area has a population of 2 million residents.
+- System A has 394 cells with 19 channels each.
+- Find the number of users that can be supported at 2\% blocking if each user averages two calls per hour at an average call duration of three minutes.
+- Assuming that trunk systems are operated at maximum capacity, compute percentage market penetration of cellular provider.
+
+- Solution
+    - probability of blocking = 2\% = 0.02
+    - Number of channels per cell used in the system, C = 19
+    - Traffic intensity per user, Au = $\lambda H = 2 \times (3/60) = 0.1$ Erlangs
+    - For GoS = 0.02 and C = 19,
+        - from the Erlang B chart, the total carried traffic, A, is obtained as 12 Erlangs
+    - Therefore, the number of users that can be supported per cell is U = A/Au = 12/0.1 = 120
+    - Since there are 394 cells, the total number of subscribers that can be supported by System A = 120 x 394 = 47280
+    - no. of residents = 2 million
+    - so market peneration = 47280/2,000,000 = 2.36%
+
+
+# Grade of Service (GoS)
+
+- it is a measure of the ability of a user to access a trunked system during the busiest hour.
+- GoS is typically given as
+    - the likelihood that is blocked (for Erlang B systems) or
+    - the likelihood that a call experiences a delay larger than a certain pre-determined system queueing delay (for Erlang C systems)
+- Basic Definitions
+    - Blocked call (Lost Call):
+        - Call which cannoot be completed at the time of request, due to congestion
+    - Average holding time (H):
+        - Average duration of a typical call
+    - Traffic Intensity (A):
+        - Measure of channel time utilization, which is the average channel occupancy measured in Erlang
+    - Load:
+        - Traffic intensity across the entire trunked radio system, measured in Erlangs.
+    - Request Rate ($\lambda$):
+        - the average number of call requests per unit time per user.
+
+# Improving Capacity in Cellular Systems
+
+- Methods for improving capacity in cellular systems
+    1. Cell Splitting:
+        - subdividing a congested cell into smaller cells
+    2. Sectoring:
+        - directional antennas to control and the interference and frequency reuse
+    3. Coverage zone:
+        - distributing the coverage of a cell and extends the cell boundary to hard-to-reach place.
+
+## Cell Splitting
+
+- Split congested cell into smaller cells.
+    - preserve frequency reuse plan.
+    - Reduce transmission power.
+    - working diagram
+        - ![Cell Splitting to Reduce R to R/2](attachments/capacity-cell-splitting.png)
+- transmission power reduction from $P_{t1}$ to $P_{t2}$
+- examining the receiving power at the new and old cell boundary
+    - $P_r$, at old cell boundary $\propto P_{t1} R^{-n}$
+    - $P_r$, at new cell boundary $\propto P_{t2} (R/2)^{-n}$
+- If we take n = 4, and set the received power equal to each other,
+    $P_{t2} = \dfrac{P_{t1}}{16}$
+- The transmit power must be reduced by 12dB in order to fill in the original coverage area.
+- Problem:
+    - if only part of the cells are splitted
+    - different cell sizes exist simultaneously
+- Handoff issues
+    - high speed and low speed tra
