@@ -285,4 +285,111 @@ flowchart TD
     - Important effects
         - rapid changes in signal strength over a small travel distance or time interval
         - radom frequency modulation due to varying Doppler's shifts on different multipath signals
-        - Time Dispersion (echoes)
+        - Time Dispersion (echoes) caused by multipath propagation delays.
+        - Small scale fading occurs specially in heavily populated urban areas.
+- The shift in received signal frequency due to motion is called **Dopler's shift and is directly proportional to velocity and direction of the mobile with respect to the direction of arrival of the received multipath wave.
+
+## Factors influencing Small-scale fading
+
+1. Multipath propagation
+    - the random phase and amplitude of the different multipath components cause fluctuation in signal strength thereby inducing small scale fading.
+    - multipath propagation often lengthens the time required for the baseband portion of the signal to reach the receiver which can cause signal smearing (blur) due to inter-symbol interference
+2. Speed of the mobile
+    - relative motion between BS and MS cause random frequency modulation due to Doppler shift ($f_d$)
+    - different multipath components may have different frequency shifts.
+3. Speed of surrounding objects
+    - if the surrounding objects move at a greater rate than the mobile, then this effect dominates the small-scale fading
+4. The transmission bandwidth of the signal
+    - if Tx signal's bandwidth > bandwidth of the multipath channel
+    - this means, received signal will be distorted.
+    - but the received signal will not fade much mover a local area 
+        - the small scale fading is not significant
+    - however, Tx signa's bandwidth < bandwidth of the multipath channel, the amplitude of signal will change rapidly, but the signal will not be distorted in time.
+5. Transmitted signal bandwidth
+    - The mobile radio channel (MRC) is modeled as filter with specific bandwidth (BW)
+    - The relationship between the signal BW & the MRC BW will affect fading rates and distortion, and so will determine
+        - if small scale fading is significant
+        - if time distortion of signal leads to inter-symbol interference (ISI)
+    - An MRC can cause distortion/ISI or small-scaale fading typically one or the other.
+
+## Doppler Shift
+
+- motion causes frequency modulation due to doppler shift $(f_d)$
+- Receiver moving forward the source (receiving frequency is higher) or
+- receiver movign away from the source (receiving frequency is lower).
+- this resulting effect is the dopller shift
+- consider a mobile moving at a constant velocity v, along a path segment having length d between points X and Y, while it receives signals from remote source S, as in figure:
+    - ![Figure for analysis](attachments/doppler-illustration.png)
+    - the differnece in path lengths travelled by the wave from source S to the mobile at points X and Y is $\Delta l = d \cos(\theta) = v \Delta t \cos(\theta)$ where $\Delta t$ is the time required for the mbile to travel from X to Y, and $\theta$ is assumed to be very far away
+
+### Some formulas
+
+- Phase change due to difference in path length
+    - $$\Delta \phi =\frac{2\pi \Delta l}{\lambda }=\frac{2\pi v\Delta t}{\lambda }\cos \left(\theta \right)$$
+- Apparent change in frequency, or Doppler Shift
+    - $$f_{d}=\frac{1}{2\pi }\cdot \frac{\Delta \phi }{\Delta t}=\frac{v}{\lambda }\cdot \cos \left(\theta \right)$$
+- where:
+    - $v$ = velocity (m/s)
+    - $\lambda$ = wavelength (m)
+    - $\theta$ = angle between mobile direction
+- and arrival direction of RF energy
+    - `+` shift $\leftarrow$ mobile moving towards S
+    - `-` shift $\rightarrow$ mobile moving away from S
+
+## Time and Frequency Dispersions
+
+- Time Dispersion
+    - when the received signal has a longer duration than htat of the transmitted signal, due to different delays of the signal paths, i.e.
+    - delay spread into the received signal.
+- Frequency Dispersion
+    - When the received signal has a larger bandwidth than that of transmitted signal due to the different doppler shifts introduced by the multipath components i.e., 
+    - Doppler Spread into the received signal.
+
+## Delay Spread
+
+- Delay spread effect is mainly due to small-sacle fading.
+- Because multiple reflections of the transmitted signal may arrive at the receiver at the different time and all get added constructively or destructively.
+- This can cause a smearing of the signal and interference between bits that are received.
+- Representative figure
+    - ![Effect of delay spread](attachments/Effect%20of%20delay%20spread.png)
+
+### Power Delay Profile
+
+- Random and complicated radio-propagation channels can be characterized using the impulse response approach.
+- If the input signal is a unit impulse response, which can be written as
+    $$h\left(t\right)=\sum_{n=1}^{N}A_{n}\exp \left(-j\phi _{n}\right)\delta \left(t-\tau _{n}\right)$$
+- where $A_n, \tau_n$ and $\phi_n$ are the attenuation, delay in time of arrival and phase, corresponding to path n respectively
+- Multipath propagation causes severe dispersion of the transmitted signal and the expected degree of dispersion is determined through the measurement of teh power-delay profile of the channel.
+- The power-delay profile provides an indication of the dispersion or distribution of transmitted power over various paths in a multipath model
+    - the delay profiles is the expected power variation per unit of time received with a certain excess delay.
+    - it is obtained by averaging a large set of impulse responses.
+
+### Parameters characterizing delay spread categories
+
+1. First-Arrival Delay ($\tau_A$)
+    - this is a time delay corresponding to the arrival of the first transmitted signal at the receiver.
+    - It is usually measured at the receiver
+    - This delay is set by the minimum possible propagation path delay from the transmitter to the receiver.
+    - it serves as a reference, and all delay measurements are made relative to it.
+    - Any measured delay longer than this reference delay is called an excess delay.
+2. Mean access delay
+3. RMS Delay Spread
+4. Excess delay spread
+
+## Perforamance Parameters
+
+- The time dispersion of the channel is called multipath delay spread which is one of the important parameter
+- A common measure of multipath delay spread is root mean square (RMS delay spread $T_{RMS}$)
+    - The $T_{RMS}$ is the standard deviations or RMS value of the delay of reflections, weighted proportional to the energy in the reflected waves.
+- Maximum excess delay ($T_m$)
+    - there is some delay between the time when the antenna receives the first copy of the signal on the shortest path and hwen it receives the last copy of the same signal on the longest path.
+    - The maximum delay time spread $T_m$ is the total time interval, during which reflections with significant energy arrive.
+    - in practice, we use RMS delay spread more over $T_m$
+
+# Coherence Time and Coherence Bandwidth
+
+- Coherence time:
+    - measure of expected time duration over which channel
+
+
+
