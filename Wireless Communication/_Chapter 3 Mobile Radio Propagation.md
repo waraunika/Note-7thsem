@@ -133,4 +133,39 @@
     - Phase difference ($\theta_\Delta$)
     - Time delay ($T_d$)
 - General equation for plane wave in free space is given by
+    $$E(Z, t) = E_0\cdot e^{-\alpha Z}\cdot \cos(\omega t- \beta Z) \hat a_x$$
+- Let us rewrite the above equation with our own variables
+    $$E\left(d,t\right)=\frac{E_{0}d_{0}}{d}\cdot \cos \left(\omega _{c}\left(t-\frac{d}{c}\right)\right)$$
+- Calculating of E-field for LoS signal and reflected signal
+    $$E_{LoS}\left(d',t\right)=\frac{E_{0}d_{0}}{d'}\cdot \cos \left(\omega _{c}\left(t-\frac{d'}{c}\right)\right)$$
+    - and for reflected, with $\Gamma$ as reflection coefficient
+    $$Eg\left(d'',t\right)=\Gamma \frac{E_{0}d_{0}}{d''}\cdot \cos \left(\omega _{c}\left(t-\frac{d''}{c}\right)\right)$$
+- An ideal receiver just adds up all the received signal so the total E field Equation is given by
+    $$\left|E_{tot}\right|=\left|E_{LoS}\right|+\left|E_{g}\right|$$
+    $$\left|E_{tot}\right|=\frac{E_{0}d_{0}}{d'}\cdot \cos \left(\omega _{c}\left(t-\frac{d'}{c}\right)\right)+\Gamma \frac{E_{0}d_{0}}{d''}\cdot \cos \left(\omega _{c}\left(t-\frac{d''}{c}\right)\right)$$
+- We know that the from laws of reflection in dielectrics, the reflection coefficient is (-1)
+    $$\left|E_{tot}\right|=\frac{E_{0}d_{0}}{d'}\cdot \cos \left(\omega _{c}\left(t-\frac{d'}{c}\right)\right)-\frac{E_{0}d_{0}}{d''}\cdot \cos \left(\omega _{c}\left(t-\frac{d''}{c}\right)\right)$$
+### Calculating Path Difference
+- Since the path taken by two rays are different and they travel different distances.
+- Therefore it is important to calculat the Path difference.
+- To find the path difference between 2 waves, we use method of imaging.
+- so that:
+    - $d''=\sqrt{\left(h_{t}+h_{r}\right)^{2}+d^{2}}$
+    - $d'=\sqrt{\left(h_{t}-h_{r}\right)^{2}+d^{2}}$
+- And $\Delta$ as the path difference:
+    - $\Delta =d\sqrt{1+\left(\frac{h_{t}+h_{r}}{d}\right)^{2}}-d\sqrt{1+\left(\frac{h_{t}-h_{r}}{d}\right)^{2}}$
+    - $=d\left\{\left(1+\frac{1}{2}\left(\frac{h_{t}+h_{r}}{d}\right)^{2}\right)-\left(1+\frac{1}{2}\left(\frac{h_{t}+h_{r}}{d}\right)^{2}\right)\right\}$
+    - $=d\cdot \dfrac{4h_{t}h_{r}}{2d^{2}}$
+    - $=\dfrac{2h_{t}h_{r}}{d}$
+- Phase Difference ($\theta_\Delta$)
+    - $\theta_\Delta = \dfrac{2\pi \Delta}{\lambda} = \dfrac{2\pi \Delta}{c/f} = \dfrac{2\pi f \Delta}{c} = \dfrac{\omega_c \Delta}{c}$
+- Time Delay ($T_d$)
+    - $T_d = \dfrac{\Delta}{c} = \dfrac{\theta_\Delta}{2\pi f}$
+
+Notes:
+- When d becomes large, the difference between the distance d' and d'' become very small, and the amplitude $E_{LoS}$ and $E_g$ are virtually identical and differ only in phase
+- If the received E-field is evaluated at some time, let, t = d''/c, then the equation is given by:
+    $$\begin{align}
+        \left|E_{tot}\right|=\frac{E_{0}d_{0}}{d'}\cdot \cos \left(\omega _{c}\left(\frac{d''}{c}-\frac{d'}{c}\right)\right)-\frac{E_{0}d_{0}}{d''}\cdot \cos \left(\omega _{c}\left(\frac{d''}{c}-\frac{d''}{c}\right)\right)
+    \end{align}$$
 
