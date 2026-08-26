@@ -98,7 +98,7 @@
 
 - Two general categories - linear and non-linear equalization
 - If d(t) is not the feedback path to adapt the equalizer, the equalization is linear
-- If d(t) is fed back to change the subsequent outputs of the equalizer, teh equalization is nonlinear.
+- If d(t) is fed back to change the subsequent outputs of the equalizer, the equalization is nonlinear.
 
 #### Linear Equalization
 
@@ -277,6 +277,60 @@ $$\begin{align}
 ### Maximal Ratio Combining Technique
 
 - The signals from all the m branches are weighted according to their signal voltage to noise power ratios and then summed.
-- The individual signals must be co-phased before being summed. i.e. it considers all
+- The individual signals must be co-phased before being summed. i.e. it considers all of the signals components.
+- Maximum ratio combining produces an output SNR equal to the sum of the individual SNRs.
+- Produces an output with acceptable SNR even when none of the individual signals themselves are acceptable.
+- This technique gives the best statistical reduction of fading.
+- Block Diagram for working:
+    - ![Maximal Ratio Combining Technique](attachments/diversity-maximal-block.png)
+    - Principle: Combining all the signals in cophased and weighted manner so as to have the highest achievable SNR at receiver at all the time.
 
 
+### Equal Gain Combining
+
+- Used when it is not convenient to provide for the variable weighting capability required for maximal ratio combining.
+- The branch weights are all set to unity but the signals from each are co-phased to provide equal gain combining diversity.
+- Thus it is simple to implement.
+- The probability of producing an acceptable signal from a number of unacceptable inputs is still retained.
+- Performance is only marginally inferior to maximal ratio combining and superior to selection diversity.
+- Note the MRC requires an accurate estimate of the channel amplitude gain
+    - which increases the receiver complexity.
+    - Alternative way: weight all the signals equally after coherent detection
+    - which removes phase distortion
+- Simplified Block diagram
+    - ![Simplistic view of MRC working](attachments/diversity-mrc.png)
+
+# Polarization Divesity and Frequency Diversity
+
+## Polarization Diversity
+
+- Both horizontal and vertical polarizaiton are involved.
+- Different fading variations are experienced by horizontal and vertical polarizations.
+
+## Frequency Diversity
+
+- Frequency diversity transmits information on more than one carrier frequency
+- The frequencies separated by more than that of the coherence bandwidth of the mobile channel, would be uncorrelated with each other and hence wouldn to experience same fading status.
+- Frequencies separated by more than the coherence bandwidth of the channel will not experience the same fadings.
+
+# Time Diversity
+
+- Principle: The signals representing the same information are sent over the same channel at different times.
+- Time diversity repetitively transmit information at time spacing that exceeds the coherent time of the channel.
+- The modern impelmentation of time diversity involves the use of the RAKE receiver for CDMA.
+
+# Rake Receiver
+
+- CDMA spreading codes are designed to provide very low correlation between successive chips
+- Propagation delay spread in the radio channel merely provides multiple versions of the tranmitted signal at thre receiver.
+- If the multipath components are delayed in time by more than a chip duration, they appear like uncorrelated noise at a CDMA receiver, and equalization is note required.
+- Since there is useful information in the multipath componennts, CDMA receiver may combine the time delayed version of the original signal transmission in order to improve the signal to noise ratio at the receiver.
+- a Rake Receiver is a radio receiver designed to coutner the effects of multipath fading
+- It does this by using several "sub-receivers" called _fingers_, that is, several correlators each assigned to a different multipath component.
+- Each finger independently decodes a single multipath component
+- at a later stage the contribution of all fingers are combined in order to make the most use fo the different transmission characteristics of each transmission path.
+- This could very well result in higher SNR in a multipath environment than in a clean environment.
+- Multipath components are delayed copies of the original transmitted wave traveling through a different echo path, each with a different magnitude and time-of-arrival at the receiver.
+- Since each component contains the original information, if the magnitude and time-of-arrival (phase) of each component is computed at the receiver
+    - through a process called channel estimation
+    - then all the components can be added coherently to improve the information reliability.
