@@ -388,8 +388,156 @@ flowchart TD
 
 # Coherence Time and Coherence Bandwidth
 
-- Coherence time:
-    - measure of expected time duration over which channel
+## Coherence time:
 
+- measure of expected time duration over which channel appears highly correlative
+- i.e. the coherence time is a measure of the length of time for which channel can be assumed to be nearly constant.
 
+## Coherence bandwidth
+- it is a measure of the approximate bandwidth within which the channel can be assumed to be nearly constant.
+- range of frequencies over which the channel can be considered flat
+    - i.e. channel passess all spectral components with equal gain and linear phase
+    - it is a definition that depends on RMS delay spread
+- Two sinusoids with frequency separation greater  than Bandwidth Coherence ($B_c$) are affected quite differently by the channel.
+- Frequency correlation between two sinusoids: $0 \le C_{r1, r2} \le 1$.
+- if we define coherence bandwidth ($B_c$) as the range of the frequencies over which the frequency correlatino is above 0.9, then
+    $$B_c = \frac{1}{50\sigma_\tau}$$
+    - where, $\sigma_\tau$ is rms delay spread
+- If we define coherence bandwidth as the range of frequencies over which the frequency correlation is above 0.5, then,
+    $$B_c = \frac{1}{5\sigma_\tau}$$
+    - this is called 50\% coherence bandwidth.
+- example
+    - for a multipath channel, $\sigma_\tau$ is given as 1.37ms
+    - the 50% coherence bandwidth is given as: $\dfrac{1}{5\sigma_\tau}$ = 146kHz.
+        - this means that for a good transmission from a Tx to a Rx
+        - the range of Tx frequency (channel bandwidth) should not exceed 146kHz, so that all frequencies in this band experience the same channel characterisitics.
+        - equalizers are needed in order to use transmission frequencies that are separated larger than this value.
+        - This coherence bandwidth is enough for an AMPS channel (30kHz) band needed for a channel), but is not enough for a GSM channel (200 kHz needed per channel).
+
+### Doppler Spread and Coherence Time
+
+- Delay Spread and Coherence bandwidth describe the time dispersive nature of the channel in a local area.
+    - they don't offer information about the time varying nature of teh channel caused by relative motion of Tx and Rx
+- Doppler spread and coherence time are parameters which describe the time varying nature of teh channel in a small scale region.
+
+#### Doppler Spread
+
+- Measure of spectral broadening caused by the time rate of change of the mobile radio channel.
+- Dopller spread, $B_D$, is defined as maximum doppler shift: $f_m = v/\lambda$
+- Characterizes **frequency-dispersiveness** of the channel, or the spreading of transmitted frequency due to different Doppler shifts.
+
+#### Coherence Time
+
+- Coherence time is the time duration over whcih the channel impulse response is essentially time invariant.
+- If the symbol period of the base band signal (reciprocal of teh baseband signal bandwidth) is greater than the coherence time, then the signal will dsitort.
+    - due to channel will change during the transmission of the signal.
+- Coherence time ($T_C$) and doppler spread are inversely proportion to one another and is defined as:
+    $$T_c \approx 1/f_m$$
+- Also defined as:
+    $$T_c \approx \sqrt{\frac{9}{16\pi f_m^2}}$$
+- Coherence time definition implies that 2 signals arriving with a time separation greater than $T_C$ are effected ifferently by the channel
+- Large coherence time implies that the channel changes slowly.
+
+## Types of Small-Scale Fading
+
+Based on multipath time delay spread:
+1. Flat Fading
+    1. BW of signal < BW of channel
+    2. Delay spread < symbol period
+        - i.e. BS << BC $\leftrightarrow$ $\sigma_\tau$ << TS
+    3. Spectral Characteristics of the transmitted signal is preserved
+2. Frequency selective fading
+    1. BW of signal > BW of channel
+    2. Delay spread > symbol period
+        - i.e., BS > BC $\leftrightarrow$ $\sigma_\tau$ >> TS
+    3. Spectral characterisitics of Tx signal is not preserved.
+
+Based on Doppler Spread
+
+1. Fast Fading
+    1. High Doppler Spread
+    2. Coherence time < Symbol period
+    3. Channel variations faster than baseband signal variations
+        - i.e. $T_C < T_S$
+2. Slow Fading
+    1. Low Dopller spread
+    2. Coherence time > Symbol period
+    3. Channel variations slower than baseband signal variations
+        - i.e. $T_C >> T_S$
+
+## Frequency Flat Fading
+
+- Occurs when symbol period of the transmitted signal is much larger than the Delay Spread of the channel
+    - bandwidth of the applied signal is narrow
+- May cause deep fades.
+    - inrease the transmit power to combat this situation
+
+## Fast Fading
+
+- occurs due to dopller spread
+    - rate of change of the channel characteristics is larger than the rate of change of the transmitted signal
+    - the channel changes during a symbol period
+    - the channel changes because of relative motion between the receiver and the baseband signal
+    - coherence time ($T_C$) of the channel is smaller than the symbol period ($T_S$) of the transmitter signal
+- occurs when:
+    $B_S < B_D$ and $T_S > T_C$
+- where
+    - $B_S$: bandwidth of the signal
+    - $B_D$: doppler spread
+    - $T_S$: symbol period
+    - $B_C$: coherence bandwidth
+
+## Slow Fading
+
+- Due to doppler spread
+    - rate of change of the channel characterisitics is much smaller than the rate of change of the transmitted signal.
+- occurs when
+    - $B_S >> B_D$ and $T_S << T_C$
+- where
+    - $B_S$: bandwidth of the signal
+    - $B_D$: doppler spread
+    - $T_S$: symbol period
+    - $B_C$: coherence bandwidth
+
+### Fast/Slow Fading
+
+- velocity of the mobile (or the velocity of objects in the channel)
+    - and the baseband signaling
+- determines whether a signal undergoes fast fading or slow fading.
+
+## Fading Distributions
+
+- Describes how the received signal amplitude changes with time
+    - remember that the received signal is combination of multiple signals arriving from different directions, phases and amplitudes
+- it is a statistical characterization of the variation of the envelope of the received signal over time.
+- two most common distributions
+    - rayleigh fading
+    - ricean fading
+
+### Rayleigh Fading
+
+- If all the multipath componennts have approximately the same amplitude, i.e., MS is far from BS, the envelope of teh receieved signal is Rayleigh Distributed
+- No dominant signal component (such as the LoS component)
+- Rayleigh Distribution has the probability density function (PDF) given by:
+    $$p(r) = 
+    \begin{cases}
+    \dfrac{r}{\sigma^2} e^{-\dfrac{r^2}{2\sigma^2}}\ &(0 \le r \le \infty)\\
+    0 & (r \lt 0)
+    \end{cases}$$
+- $\sigma$ is the rms value of the received voltage signal before envelope detection
+- $\sigma^2$ is the time average power of the received signal before envelope detection.
+- Its graph looks like:
+    - ![Rayleigh Distributino](attachments/rayleigh-distribution.png)
+
+### Ricean Fading
+
+- When there is a stationary (non-fading) LoS signal present, then the envelope distribution is Ricean
+- The Ricean distibution degenerates to Rayleigh when the dominant component fades away.
+- The ricean distribution is given by
+    $$p(r) = 
+    \begin{cases}
+    \dfrac{r}{\sigma^2} e^{-\dfrac{r^2+A^2}{2\sigma^2}} I_0\left( \dfrac{Ar}{\sigma^2} \right)\ &(0 \le r \lt \infty)\\
+    0 & (r \le 0)
+    \end{cases}$$
+    
 
