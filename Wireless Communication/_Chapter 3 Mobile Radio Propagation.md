@@ -635,6 +635,117 @@ Based on Doppler Spread
 - where
     - $L_{50}$ = 50\% of propagation path loss (median)
     - $L_{F}$ = free space propagation loss
-    - $A_{mu}\left(f,d\right)$ = median attenuation relative to  -G\left(h_{te}\right)-G\left(h_{re}\right)-G_{AREA}
+    - $A_{mu}\left(f,d\right)$ = median attenuation relative to  free space
+    - $G\left(h_{te}\right)$ = base station antenna height gain factor = $20\log \dfrac{h_{te}}{200}$ for 30m to 1000m of $h_{te}$
+    - $G\left(h_{re}\right)$ = mobile antenna height gain factor = $10\log\dfrac{h_{re}}{3}$ for 0 to 3m of $h_{re}$
+    - $G_{AREA}$ = gain due to type of environment = $20 \log \dfrac{h_{re}}{3}$ for 3m to 10m of $h_{re}$
 
+Explanation
+- Okumura developed a set of curves giving the median attenuation relative to free space ($A_{mu}$) in an urban area over a quasi-smooth terrain with a base station effective antenna height ($h_{te}$) of 200m and a mobile antenna height ($h_{re}$) of 3m.
+- These curves were developed from extensive measurements using vertical omni-directional antennas at both the base and mobile, and are plotted as a function of frequency.
+- Okumura's mdoel is wholly based on measured data and does not provide any analytical explanation.
+- For many situations, extrapolations of the derived curves can be made to obtain values outside the measurement range, although the validity of such extrapolations depends on the circumstances and the smoothness of the curve in question
+- Okumura's model is considered to be amon the simplest and best in terms of accuracy in path loss prediction for mature cellular and land mobile radio systems in cluttered environments
+- the major disadvantages with the model is its slow response to rapid changes in terrain,, therefore the model is fairly good in urban and suburban areas but not as good in rural areas.
+
+## Hata Model
+
+- The hata model is the empirical formulation of the graphical path loss data provided by Okumura and is valid fom 150 MHz to 1.5 MHz
+- The median path loss in urban areas is given by
+    - $L_{50}$(dB) = 69.55 + 26.16$\log_{10} f_c$ (MHz) - 13.82$\log_{10}(h_{te})$ - $\alpha(h_{re}(m)) + (44.9 - 6.55 \log h_{te}(m))\log_{10}d(km)$
+- Parameters:
+
+| parameter | comment |
+| --- | --- |
+| $L_{50}$ | 50th % value (median) propagation path loss (urban) |
+| $f_c$ | frequency from 150 MHz-1.5 GHz |
+| $h_{te}, h_{re}$ | base station (30 to 200m) and mobile antenna (1 to 10m) height |
+| $\alpha(h_{re})$ | corection factor for $h_{re}$, affected by coveraeg area| 
+| d | Tx-Rx separation in km | 
+
+Correction factors for Hata mdoel:
+
+![Corrective factors](attachments/hata-corrections.png)
+
+## Lonley Rice Model
+
+- The longley rice model is normally available as a computer program that takes as input:
+    - transmission frequency
+    - path leght
+    - polarizatino
+    - antenna heights
+    - surface reflectivity
+    - ground conductivity and dielectric constant
+    - climatic factors
+- the main drawback of the Longley-Rice propagation model is that it does not consider the effect of multipath, buildings, foliage and other environmental factors.
+
+# Indoor Propagation Models (1)
+
+- Indoor channels are different from traditional mobile radio channels in 2 different ways
+    - the distance covered are much smaller
+    - the varaibility of the environment is much greater for a much smaller range of Tx and Rx separation distances
+- the propagation inside a building is influenced by
+    - layout of the building
+    - construction materials
+    - building type: office area, residentail home, factory, etc.
+- indoor propagation is dominated by the same mechanisms as outdoor:
+    - reflection, scattering, diffractin
+- however, conditions are much more vairable
+    - doors, windows open or not
+    - the mounting place of antenna: desk, ceiling
+    - the level of loors
+- the indoor chanels are classified as
+    - LoS
+    - Obstructed (OBS) with varyyingdegrees of cluster
+- temporal fading for fixed and moving terminals
+    - portable receiver exeperience in general
+        - rayliegh rading for OBS propagation paths
+        - ricean fading for LOS paths.
+- Multipath delay spread
+    - buildings with fewer metals and hard partitions typically have small rms delay spread: 30 to 60 ns
+    - can support data rates excess of several Mbps without equalization
+- larger buildings with great amount of metal and open aisles may have rm delay spreads as large as 300ns
+    - cannot support data rates more tahn a new hundred kbps without equalization
+- path loss:
+    - the following formula that we have seen earlier also descibres the indoor path loss:
+    $$PL(d)(dB) = \overline{PL}(d_0) + 10n \log\left(\frac{d}{d_0}\right) + X_\sigma$$
+    - n and $\sigma$ depends on the type of the building
+    - smaller value of $\sigma$ indicates better accuracy of the path loss model.
+- in building path loss factors
+    - parititon lossess (same floor)
+        - 2 kinds
+            - hard partitions: walls of the room
+            - soft parititions: moveable partitions that do not span to the ceiling
+        - path loss depends on the type of parititions
+        - various losses:
+            - ![Same floor losses](attachments/partition-losses-same-floor.png)
+    - partitiotn losses between floors
+        - depends on:
+            - external dimensions and materials of the building 
+            - type of construction used to create floors
+            - external surroundings
+            - number of windows
+            - presence of tintinig on windows
+        - various losses:
+            - ![Between Floor losses](attachments/partition-losses-between-floors.png)
+    - signal penetration into buildings
+
+# Ericsson Multiple Breakpoint Model
+
+- measurements in multi-floor office building
+- uses uniform distribution to generate path loss values betwee minimum and maximum range, relative to distance
+- 4 breakpoints consider upper and lower bound on path loss
+- assumes 30 dB attenuation at $d_0$ = 1m
+    - accurate for f = 900 MHz and unity gain antenna
+- provides determinisitc limit on the range of path loss at a given distance
+- Diagram of its graph
+    - ![Attenuation in Ericsson model](attachments/ericsson-model.png)
+
+# Attenuation Factor Model
+
+- Obtained by measurement in a multiple floor office building
+    $$\overline{PL}(d)(dB) = \overline{PL}(d_0)(dB) + 10n_{SF}\log\left(\dfrac{d}{d_0}\right) + FAF(dB) + \sum PAF (dB)$$
+    - where $n_{SF}$ = path loss exponnent of the same floor
+    - FAF = floor attenuation factor
+    - PAF = partition attenuatino factor
 
