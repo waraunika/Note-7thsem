@@ -1,18 +1,36 @@
+# Exam Frequency Table (2070–2082 BS, 22 papers)
+
+| Topic | Typical Marks | Frequency |
+|---|---|---|
+| Prove $Q = \sqrt{3N}$ + optimal N for omni/120°/60° sectoring (numerical, deferred) | 3–8 | Very High |
+| Handoff: definition, types, practical considerations, cell dragging | 2–8 | Very High |
+| Co-channel vs adjacent channel interference | 2.5–7 | High |
+| Cell splitting vs sectoring (capacity/coverage enhancement) | 4–8 | High |
+| GoS, traffic intensity, blocked-calls-cleared systems (theory + numericals, deferred) | 3–8 | High |
+| Microcell zone concept | 1–4 | Moderate |
+| Frequency reuse / co-channel reuse ratio concept | 3–6 | Moderate |
+| Cell footprint / interference tier | 1–5 | Moderate |
+| Prioritized handoff / two schemes for prioritizing handoff | 2–3 | Moderate |
+| Techniques for capacity & coverage enhancement (general) | 5–8 | Low–Moderate |
+
+
+---
+
 # Background
 
 - in wireless telephony, a **cell** is the geographical area covered by a cellular telephone transmitter.
-- the transmitter facility tiself is called the **cell site**.
-- teh cellular conept was a amjor breakthrough in solving the problem of **spectral congestion** and **user capacity**.
-- It offered very high capacity in a limited sepctrum allocation without any major technological changes
+- the transmitter facility itself is called the **cell site**.
+- the cellular concept was a major breakthrough in solving the problem of **spectral congestion** and **user capacity**.
+- It offered very high capacity in a limited spectrum allocation without any major technological changes
 
 ## Cellular Concept
 
 The cellular concept has the following system level ideas
-- replacing a single, high power tranmitter with many low power transmistters, each providing coverage to only a small area.
+- replacing a single, high power transmitter with many low power transmitters, each providing coverage to only a small area.
 - Neighboring cells are assigned different groups of channels in order to minimize interference
 - The same set of channels is then reused at different geographical locations.
-- each base station (**BS**) is allocated a portion of total no. of channels avialable to entire system.
-- nearby base station are assigned different groups of channels so that all the avialable channels are assigned to a relatively small no. of neighboring base stations.
+- each base station (**BS**) is allocated a portion of total no. of channels available to entire system.
+- nearby base station are assigned different groups of channels so that all the available channels are assigned to a relatively small no. of neighboring base stations.
 - Nearby BS are assigned different groups of channel so that interference between BS is minimized.
 - When designing a cellular mobile communication system, it is important to provide good coverage and services in a high user-density area.
 - Cellular advantage:
@@ -21,21 +39,22 @@ The cellular concept has the following system level ideas
 
 ## Cell Footprint
 
-- The actual radio coverage of a cell is known as cell footprint
-- Irregular cell structure and irregular placing of the transmitter may not be acceptable in the initial system in the initial system design.
+
+- The actual radio coverage of a cell is known as **cell footprint**.
+- Irregular cell structure and irregular placing of the transmitter may not be acceptable in the initial system design.
 - However, as traffic grows, where new cells and channels need to be added,
     - it may lead to inability to reuse frequencies because of co-channel interference.
 - For systematic cell planning, a regular shape is assumed for the footprint
 - Coverage contour should be circular.
     - However, it is impractical because it provides ambiguous areas with either multiple or no coverage.
 - Due to economic reasons, the hexagon has been chosen due to its maximum area coverage.
-- Hence a conventional cellular layout is often defeind by a uniform grid of regular hexagons.
+- Hence a conventional cellular layout is often defined by a uniform grid of regular hexagons.
 
 # Frequency Reuse
 
 - each cellular base station is allocated a group of radio channels within a small geographic area called a cell.
 - Neighboring cells are assigned different channel groups.
-- By limiting the coverage area to within the boundary of the cell, teh channel groups may be reused to cover different cells.
+- By limiting the coverage area to within the boundary of the cell, the channel groups may be reused to cover different cells.
 - Keep interference levels within tolerable limits.
 
 Real world planning
@@ -55,14 +74,16 @@ Real world planning
 
 ## Terminology
 
+*(Frequently asked directly: cluster size, interference tier — both carry high recall value)*
+
 - Cluster Size
-    - The $N$ cells which collectively use teh complete set of avialable frequency is called the cluster size.
+    - The $N$ cells which collectively use the complete set of available frequency is called the cluster size.
     - ![Illustration of cellular frequency reuse concept](attachments/cluster-description.png)
 - Co-channel cell
     - the set of cells using the same set of frequencies as the target cell.
 - Interference Tier
     - a set of co-channel cells at the same distance from the reference cell is called an interference tier.
-    - The set of closet-co-channel cell is called first tier.
+    - The set of closest co-channel cell is called first tier.
     - There is always 6 co-channel cells in the first tier.
     - example as a figure:
     - ![Interference-tier representation](attachments/interference-tier.png)
@@ -76,7 +97,7 @@ Real world planning
 
 - Frequency reuse scheme
     - increases capacity
-    - minimze interference
+    - minimize interference
 - Channel assignment strategy
     - fixed channel assignment
         - each cell is allocated a predetermined set of voice channel
@@ -89,15 +110,19 @@ Real world planning
 
 # Handoff Strategies
 
+
 - When a mobile moves into a different cell while a conversation is in progress, the MSC automatically transfers the call to a new channel belonging to the new base station.
 - Handoff operation
     - identifying a new base station
     - re-allocating the voice and control channels with the new base station
+
+## Handoff Margin
+
 - Handoff Threshold
     - Minimum usable signal for acceptable voice quality (-90 dBm to -100 dBm)
     - Handoff margin $\Delta = P_{\text{r, handoff}} - P_{\text{r, minimum usable}}$ cannot be too large or too small.
     - Where, $P_{r, h}$ = received handoff signal power
-        - $P_{r, m}$ = minmum usable handoff power
+        - $P_{r, m}$ = minimum usable handoff power
     - If $\Delta$ is too large, unnecessary handoffs burden the MSC
     - If $\Delta$ is too small, there may be insufficient time to complete handoff before a call is lost.
 - Proper vs Improper Handoff
@@ -111,9 +136,9 @@ Real world planning
     - in first generation analog cellular systems, signal strength measurements are made by the base station and supervised by the MSC.
     - in 2nd generation systems (TDMA), handoff decisions are mobile assisted, called mobile assisted handoff (MAHO)
 - Intersystem handoff
-    - if a mobile moves from one cellular system to a different celllular system controlled by a different MSC.
+    - if a mobile moves from one cellular system to a different cellular system controlled by a different MSC.
 - Handoff requests is much important than handling a new call
-    - to maintain Grade of Servie (GOS)
+    - to maintain Grade of Service (GOS)
 
 ## Practical Handoff Consideration
 
@@ -122,9 +147,9 @@ Real world planning
     - Low speed users may never need a handoff during a call.
 - **Microcells** to provide capacity, the MSC can become burdened if high speed users are constantly being passed between very small cells.
 - **Considerations**:
-    - Minimze handoff intervention
+    - Minimize handoff intervention
         - handle the simultaneous traffic of high speed and low speed users.
-    - Large and small cells can be located a singl elocation (umbrella cell)
+    - Large and small cells can be located a single location (umbrella cell)
         - different antenna height
         - different power level
         - Figure representing Umbrella cell:
@@ -158,7 +183,7 @@ Real world planning
 - each BS constantly monitors the signal strengths of all of its reverse voice channels to determine the relative location of each mobile user with respect to the BS.
 - This information is forwarded to MSC who makes decisions regarding handover.
 - Mobile assisted handover (MAHO): 
-    - the mobile station measures the received power from surrouding BSs and continually reports the results of these measurements to the serving BS.
+    - the mobile station measures the received power from surrounding BSs and continually reports the results of these measurements to the serving BS.
 
 ## Prioritizing Handover
 
@@ -167,12 +192,12 @@ Real world planning
     - A fraction of the total available channels in a cell is reserved only for handover requests.
     - However, this reduces the total carried traffic
     - Dynamic allocation can improve this.
-- Queuing of handover requests is another method to decrease the probability of forced terminatino of a cell due to a lack of available channel.
+- Queuing of handover requests is another method to decrease the probability of forced termination of a cell due to a lack of available channel.
     - the time span over which a handover is usually required leaves room for queueing handover request.
 
 ## Practical Handover
 
-- A hard handoever does "break before make"
+- A hard handover does "break before make"
     - the old channel connection is broken before the new allocated channel connection is setup.
     - this obviously can cause call dropping
 - In soft handover, we do "make before break"
@@ -181,7 +206,7 @@ Real world planning
 - Representative figure
     - ![Handover soft and hard](attachments/handover-soft-vs-hard.png)
 
-# Interference and System Capcity
+# Interference and System Capacity
 
 - Sources of interference
     - another mobile in the same cell
@@ -198,9 +223,9 @@ Real world planning
     - there are several cells that use the same set of frequencies
     - called co-channel cells
 - To reduce co-channel interference, co-channel cell must be separated by a minimum distance
-- When teh size of cell is approximately the same
+- When the size of cell is approximately the same
     - co-channel interference is independent of the transmitted power
-- co-channel intereference is a function of:
+- co-channel interference is a function of:
     - $R$ = radius of the cell
     - $D$ = distance to the center of the nearest co-channel cell
 - Increasing the ratio $Q = D/R$, the interference is reduced.
@@ -209,11 +234,11 @@ Real world planning
     $$Q = \frac{D}{R} = \sqrt{3N}$$
 - A small value of Q provides large capacity
 - A large value of Q improves the transmission quality - smaller level of co-channel interference
-- A tradeoff must be made betwen these 2 objectives.
+- A tradeoff must be made between these 2 objectives.
 
 ### Prove $D = \sqrt{3N}R$ for hexagonal geometry
 
-- Assuming hexagonal geoemetry, we draw the figure as:
+- Assuming hexagonal geometry, we draw the figure as:
     - ![Figure showing A-A-E triangle](attachments/interference-cochannel-hexagonal-geometry.png)
 - Here, $D$ = distance between two co-channel cell.
 - $R$ = radius of hexagon/cell.
@@ -233,7 +258,7 @@ Real world planning
     - where,$S$ = desired signal power
     - $I_i$ = interference power caused by the ith interfering co-channel cell base station
     - $N_I$ = Number of co-channel interfering cells
-- Let $D_i$ be the distance between the $i^{th}$ inteferer and mobile.
+- Let $D_i$ be the distance between the $i^{th}$ interferer and mobile.
 - The received interference $I_i$ is proportional to $(D_i)^{-K}$, where k is the path loss $2 \le K \le 5$
 - The desired received signal power $S$ is proportional to $r^{-k}$,
     - where $r$ is the distance between the mobile and serving base station
@@ -245,26 +270,16 @@ Real world planning
 - In such case, $r = R$ and using $D_i = D$ for i = 1, 2, 3 ... $N_I$
 - We have
     $$\frac{S}{I} = \frac{(D/R)^k}{N_I} = \frac{q^k}{N_I} = \frac{(\sqrt{3N})^k}{N_I}$$
-- Then the frequency reuse raito can be expressed as
+- Then the frequency reuse ratio can be expressed as
     $$q = \left( N_I \times \frac{S}{I} \right)^{1/k} = \left( 6 \times \frac{S}{I} \right)^{1/k}$$
 
-#### Example for SIR
-
-- AMPS requires that S/I = 18 dB. Calculate cluster size N
-- with path loss of $k = 4$
-- the frequency reuse ratio $q$ is determined as
-    $$q = (6 \times 10^{1.8})^{1/4} = (6 \times 63.1)^{0.25} \approx 4.41 $$
-- Hence cluster size N should be
-    $$N = q^2/3 = 6.49 = 7$$ 
-    - nearest options are 7, 12
-
 #### Worst Case
-- For exagonal geometry with 7-cell cluster, with the mobile unit at the cell boundary, the SIR for worst case can be approximated as
+- For hexagonal geometry with 7-cell cluster, with the mobile unit at the cell boundary, the SIR for worst case can be approximated as
     $$\frac{S}{I} = \frac{R^-4}{2(D-R)^{-4} + (D-R/2)^-4 + (D+R/2)^{-4} + (D+R)^{-4} + D^{-4}}$$
     - Figure for the formula
     - ![Worst Case Scenario](attachments/interference-cochannel-worst.png)
 
-## Adjacent Channel Inteference (ACI)
+## Adjacent Channel Interference (ACI)
 
 - Interference from adjacent in frequency to the desired signal.
 - imperfect receiver filters allow nearby frequencies to leak into the passband
@@ -272,8 +287,8 @@ Real world planning
 - This can be avoided by:
     1. Suitable channel allocation scheme
         - a cell should not be assigned channels which are adjacent in frequency, rather keeping frequency separation as large as possible
-    2. Carefeul filtering
-        - desing of a carefully built band pass filter at the receiver end, by using proper modulation schemes, that have low out band radiation
+    2. Careful filtering
+        - design of a carefully built band pass filter at the receiver end, by using proper modulation schemes, that have low out band radiation
     3. Separate Multiplexing
         - uplink and downlink channels might use multiplexing technique in order to avoid interference.
 
@@ -286,20 +301,20 @@ Real world planning
     - Ensure each mobile transmits the smallest power necessary to maintain a good quality link on the reverse channel.
     - long battery life
     - increase SIR
-    -solve the near-far problem
+    - solve the near-far problem
 
 # Trunking
 
 - In cellular systems, a relatively small number of radio channels are used to serve a large population of mobile users, which is made possible by cellular design (i.e. frequency reuse) and by trunking.
-- Trunking allows the mobile users share the radio channels in each cell on a demand basiss.
+- Trunking allows the mobile users share the radio channels in each cell on a demand basis.
 - A trunk is a communication line or link designed to carry multiple signals simultaneously to provide network access between two points.
 - Trunks typically connect switching center in a communications systems
-- Based on the traffic load, the number of radio channels in each cell hsould be determined in such a away that
+- Based on the traffic load, the number of radio channels in each cell should be determined in such a way that
     - All the channels are utilized efficiently
-    - Call blcoking rate is below a pre-determined threshold.
+    - Call blocking rate is below a pre-determined threshold.
 - The measure of traffic efficiency:
     - 1 Erlang is defined as the amount of traffic intensity carried by a channel that is completely occupied
-    - .e.g, a radio channle that is occupied for 30 minutes during an hour carries 0.5 erlangs of traffic per hour.
+    - e.g, a radio channel that is occupied for 30 minutes during an hour carries 0.5 erlangs of traffic per hour.
 
 ## Types of Trunked Systems
 
@@ -310,50 +325,6 @@ Real world planning
     - the call request is delayed until a channel becomes available
         - blocked calls delayed
 
-## Numerical
-
-### Example-1
-
-- Given a cellular system for 415 radio channels availabel for handling traffic
-- Assume that 21 of this channels are designed as control channels
-- Let the average channel holding time of a call be 3 minutes
-- the probability during busy hours be 2\%, and the frequency factor be 9.
-- then determine:
-    - the number of call per cell per hour
-    - the signal to co-channel interferences S/I in dB
-- Solution
-    - The number of voice channels = 416 - 21 = 395
-    - Frequency factor: N = 9
-    - Number of voice channel per cell is: $\dfrac{395}{N} \approx 44$
-    - from look-up table,
-        - with 44 available channels and $P_B$ = 0.02,
-        - traffic intensity is 34.684 Erlangs.
-    - So, number of calls per cell per minute:
-        - $\dfrac{34.683}{3} \approx 12$ calls per cell per minute
-        - $\dfrac{34.683}{3} \times 60 \approx 693$ calls per cell per hour
-    - Frequency reuse ratio q = $\sqrt{3N} = \sqrt{3\times 9} = 5.1962$
-    - for k = 4, the signal-to-co-channel interference ratio will be given by:
-        - $S/I = \dfrac{q^k}{6} = \dfrac{(5.1962)^4}{6} = 121.5 = 20.485 dB$
-
-### Example-2
-
-- An urban area has a population of 2 million residents.
-- System A has 394 cells with 19 channels each.
-- Find the number of users that can be supported at 2\% blocking if each user averages two calls per hour at an average call duration of three minutes.
-- Assuming that trunk systems are operated at maximum capacity, compute percentage market penetration of cellular provider.
-
-- Solution
-    - probability of blocking = 2\% = 0.02
-    - Number of channels per cell used in the system, C = 19
-    - Traffic intensity per user, Au = $\lambda H = 2 \times (3/60) = 0.1$ Erlangs
-    - For GoS = 0.02 and C = 19,
-        - from the Erlang B chart, the total carried traffic, A, is obtained as 12 Erlangs
-    - Therefore, the number of users that can be supported per cell is U = A/Au = 12/0.1 = 120
-    - Since there are 394 cells, the total number of subscribers that can be supported by System A = 120 x 394 = 47280
-    - no. of residents = 2 million
-    - so market peneration = 47280/2,000,000 = 2.36%
-
-
 # Grade of Service (GoS)
 
 - it is a measure of the ability of a user to access a trunked system during the busiest hour.
@@ -362,7 +333,7 @@ Real world planning
     - the likelihood that a call experiences a delay larger than a certain pre-determined system queueing delay (for Erlang C systems)
 - Basic Definitions
     - Blocked call (Lost Call):
-        - Call which cannoot be completed at the time of request, due to congestion
+        - Call which cannot be completed at the time of request, due to congestion
     - Average holding time (H):
         - Average duration of a typical call
     - Traffic Intensity (A):
@@ -400,8 +371,8 @@ Real world planning
     - if only part of the cells are splitted
     - different cell sizes exist simultaneously
 - Handoff issues
-    - high speed and low speed traffic can be simultaneously accomodated
-- Require additioanl installation of towers and antennas
+    - high speed and low speed traffic can be simultaneously accommodated
+- Require additional installation of towers and antennas
 - Lower spectral efficiency
 
 ## Sectoring
@@ -412,20 +383,21 @@ Real world planning
 - Figure
     - ![General Figure for sectoring already existing cells](attachments/capacity-sectoring.png)
 - Example
-    - ![Example of 0-6 secotrs](attachments/capacity-sectoring-example.png)
+    - ![Example of 0-6 sectors](attachments/capacity-sectoring-example.png)
     - Sector 0 interference from sector 4, 5 and 6 only.
         - as the antenna in 4, 5, 6 radiate toward 0's direction
-    -However, for sector 3, 2 and 1's antenan
+    - However, for sector 3, 2 and 1's antenna
         - they radiate in opposite direction from 0
     - Hence for typical hexagon geometry the co-channel interference reduces from 6 cells to 3 cells.
     - Since the number of interference is reduced the better S/I is guaranteed.
 
 ## Microcell Zone Concept
 
+
 - Antennas are placed at the outer edges of the cell
 - Any channel may be assigned to any zone by the base station
 - Mobile is served by the zone with the strongest signal.
-    - The problem of sectoring can be avoidedby microcell zone concept
+    - The problem of sectoring can be avoided by microcell zone concept
     - A cell is conceptually divided into microcell or zones
     - Each microcell (zone) is connected to the same base stations (Fiber/Microwave)
 - Figure
@@ -435,3 +407,13 @@ Real world planning
     - MS is served by the strongest zone
     - as mobile travels from one zone to another, it retains the same channel, i.e. no handoff
     - the BS simply switch the channel to the next zone site.
+
+---
+
+# Additional Info (Numericals)
+
+- Number of calls/hour and S/I (dB) computation given total channels, control channels, holding time, blocking probability, and frequency reuse factor.
+- Market penetration computation given population, number of cells, channels/cell, blocking probability, call rate and holding time (Erlang B table lookup).
+- Optimal N for omni-directional, 120°, and 60° sectoring given SIR requirement and path loss exponent.
+- Minimum co-channel distance and cell area-based calculations for 7-cell reuse patterns.
+- GoS-based channel/user capacity calculations (blocked-calls-cleared and blocked-calls-delayed systems).
