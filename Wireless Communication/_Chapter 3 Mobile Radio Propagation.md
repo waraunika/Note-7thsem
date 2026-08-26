@@ -217,3 +217,72 @@ Notes:
     $$v=h\sqrt{\frac{2\left(d_{1}+d_{2}\right)}{\lambda d_{1}d_{2}}}$$
 - Fresnel Zone figure:
     - ![Fresnel Zones](attachments/diffraction-fresnel-zones.png)
+
+## Scattering
+
+- occurs when the medium has object that are smaller or comparable to the wavelength (small objects, rough surfaces and other irregularities on the cahnnel)
+- Folllows the same principles as diffraction
+- Causes the transmitter energey to be radiated in many directions.
+- e.g., foliage, street signs, lamp posts
+
+# Radio Propagation Models
+
+- Need models to characterize the signal strength received at the receiver after undergoing reflections,  diffraction and scattering
+    - small scale propagation models
+    - large scale propagation models
+- Radio propagation models can be derived by
+    - using empirical methods: collect measurement, fit curves
+    - using analytical methods: model the propagation mechanisms mathematically and derive equations for path loss
+
+# Fading
+
+- rapid fluctuations of received signal strength over short time intervals and/or travel distances
+- Caused by interference from multiple copies of Tx signal arriving at Rx at slightly different times.
+- Three most important effects:
+    1. Rapid changes in signal strengths over small distances or short time period
+    2. Changes in the frequency of signals
+    3. Multiple signals arriving at different times (time dispersion)
+- when added together at the antenna, signals are spread out in time.
+- this can cause a smearing of the signal and interference between bits that are received.
+- Even stationary Tx/Rx wireless links can experience fading due to motion of objects (cars, people, trees, etc.) in surrounding environment off which come the reflections
+- Multipath signals have randomly distributed amplitudes, phases & direction of arrival.
+    - vector summation of ($A\angle\theta$) at Rx of multipath leads to constructive/destructive interference as mobile Rx moves in space with respect to time.
+- Fading occurs around received signal strength predicted from a large-scale path loss models
+- Effect of fading
+    - ![Received power vs distance during fading](attachments/fading-graph.png)
+
+## Types of Fading
+
+```mermaid
+flowchart TD
+    A[Fading Types] --> B[Large Scale<br>Fading]
+    A --> C[Small Scale<br>Fading]
+    B --> D[Path Loss]
+    B --> E[Shadowing]
+    C --> F[Multipath<br>delay spread]
+    C --> G[Doppler<br>spread]
+    F --> H[Flat Fading]
+    F --> I[Frequency<br>Selective Fading]
+    G --> J[Fast<br>Fading]
+    G --> K[Slow<br>Fading]
+```
+
+- Large scale fading
+    - is the result of signal attenuation due to signal propagation over large distances and diffraction around large objects in the propagation path.
+    - It is due to the followig reasons
+        - **Attenuation** in free space: power degrades with $1/d^2$
+        - **Shadows**: signal are blocked by obstructing structures.
+- Small-scale fading models
+    - characterize the rapid fluctuations of the received signal strength over very short travel distance or short time duration.
+    - rapid fluctuation due to:
+        - sum of many contributions from different directions with different phases
+        - random frequency modulation due to varying Doppler shifts on different multipath signals
+    - As the mobile moves over small distances, the instantaneous received signal will fluctuate rapidly giving rise to small-scale fading
+        - the reason is that the signal is the sum of many contributors coming from different directions
+        - Since the phases of these signals are random, the sum behaves like a "noise"
+    - the received signal power may change as much as 3/4 orders of magnitude (30dB or 40dB), when the receiver is only moved a fraction of the wavelength
+    - Multipath in the radio channel produces small scale fading effects
+    - Important effects
+        - rapid changes in signal strength over a small travel distance or time interval
+        - radom frequency modulation due to varying Doppler's shifts on different multipath signals
+        - Time Dispersion (echoes)
