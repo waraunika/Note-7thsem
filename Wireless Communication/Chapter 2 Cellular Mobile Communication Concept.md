@@ -410,6 +410,44 @@ Real world planning
 
 ---
 
+# Difference tables
+
+| Aspect | Proper Handoff | Improper Handoff |
+|---|---|---|
+| Timing | Occurs when signal strength genuinely drops as mobile moves away from serving BS | Occurs due to momentary fading, not actual mobile movement away from BS |
+| Trigger | Sustained decline in received signal strength below handoff threshold | Short-term/instantaneous fade mistaken for a real handoff need |
+| Handoff margin ($\Delta$) | Appropriately sized — enough time to complete handoff before call quality degrades | Poorly judged — either triggers unnecessarily or triggers too late |
+| Load on MSC | Normal, expected load | Unnecessary handoffs burden the MSC when margin is too large or averaging is poor |
+| Call outcome | Call continues seamlessly on new BS with good link quality | Risk of dropped call (if triggered too late) or wasted handoff (if triggered on false signal dip) |
+| Root cause avoided by | Running average / proper signal-strength averaging tuned to mobile speed | Reacting to instantaneous fading without averaging over time |
+
+
+
+| Aspect | Co-channel Interference | Adjacent Channel Interference |
+|---|---|---|
+| Source | Cells reusing the **same** frequency (co-channel cells) | Signals in frequencies **adjacent** to the desired channel |
+| Cause | Insufficient physical separation between co-channel cells | Imperfect receiver filters allowing nearby frequencies to leak into the passband |
+| Dependence on power | Independent of transmitted power when cell sizes are equal — cannot be reduced simply by increasing/decreasing power | Worsened by near-far effect; strongly influenced by relative power of desired vs adjacent signal |
+| Controlling parameter | Co-channel reuse ratio $Q = D/R = \sqrt{3N}$ | Frequency separation between assigned channels and filter selectivity |
+| Mitigation | Increasing $D/R$ (larger cluster size $N$), sectoring | Careful channel allocation (avoid assigning adjacent channels to same cell), careful filter design, separate uplink/downlink multiplexing |
+| Trade-off | Larger $Q$ improves quality but reduces capacity (larger $N$) | Tighter channel spacing improves capacity but raises leakage risk |
+
+
+| Aspect | Cell Splitting | Sectoring |
+|---|---|---|
+| Basic idea | Subdividing a congested cell into smaller cells | Replacing an omni-directional antenna with several directional antennas at the same site |
+| Cell radius | Reduced (e.g. $R \to R/2$) | Kept unchanged |
+| Transmit power | Reduced (by ~12 dB for $n=4$ when halving radius) | Unchanged; interference reduced by directional radiation instead |
+| Effect on capacity | Increases capacity by reusing frequencies over a smaller area (more cells in the same region) | Increases capacity indirectly by reducing co-channel interference, allowing tighter reuse |
+| Effect on interference | Can complicate frequency planning; different cell sizes coexist during gradual splitting | Reduces co-channel interference directly (e.g. 6 interferers → 3 interferers for typical hexagonal sectoring) |
+| Infrastructure/cost | Requires additional towers, antennas, and base stations | Requires only additional/replacement directional antennas at existing site |
+| Handoff impact | More frequent handoffs; must handle high-speed and low-speed traffic simultaneously | Increases handoffs between sectors of the same cell, but no new cell boundaries created |
+| Drawback | Lower spectral efficiency if only partially implemented | Reduces trunking efficiency since channels are divided among sectors |
+
+
+
+---
+
 # Additional Info (Numericals)
 
 - Number of calls/hour and S/I (dB) computation given total channels, control channels, holding time, blocking probability, and frequency reuse factor.
