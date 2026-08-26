@@ -216,5 +216,4 @@ Notes:
 - The Fresnel-Kirchoff Diffraction parameter is given by
     $$v=h\sqrt{\frac{2\left(d_{1}+d_{2}\right)}{\lambda d_{1}d_{2}}}$$
 - Fresnel Zone figure:
-    
-![](attachments/diffraction-fresnel-zones.png)
+    - ![Fresnel Zones](attachments/diffraction-fresnel-zones.png)
