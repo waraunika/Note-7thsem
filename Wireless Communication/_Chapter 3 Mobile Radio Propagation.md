@@ -166,6 +166,55 @@ Notes:
 - When d becomes large, the difference between the distance d' and d'' become very small, and the amplitude $E_{LoS}$ and $E_g$ are virtually identical and differ only in phase
 - If the received E-field is evaluated at some time, let, t = d''/c, then the equation is given by:
     $$\begin{align}
-        \left|E_{tot}\right|=\frac{E_{0}d_{0}}{d'}\cdot \cos \left(\omega _{c}\left(\frac{d''}{c}-\frac{d'}{c}\right)\right)-\frac{E_{0}d_{0}}{d''}\cdot \cos \left(\omega _{c}\left(\frac{d''}{c}-\frac{d''}{c}\right)\right)
+        \left|E_{tot}\right|&=\frac{E_{0}d_{0}}{d'}\cdot \cos \left(\omega _{c}\left(\frac{d''}{c}-\frac{d'}{c}\right)\right)-\frac{E_{0}d_{0}}{d''}\cdot \cos \left(\omega _{c}\left(\frac{d''}{c}-\frac{d''}{c}\right)\right)\\
+        \left|E_{tot}\right|&=\frac{E_{0}d_{0}}{d'}\cdot \cos \left(\omega _{c}\left(\frac{\Delta }{c}\right)\right)-\frac{E_{0}d_{0}}{d''}\cdot \cos \left(0\right)\\
+        \left|E_{tot}\right|&=\frac{E_{0}d_{0}}{d'}\left(\cos \left(\theta _{\Delta }\right)-\cos \left(0\right)\right)\\
     \end{align}$$
+    - By using trignometric identitiy and simplifying further
+    $$\begin{align}
+        \left|E_{tot}\right|&=\frac{E_{0}d_{0}}{d'}\cdot 2\sin \left(\frac{1}{2}\ \frac{\omega _{c}\Delta }{c}\right)\\
+        \left|E_{tot}\right|&=\frac{E_{0}d_{0}}{d'}\cdot 2\sin \left(\frac{1}{2}\ \frac{1}{c}\cdot 2\pi f\cdot \frac{2h_{t}h_{r}}{d}\right)\\
+        \left|E_{tot}\right|&=\frac{2E_{0}d_{0}}{d'}\sin \left(\frac{2\pi h_{t}h_{r}}{\lambda d}\right)\\
+    \end{align}$$
+    - By small angle approximation
+    $$\begin{align}
+        \left|E_{tot}\right|&=\frac{2E_{0}d_{0}}{d'}\frac{2\pi h_{t}h_{r}}{\lambda d}\\
+        \left|E_{tot}\right|&=E_{0}d_{0}\left(\frac{4\pi h_{t}h_{r}}{\lambda d^{2}}\right)\\
+    \end{align}$$
+    - For received power at distance d
+    $$\begin{align}
+        P_{r}&=\frac{E_{tot}}{120\pi }A_{e}\\
+        P_{r}&=\left(E_{0}d_{0}\left(\frac{4\pi h_{t}h_{r}}{\lambda d^{2}}\right)\right)^{2}\cdot \frac{A_{e}}{120\pi }\\
+        P_{r}&=\left(E_{0}d_{0}\left(\frac{4\pi h_{t}h_{r}}{\lambda d^{2}}\right)\right)^{2}\cdot \frac{P_{t}G_{t}G_{r}\lambda ^{2}}{\left(4\pi \right)^{2}d^{2}}\\
+        P_{r}&=P_{t}G_{t}G_{r}\cdot \left(\frac{h_{t}h_{r}}{d^{2}}\right)^{2}\\
+    \end{align}$$
+- So path loss as $P_t/P_r$:
+    $$\frac{P_{t}}{P_{r}}=\frac{d^{4}}{G_{t}G_{r}\left(h_{t}h_{r}\right)^{2}}$$
+- in db form:
+    $$PL\left(dB\right)=40\log \left(d\right)-\left(10\log \left(G_{t}\right)+10\log \left(G_{r}\right)+20\log \left(h_{t}\right)+20\log \left(h_{r}\right)\right)$$
 
+## Diffraction
+
+- Occurs when the radio path between the transmitter and receiver is obstructed by a surface that has sharp irregularities (edges).
+- Explains how radio signals can travel in urban and rural environments without a line of sight path.
+- Diffraction can be explained by Huygen's principle:
+    - all points on a wavefront can be considered as point sources for the production of secondary wavelets.
+
+### Knife Edge Diffraction Geometry
+
+
+- Geometry:
+    - ![Explanation with figure for analysis](attachments/diffraction-geometry-for-analysis.png)
+
+### Fresnel Zone
+
+- Fresnel zones are used by propagation theory to calculate reflections and dffraction loss between a transmitter and receiver.
+- Fresnel zones are numbered and are called F1, F2, F3, etc.
+- Though there are infinite, we concern only 3.
+- A Fresnel zone is a cylindrical ellipse drawn between transmitter and receiver.
+- the size of the ellipse is determined by the frequency of operation and the distance between the two sites.
+- The Fresnel-Kirchoff Diffraction parameter is given by
+    $$v=h\sqrt{\frac{2\left(d_{1}+d_{2}\right)}{\lambda d_{1}d_{2}}}$$
+- Fresnel Zone figure:
+    
+![](attachments/diffraction-fresnel-zones.png)
