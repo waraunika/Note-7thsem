@@ -180,3 +180,91 @@ Real world planning
     - This is realized in CDMA where also BS diversity is used to improve boundary condition.
 - Representative figure
     - ![Handover soft and hard](attachments/handover-soft-vs-hard.png)
+
+# Interference and System Capcity
+
+- Sources of interference
+    - another mobile in the same cell
+    - a call in progress in the neighboring cell
+    - other base stations operating in the same frequency band
+    - non cellular system leaks energy into the cellular frequency band
+- Two major cellular interference
+    - co-channel interference
+    - adjacent channel interference
+
+## Co-channel Interference
+
+- Frequency reuse
+    - there are several cells that use the same set of frequencies
+    - called co-channel cells
+- To reduce co-channel interference, co-channel cell must be separated by a minimum distance
+- When teh size of cell is approximately the same
+    - co-channel interference is independent of the transmitted power
+- co-channel intereference is a function of:
+    - $R$ = radius of the cell
+    - $D$ = distance to the center of the nearest co-channel cell
+- Increasing the ratio $Q = D/R$, the interference is reduced.
+- Q is called the co-channel reuse ratio
+- For a hexagonal geometry
+    $$Q = \frac{D}{R} = \sqrt{3N}$$
+- A small value of Q provides large capacity
+- A large value of Q improves the transmission quality - smaller level of co-channel interference
+- A tradeoff must be made betwen these 2 objectives.
+
+### Prove $D = \sqrt{3N}R$ for hexagonal geometry
+
+- Assuming hexagonal geoemetry, we draw the figure as:
+    - ![Figure showing A-A-E triangle](attachments/interference-cochannel-hexagonal-geometry.png)
+- Here, $D$ = distance between two co-channel cell.
+- $R$ = radius of hexagon/cell.
+- So, by geometry of cosine law
+    $$\begin{align}
+        D^2 &= (i\sqrt3 R)^2 + (j\sqrt3 R)^2 - 2(i\sqrt3 R)(j\sqrt3 R) \cos(120^0)\\
+        &= 3i^2R^2 + 3j^2R^2 - 2\cdot 3ijR^2 cos(-60)\\
+        &= 3R^2(i^2+j^2 + ij)\\
+        &= 3NR^2\\
+        \therefore D &= \sqrt{3N} R
+    \end{align}$$
+
+### Signal-to-Interference Ratio (SIR)
+- Let $i_0$ be the number of co-channel interfering cells.
+- The SIR for a mobile receiver can be expressed as:
+    $$\frac{S}{I} = \frac{S}{\sum_{i=1}^{N_I} I_i}$$
+    - where,$S$ = desired signal power
+    - $I_i$ = interference power caused by the ith interfering co-channel cell base station
+    - $N_I$ = Number of co-channel interfering cells
+- Let $D_i$ be the distance between the $i^{th}$ inteferer and mobile.
+- The received interference $I_i$ is proportional to $(D_i)^{-K}$, where k is the path loss $2 \le K \le 5$
+- The desired received signal power $S$ is proportional to $r^{-k}$,
+    - where $r$ is the distance between the mobile and serving base station
+- Now, when the transmitted power from all base stations are equal and the path loss is same through out the geographical coverage area, the co-channel interference ratio is given by.
+    $$\frac{S}{I} = \frac{r}{\sum_{i=0}^{N_I} (D_i)^{-k}}$$
+- When the mobile located at the cell boundary, the worst case co-channel interference occurs as the power of the desired signal is minimum.
+- With hexagon shaped cellular systems, there are always six co-channel interfering in the first tier.
+- If we neglect co-channel interference from second and higher tiers, then $N_I$ = 6
+- In such case, $r = R$ and using $D_i = D$ for i = 1, 2, 3 ... $N_I$
+- We have
+    $$\frac{S}{I} = \frac{(D/R)^k}{N_I} = \frac{q^k}{N_I} = \frac{(\sqrt{3N})^k}{N_I}$$
+- Then the frequency reuse raito can be expressed as
+    $$q = \left( N_I \times \frac{S}{I} \right)^{1/k} = \left( 6 \times \frac{S}{I} \right)^{1/k}$$
+
+#### Example for SIR
+
+- AMPS requires that S/I = 18 dB. Calculate cluster size N
+- with path loss of $k = 4$
+- the frequency reuse ratio $q$ is determined as
+    $$q = (6 \times 10^{1.8})^{1/4} = (6 \times 63.1)^{0.25} \approx 4.41 $$
+- Hence cluster size N should be
+    $$N = q^2/3 = 6.49 = 7$$ 
+    - nearest options are 7, 12
+
+#### Worst Case
+- For exagonal geometry with 7-cell cluster, with the mobile unit at the cell boundary, the SIR for worst case can be approximated as
+    $$\frac{S}{I} = \frac{R^-4}{2(D-R)^{-4} + (D-R/2)^-4 + (D+R/2)^{-4} + (D+R)^{-4} + D^{-4}}$$
+    - Figure for the formula
+    - ![Worst Case Scenario](attachments/interference-cochannel-worst.png)
+
+## Adjacent Channel Inteference (ACI)
+
+- Interference from adjacent in frequency to the desired signal.
+- imperfect receiver filters allow nearby frequencies to leak into the passband
