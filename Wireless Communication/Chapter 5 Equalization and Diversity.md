@@ -152,9 +152,9 @@ $$\hat d_k = y_k^T w_k = w_k^T y_k$$
 $$d_k = x_k$$
 - Error signal:
 $$e_k = d_k - \hat d_k = x_k - \hat d_k = x_k - y_k^T \omega_k = x_k - \omega_k^T y_k$$
-$$|e_k|^2 = x_k^2 + \omega_k^T y_k y_k^T \omega_k - 2x_k y_k^T \omega_k$$
+$$|e_k|^2 = x_k^2 + \omega_k^T y_k y_k^T \omega_k - 2x_k y_k^T \omega_k $$
 - Expected value:
-$$E\left[|e_k|^2\right] = E[x_k^2] + \omega_k^T E[y_k y_k^T]\, \omega_k$$
+$$E\left[|e_k|^2\right] = E[x_k^2] + \omega_k^T E[y_k y_k^T]\, \omega_k - 2E[x_k y_k^T]\omega_k$$
 - The filter weight $w_k$ is not included in the time-average calculation, since it is assumed to have already converged to an optimum value, i.e., $w_k$ does not change with time.
 - **Input correlation matrix** $R$, an $(N+1)\times(N+1)$ square matrix:
 $$R = E[y_k y_k^*] = E
@@ -165,7 +165,7 @@ y_{k-1} y_k & y_{k-1}^2 & y_{k-1} y_{k-2} & \dots & y_{k-1} y_{k-N} \\
 y_{k-N} y_k & y_{k-N} y_{k-1} & y_{k-N} y_{k-2} & \dots & y_{k-N}^2
 \end{bmatrix}$$
 - **Cross-correlation vector** $p$ between the desired response and the input signal:
-$$p = E[x_k y_k] = E[x_k y_k \ \ x_k y_{k-1} \ \ x_k y_{k-2} \ \ \dots \ \ x_k y_{k-N}]^T$$
+$$p = E[x_k y_k] = E[x_k y_k \ \ x_k y_{k-1} \ \ x_k y_{k-2} \ \ \dots \ \ x_k y_{k-N}]^T $$
 - **Mean Square Error:**
 $$\zeta = E\left[|e_k|^2\right] = E[x_k^2] + \omega^T R \omega - 2 p^T \omega$$
 - Minimizing the MSE with respect to weights gives the optimal solution $w_k$ (set below).

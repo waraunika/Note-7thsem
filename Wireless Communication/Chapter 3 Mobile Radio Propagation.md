@@ -537,7 +537,7 @@ flowchart TD
     - As the mobile moves over small distances, the instantaneous received signal will fluctuate rapidly giving rise to small-scale fading.
         - the reason is that the signal is the sum of many contributors coming from different directions
         - Since the phases of these signals are random, the sum behaves like a "noise"
-    - the received signal power may change as much as 3/4 orders of magnitude (30dB or 40dB), when the receiver is only moved a fraction of the wavelength
+    - the received signal power may change as much as 3-4 orders of magnitude (30dB or 40dB), when the receiver is only moved a fraction of the wavelength
     - Multipath in the radio channel produces small scale fading effects.
     - Important effects:
         - rapid changes in signal strength over a small travel distance or time interval

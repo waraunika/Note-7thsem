@@ -11,10 +11,14 @@
             "id": "e14cc83ef4f322e8",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Wireless Communication/Chapter 6 Speech and Channel Coding Fundamentals.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Chapter 6 Speech and Channel Coding Fundamentals"
             }
           }
         ]
@@ -184,5 +188,10 @@
     }
   },
   "active": "e14cc83ef4f322e8",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "Wireless Communication/Chapter 5 Equalization and Diversity.md",
+    "Wireless Communication/Chapter 3 Mobile Radio Propagation.md",
+    "Wireless Communication/Chapter 2 Cellular Mobile Communication Concept.md",
+    "Wireless Communication/Chapter 1 Introduction.md"
+  ]
 }

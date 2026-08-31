@@ -60,7 +60,6 @@ This method divides the speech signal into frequency components which are quanti
 - **Key Technique:** Low-pass translation of sub-band signals to zero frequency (similar to single sideband modulation) is used to reduce the sampling rate effectively.
 - **Block Diagram:**  
     - ![Sub band coding with 4 frequency range](attachments/sub-band-coding.png)
-    _(4 frequency ranges shown)_
 
 ## Adaptive Transform Coding (ATC)
 
@@ -101,17 +100,16 @@ Vocoders analyze the voice signal at the transmitter, transmit derived parameter
 - The output of each filter is rectified and lowpass filtered.
     - the bandwidth of the LPF is selected to match:
     - the time variations in the characteristics of the vocal tract.
-- For measurement of the spectral magnitudes, a voicing detector and a pitch estimator are included in teh speech analysis.
+- For measurement of the spectral magnitudes, a voicing detector and a pitch estimator are included in the speech analysis.
 - Block Diagram
     - ![Analyzer block diagram](attachments/channel-vocoder-analyzer.png)
-
 
 ### Synthesizer Block Diagram
 
 - At the receiver the signal samples are passed through D/A converters.
 - The outputs of the D/As are multiplied by the voiced or unvoiced signal sources.
 - The resulting signal are passed through bandpass filters.
-- The outputs of the bandpass filters are summed to form the synthesized spech signal
+- The outputs of the bandpass filters are summed to form the synthesized speech signal
 - Block Diagram
     - ![Synthesizer Block Diagram](attachments/vocoder-channel-synthesizer.png)
 
@@ -134,7 +132,6 @@ Vocoders analyze the voice signal at the transmitter, transmit derived parameter
 
 - Block Diagram
     - ![Synthesizer Block Diagram](attachments/vocoder-formant-synthesizer.png)
-ttps://attachments/vocoder-formant-synthesizer.png)
 
 # Linear Predictive Coding (LPC)
 
@@ -200,14 +197,14 @@ A block code is a set of fixed-length codewords. A binary block code of length `
     - For a linear code, the minimum distance (`d'`) equals the minimum weight (`w'`) of any non-zero codeword.
 - **Representation:**
     - **Generator Matrix (G):** A `k x n` matrix that encodes the information word (`i`) of length `k` into a codeword (`c`) of length `n`.  
-        c=iGc=iG
+        c=iG
 
 ## Hamming Code
 
 - **Type:** A linear block code capable of correcting single-bit errors within a block.
 - **Structure:** Employs modulo-2 arithmetic (Ex-OR) and inserts parity bits between data bits. Offers little protection against burst errors.
 - **Parameters:**
-    -Code length: $n \le 2^{n-k} - 1$
+    - Code length: $n \le 2^{n-k} - 1$
     - Number of message bits: $k \le n - \log_2 (n+1)$
     - error-correcting capability: $t_c = \dfrac{d_{min} - 1}2$ 
 

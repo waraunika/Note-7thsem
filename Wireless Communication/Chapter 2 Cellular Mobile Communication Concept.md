@@ -263,7 +263,7 @@ Real world planning
 - The desired received signal power $S$ is proportional to $r^{-k}$,
     - where $r$ is the distance between the mobile and serving base station
 - Now, when the transmitted power from all base stations are equal and the path loss is same through out the geographical coverage area, the co-channel interference ratio is given by.
-    $$\frac{S}{I} = \frac{r}{\sum_{i=0}^{N_I} (D_i)^{-k}}$$
+    $$\frac{S}{I} = \frac{r^{-k}}{\sum_{i=0}^{N_I} (D_i)^{-k}}$$
 - When the mobile located at the cell boundary, the worst case co-channel interference occurs as the power of the desired signal is minimum.
 - With hexagon shaped cellular systems, there are always six co-channel interfering in the first tier.
 - If we neglect co-channel interference from second and higher tiers, then $N_I$ = 6
@@ -275,7 +275,7 @@ Real world planning
 
 #### Worst Case
 - For hexagonal geometry with 7-cell cluster, with the mobile unit at the cell boundary, the SIR for worst case can be approximated as
-    $$\frac{S}{I} = \frac{R^-4}{2(D-R)^{-4} + (D-R/2)^-4 + (D+R/2)^{-4} + (D+R)^{-4} + D^{-4}}$$
+    $$\frac{S}{I} = \frac{R^{-4}}{2(D-R)^{-4} + (D-R/2)^{-4} + (D+R/2)^{-4} + (D+R)^{-4} + D^{-4}}$$
     - Figure for the formula
     - ![Worst Case Scenario](attachments/interference-cochannel-worst.png)
 
