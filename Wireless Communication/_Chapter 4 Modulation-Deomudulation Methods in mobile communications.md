@@ -189,5 +189,4 @@ In general SS modulation techniques can be categorized into:
 
 ## Frequency selection in FHSS
 
-
 ![frequency being selected from frequency table as per k-bit patterns](attachments/fhss-frequency%20selection.png)
