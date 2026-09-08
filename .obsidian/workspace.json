@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Wireless Communication/Chapter 6 Speech and Channel Coding Fundamentals.md",
+                "file": "Wireless Communication/Chapter 7 Multiple Access in Wireless Communications.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 6 Speech and Channel Coding Fundamentals"
+              "title": "Chapter 7 Multiple Access in Wireless Communications"
             }
           }
         ]
@@ -189,6 +189,7 @@
   },
   "active": "e14cc83ef4f322e8",
   "lastOpenFiles": [
+    "Wireless Communication/Chapter 6 Speech and Channel Coding Fundamentals.md",
     "Wireless Communication/Chapter 5 Equalization and Diversity.md",
     "Wireless Communication/Chapter 3 Mobile Radio Propagation.md",
     "Wireless Communication/Chapter 2 Cellular Mobile Communication Concept.md",
