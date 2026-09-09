@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "5e3a7d6c154cdc34",
+        "id": "f29e0e388cedaf57",
         "type": "tabs",
         "children": [
           {
-            "id": "9e1af084b2128245",
+            "id": "63b5ba0a6854799e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Wireless Communication/Chapter 1 Introduction.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Chapter 1 Introduction"
+              "title": "New tab"
             }
           }
         ]
@@ -83,7 +79,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "1db74ccb9acf52c9",
@@ -99,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -167,7 +164,8 @@
               "title": "Outline"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -187,8 +185,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9e1af084b2128245",
+  "active": "63b5ba0a6854799e",
   "lastOpenFiles": [
+    "Wireless Communication/Chapter 8 Wireless Systems and Standards.md",
+    "Wireless Communication/Chapter 7 Multiple Access in Wireless Communications.md",
+    "Wireless Communication/Chapter 6 Speech and Channel Coding Fundamentals.md",
+    "Wireless Communication/Chapter 5 Equalization and Diversity.md",
+    "Wireless Communication/Chapter 4 Modulation Techniques.md",
+    "Wireless Communication/Chapter 3 Mobile Radio Propagation.md",
+    "Wireless Communication/Chapter 2 Cellular Mobile Communication Concept.md",
+    "Wireless Communication/Chapter 1 Introduction.md",
     "Excalidraw/Drawing 2026-09-09 10.15.05.excalidraw.md",
     "Excalidraw/attachments/room.png",
     "Excalidraw/attachments",

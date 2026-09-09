@@ -1,6 +1,6 @@
-# Chapter 5: Equalization and Diversity Techniques
+# ⁠A. Chapter 5: Equalization and Diversity Techniques
 
-## Exam Frequency Table (2070–2082 BS, 22 papers)
+## ⁠A.1. Exam Frequency Table (2070–2082 BS, 22 papers)
 
 | Topic | Typical Marks | Frequency |
 |---|---|---|
@@ -18,7 +18,7 @@
 
 ---
 
-# Introduction
+# ⁠B. Introduction
 
 - Equalization, diversity, and channel coding are three techniques used independently or in combination to improve received signal quality.
 - **Equalization** compensates for Inter-Symbol Interference (ISI) created by time-dispersive channels (when signal bandwidth $B_s$ > channel coherence bandwidth $B_c$).
@@ -29,18 +29,18 @@
 
 ---
 
-# Equalization: Linear, Non-linear, Adaptive
+# ⁠C. Equalization: Linear, Non-linear, Adaptive
 
-## Need for Equalization
+## ⁠C.1. Need for Equalization
 
 - Equalization compensates for Inter-Symbol Interference (ISI) caused by multipath time-dispersive channels.
 - An equalizer within a receiver compensates for the average range of expected channel amplitude and delay characteristics.
 - Since mobile fading channels are random and time-varying, the equalizer must **track** the time-varying channel characteristics, hence called an **adaptive equalizer**.
 - An adaptive equalizer operates in two phases: **Training** and **Tracking**.
 
-##  Modes of Operation
+## ⁠C.2. Modes of Operation
 
-### Training Mode
+### ⁠C.2.a. Training Mode
 
 - Purpose: to measure/characterize the channel.
 - A known, fixed-length training sequence is transmitted first so the receiver's equalizer can converge to a proper setting.
@@ -53,7 +53,7 @@
   - Time rate of change of the multipath radio channel
 - TDMA wireless systems are particularly well suited for equalizers (since data is sent in bursts with a training preamble).
 
-### Tracking Mode
+### ⁠C.2.b. Tracking Mode
 
 - Follows the training mode.
 - Once the training sequence ends, filter coefficients are near-optimal.
@@ -61,7 +61,7 @@
 - As user data is received, the equalizer's adaptive algorithm continues to **track** the changing channel.
 - As a result, the adaptive equalizer continuously updates its filter characteristics over time.
 
-##  Implementation
+## ⁠C.3. Implementation
 
 - Usually implemented at baseband or IF in a receiver.
 $$y(t) = x(t) * f(t) + n_b(t)$$
@@ -78,18 +78,18 @@ $$d(t) = y(t)*h_{eq}(t) = x(t) * f(t) * h_{eq}(t) + n_b(t) * h_{eq}(t)$$
 - If the channel is frequency selective, the equalizer enhances frequency components with small amplitudes and attenuates the strong frequencies in the received response.
 - For a time-varying channel, an **adaptive** equalizer is required to track channel variations.
 
-## Adaptive Equalization
+## ⁠C.4. Adaptive Equalization
 
 - An adaptive equalizer is a time-varying filter that must be continuously retuned.
 - Implemented as a transversal filter with $N$ delay elements, $N+1$ taps, and $N+1$ tunable complex weights.
 - Weights are updated continuously by an adaptive algorithm, either on a sample-by-sample or block-by-block basis.
 - The adaptive algorithm is controlled by the error signal $e_k$.
 
-### Block Diagram
+### ⁠C.4.a. Block Diagram
 
 ![Adaptive Equalizer during training](attachments/adaptive-equalization-training.png)
 
-### Operation
+### ⁠C.4.b. Operation
 
 - The error signal is derived by comparing the equalizer output $\hat d_k$ with some signal $d_k$, which is either an exact replica of the transmitted signal $x_k$, or represents a known property of the transmitted signal.
 - The adaptive algorithm uses $e_k$ to minimize a cost function and iteratively update the equalizer weights to reduce that cost function.
@@ -101,15 +101,15 @@ $$d(t) = y(t)*h_{eq}(t) = x(t) * f(t) * h_{eq}(t) + n_b(t) * h_{eq}(t)$$
 - Upon convergence, the adaptive algorithm freezes the filter weights until the error signal exceeds an acceptable level, or until a new training sequence is sent.
 - The most common cost function is the **Mean Square Error (MSE)** between the desired signal and the equalizer output: $E[e(k)\,e(k)^*]$.
 
-## Equalization Techniques (Linear vs Non-linear)
+## ⁠C.5. Equalization Techniques (Linear vs Non-linear)
 
 - Two general categories: **linear** and **non-linear** equalization.
 - If $d(t)$ is *not* fed back to adapt the equalizer → **linear equalization**.
 - If $d(t)$ *is* fed back to change subsequent outputs of the equalizer → **non-linear equalization**.
 
-#### Linear Equalization
+#### ⁠C.5.a.I. Linear Equalization
 
-##### Linear Transversal Equalizer (LTE)
+##### ⁠C.5.a.I.i. Linear Transversal Equalizer (LTE)
 
 - LTE is made up of tapped delay lines, as shown in the block diagram.
   - ![Basic Linear Transversal Equalizer Structure](attachments/equalizer-lte-structure.png)
@@ -119,7 +119,7 @@ $$d(t) = y(t)*h_{eq}(t) = x(t) * f(t) * h_{eq}(t) + n_b(t) * h_{eq}(t)$$
   - ![Tapped delay line filter with both feedforward and feedback taps](attachments/equalizer-lte-feedback.png)
 - Equalizers using both feed-forward and feedback taps tend to be unstable and are rarely used.
 
-### Non-linear Equalization
+### ⁠C.5.b. Non-linear Equalization
 
 - Used in applications where channel distortion is too severe for linear equalization.
 - Attempting to compensate for severe distortion, a linear equalizer places too much gain near spectral nulls, enhancing the noise present at those frequencies.
@@ -127,11 +127,11 @@ $$d(t) = y(t)*h_{eq}(t) = x(t) * f(t) * h_{eq}(t) + n_b(t) * h_{eq}(t)$$
   - Decision Feedback Equalization (DFE)
   - Maximum Likelihood Sequence Estimator (MLSE)
 
-#### Decision Feedback Equalizer (DFE)
+#### ⁠C.5.b.I. Decision Feedback Equalizer (DFE)
 
 ![Decision Feedback Equalizer](attachments/equalizer-dfe.png)
 
-#### Maximum Likelihood Sequence Estimation (MLSE)
+#### ⁠C.5.b.II. Maximum Likelihood Sequence Estimation (MLSE)
 
 - MLSE tests **all possible data sequences** (rather than decoding each received symbol individually) and chooses the data sequence with the maximum probability as the output.
 - Usually has a large computational requirement.
@@ -141,7 +141,7 @@ $$d(t) = y(t)*h_{eq}(t) = x(t) * f(t) * h_{eq}(t) + n_b(t) * h_{eq}(t)$$
 - The Viterbi algorithm traces the channel's state through the $M^L$-state trellis and, at stage $k$, gives the most probable sequence.
 - MLSE is the **optimum equalizer**, as it minimizes the probability of sequence error.
 
-## Solutions for Optimum Weights (MSE Derivation)
+## ⁠C.6. Solutions for Optimum Weights (MSE Derivation)
 
 - Let input vector $y_k$ and weight vector $w_k$:
 $$y_k = [y_k,\ y_{k-1},\ y_{k-2},\ \dots,\ y_{k-N}]^T$$
@@ -170,9 +170,9 @@ $$p = E[x_k y_k] = E[x_k y_k \ \ x_k y_{k-1} \ \ x_k y_{k-2} \ \ \dots \ \ x_k y
 $$\zeta = E\left[|e_k|^2\right] = E[x_k^2] + \omega^T R \omega - 2 p^T \omega$$
 - Minimizing the MSE with respect to weights gives the optimal solution $w_k$ (set below).
 
-## Algorithms for Adaptive Equalization
+## ⁠C.7. Algorithms for Adaptive Equalization
 
-### Zero Forcing (ZF)
+### ⁠C.7.a. Zero Forcing (ZF)
 
 - Zero forcing equalizer is a linear equalization algorithm that applies the **inverse of the channel's frequency response**. First proposed by Robert Lucky.
 - For a channel with frequency response $F(f)$, the zero-forcing equalizer $C(f)$ is constructed as:
@@ -185,7 +185,7 @@ $$C(f) = \frac{1}{F(f)}$$
   - At frequencies where the received signal is weak, the zero-forcing filter's gain grows very large to compensate, this boosts any noise added after the channel and destroys the overall SNR.
   - The channel may have frequency-response zeros that cannot be inverted at all (Gain × 0 = still 0).
 
-### Least Mean Square (LMS) Algorithm
+### ⁠C.7.b. Least Mean Square (LMS) Algorithm
 
 - Criterion: minimize the MSE between the desired equalizer output and the actual equalizer output.
 - Using the MSE derivation above (§5.1.6):
@@ -198,30 +198,30 @@ $$J_{opt} = J(\hat w_N) = E[x_k x_k^*] - p_N^T \hat w_N$$
 
 ---
 
-# Diversity Methods and Combining
+# ⁠D. Diversity Methods and Combining
 
-## Need for Diversity
+## ⁠D.1. Need for Diversity
 
 - Diversity is a powerful, low-cost receiver technique that improves the wireless link.
 - Diversity decisions are made at the receiver (RX) and are unknown to the transmitter (TX).
 - **Concept:** If one radio path undergoes a deep fade, another independent path may carry a strong signal. By having more than one path to select from, both instantaneous and average SNR at the receiver can be improved, often by as much as 20–30 dB.
 
-## Microscopic vs Macroscopic Diversity
+## ⁠D.2. Microscopic vs Macroscopic Diversity
 
-### Microscopic Diversity
+### ⁠D.2.a. Microscopic Diversity
 
 - Used to combat small-scale fading.
 - If antennas are separated by a fraction of a meter, one may receive a null while the other receives a strong signal.
 - By selecting the best signal at all times, the receiver mitigates small-scale fading, this is called **antenna diversity** (or **space diversity**).
 
-### Macroscopic Diversity
+### ⁠D.2.b. Macroscopic Diversity
 
 - Used against large-scale fading caused by shadowing (variations in terrain profile and surroundings).
 - In deep shadowing, received signal strength at a mobile can drop well below the free-space level.
 - By selecting a base station that is not shadowed (when others are), the mobile substantially improves average SNR on the forward link.
 - Called macroscopic diversity because it exploits large separations between serving base stations.
 
-## Diversity Techniques (Space Diversity)
+## ⁠D.3. Diversity Techniques (Space Diversity)
 
 - Space diversity, aka antenna diversity.
 - Signals received from spatially separated antennas on the mobile have essentially **uncorrelated envelopes** for antenna separations of one-half wavelength ($\lambda/2$) or more.
@@ -229,7 +229,7 @@ $$J_{opt} = J(\hat w_N) = E[x_k x_k^*] - p_N^T \hat w_N$$
     - ![Generalized Block diagram for space diversity](attachments/diversity-space-block.png)
 - Four categories: Selection, Feedback/Scanning, Maximal Ratio Combining, Equal Gain Combining.
 
-#### Selection Diversity
+#### ⁠D.3.a.I. Selection Diversity
 
 - $m$ diversity branches whose gains are adjusted to provide the same average SNR per branch.
 - The receiver branch with the **highest instantaneous SNR** is connected to the demodulator, i.e., antenna signals are sampled and the best one is sent to a single demodulator.
@@ -238,7 +238,7 @@ $$J_{opt} = J(\hat w_N) = E[x_k x_k^*] - p_N^T \hat w_N$$
     - ![Working Block Diagram of Space Diversity](attachments/diversity-selection-working.png)
     - **Principle:** Selecting the best signal among all branch signals received at the receiving end.
 
-### Feedback or Scanning Diversity
+### ⁠D.3.b. Feedback or Scanning Diversity
 
 - The $M$ signals are scanned in a fixed sequence until one is found above a predetermined threshold.
 - That signal is received until it falls below the threshold, at which point scanning resumes.
@@ -248,7 +248,7 @@ $$J_{opt} = J(\hat w_N) = E[x_k x_k^*] - p_N^T \hat w_N$$
     - ![Basic Form for scanning diversity](attachments/diversity-feedback-block.png)
     - **Principle:** The $M$ signals are scanned in a fixed sequence until one is found above the predetermined threshold.
 
-### Maximal Ratio Combining (MRC)
+### ⁠D.3.c. Maximal Ratio Combining (MRC)
 
 - Signals from all $m$ branches are weighted according to their signal voltage-to-noise power ratios, then summed.
 - Individual signals must be **co-phased** before summing, i.e., all signal components are considered.
@@ -259,7 +259,7 @@ $$J_{opt} = J(\hat w_N) = E[x_k x_k^*] - p_N^T \hat w_N$$
     - ![Maximal Ratio Combining Technique](attachments/diversity-maximal-block.png)
     - **Principle:** Combining all signals in a co-phased and weighted manner to achieve the highest achievable SNR at the receiver at all times.
 
-### Equal Gain Combining (EGC)
+### ⁠D.3.d. Equal Gain Combining (EGC)
 
 - Used when it is inconvenient to provide the variable weighting capability required for MRC.
 - Branch weights are all set to unity, but signals from each branch are co-phased to provide combining gain.
@@ -271,7 +271,7 @@ $$J_{opt} = J(\hat w_N) = E[x_k x_k^*] - p_N^T \hat w_N$$
 - Simplified block diagram:
     - ![Simplistic view of MRC working](attachments/diversity-mrc.png)
 
-### Feedback vs Maximal Ratio Combining (Comparison)
+### ⁠D.3.e. Feedback vs Maximal Ratio Combining (Comparison)
 
 | Aspect | Feedback / Scanning Diversity | Maximal Ratio Combining |
 |---|---|---|
@@ -281,7 +281,7 @@ $$J_{opt} = J(\hat w_N) = E[x_k x_k^*] - p_N^T \hat w_N$$
 | Fading performance | Inferior | Best statistical reduction of fading |
 | Output SNR | Equal to the selected branch's SNR | Sum of all branch SNRs |
 
-## Types of Antenna Diversity: Overview
+## ⁠D.4. Types of Antenna Diversity: Overview
 
 
 | Technique | Basis of Operation | Relative Complexity |
@@ -295,15 +295,15 @@ $$J_{opt} = J(\hat w_N) = E[x_k x_k^*] - p_N^T \hat w_N$$
 
 ---
 
-# RAKE Receivers and Interleaving
+# ⁠E. RAKE Receivers and Interleaving
 
-## Time Diversity
+## ⁠E.1. Time Diversity
 
 - **Principle:** Signals representing the same information are sent over the same channel at different times.
 - Time diversity repetitively transmits information at time spacings that exceed the **coherence time** of the channel.
 - The modern implementation of time diversity involves the use of the **RAKE receiver** for CDMA.
 
-## RAKE Receiver
+## ⁠E.2. RAKE Receiver
 
 - CDMA spreading codes are designed to provide very low correlation between successive chips.
 - Propagation delay spread in the radio channel merely provides multiple versions of the transmitted signal at the receiver.
@@ -324,7 +324,7 @@ $$J_{opt} = J(\hat w_N) = E[x_k x_k^*] - p_N^T \hat w_N$$
 - Block diagram
     - ![M-branch rake receiver implementation](attachments/rake-receiver.png)
 
-### 5.3.2 Interleaving
+### ⁠E.2.a. Interleaving
 
 - **Purpose:** Channel coding (block/convolutional codes) is effective against random, independent bit errors, but wireless fading channels produce **burst errors** (many consecutive bits corrupted during a deep fade). Interleaving is needed to spread out burst errors so that channel coding can correct them as if they were random errors.
 - **Working principle:**
@@ -339,14 +339,14 @@ $$J_{opt} = J(\hat w_N) = E[x_k x_k^*] - p_N^T \hat w_N$$
 
 ---
 
-## Additional Info
+## ⁠E.3. Additional Info
 
-### Polarization Diversity
+### ⁠E.3.a. Polarization Diversity
 
 - Involves both horizontal and vertical polarization.
 - Horizontal and vertical polarizations experience different fading variations, providing diversity without needing spatial separation of antennas.
 
-### Frequency Diversity
+### ⁠E.3.b. Frequency Diversity
 
 - Transmits information on more than one carrier frequency.
 - Frequencies separated by more than the coherence bandwidth of the mobile channel are uncorrelated with each other and hence do not experience the same fading, providing frequency diversity.

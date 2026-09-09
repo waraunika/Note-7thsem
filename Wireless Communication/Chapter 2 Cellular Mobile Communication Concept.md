@@ -1,4 +1,4 @@
-# Exam Frequency Table (2070–2082 BS, 22 papers)
+# ⁠A. Exam Frequency Table (2070–2082 BS, 22 papers)
 
 | Topic | Typical Marks | Frequency |
 |---|---|---|
@@ -16,14 +16,14 @@
 
 ---
 
-# Background
+# ⁠B. Background
 
 - in wireless telephony, a **cell** is the geographical area covered by a cellular telephone transmitter.
 - the transmitter facility itself is called the **cell site**.
 - the cellular concept was a major breakthrough in solving the problem of **spectral congestion** and **user capacity**.
 - It offered very high capacity in a limited spectrum allocation without any major technological changes
 
-## Cellular Concept
+## ⁠B.1. Cellular Concept
 
 The cellular concept has the following system level ideas
 - replacing a single, high power transmitter with many low power transmitters, each providing coverage to only a small area.
@@ -37,7 +37,7 @@ The cellular concept has the following system level ideas
     - the use of low power transmitter
     - an allowance for frequency reuse.
 
-## Cell Footprint
+## ⁠B.2. Cell Footprint
 
 
 - The actual radio coverage of a cell is known as **cell footprint**.
@@ -50,7 +50,7 @@ The cellular concept has the following system level ideas
 - Due to economic reasons, the hexagon has been chosen due to its maximum area coverage.
 - Hence a conventional cellular layout is often defined by a uniform grid of regular hexagons.
 
-# Frequency Reuse
+# ⁠C. Frequency Reuse
 
 - each cellular base station is allocated a group of radio channels within a small geographic area called a cell.
 - Neighboring cells are assigned different channel groups.
@@ -72,7 +72,7 @@ Real world planning
 - The frequency reuse factor is given by $1/N$
 - for small $N$, we have to consider the co-channel interference.
 
-## Terminology
+## ⁠C.1. Terminology
 
 *(Frequently asked directly: cluster size, interference tier — both carry high recall value)*
 
@@ -93,7 +93,7 @@ Real world planning
     - j = movement of $60^0$ counter-clockwise/clock-wise to reach adjacent co-channel cell.
     - ![Calculation of N as cluster size](attachments/cluster-size-example.png)
 
-## Channel Assignment Strategies
+## ⁠C.2. Channel Assignment Strategies
 
 - Frequency reuse scheme
     - increases capacity
@@ -108,7 +108,7 @@ Real world planning
         - allocate channels based on request.
         - reduce the likelihood of blocking, increase capacity.
 
-# Handoff Strategies
+# ⁠D. Handoff Strategies
 
 
 - When a mobile moves into a different cell while a conversation is in progress, the MSC automatically transfers the call to a new channel belonging to the new base station.
@@ -116,7 +116,7 @@ Real world planning
     - identifying a new base station
     - re-allocating the voice and control channels with the new base station
 
-## Handoff Margin
+## ⁠D.1. Handoff Margin
 
 - Handoff Threshold
     - Minimum usable signal for acceptable voice quality (-90 dBm to -100 dBm)
@@ -140,7 +140,7 @@ Real world planning
 - Handoff requests is much important than handling a new call
     - to maintain Grade of Service (GOS)
 
-## Practical Handoff Consideration
+## ⁠D.2. Practical Handoff Consideration
 
 - Different type of users
     - High speed users need frequent handoff during a call.
@@ -163,7 +163,7 @@ Real world planning
     - microcell: 2km
     - macro cell: 10s of km
 
-## Evolution of handoff
+## ⁠D.3. Evolution of handoff
 
 - Handoff for 1st generation analog cellular systems:
     - 10 second handoff time
@@ -178,14 +178,14 @@ Real world planning
     - No physical change of channel during handoff
     - MSC decides the base station with the best receiving signal as the service station
 
-## Handover Indication
+## ⁠D.4. Handover Indication
 
 - each BS constantly monitors the signal strengths of all of its reverse voice channels to determine the relative location of each mobile user with respect to the BS.
 - This information is forwarded to MSC who makes decisions regarding handover.
 - Mobile assisted handover (MAHO): 
     - the mobile station measures the received power from surrounding BSs and continually reports the results of these measurements to the serving BS.
 
-## Prioritizing Handover
+## ⁠D.5. Prioritizing Handover
 
 - Dropped call is considered a more serious event than call blocking.
     - Channel assignment schemes therefore must give priority to handover requests
@@ -195,7 +195,7 @@ Real world planning
 - Queuing of handover requests is another method to decrease the probability of forced termination of a cell due to a lack of available channel.
     - the time span over which a handover is usually required leaves room for queueing handover request.
 
-## Practical Handover
+## ⁠D.6. Practical Handover
 
 - A hard handover does "break before make"
     - the old channel connection is broken before the new allocated channel connection is setup.
@@ -206,7 +206,7 @@ Real world planning
 - Representative figure
     - ![Handover soft and hard](attachments/handover-soft-vs-hard.png)
 
-# Interference and System Capacity
+# ⁠E. Interference and System Capacity
 
 - Sources of interference
     - another mobile in the same cell
@@ -217,7 +217,7 @@ Real world planning
     - co-channel interference
     - adjacent channel interference
 
-## Co-channel Interference
+## ⁠E.1. Co-channel Interference
 
 - Frequency reuse
     - there are several cells that use the same set of frequencies
@@ -236,7 +236,7 @@ Real world planning
 - A large value of Q improves the transmission quality - smaller level of co-channel interference
 - A tradeoff must be made between these 2 objectives.
 
-### Prove $D = \sqrt{3N}R$ for hexagonal geometry
+### ⁠E.1.a. Prove $D = \sqrt{3N}R$ for hexagonal geometry
 
 - Assuming hexagonal geometry, we draw the figure as:
     - ![Figure showing A-A-E triangle](attachments/interference-cochannel-hexagonal-geometry.png)
@@ -251,7 +251,7 @@ Real world planning
         \therefore D &= \sqrt{3N} R
     \end{align}$$
 
-### Signal-to-Interference Ratio (SIR)
+### ⁠E.1.b. Signal-to-Interference Ratio (SIR)
 - Let $i_0$ be the number of co-channel interfering cells.
 - The SIR for a mobile receiver can be expressed as:
     $$\frac{S}{I} = \frac{S}{\sum_{i=1}^{N_I} I_i}$$
@@ -273,13 +273,13 @@ Real world planning
 - Then the frequency reuse ratio can be expressed as
     $$q = \left( N_I \times \frac{S}{I} \right)^{1/k} = \left( 6 \times \frac{S}{I} \right)^{1/k}$$
 
-#### Worst Case
+#### ⁠E.1.b.I. Worst Case
 - For hexagonal geometry with 7-cell cluster, with the mobile unit at the cell boundary, the SIR for worst case can be approximated as
     $$\frac{S}{I} = \frac{R^{-4}}{2(D-R)^{-4} + (D-R/2)^{-4} + (D+R/2)^{-4} + (D+R)^{-4} + D^{-4}}$$
     - Figure for the formula
     - ![Worst Case Scenario](attachments/interference-cochannel-worst.png)
 
-## Adjacent Channel Interference (ACI)
+## ⁠E.2. Adjacent Channel Interference (ACI)
 
 - Interference from adjacent in frequency to the desired signal.
 - imperfect receiver filters allow nearby frequencies to leak into the passband
@@ -292,7 +292,7 @@ Real world planning
     3. Separate Multiplexing
         - uplink and downlink channels might use multiplexing technique in order to avoid interference.
 
-### Near-Far Problem
+### ⁠E.2.a. Near-Far Problem
 - Figure demonstrating the issue:
     - ![Channel quality affected by near-far problem](attachments/inteference-adjacent-near-far.png)
 - The near-far problem is a condition in which a receiver captures a strong signal and thereby makes it impossible for the receiver to detect a weaker signal.
@@ -303,7 +303,7 @@ Real world planning
     - increase SIR
     - solve the near-far problem
 
-# Trunking
+# ⁠F. Trunking
 
 - In cellular systems, a relatively small number of radio channels are used to serve a large population of mobile users, which is made possible by cellular design (i.e. frequency reuse) and by trunking.
 - Trunking allows the mobile users share the radio channels in each cell on a demand basis.
@@ -316,7 +316,7 @@ Real world planning
     - 1 Erlang is defined as the amount of traffic intensity carried by a channel that is completely occupied
     - e.g, a radio channel that is occupied for 30 minutes during an hour carries 0.5 erlangs of traffic per hour.
 
-## Types of Trunked Systems
+## ⁠F.1. Types of Trunked Systems
 
 - If no channels are available
     - the requesting user is blocked without access,
@@ -325,7 +325,7 @@ Real world planning
     - the call request is delayed until a channel becomes available
         - blocked calls delayed
 
-# Grade of Service (GoS)
+# ⁠G. Grade of Service (GoS)
 
 - it is a measure of the ability of a user to access a trunked system during the busiest hour.
 - GoS is typically given as
@@ -343,7 +343,7 @@ Real world planning
     - Request Rate ($\lambda$):
         - the average number of call requests per unit time per user.
 
-# Improving Capacity in Cellular Systems
+# ⁠H. Improving Capacity in Cellular Systems
 
 - Methods for improving capacity in cellular systems
     1. Cell Splitting:
@@ -353,7 +353,7 @@ Real world planning
     3. Coverage zone:
         - distributing the coverage of a cell and extends the cell boundary to hard-to-reach place.
 
-## Cell Splitting
+## ⁠H.1. Cell Splitting
 
 - Split congested cell into smaller cells.
     - preserve frequency reuse plan.
@@ -375,7 +375,7 @@ Real world planning
 - Require additional installation of towers and antennas
 - Lower spectral efficiency
 
-## Sectoring
+## ⁠H.2. Sectoring
 
 - Decrease the co-channel interference and keep the cell radius R unchanged.
 - Replacing single omni-directional antenna by several directional antennas
@@ -391,7 +391,7 @@ Real world planning
     - Hence for typical hexagon geometry the co-channel interference reduces from 6 cells to 3 cells.
     - Since the number of interference is reduced the better S/I is guaranteed.
 
-## Microcell Zone Concept
+## ⁠H.3. Microcell Zone Concept
 
 
 - Antennas are placed at the outer edges of the cell
@@ -410,7 +410,7 @@ Real world planning
 
 ---
 
-# Difference tables
+# ⁠I. Difference tables
 
 | Aspect | Proper Handoff | Improper Handoff |
 |---|---|---|
@@ -448,7 +448,7 @@ Real world planning
 
 ---
 
-# Additional Info (Numericals)
+# ⁠J. Additional Info (Numericals)
 
 - Number of calls/hour and S/I (dB) computation given total channels, control channels, holding time, blocking probability, and frequency reuse factor.
 - Market penetration computation given population, number of cells, channels/cell, blocking probability, call rate and holding time (Erlang B table lookup).

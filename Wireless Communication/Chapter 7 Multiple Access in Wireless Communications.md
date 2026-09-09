@@ -1,4 +1,4 @@
-# Exam Frequency Table (2070–2082 BS, 22 papers)
+# ⁠A. Exam Frequency Table (2070–2082 BS, 22 papers)
 
 | Topic | Typical Marks | Frequency |
 |---|---|---|
@@ -20,7 +20,7 @@
 
 ---
 
-# 7.0 Narrowband and Wideband Systems
+# ⁠B. Narrowband and Wideband Systems
 
 - **Narrowband systems**
     - The available radio spectrum is divided into a large number of narrowband channels.
@@ -33,7 +33,7 @@
 
 ---
 
-# 7.1 Frequency Division Multiple Access (FDMA)
+# ⁠C. Frequency Division Multiple Access (FDMA)
 
 ![FDMA where different channels are assigned different frequency bands](attachments/fdma-channel-allocation.png)
 
@@ -42,7 +42,7 @@
 - The channels are assigned on demand to users who request service.
 - During the period of the call, no other user can share the same channel.
 
-## Features
+## ⁠C.1. Features
 
 - Usually implemented in narrowband systems.
 - Carries only one phone circuit at a time.
@@ -55,7 +55,7 @@
     - This results in an increase in the cost of FDMA subscriber units and base stations.
 - FDMA requires tight RF filtering to minimize adjacent channel interference.
 
-## Number of Channels in FDMA
+## ⁠C.2. Number of Channels in FDMA
 
 $$ N = \frac{B_t - 2B_{guard}}{B_c}$$
 
@@ -65,7 +65,7 @@ $$ N = \frac{B_t - 2B_{guard}}{B_c}$$
 
 ---
 
-# 7.2 Time Division Multiple Access (TDMA)
+# ⁠D. Time Division Multiple Access (TDMA)
 
 *(Frequently asked directly: "TDMA advantages over FDMA")*
 
@@ -80,14 +80,14 @@ $$ N = \frac{B_t - 2B_{guard}}{B_c}$$
 - High synchronization overhead is required in TDMA systems because of burst transmissions.
 - TDMA has an advantage in that it is possible to allocate different numbers of time slots per frame to different users, adjustable bandwidth per user.
 
-## Number of Channel Slots in a TDMA System
+## ⁠D.1. Number of Channel Slots in a TDMA System
 
 $$N = \dfrac{m(B_{tot} - 2B_{guard})}{B_c}$$
 
 - where $m$ is the number of time slots on each channel
 - $B_c$ is the carrier channel bandwidth in Hz
 
-## TDMA Frame
+## ⁠D.2. TDMA Frame
 
 ![TDMA frame structure](attachments/tdma-frame-structure.png)
 
@@ -97,7 +97,7 @@ $$N = \dfrac{m(B_{tot} - 2B_{guard})}{B_c}$$
     - Guard time should be minimized; however, this could increase interference to adjacent channels.
 - **Trail bits**: error correction bits (usually checksum or CRC).
 
-## Efficiency of TDMA
+## ⁠D.3. Efficiency of TDMA
 
 *(Frequently paired with a GSM frame-efficiency numerical)*
 
@@ -121,7 +121,7 @@ $$b_T = T_f R$$
 
 The frame efficiency $\eta_f$ is thus given as:
 $$\eta_f = \left( 1 - \dfrac{b_{OH}}{b_T}\right)\times 100\%$$
-# Features Summary (TDMA)
+# ⁠E. Features Summary (TDMA)
 
 - Shares a single carrier frequency with several users.
 - Data transmission for a user is not continuous:
@@ -135,9 +135,9 @@ $$\eta_f = \left( 1 - \dfrac{b_{OH}}{b_T}\right)\times 100\%$$
 
 ---
 
-# 7.3 Spread Spectrum Multiple Access: CDMA, FHMA, Hybrids
+# ⁠F. Spread Spectrum Multiple Access: CDMA, FHMA, Hybrids
 
-## Code Division Multiple Access (CDMA)
+## ⁠F.1. Code Division Multiple Access (CDMA)
 
 *(One of the most repeated topics, nearly every paper)*
 
@@ -152,7 +152,7 @@ $$\eta_f = \left( 1 - \dfrac{b_{OH}}{b_T}\right)\times 100\%$$
     - In order to receive the data, the receiver synchronizes the code to recover the data.
     - The use of independent data and synchronous reception allows multiple users to access the same frequency band at the same time.
 
-### Working
+### ⁠F.1.a. Working
 
 - CDMA takes an entirely different approach from TDMA.
 - After digitizing the data, CDMA spreads it out over the entire available bandwidth.
@@ -165,7 +165,7 @@ $$\eta_f = \left( 1 - \dfrac{b_{OH}}{b_T}\right)\times 100\%$$
 - The CDMA system requires an accurate time stamp on each piece of signal.
 - Eight to ten separate calls can be carried out in the same channel space as one analog call.
 
-### Types (Spreading Methods used in CDMA)
+### ⁠F.1.b. Types (Spreading Methods used in CDMA)
 
 - **Frequency Hopping**
     - The easiest of all spread-spectrum modulation techniques to use.
@@ -178,7 +178,7 @@ $$\eta_f = \left( 1 - \dfrac{b_{OH}}{b_T}\right)\times 100\%$$
     - The digital data is directly coded at a higher frequency, and the code is generated pseudo-randomly.
     - A receiver knows how to generate the same code and correlates the received signal with that code to extract the data.
 
-### Features of CDMA
+### ⁠F.1.c. Features of CDMA
 
 *(Frequently asked directly: "characteristics, advantages and limitations")*
 
@@ -198,7 +198,7 @@ $$\eta_f = \left( 1 - \dfrac{b_{OH}}{b_T}\right)\times 100\%$$
 
 *(Note: Implementation of CDMA encoding/decoding with the Hadamard/Walsh code construction is covered in the earlier chapter on channel coding, refer there for the 8×8 Hadamard code construction and its conditions.)*
 
-## Frequency Hopped Multiple Access (FHMA)
+## ⁠F.2. Frequency Hopped Multiple Access (FHMA)
 
 *(Frequently asked as its own topic, distinct from CDMA: a "working with block diagram" or "principle + types" style question)*
 
@@ -213,7 +213,7 @@ $$\eta_f = \left( 1 - \dfrac{b_{OH}}{b_T}\right)\times 100\%$$
 - At any given point in time, a frequency-hopped signal only occupies a single, relatively narrow channel, since narrowband FM or FSK is used.
 - The difference between FHMA and a traditional FDMA system is that the frequency-hopped signal changes channels at rapid intervals.
 
-### Types of FHMA
+### ⁠F.2.a. Types of FHMA
 
 - **Fast Frequency Hopping**: if the rate of change of the carrier frequency is greater than the symbol rate.
     - A fast frequency hopper may be thought of as an FDMA system which employs frequency diversity.
@@ -223,7 +223,7 @@ $$\eta_f = \left( 1 - \dfrac{b_{OH}}{b_T}\right)\times 100\%$$
 
 ![Data transmission during fast fhss](attachments/fhma-fast-fhss.png)
 
-### Properties and Advantages
+### ⁠F.2.b. Properties and Advantages
 
 - FHMA systems often employ energy-efficient constant-envelope modulation.
 - Inexpensive receivers may be built to provide non-coherent detection of FHMA
@@ -233,7 +233,7 @@ $$\eta_f = \left( 1 - \dfrac{b_{OH}}{b_T}\right)\times 100\%$$
 - Error control coding and interleaving can also guard against **erasures**, which occur when two or more users transmit on the same channel at the same time.
 - **Bluetooth** and **HomeRF** wireless technologies have adopted FHMA for power efficiency and low-cost implementation.
 
-### FHSS as a Multiple Access Method
+### ⁠F.2.c. FHSS as a Multiple Access Method
 
 - FHSS is a method of transmitting radio signals by rapidly switching a carrier among many frequency channels, using a pseudorandom sequence known to both Tx and Rx.
 - The data signal is modulated with a narrowband carrier signal that "hops" in a random but predictable sequence from frequency to frequency as a function of time over a wide band of frequencies.
@@ -246,7 +246,7 @@ $$\eta_f = \left( 1 - \dfrac{b_{OH}}{b_T}\right)\times 100\%$$
 
 ![Transmission of FHMA from input to output data](attachments/fhma-block-diagram.png)
 
-## The Near-Far Problem in CDMA
+## ⁠F.3. The Near-Far Problem in CDMA
 
 *(Frequently asked directly, and as a component of hybrid SSMA questions)*
 
@@ -256,7 +256,7 @@ $$\eta_f = \left( 1 - \dfrac{b_{OH}}{b_T}\right)\times 100\%$$
     - Since one transmission is another's noise, the SNR for the farther transmitter must be higher.
     - If the nearer transmitter's signal is orders of magnitude stronger, the farther transmitter's signal may fall below the required detection threshold, making it effectively undetectable, as though the farther transmitter were not transmitting at all.
 
-### Problem Illustration
+### ⁠F.3.a. Problem Illustration
 
 ```mermaid
 flowchart LR
@@ -271,7 +271,7 @@ Illustrative Figure:
 
 - With different transmitters at different distances, the BTS may fail to acknowledge the farther transmitter, since its signal is swamped by the near transmitter's stronger signal appearing as noise.
 
-### Solution: Power Control Mechanism
+### ⁠F.3.b. Solution: Power Control Mechanism
 
 - To overcome this problem, a **power control mechanism** is used.
 - Power control is provided by each base station in a cellular system, and ensures that each mobile within the base station's coverage area delivers approximately the **same signal level** to the base station receiver, regardless of the mobile's actual distance from the BTS.
@@ -284,7 +284,7 @@ Illustrative Figure:
 
 ---
 
-# Hybrid Spread Spectrum Technologies
+# ⁠G. Hybrid Spread Spectrum Technologies
 
 *(Frequently asked together with the near-far effect, "any two hybrid SSMA techniques that mitigate near-far", "hybrid multiple access +/-")*
 
@@ -296,7 +296,7 @@ Illustrative Figure:
 - Diagrammatic representation:
     - ![Spectrum of Wideband CDMA occupied to the spectrum of a hybrid, frequency division, direct sequence of multiple access](attachments/hybrid-splitting-of-wb-to-nb.png)
 
-## Techniques
+## ⁠G.1. Techniques
 
 - **Hybrid Direct Sequence/Frequency Hopped (DS/FHMA)**
     - Consists of a direct-sequence modulated signal whose center frequency is made to hop periodically in a pseudorandom fashion.
@@ -316,7 +316,7 @@ Illustrative Figure:
 
 ---
 
-# 7.4 Space Division Multiple Access (SDMA)
+# ⁠H. Space Division Multiple Access (SDMA)
 
 - Controls the radiated energy for each user in space.
 - That is, it serves different users by using **spot beam antennas**.
@@ -327,18 +327,18 @@ Illustrative Figure:
 
 ---
 
-# 7.5 Multiple Access Comparison
+# ⁠I. Multiple Access Comparison
 
 *(Frequently asked directly: "Define multiple access; explain TDMA, CDMA and SDMA", "FDMA vs TDMA vs CDMA (+/-)", "merits and demerits of CDMA")*
 
-## Duplexing Types (Recap)
+## ⁠I.1. Duplexing Types (Recap)
 
 - **FDD (Frequency Division Duplex)**: separate frequency bands are used for the forward (downlink) and reverse (uplink) channels, allowing simultaneous transmission and reception.
 - **TDD (Time Division Duplex)**: a single frequency channel is shared in time between forward and reverse transmission
     - only one direction is active at a time, but switching is fast enough to appear simultaneous.
 - Multiple access schemes (FDMA, TDMA, CDMA, SDMA) can be combined with either FDD or TDD.
 
-## FDMA vs TDMA vs CDMA vs SDMA
+## ⁠I.2. FDMA vs TDMA vs CDMA vs SDMA
 
 | Aspect | FDMA | TDMA | CDMA | SDMA |
 |---|---|---|---|---|
@@ -351,7 +351,7 @@ Illustrative Figure:
 | Handoff complexity | Frequency retuning at handoff | Simpler: MAHO possible via idle slot monitoring | Soft handoff possible: MSC selects best signal without switching codes/frequencies | Depends on underlying access scheme; beam-switching adds complexity |
 | Typical example systems | AMPS | GSM, IS-136 | IS-95 (cdmaOne), UMTS/WCDMA | Used in conjunction with FDMA/TDMA/CDMA (e.g. smart antenna systems) |
 
-## Merits and Demerits of CDMA
+## ⁠I.3. Merits and Demerits of CDMA
 
 *(Frequently asked directly, sometimes as a standalone "merits and demerits" question)*
 
@@ -371,7 +371,7 @@ Illustrative Figure:
 
 ---
 
-# Additional Info (Numericals to be revisited)
+# ⁠J. Additional Info (Numericals to be revisited)
 
 The following numerical problem types are frequently asked from this chapter but are deferred here per current study focus (theory-first). Revisit once theory is locked in:
 

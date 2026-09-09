@@ -21,9 +21,9 @@
 
 ---
 
-# 8.1 GSM: Architecture and Channels
+# ⁠A. GSM: Architecture and Channels
 
-## GSM System Overview
+## ⁠A.1. GSM System Overview
 
 - Global System for Mobile Communications (GSM), introduced in 1991, was developed to solve the fragmentation problems of the first cellular systems in Europe.
 - GSM standards were set by **ETSI** (European Telecommunication Standards Institute).
@@ -32,7 +32,7 @@
     - Data services
     - Short message paging
 
-## System Architecture
+## ⁠A.2. System Architecture
 
 *(Frequently asked directly: "GSM architecture: draw & explain")*
 
@@ -43,7 +43,7 @@
 - Figure illustrating such networks:
     - ![GSM architecture illustrating all subsystems](attachments/gsm-architecture.png)
 
-### Radio Subsystem (Base Station Subsystem: BSS)
+### ⁠A.2.a. Radio Subsystem (Base Station Subsystem: BSS)
 
 - Consists of Mobile Stations (MS), Base Transceiver Station (BTS), and the Base Station Controller (BSC).
 - The mobile station contains **IMEI** (International Mobile Equipment Identity).
@@ -53,7 +53,7 @@
 - One BSC controls up to several BTSs.
 - The BSC performs handover for MS under the control of the same BSC.
 
-### Network and Switching Subsystem (NSS)
+### ⁠A.2.b. Network and Switching Subsystem (NSS)
 
 *(Frequently asked directly: "Components of the Network Switching Subsystem")*
 
@@ -66,17 +66,17 @@
 - **EIR**: when mobile equipment is stolen or lost, the owner can typically contact their local operator with a request that it be blocked.
     - If the local operator possesses an Equipment Identity Register (EIR), it puts the IMEI (accessed via `*#06#`) into it, and can optionally communicate this to the Central Equipment Identity Register (CEIR), which blacklists the device across all other operator switches that use the CEIR.
 
-### Operation Support Subsystem (OSS)
+### ⁠A.2.c. Operation Support Subsystem (OSS)
 
 - Supports the operation and maintenance of GSM, allowing system engineers to monitor, diagnose, and troubleshoot all aspects of the GSM system.
 - Interacts with the other GSM subsystems.
 - Handles charging and billing.
 
-### Interfaces
+### ⁠A.2.d. Interfaces
 
 ![The various interfaces used in GSM](attachments/gsm-interfaces.png)
 
-## GSM Air Interface Specification Summary
+## ⁠A.3. GSM Air Interface Specification Summary
 
 | Parameter | Specification |
 | --- | --- |
@@ -95,7 +95,7 @@
 | Interleaving (max. delay) | 40 ms |
 | Voice coder bit rate | 13.4 kbps |
 
-## Frequency Domain
+## ⁠A.4. Frequency Domain
 
 - The frequency band for uplink (reverse) is 890–915 MHz; downlink (forward) is 935–960 MHz.
 - The bandwidth for the GSM system is 25 MHz, providing 125 carriers uplink/downlink, each with a bandwidth of 200 kHz.
@@ -105,26 +105,26 @@
     - Every eighth timeslot on a TDMA channel, the user transmits or receives information.
 - A second frequency band from 1710–1785 MHz and 1805–1880 MHz (three times as much as the primary 900 MHz) is also specified in 1900, a total of 374 duplex channels, **DCS 1800**.
 
-## Time Domain
+## ⁠A.5. Time Domain
 
 - The RF carrier channel is time-division multiple-accessed by users at different locations within a cell site.
 - Frame duration is 4.615 ms, and each frame consists of 8 time-slots.
 - Each time-slot is a traffic channel with a duration of 0.577 ms.
 
-## Multiframe
+## ⁠A.6. Multiframe
 
 - **26-frame multiframe** (traffic or speech): Traffic Channel (TCH), Slow Associated Control Channel (SACCH), Fast Associated Control Channel (FACCH).
 - **51-frame multiframe** (control): Broadcast Common Control (BCCH), Stand Alone Dedicated Control Channels.
 - **Superframe**: 51 traffic multiframes or 26 control multiframes.
 - **Hyperframe**: 2048 superframes (3 hrs 28 min 52.76s), to support encryption with high security and frequency hopping.
 
-## Timeslot and Frame Structure
+## ⁠A.7. Timeslot and Frame Structure
 
 *(Frequently asked directly: "GSM frame hierarchy")*
 
 ![TDMA frame, multiplex frame, super frame, super high frame of GSM](attachments/gsm-frame-structure.png)
 
-## Physical Channel & Logical Channel
+## ⁠A.8. Physical Channel & Logical Channel
 
 - **Physical Channel**: specified by ARFCN and TN (time slot Number).
 - **Logical Channel**: mapped onto the physical channel, e.g., TCHs and control channels.
@@ -165,7 +165,7 @@
     </tr>
 </table>
 
-## Channel Type Overview
+## ⁠A.9. Channel Type Overview
 
 *(Frequently asked directly: "GSM traffic & control channels")*
 
@@ -191,22 +191,22 @@ flowchart LR
     H --> S[SACCH]
 ```
 
-### Traffic Channel (TCH)
+### ⁠A.9.a. Traffic Channel (TCH)
 
 - Traffic Channels carry digitally encoded user speech or user data.
     - Have identical functions and formats on both the forward and reverse link.
 - **Full rate**: user data is contained within one TS per frame.
 - **Half rate**: user data is mapped onto the same time slot but is sent in alternate frames.
 
-### Traffic or Speech Multiframe
+### ⁠A.9.b. Traffic or Speech Multiframe
 
 ![The speech dedicated control channel frame and multiframe structure](attachments/gsm-traffic-speech-multiframe.png)
 
-### Control Multiframe
+### ⁠A.9.c. Control Multiframe
 
 ![a. control channel multiframe (Forward link for TS0), b. the control channel multiframe (reverse channel multiframe (reverse link for TS0))](attachments/gsm-control-multiframe.png)
 
-### Control (Signaling) Channels
+### ⁠A.9.d. Control (Signaling) Channels
 
 *(Frequently asked directly: "BCH and CCCH in GSM", "Broadcast Control Channel")*
 
@@ -228,7 +228,7 @@ flowchart LR
     - May exist in any time slot and on any radio channel except TS0 of the control radio channel.
     - **Stand-Alone Dedicated Control Channel (SDCCH)**: carries signaling data following the connection of the mobile with the BS; intermediate and temporary channel for mobiles while waiting for the BS to allocate a TCH channel; ensures mobile and base remain connected during authentication and resource allocation; may be assigned their own physical channel or occupy TS0 of the BCH if there is low demand for BCH/CCCH traffic.
 
-### Associated Control Channel
+### ⁠A.9.e. Associated Control Channel
 
 - **Slow Associated Control Channel (SACCH)**
     - Always associated with a traffic channel.
@@ -239,7 +239,7 @@ flowchart LR
     - Carries urgent messages to the mobile, e.g., handover.
     - FACCH gains access by stealing frames from TCH (e.g., data transmission slots are stolen).
 
-### Location Updating Communication
+### ⁠A.9.f. Location Updating Communication
 
 | System Activity | Channel | Mobile Activity |
 | --- | --- | --- |
@@ -255,7 +255,7 @@ flowchart LR
 | Receive acknowledgement | ←SDCCH | Acknowledge new location and TMSI |
 | Send channel release | SDCCH→ | Switch to idle update mode, monitor BCCH and CCCH |
 
-### Time Slot Bursts
+### ⁠A.9.g. Time Slot Bursts
 
 - Time slot data bursts take on one of 5 formats according to the logical channel.
 - A normal burst consists of 148 bits.
@@ -268,7 +268,7 @@ flowchart LR
 
 ![Time Slots data bursts in GSM: (a) Normal (b) FCCH (c) SCH (d) RACH (e) Dummy](attachments/gsm-time-slots.png)
 
-## Example of a GSM Call
+## ⁠A.10. Example of a GSM Call
 
 - By receiving the FCCH, SCH, and BCCH messages, the MS locks on to the appropriate BCH.
 - To originate a call, the MS transmits a burst of RACH data, using the same ARFCN as the base station to which it is locked.
@@ -279,13 +279,13 @@ flowchart LR
 - The MS is then commanded by the base station via SDCCH to tune to a new ARFCN and new slot for TCH assignment.
 - Once tuned to the TCH, speech data is transferred in both directions, and the SDCCH is vacated.
 
-## Signal Processing in GSM
+## ⁠A.11. Signal Processing in GSM
 
 *(Frequently asked directly: "Basic signal processing operations to convert a speech signal into a radio signal and back")*
 
 ![GSM operations from speech input to speech output](attachments/gsm-signal-processing-flowchart.png)
 
-### Speech Coding
+### ⁠A.11.a. Speech Coding
 
 - The GSM speech coder is based on the **Residually Excited Linear Predictor (RELP)**, enhanced by a **Long Term Predictor (LTP)**.
 - The coder provides 260 speech codec bits for each 20 ms, i.e., the speech codec bit rate is 13 kbps.
@@ -295,7 +295,7 @@ flowchart LR
 - By incorporating a Voice Activity Detector (VAD) in the speech coder, GSM systems operate in a Discontinuous Transmission mode (DTX), which provides longer subscriber battery life and reduces instantaneous radio interference, since the GSM transmitter is not active during silent periods.
 - A Comfort Noise Sub-system (CNS) at the receiving end introduces background acoustic noise to compensate for the annoying switched muting that occurs due to DTX.
 
-### TCH/FS, SACCH, and FACCH Channel Coding
+### ⁠A.11.b. TCH/FS, SACCH, and FACCH Channel Coding
 
 - The output bits of the speech coder are ordered into groups for error protection, based on their significance in contributing to speech quality.
 - Out of the total 260 bits in a frame, the most important 50 bits, called **type Ia** bits, have 3 parity check (CRC) bits added to them.
@@ -307,13 +307,13 @@ flowchart LR
 
 ![Error protection for speech signals in GSM](attachments/gsm-channel-coding.png)
 
-### Channel Coding for Data Channels
+### ⁠A.11.c. Channel Coding for Data Channels
 
 - The coding provided for GSM full-rate data channels (TCH/F9.6) is based on handling 60 bits of user data at 5 ms intervals, in accordance with the modified CCITT V.110 modem standard.
 - 240 bits of user data, with four trailing bits, are applied to a half-rate punctured convolutional coder with constraint length K = 5.
 - The resulting 488 coded bits are reduced to 456 encoded data bits through puncturing (32 bits are not transmitted); the data is separated into four 114-bit data bursts applied in an interleaved fashion to consecutive time slots.
 
-### Channel Coding for Control Channels
+### ⁠A.11.d. Channel Coding for Control Channels
 
 - GSM control channel messages are defined to be 184 bits long, and are encoded using a shortened binary cyclic **fire code**, followed by a half-rate convolutional coder.
 - The fire code uses the generator polynomial:
@@ -323,7 +323,7 @@ flowchart LR
 - This block is applied to a half-rate K = 5 convolutional code using generator polynomials $G_0 = 1 + x^3 +x^4$ and $G_1 = 1 + x + x^3 + x^4$ (the same polynomials used to code TCH type Ia data bits).
 - The resulting 456 encoded bits are interleaved onto eight consecutive frames in the same manner as TCH speech data.
 
-### Interleaving
+### ⁠A.11.e. Interleaving
 
 - To minimize the effect of sudden fades on the received data, the total of 456 encoded bits within each 20 ms speech frame or control message frame are broken into eight 57-bit sub-blocks.
 - These 8 sub-blocks, which make up a single speech frame, are spread over eight consecutive TCH time slots (i.e., eight consecutive frames for a specific TS).
@@ -331,7 +331,7 @@ flowchart LR
 - Each TCH time slot carries two 57-bit blocks of data from two different 20 ms (456 bit) speech (or control) segments.
 - TS 0 contains 57 bits of data from the 0th sub-block of the $n^{th}$ speech coder frame, and 57 bits of data from the 4th sub-block of the $(n-1)^{th}$ speech coder frame.
 
-### Ciphering
+### ⁠A.11.f. Ciphering
 
 - Ciphering modifies the contents of eight interleaved blocks through encryption techniques known only to the particular mobile station and base transceiver station.
 - Security is further enhanced by the fact that the encryption algorithm changes from call to call.
@@ -339,11 +339,11 @@ flowchart LR
     - The **A3** algorithm authenticates each mobile by verifying the user's passcode within the SIM against the cryptographic key at the MSC.
     - The **A5** algorithm provides the scrambling for the 114 coded data bits sent in each TS.
 
-### Burst Formatting
+### ⁠A.11.g. Burst Formatting
 
 - Burst formatting adds binary data to the ciphered blocks to help with synchronization and equalization of the received signal.
 
-### Modulation
+### ⁠A.11.h. Modulation
 
 - The modulation scheme used in GSM is **0.3 GMSK**, where 0.3 describes the 3 dB bandwidth of the Gaussian pulse-shaping filter with relation to the bit rate (i.e., BT = 0.3).
 - GMSK is a special type of digital FM modulation.
@@ -351,7 +351,7 @@ flowchart LR
 - The channel data rate reduces the bandwidth occupied by the modulation spectrum and hence improves channel capacity.
 - The MSK-modulated signal is passed through a Gaussian filter to smooth the rapid frequency transitions, which would otherwise spread energy into adjacent channels.
 
-### Frequency Hopping
+### ⁠A.11.i. Frequency Hopping
 
 - Under normal conditions, each data burst belonging to a particular physical channel is transmitted using the same carrier frequency.
 - If users in a particular cell have severe multipath problems, the cell may be defined as a hopping cell by the network operator, in which case slow frequency hopping may be implemented to combat multipath or interference effects in that cell.
@@ -359,18 +359,18 @@ flowchart LR
 - As many as 64 different channels may be used before a hopping sequence is repeated.
 - Frequency hopping is completely specified by the service provider.
 
-### Equalization
+### ⁠A.11.j. Equalization
 
 - Equalization is performed at the receiver with the help of the training sequences transmitted in the midamble of every time slot.
 - The type of equalizer for GSM is not specified and is left up to the manufacturer.
 
-### Demodulation
+### ⁠A.11.k. Demodulation
 
 - The portion of the transmitted forward channel signal of interest to a particular user is determined by the assigned TS and ARFCN.
 - The appropriate TS is demodulated with the aid of synchronization data provided by the burst formatting.
 - After demodulation, binary information is deciphered, de-interleaved, channel decoded, and speech decoded.
 
-## Apparent Bandwidth Efficiency (Quick Reference)
+## ⁠A.12. Apparent Bandwidth Efficiency (Quick Reference)
 
 - GSM bit rate = 270.83 kbps, bandwidth = 200 kHz → bandwidth efficiency = 1.354 bits/Hz.
 - The speech codec rate for each time slot = 456 bits/20 ms = 22.8 kbps.
@@ -382,9 +382,9 @@ flowchart LR
 
 ---
 
-# 8.2 CDMA Standards: IS-95 Forward and Reverse Channels
+# ⁠B. CDMA Standards: IS-95 Forward and Reverse Channels
 
-## Overview
+## ⁠B.1. Overview
 
 - A US standard based on technology developed by Qualcomm.
 - FDD using two 1.25 MHz simplex channels separated by 45 MHz.
@@ -392,7 +392,7 @@ flowchart LR
 - Downlink: 869 MHz – 894 MHz.
 - CDMA allows users within a cell and users in adjacent cells to use the same radio channel, no frequency planning is needed.
 
-## Forward CDMA Channel
+## ⁠B.2. Forward CDMA Channel
 
 *(Frequently asked directly: "Draw the forward CDMA (IS-95) channel", "Pilot and sync channels in the IS-95 forward link")*
 
@@ -412,7 +412,7 @@ flowchart LR
 - The signal is fed into the I and Q channels and spread by a pair of short PN codes (15 bit).
     - This is used for cell identification, as each cell uses one of 512 possible phase offsets of the short PN codes.
 
-## Reverse CDMA Channel
+## ⁠B.3. Reverse CDMA Channel
 
 *(Frequently asked directly: "Draw the reverse CDMA (IS-95) channel")*
 
@@ -436,7 +436,7 @@ flowchart LR
 - If user data rate is 2400 bps, transmission occurs on 4 PCGs.
 - If user data rate is 1200 bps, transmission occurs on 2 PCGs.
 
-## GSM vs CDMA Standards
+## ⁠B.4. GSM vs CDMA Standards
 
 *(Frequently asked directly: "GSM Vs CDMA standards")*
 
@@ -452,7 +452,7 @@ flowchart LR
 | Power control | Not as central a requirement | Central and critical: near-far problem must be actively managed via open/closed loop power control |
 | Speech/channel coding | Convolutional coding with fire code (control) and rate-1/2 convolutional coding (speech) | Convolutional coding with Walsh code spreading for channelization |
 
-## CDMA vs LTE System Architecture; Functions of the Entities
+## ⁠B.5. CDMA vs LTE System Architecture; Functions of the Entities
 
 *(Directly asked: "CDMA Vs LTE system architecture; functions of the entities")*
 
@@ -467,7 +467,7 @@ flowchart LR
 | Multiple access scheme | CDMA (code-division) | OFDMA (downlink) / SC-FDMA (uplink) |
 | Overall architecture complexity | More layered/hierarchical, circuit-switched legacy elements remain | Flatter, simpler, IP-centric architecture ("System Architecture Evolution": SAE) |
 
-### Functions of Key LTE Entities (for reference)
+### ⁠B.5.a. Functions of Key LTE Entities (for reference)
 
 1. **Evolved Radio Access Network (E-UTRAN)**: consists of a single node type, the eNodeB (eNB), which interfaces directly with the User Equipment (UE).
 2. **Serving Gateway (SGW)**: routes and forwards user data packets, while acting as the mobility anchor for the user plane during inter-eNB handovers, and as the anchor for mobility between LTE and other 3GPP technologies.
@@ -479,9 +479,9 @@ flowchart LR
 
 ---
 
-# 8.3 WiFi, WiMAX, LTE and Recent Trends
+# ⁠C. WiFi, WiMAX, LTE and Recent Trends
 
-## WiFi
+## ⁠C.1. WiFi
 
 - WiFi stands for **Wireless Fidelity**.
 - Based on the IEEE 802.11 family of standards; primarily a LAN technology designed to provide in-building broadband coverage.
@@ -490,7 +490,7 @@ flowchart LR
 - Systems can typically provide a coverage range of only about 1000 feet from the access point.
 - WiFi offers remarkably higher peak data rates than 3G systems, primarily because it operates over a larger 20 MHz bandwidth, but WiFi systems are not designed to support high-speed mobility.
 
-### Three Most Important Items for WiFi Operation
+### ⁠C.1.a. Three Most Important Items for WiFi Operation
 
 - Radio Signals
 - WiFi card, which fits in a laptop/computer
@@ -500,7 +500,7 @@ Figure:
 
 ![Wifi working](attachments/wifi-simplified-operational-block-diagram.png)
 
-#### Radio Signals
+#### ⁠C.1.a.I. Radio Signals
 
 - Radio signals make WiFi networking possible.
 - These signals, transmitted from WiFi antennas, are picked up by WiFi receivers such as computers or cell phones equipped with their own WiFi cards.
@@ -508,24 +508,24 @@ Figure:
     - the WiFi card reads the signals and creates an internet connection between the user and the network, without the use of a cord.
 - Access points, which consist of antennas and routers, are the main source that transmits and receives radio waves.
 
-#### WiFi Cards
+#### ⁠C.1.a.II. WiFi Cards
 
 - Can be thought of as an "invisible cable" that connects a computer to the antenna for a direct connection to the internet.
 - Can be external or internal, e.g., onboard built-in card, USB dongle, PCMCIA card, etc.
 
-#### WiFi Hotspots
+#### ⁠C.1.a.III. WiFi Hotspots
 
 - A WiFi hotspot is created by installing an access point at an internet connection.
 - The access point transmits a wireless signal over a short distance, typically around 300 feet.
 - When a WiFi-enabled device (such as a Pocket PC) encounters a hotspot, the device can then connect to that network wirelessly.
 
-#### Security Features
+#### ⁠C.1.a.IV. Security Features
 
 - Wired Equivalent Privacy (WEP)
 - WiFi Protected Access (WPA)
 - IEEE 802.11i/WPA2
 
-## WiMAX
+## ⁠C.2. WiMAX
 
 *(Frequently asked directly, moderately weighted 3–5 marks)*
 
@@ -542,7 +542,7 @@ Figure:
 - The 802.16a standard for 2–11 GHz is a wireless MAN technology providing broadband wireless to fixed, portable, and nomadic devices.
 - Can be used to connect 802.11 hotspots to the Internet, provide campus connectivity, and serve as a wireless alternative to cable/DSL for last-mile broadband access.
 
-### Features of WiMAX
+### ⁠C.2.a. Features of WiMAX
 
 1. **OFDM-based physical layer**
     - The WiMAX PHY is based on Orthogonal Frequency Division Multiplexing, a scheme offering good resistance to multipath and allowing WiMAX to operate in NLOS (non-line-of-sight) conditions.
@@ -583,7 +583,7 @@ Figure:
     - It is possible to connect several base stations to one another using high-speed backhaul microwave links.
     - This also allows roaming by a WiMAX subscriber from one base station's coverage to another, similar to roaming enabled by cell phones.
 
-## Long Term Evolution (LTE)
+## ⁠C.3. Long Term Evolution (LTE)
 
 - In contrast to the circuit-switched model of previous cellular systems, LTE has been designed to support **only packet-switched services**.
 - Aims to provide seamless IP connectivity between the User Equipment (UE) and the Packet Data Network (PDN), without any disruption to the end user's application during mobility.
@@ -591,7 +591,7 @@ Figure:
     - It is accompanied by an evolution of the non-radio aspects under the term **System Architecture Evolution (SAE)**, which includes the **Evolved Packet Core (EPC)** network.
     - Together, LTE and SAE comprise the **Evolved Packet System (EPS)**.
 
-### Performance Requirements
+### ⁠C.3.a. Performance Requirements
 
 | Metric | Requirement |
 | --- | --- |
@@ -603,7 +603,7 @@ Figure:
 | Coverage | 5 to 100 km, with slight degradation after 30 km |
 | Spectrum flexibility | 1.25, 2.5, 5, 10, 15, and 20 MHz |
 
-### Architecture
+### ⁠C.3.b. Architecture
 
 ![Architecture of LTE networks](attachments/lte-architecture.png)
 
@@ -620,9 +620,9 @@ Figure:
 
 ---
 
-# 8.4 Regulatory Issues
+# ⁠D. Regulatory Issues
 
-## Spectrum Management
+## ⁠D.1. Spectrum Management
 
 *(Frequently asked directly: "Significance of spectrum management; functions of the regulatory")*
 
@@ -632,7 +632,7 @@ Figure:
 - To combat this problem, governments around the world regulate who can use what part of the spectrum, in what locations.
 - These rules govern all spectrum-based operations, whether for cellular, satellite, or other wireless services.
 
-## Regulatory Approach: Functions
+## ⁠D.2. Regulatory Approach: Functions
 
 *(Frequently asked directly: "Regulatory issues in wireless communication")*
 
@@ -643,7 +643,7 @@ Regulatory Functions:
 4. Licensing of telecom operators and internet service providers.
 5. Approval of tariffs for telecom services: fixed tariffs, maximum tariffs, and non-regulated tariffs.
 
-## Key Regulatory Issue Areas (Named Sub-Topics)
+## ⁠D.3. Key Regulatory Issue Areas (Named Sub-Topics)
 
 - **Spectrum Allocation**
     - The process by which regulators designate specific frequency bands for specific services (e.g., cellular, broadcasting, satellite, military use), preventing harmful interference between different services and operators.
@@ -662,7 +662,7 @@ Regulatory Functions:
     - Rules governing how different network operators must interconnect their networks so that subscribers on one network can communicate with subscribers on another (e.g., calls between two different mobile operators, or between mobile and PSTN networks).
     - Interconnection regulation typically covers technical standards for interconnection, and the fees operators charge each other for carrying traffic that originates or terminates on another operator's network.
 
-## Significance of Spectrum Management
+## ⁠D.4. Significance of Spectrum Management
 
 - Ensures efficient, interference-free use of a scarce and finite national/international resource.
 - Enables fair competition among multiple operators by allocating spectrum transparently.

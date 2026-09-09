@@ -1,4 +1,4 @@
-# Exam Frequency Table (2070–2082 BS, 22 papers)
+# ⁠A. Exam Frequency Table (2070–2082 BS, 22 papers)
 
 | Topic | Typical Marks | Frequency |
 |---|---|---|
@@ -13,9 +13,9 @@
 
 ---
 
-# 1.0 Basic Concepts
+# ⁠B. Basic Concepts
 
-## Duplexing
+## ⁠B.1. Duplexing
 
 - **Simplex**: Communication systems which provide only one-way communication.
 - **Half Duplex**: Communication systems which allow two-way communication by using the same radio channel for both Tx and Rx. At any given time, the user can only either transmit or receive information.
@@ -24,12 +24,12 @@
         - FDD (Frequency Division Duplex)
         - TDD (Time Division Duplex)
 
-### Frequency Division Duplex (FDD)
+### ⁠B.1.a. Frequency Division Duplex (FDD)
 
 - Provides simultaneous radio transmission channels for the subscriber and the base station, so that both may transmit while simultaneously receiving signals from one another.
 - Two separate, frequency-offset channels are used (reverse channel and forward channel), e.g. $F_c$ and $F_c + 45\text{MHz}$.
 
-### Time Division Duplex (TDD)
+### ⁠B.1.b. Time Division Duplex (TDD)
 
 - Also provides simultaneous radio transmission channels for the subscriber and the base station.
 - However, a single radio channel is shared in time, a portion of the time is used from the base station to mobile, and the remaining time is used to transmit from the mobile to the base station.
@@ -38,7 +38,7 @@
 
 *(Frequently paired with the "define forward and reverse channel" PYQ, see §1.3 below)*
 
-## Basic Terminologies
+## ⁠B.2. Basic Terminologies
 
 | Term | Description |
 |---|---|
@@ -52,7 +52,7 @@
 | Handoff | The process of transferring a mobile station from one channel or base station to another. |
 | Page | A brief message which is broadcast over the entire service area, usually simultaneously by many base stations. |
 
-## Cordless Telephones vs Cellular Telephony
+## ⁠B.3. Cordless Telephones vs Cellular Telephony
 
 *(Useful for building out the "wide-area vs local" distinction that underlies many evolution/comparison questions)*
 
@@ -74,7 +74,7 @@
 - Integrated with sophisticated public switched telephone network (PSTN)
 - High transmit power required at the handsets (~2W)
 
-### Cellular Telephony System Components
+### ⁠B.3.a. Cellular Telephony System Components
 
 - **Mobile users and handsets**: very complex circuitry and design.
 - **Base stations**: provide gateway functionality between wireless and wireline links.
@@ -82,7 +82,7 @@
 
 ![Cellular Telephony Architecture](attachments/cellular-architecture.png)
 
-### Cellular System: Channel Structure
+### ⁠B.3.b. Cellular System: Channel Structure
 
 - Each cell has a base station (BS), providing the radio interface to the mobile station (MS).
 - A sophisticated switching technique called **handover** enables a call to proceed uninterrupted across cell boundaries.
@@ -95,7 +95,7 @@
     - Reverse (Uplink) control channel: MS → BS
 - A MS contains a transceiver, an antenna, and control circuitry. A BS consists of several transmitters and receivers.
 
-### Call Flow Examples
+### ⁠B.3.c. Call Flow Examples
 
 **Telephone call made to a mobile user:**
 
@@ -119,11 +119,11 @@
 
 ---
 
-# 1.1 Evolution of Wireless (Mobile) Communications
+# ⁠C. Evolution of Wireless (Mobile) Communications
 
 *(The single most repeated question type in this chapter, nearly every paper asks for a 1G–3G or 1G–4G evolution narrative, often with worldwide market penetration angle)*
 
-## Radio Frequency Spectrum Context
+## ⁠C.1. Radio Frequency Spectrum Context
 
 - Wireless technologies span a wide range of applications: Satellite, TV, Cordless phone, Cellular phone, Wireless LAN/WiFi/WiMAX, Bluetooth, Ultra Wide Band, Wireless Laser, Microwave.
 - Frequency bands used for radio transmission:
@@ -150,7 +150,7 @@
 - SHF is used for directed microwave links (~2–40 GHz) and fixed satellite services (C-band 4/6 GHz, Ku-band 11/14 GHz, Ka-band 19/29 GHz).
 - EHF comes close to infrared; all radio frequencies are regulated to avoid interference.
 
-## Chronology of Important Developments in Mobile Communications
+## ⁠C.2. Chronology of Important Developments in Mobile Communications
 
 *(Frequently the backbone for a full 1G–3G/4G evolution answer, memorize key years)*
 
@@ -170,7 +170,7 @@
 | 1997 | ETSI publishes GPRS standard. |
 | 1999 | Standards of 3G wireless services published. |
 
-## First Generation (1G): Analog Systems
+## ⁠C.3. First Generation (1G): Analog Systems
 
 - The first version of cellular telephony to be commercially deployed in the 1980s consisted of **analog systems**:
     - Frequency Modulation (FM) is used for analog voice.
@@ -181,7 +181,7 @@
     - Voice traffic only.
     - FDMA/FDD multiple access.
 
-### Network Reference Model for 1G (IS-41 Architecture)
+### ⁠C.3.a. Network Reference Model for 1G (IS-41 Architecture)
 
 - Network reference model of TIA/EIA standard IS-41:
     - ![Reference model of a mobile communication network](attachments/IS-41%20block.png)
@@ -201,7 +201,7 @@
 - **Equipment Identity Register (EIR)**: contains the equipment identification number.
 - **Authentication Center (AC)**: manages user data-encryption-related functions such as ciphering keys.
 
-## Second Generation (2G): Digital Systems
+## ⁠C.4. Second Generation (2G): Digital Systems
 
 *(Anchor topic for "evolution 1G-2G-2.5G" and "2G vs 3G" comparisons)*
 
@@ -220,7 +220,7 @@
 - An enhanced data service called **GPRS** is now also available in GSM.
 - **CDMA systems**, using direct-sequence spread spectrum technology, have been deployed in many countries since 1995.
 
-### 2G Technologies Comparison
+### ⁠C.4.a. 2G Technologies Comparison
 
 | Parameter | cdmaOne (IS-95) | GSM, DCS-1900 | IS-54/IS-136, PDC |
 |---|---|---|---|
@@ -234,19 +234,19 @@
 | Voice Channels per carrier | 64 | 8 | 3 |
 | Speech Coding | CELP @ 13kbps, EVRC @ 8kbps | RPE-LTP @ 13 kbps | VSELP @ 7.95 kbps |
 
-### Second Generation Network Architecture
+### ⁠C.4.b. Second Generation Network Architecture
 
 - Figure below shows the network architecture of 2G, similar to 1G except for its interface to a public data network (PDN):
     - ![2G wireless network with packet data services](attachments/2g-architecture.png)
 - The interface to the PDN is via an interworking function (IWF), which performs protocol conversion necessary due to differences between the protocols used on the mobile stations and the PDN.
 
-### 2G and Data
+### ⁠C.4.c. 2G and Data
 
 - 2G was developed for voice communications.
 - Data can be sent over 2G channels using a modem, providing data rates on the order of ~9.6 kbps.
 - Increased data rates are required for internet applications, this necessitated evolution towards **2.5G**.
 
-## 2.5G Networks (2G+)
+## ⁠C.5. G Networks (2G+)
 
 - Except for the A interface between a BS and an MSC, the core network is circuit-switched.
 - One possible architecture around which many new networks were built:
@@ -262,7 +262,7 @@
 3. Allows for distributed processing, offloading the core network, and provides a platform for new services/features/applications to be developed, tested, and installed as needed.
     - The architecture is compatible with an all-IP network, the trend of the future.
 
-### 2.5G Technologies (Evolution of TDMA and CDMA Systems)
+### ⁠C.5.a. G Technologies (Evolution of TDMA and CDMA Systems)
 
 - **Evolution of TDMA systems:**
     - **HSCSD** (High-Speed Circuit Switched Data) for 2.5G GSM, up to 57.6 kbps.
@@ -277,7 +277,7 @@
 - **Evolution of CDMA systems:**
     - IS-95 (cdmaOne) → IS-95B, up to 64 kbps, in increments of 8 kb/s over a 1.25 MHz channel.
 
-## Third Generation (3G) Wireless Technology
+## ⁠C.6. Third Generation (3G) Wireless Technology
 
 *(Frequently paired with "3G vs 4G" or "1G-2G-3G-4G" comparison questions)*
 
@@ -296,7 +296,7 @@
 - Support for high-speed data at rates from **144 kb/s** for urban/suburban outdoor environments to **2.048 Mb/s** for indoor or low-range outdoor environments is one of the most important features of 3G.
 - Because of its many advantages, **CDMA technology forms the basis of 3G systems**.
 
-### 3G Requirements
+### ⁠C.6.a. 3G Requirements
 
 - 3G systems are required to operate in many different radio environments: indoor or outdoor, urban, suburban, or rural.
 - End users may be fixed or moving at various speeds:
@@ -314,13 +314,13 @@
     - at least 384 kbps for pedestrians
     - about 2.048 Mbps for indoor or low-range outdoor applications
 
-### 3G: Types of User Traffic Envisaged
+### ⁠C.6.b. 3G: Types of User Traffic Envisaged
 
 1. **Constant bit rate traffic**: e.g. speech, high-quality audio, video telephony, full-motion video; sensitive to delays and delay variations.
 2. **Real-time variable bit rate traffic**: e.g. variable bit-rate encoded audio, interactive MPEG video; requires variable bandwidths and is also sensitive to delays/delay variations.
 3. **Non-real-time variable bit rate traffic**: e.g. interactive and large file transfers; can tolerate delays or delay variations.
 
-### 3G: Commercially Attractive Applications
+### ⁠C.6.c. 3G: Commercially Attractive Applications
 
 - Conversational voice, video phone and video conferencing, interactive games, two-way process control and telemetry information.
 - High-speed internet access applications: web browsing, e-mail, data transfer to/from server, transaction services, etc.
@@ -328,7 +328,7 @@
 - Entertainment-quality audio.
 - Inquiries/reservations (e.g. plane ticket ordering).
 
-### 3G Evolution of Systems
+### ⁠C.6.d. 3G Evolution of Systems
 
 - CDMA system evolved to **CDMA2000** (IMT-2000):
     - CDMA2000-1xRTT: up to 307 kbps
@@ -341,7 +341,7 @@
     - expected to be fully deployed by 2010–2015
     - assures backward compatibility
 
-### Upgrade Paths for 2G Technologies (Overview)
+### ⁠C.6.e. Upgrade Paths for 2G Technologies (Overview)
 
 ```mermaid
 flowchart LR
@@ -360,7 +360,7 @@ flowchart LR
 
 - Layered view: **2G → 2.5G → 3G** progression across GSM/IS-136/PDC and IS-95 tracks converge toward W-CDMA and cdma2000 respectively.
 
-### Evolution Path to 3G Systems (GSM and IS-95 tracks)
+### ⁠C.6.f. Evolution Path to 3G Systems (GSM and IS-95 tracks)
 
 ```mermaid
 flowchart LR
@@ -380,12 +380,12 @@ flowchart LR
     end
 ```
 
-### Evolution of Digital Cellular Standards (Full Chart, 2G → 5G)
+### ⁠C.6.g. Evolution of Digital Cellular Standards (Full Chart, 2G → 5G)
 
 - ![Evolution of Digital Cellular Standards](attachments/evolution-digital-cellular-standards.png)
 - Traces the full path: GSM/PDC/iDEN/IS-136 (TDMA, 2G) → GPRS → EDGE → WCDMA(UMTS)/TD-SCDMA (3G) → HSPA → HSPA+ → LTE → LTE-A → LTE-A Pro (4.5G, Gigabit LTE); parallel CDMA track: IS-95A → IS-95B → 1x(CDMA2000) → EV-DO(CDMA2000) → merges into LTE; further evolution to WiMAX (4G) and beyond into 4.9G/5G.
 
-## Fourth Generation (4G) Systems
+## ⁠C.7. Fourth Generation (4G) Systems
 
 *(Frequently asked: "features of 4G", "4G vs 3G")*
 
@@ -393,7 +393,7 @@ flowchart LR
 - Mobile speed supported up to **200 km/hr**.
 - Frequency band: **2–8 GHz**.
 
-### Features of 4G Wireless Systems
+### ⁠C.7.a. Features of 4G Wireless Systems
 
 - Support for interactive multimedia, voice, streaming video, Internet, and other broadband services.
 - IP-based mobile system.
@@ -402,13 +402,13 @@ flowchart LR
 - Ad hoc and multi-hop networks.
 - Better spectral efficiency.
 
-### Wireless Technologies Used in 4G
+### ⁠C.7.b. Wireless Technologies Used in 4G
 
 - **OFDM** (Orthogonal Frequency Division Multiplexing)
 - **MIMO** (Multiple Input Multiple Output)
 - **Adaptive Modulation**
 
-## Recent Trends (5G and Beyond)
+## ⁠C.8. Recent Trends (5G and Beyond)
 
 *(Frequently paired with "5G vs 4G" and "forward/reverse channel" questions)*
 
@@ -424,13 +424,13 @@ flowchart LR
 
 ---
 
-# 1.2 Comparison of Available Wireless Systems, Trends
+# ⁠D. Comparison of Available Wireless Systems, Trends
 
 *(Frequently asked directly as "2G vs 3G vs 4G standards, technology advancement", also as regional standard tables)*
 
-## Standards by Region
+## ⁠D.1. Standards by Region
 
-### North American Major Standards
+### ⁠D.1.a. North American Major Standards
 
 | Standard | Type | Year | Multiple Access | Frequency Band | Modulation | Channel BW |
 |---|---|---|---|---|---|---|
@@ -447,7 +447,7 @@ flowchart LR
 | MIRS | SMR/PCS | 1994 | TDMA | Several | 16-QAM | 25 kHz |
 | iDEN | SMR/PCS | 1995 | TDMA | Several | 16-QAM | 25 kHz |
 
-### European Standards
+### ⁠D.1.b. European Standards
 
 | Standard | Type | Year | Multiple Access | Frequency Band | Modulation | Channel BW |
 |---|---|---|---|---|---|---|
@@ -461,7 +461,7 @@ flowchart LR
 | DECT | Cordless | 1993 | TDMA | 1880–1900 MHz | GFSK | 1.728 MHz |
 | DCS-1800 | Cordless/PCS | 1993 | TDMA | 1710–1880 MHz | GMSK | 200 kHz |
 
-### Japan Standards
+### ⁠D.1.c. Japan Standards
 
 | Standard | Type | Year | Multiple Access | Frequency Band | Modulation | Channel BW |
 |---|---|---|---|---|---|---|
@@ -473,7 +473,7 @@ flowchart LR
 | NEC | Paging | 1979 | FDMA | Several | FSK | 10 kHz |
 | PHS | Cordless | 1993 | TDMA | 1895–1907 MHz | π/4-DQPSK | 300 kHz |
 
-## Generational Comparison Summary
+## ⁠D.2. Generational Comparison Summary
 
 *(Direct exam scaffold for "1G vs 2G vs 3G vs 4G")*
 
@@ -488,17 +488,17 @@ flowchart LR
 
 ---
 
-# 1.3 Trends in Cellular Radio Beyond 3G
+# ⁠E. Trends in Cellular Radio Beyond 3G
 
 *(Frequently asked directly: "basic trends beyond 3G", "forward and reverse channel; 5G vs 4G")*
 
-## Forward and Reverse Channel
+## ⁠E.1. Forward and Reverse Channel
 
 - **Forward channel**: the communication channel from the Base Station (BS) to the Mobile Station (MS), i.e., the downlink.
 - **Reverse channel**: the communication channel from the Mobile Station (MS) to the Base Station (BS), i.e., the uplink.
 - Each direction may further be split into voice/data and control channels (see §1.0 channel structure above).
 
-## 5G vs 4G
+## ⁠E.2. 5G vs 4G
 
 | Aspect | 4G | 5G |
 |---|---|---|
@@ -509,7 +509,7 @@ flowchart LR
 | Key enabler | All-IP mobile system | Internet of Things (IoT) integration |
 | Target use case | Mobile broadband, streaming | Massive device connectivity, ultra-reliable low-latency communication |
 
-## Features of 5G (List Form)
+## ⁠E.3. Features of 5G (List Form)
 
 - Operational target: 2020 onward.
 - Internet of Things (IoT) support.

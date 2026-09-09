@@ -1,4 +1,4 @@
-# Exam Frequency Table (2070–2082 BS, 22 papers)
+# ⁠A. Exam Frequency Table (2070–2082 BS, 22 papers)
 
 | Topic | Typical Marks | Frequency |
 |---|---|---|
@@ -21,9 +21,9 @@
 
 ---
 
-# 3.1–3.2 Free Space Propagation and Basic Propagation Mechanisms
+# ⁠B. –3.2 Free Space Propagation and Basic Propagation Mechanisms
 
-## Free Space Propagation Model
+## ⁠B.1. Free Space Propagation Model
 
 - Channels can be broadly classified as:
     - Wired Channel
@@ -38,14 +38,14 @@
     - where $d$ is the distance (in meter) from the source
 - Power density is given by $P_d = \dfrac{P_t}{4\pi d^2}$
 
-### Key Terms
+### ⁠B.1.a. Key Terms
 
-#### Effective Isotropic Radiated Power (EIRP)
+#### ⁠B.1.a.I. Effective Isotropic Radiated Power (EIRP)
 
 - Product of the transmitted power, $P_t$ and the power gain of the transmitting antenna, $G_t$
     - i.e., EIRP = $P_t G_t$ watts
 
-#### Effective Aperture
+#### ⁠B.1.a.II. Effective Aperture
 
 - significant in receiving antenna
 - defined as the ratio of power available at antenna terminal to the power per unit area of the appropriately polarized incident electromagnetic wave
@@ -53,12 +53,12 @@
     - where, $\lambda$ is the wavelength of the carrier, and is given by
     - $\lambda = c/f$
 
-#### Power Received
+#### ⁠B.1.a.III. Power Received
 
 - The power received at a distance is given by the power flux density times the effective aperture of the receiver antenna
     $$P_d = \frac{P_t G_t}{4\pi d^2} = \frac{\text{EIRP}}{4\pi d^2} = \frac{|E|^2}{120 \pi}\ W/m^2$$
 
-### Basic Propagation Equation (Friis Free-Space Equation)
+### ⁠B.1.b. Basic Propagation Equation (Friis Free-Space Equation)
 
 - Let us consider a transmitting antenna with an EIRP defined in equation.
 - So power density is defined as
@@ -82,7 +82,7 @@
     - $\lambda$ = wavelength of the carrier signal
 - This equation is called Friis Free-space equation.
 
-### Path Loss for Free Space Model
+### ⁠B.1.c. Path Loss for Free Space Model
 
 - The free space propagation model is used to predict received signal strength when the transmitter and receiver have a clear LoS path between them.
     - Satellite comm
@@ -95,7 +95,7 @@
     $$PL(dB) = 10\log\frac{P_t}{P_r} = -10\log\left(\frac{\lambda^2}{(4\pi)^2 d^2}\right)$$
 - The Friis free space model is only a valid predictor of $d$ which is in the far-field (Fraunhofer region) of the transmission antenna.
 
-### Significance of Free Space Path Loss Model
+### ⁠B.1.d. Significance of Free Space Path Loss Model
 
 - The minus sign associated with the first term in the equation signifies the fact that this term represents a gain
 - The second term, due to the collection of terms $(4\pi d/\lambda)^2$, is called the free space loss, denoted by $L_{\text{freespace}}$
@@ -113,7 +113,7 @@
     $$P_r(dBm) = 10\log\left[ \frac{P_r(d_0)}{0.001W} \right] + 20\log\left( \frac{d_0}{d} \right)\ \text{for }\ d \ge d_0 \ge d_f$$
     - where $P_r(d_0)$ is in units of watts.
 
-### The Propagation Attenuation
+### ⁠B.1.e. The Propagation Attenuation
 
 - In general, the propagation path loss increases with
     - frequency of transmission, $f_c$
@@ -125,7 +125,7 @@
 - $d$ = distance between transmitter and receiver
 - $n$ = path loss exponent, which varies between 2 and 6.
 
-## Basic Propagation Mechanisms
+## ⁠B.2. Basic Propagation Mechanisms
 
 *(Frequently asked directly: "large-scale vs small-scale propagation model", "three basic radio wave propagation mechanisms")*
 
@@ -140,7 +140,7 @@
         - occurs when the medium through which the wave travels consists of objects with dimensions that are small, compared to the wavelength
         - e.g., Water, rain drops.
 
-### Ground Reflection (Two-Ray) Model
+### ⁠B.2.a. Ground Reflection (Two-Ray) Model
 
 - This model is found reasonably accurate when compared with free space propagation.
 - 2-ray model assumes both LoS and reflected signal for modeling the path loss.
@@ -173,7 +173,7 @@
 - We know that from laws of reflection in dielectrics, the reflection coefficient is (-1)
     $$\left|E_{tot}\right|=\frac{E_{0}d_{0}}{d'}\cdot \cos \left(\omega _{c}\left(t-\frac{d'}{c}\right)\right)-\frac{E_{0}d_{0}}{d''}\cdot \cos \left(\omega _{c}\left(t-\frac{d''}{c}\right)\right)$$
 
-#### Calculating Path Difference
+#### ⁠B.2.a.I. Calculating Path Difference
 
 - Since the path taken by two rays are different and they travel different distances, it is important to calculate the path difference.
 - To find the path difference between 2 waves, we use the method of imaging.
@@ -221,7 +221,7 @@
 - In dB form:
     $$PL\left(dB\right)=40\log \left(d\right)-\left(10\log \left(G_{t}\right)+10\log \left(G_{r}\right)+20\log \left(h_{t}\right)+20\log \left(h_{r}\right)\right)$$
 
-### Diffraction
+### ⁠B.2.b. Diffraction
 
 *(Frequently asked directly, paired with Fresnel-Kirchoff parameter derivation)*
 
@@ -230,12 +230,12 @@
 - Diffraction can be explained by Huygen's principle:
     - all points on a wavefront can be considered as point sources for the production of secondary wavelets.
 
-#### Knife Edge Diffraction Geometry
+#### ⁠B.2.b.I. Knife Edge Diffraction Geometry
 
 - Geometry:
     - ![Explanation with figure for analysis](attachments/diffraction-geometry-for-analysis.png)
 
-#### Fresnel Zone
+#### ⁠B.2.b.II. Fresnel Zone
 
 - Fresnel zones are used by propagation theory to calculate reflection and diffraction loss between a transmitter and receiver.
 - Fresnel zones are numbered and are called F1, F2, F3, etc.
@@ -247,7 +247,7 @@
 - Fresnel Zone figure:
     - ![Fresnel Zones](attachments/diffraction-fresnel-zones.png)
 
-### Scattering
+### ⁠B.2.c. Scattering
 
 - occurs when the medium has objects that are smaller or comparable to the wavelength (small objects, rough surfaces and other irregularities on the channel)
 - Follows the same principles as diffraction
@@ -256,7 +256,7 @@
 
 ---
 
-# Radio Propagation Models: Overview
+# ⁠C. Radio Propagation Models: Overview
 
 - Need models to characterize the signal strength received at the receiver after undergoing reflections, diffraction and scattering
     - small scale propagation models
@@ -265,7 +265,7 @@
     - using empirical methods: collect measurement, fit curves
     - using analytical methods: model the propagation mechanisms mathematically and derive equations for path loss
 
-## Large-Scale Propagation Models
+## ⁠C.1. Large-Scale Propagation Models
 
 *(Frequently paired with the "large-scale vs small-scale" comparison question)*
 
@@ -280,7 +280,7 @@
 - small fluctuations around a slowly varying mean
 - useful in estimating the radio coverage of a transmitter
 
-### Need for Propagation Models
+### ⁠C.1.a. Need for Propagation Models
 
 - determining the coverage area of a transmitter
     - determine the transmitter power requirement
@@ -289,7 +289,7 @@
 
 ---
 
-# 3.3 Practical Link Budget Design Using Path Loss Models
+# ⁠D. Practical Link Budget Design Using Path Loss Models
 
 - Log distance path model
     - Both theoretical and measurement-based models show that the received signal power decreases logarithmically with distance.
@@ -300,7 +300,7 @@
     - when obstructions are present, it has a larger value.
 - the link budget is a summary of the transmitted power along with all the gains and losses in the system, and this enables the strength of the received signal to be calculated.
 
-## Log-Distance Path Loss Model
+## ⁠D.1. Log-Distance Path Loss Model
 
 - Average large-scale path loss at
     $$\overline{PL} (d) \propto \left(\frac{d}{d_{0}}\right)^{n}\ d\ge d_{0}$$
@@ -321,7 +321,7 @@
 | obstructed in building | 4 to 6 |
 | obstructed in factories | 2 to 3 |
 
-## Log-Normal Shadowing
+## ⁠D.2. Log-Normal Shadowing
 
 - The path loss equation for the log-distance model does not consider the fact that the surrounding environment may be vastly different at two locations having the same T-R separation.
 - This leads to measurements that are different from the predicted average values obtained using the equations shown.
@@ -337,7 +337,7 @@
 
 ---
 
-# 3.4 Outdoor Propagation Models
+# ⁠E. Outdoor Propagation Models
 
 *(Okumura and Hata both carry heavy PYQ weight, mostly as numericals: theory below covers the "necessary conditions"/"compare Okumura vs Hata" style questions)*
 
@@ -346,7 +346,7 @@
 - Trees, buildings, hills etc. must be taken into consideration.
 - In early days, the models were based on empirical studies.
 
-## Okumura Model
+## ⁠E.1. Okumura Model
 
 - Okumura did comprehensive measurements in 1968 and came up with a model.
 - Discovered that a good model for path loss was a simple power law where the exponent $n$ is a function of frequency, antenna heights, etc.
@@ -367,7 +367,7 @@
     - $G\left(h_{re}\right)$ = mobile antenna height gain factor = $10\log\dfrac{h_{re}}{3}$ for 0 to 3m of $h_{re}$
     - $G_{AREA}$ = gain due to type of environment = $20 \log \dfrac{h_{re}}{3}$ for 3m to 10m of $h_{re}$
 
-### Explanation
+### ⁠E.1.a. Explanation
 
 - Okumura developed a set of curves giving the median attenuation relative to free space ($A_{mu}$) in an urban area over a quasi-smooth terrain with a base station effective antenna height ($h_{te}$) of 200m and a mobile antenna height ($h_{re}$) of 3m.
 - These curves were developed from extensive measurements using vertical omni-directional antennas at both the base and mobile, and are plotted as a function of frequency.
@@ -376,7 +376,7 @@
 - Okumura's model is considered to be among the simplest and best in terms of accuracy in path loss prediction for mature cellular and land mobile radio systems in cluttered environments.
 - The major disadvantage with the model is its slow response to rapid changes in terrain; therefore the model is fairly good in urban and suburban areas but not as good in rural areas.
 
-## Hata Model
+## ⁠E.2. Hata Model
 
 *(Frequently paired with a Hata vs Okumura comparison, or "necessary conditions for Okumura and Hata")*
 
@@ -397,7 +397,7 @@ Correction factors for Hata model:
 
 ![Corrective factors](attachments/hata-corrections.png)
 
-## Longley-Rice Model
+## ⁠E.3. Longley-Rice Model
 
 - The Longley-Rice model is normally available as a computer program that takes as input:
     - transmission frequency
@@ -411,7 +411,7 @@ Correction factors for Hata model:
 
 ---
 
-# 3.5 Indoor Propagation Models
+# ⁠F. Indoor Propagation Models
 
 *(Frequently asked directly: "explain indoor propagation models (any two)", "factors that influence the indoor propagation model")*
 
@@ -446,7 +446,7 @@ Correction factors for Hata model:
     - n and $\sigma$ depend on the type of the building
     - a smaller value of $\sigma$ indicates better accuracy of the path loss model.
 
-## In-Building Path Loss Factors
+## ⁠F.1. In-Building Path Loss Factors
 
 - Partition losses (same floor)
     - 2 kinds:
@@ -466,7 +466,7 @@ Correction factors for Hata model:
         - ![Between Floor losses](attachments/partition-losses-between-floors.png)
 - Signal penetration into buildings
 
-## Ericsson Multiple Breakpoint Model
+## ⁠F.2. Ericsson Multiple Breakpoint Model
 
 *(Frequently asked directly, short 2-mark definition)*
 
@@ -479,7 +479,7 @@ Correction factors for Hata model:
 - Diagram of its graph:
     - ![Attenuation in Ericsson model](attachments/ericsson-model.png)
 
-## Attenuation Factor Model
+## ⁠F.3. Attenuation Factor Model
 
 - Obtained by measurement in a multiple floor office building
     $$\overline{PL}(d)(dB) = \overline{PL}(d_0)(dB) + 10n_{SF}\log\left(\dfrac{d}{d_0}\right) + FAF(dB) + \sum PAF (dB)$$
@@ -489,9 +489,9 @@ Correction factors for Hata model:
 
 ---
 
-# 3.6 Small-Scale Fading and Multipath
+# ⁠G. Small-Scale Fading and Multipath
 
-## Fading: Overview
+## ⁠G.1. Fading: Overview
 
 - Rapid fluctuations of received signal strength over short time intervals and/or travel distances.
 - Caused by interference from multiple copies of the Tx signal arriving at Rx at slightly different times.
@@ -508,7 +508,7 @@ Correction factors for Hata model:
 - Effect of fading:
     - ![Received power vs distance during fading](attachments/fading-graph.png)
 
-### Types of Fading
+### ⁠G.1.a. Types of Fading
 
 ```mermaid
 flowchart TD
@@ -546,7 +546,7 @@ flowchart TD
         - Small scale fading occurs specially in heavily populated urban areas.
 - The shift in received signal frequency due to motion is called **Doppler's shift** and is directly proportional to velocity and direction of the mobile with respect to the direction of arrival of the received multipath wave.
 
-### Factors Influencing Small-Scale Fading
+### ⁠G.1.b. Factors Influencing Small-Scale Fading
 
 *(Frequently asked directly, almost always bundled with "types of small-scale fading")*
 
@@ -570,7 +570,7 @@ flowchart TD
         - if time distortion of the signal leads to inter-symbol interference (ISI)
     - An MRC can cause distortion/ISI or small-scale fading, typically one or the other.
 
-### Doppler Shift
+### ⁠G.1.c. Doppler Shift
 
 *(Frequently asked directly: "derive the relation for Doppler shift/spread", pairs naturally with the small-scale fading question above)*
 
@@ -582,7 +582,7 @@ flowchart TD
     - ![Figure for analysis](attachments/doppler-illustration.png)
     - the difference in path lengths travelled by the wave from source S to the mobile at points X and Y is $\Delta l = d \cos(\theta) = v \Delta t \cos(\theta)$, where $\Delta t$ is the time required for the mobile to travel from X to Y, and $\theta$ is assumed to be very far away.
 
-#### Derivation
+#### ⁠G.1.c.I. Derivation
 
 - Phase change due to difference in path length:
     $$\Delta \phi =\frac{2\pi \Delta l}{\lambda }=\frac{2\pi v\Delta t}{\lambda }\cos \left(\theta \right)$$
@@ -595,16 +595,16 @@ flowchart TD
     - `+` shift $\leftarrow$ mobile moving towards S
     - `-` shift $\rightarrow$ mobile moving away from S
 
-## Impulse Response Model of Multipath Channel
+## ⁠G.2. Impulse Response Model of Multipath Channel
 
-### Time and Frequency Dispersions
+### ⁠G.2.a. Time and Frequency Dispersions
 
 - **Time Dispersion**
     - when the received signal has a longer duration than that of the transmitted signal, due to different delays of the signal paths, i.e. delay spread into the received signal.
 - **Frequency Dispersion**
     - when the received signal has a larger bandwidth than that of the transmitted signal due to the different Doppler shifts introduced by the multipath components, i.e. Doppler Spread into the received signal.
 
-### Delay Spread
+### ⁠G.2.b. Delay Spread
 
 - Delay spread effect is mainly due to small-scale fading.
 - Because multiple reflections of the transmitted signal may arrive at the receiver at different times and all get added constructively or destructively.
@@ -612,7 +612,7 @@ flowchart TD
 - Representative figure:
     - ![Effect of delay spread](attachments/Effect%20of%20delay%20spread.png)
 
-#### Power Delay Profile
+#### ⁠G.2.b.I. Power Delay Profile
 
 - Random and complicated radio-propagation channels can be characterized using the impulse response approach.
 - If the input signal is a unit impulse, the channel impulse response can be written as
@@ -623,7 +623,7 @@ flowchart TD
     - the delay profile is the expected power variation per unit of time received with a certain excess delay.
     - it is obtained by averaging a large set of impulse responses.
 
-#### Parameters Characterizing Delay Spread Categories
+#### ⁠G.2.b.II. Parameters Characterizing Delay Spread Categories
 
 1. **First-Arrival Delay ($\tau_A$)**
     - this is a time delay corresponding to the arrival of the first transmitted signal at the receiver.
@@ -635,7 +635,7 @@ flowchart TD
 3. **RMS Delay Spread**
 4. **Excess delay spread**
 
-### Multipath Channel Performance Parameters
+### ⁠G.2.c. Multipath Channel Performance Parameters
 
 - The time dispersion of the channel is called multipath delay spread, which is one of the important parameters.
 - A common measure of multipath delay spread is the root mean square (RMS delay spread $T_{RMS}$)
@@ -645,16 +645,16 @@ flowchart TD
     - The maximum delay time spread $T_m$ is the total time interval during which reflections with significant energy arrive.
     - in practice, we use RMS delay spread more than $T_m$.
 
-## Coherence Time and Coherence Bandwidth
+## ⁠G.3. Coherence Time and Coherence Bandwidth
 
 *(Very frequently asked directly, either alone or paired with Doppler spread / rms delay spread classification)*
 
-### Coherence Time
+### ⁠G.3.a. Coherence Time
 
 - Measure of expected time duration over which the channel appears highly correlated.
 - i.e. the coherence time is a measure of the length of time for which the channel can be assumed to be nearly constant.
 
-### Coherence Bandwidth
+### ⁠G.3.b. Coherence Bandwidth
 
 - it is a measure of the approximate bandwidth within which the channel can be assumed to be nearly constant.
 - range of frequencies over which the channel can be considered flat:
@@ -675,19 +675,19 @@ flowchart TD
         - equalizers are needed in order to use transmission frequencies that are separated more than this value.
         - This coherence bandwidth is enough for an AMPS channel (30kHz band needed per channel), but is not enough for a GSM channel (200 kHz needed per channel).
 
-### Doppler Spread and Coherence Time
+### ⁠G.3.c. Doppler Spread and Coherence Time
 
 - Delay Spread and Coherence Bandwidth describe the time-dispersive nature of the channel in a local area.
     - they don't offer information about the time-varying nature of the channel caused by relative motion of Tx and Rx.
 - Doppler spread and coherence time are parameters which describe the time-varying nature of the channel in a small-scale region.
 
-#### Doppler Spread
+#### ⁠G.3.c.I. Doppler Spread
 
 - Measure of spectral broadening caused by the time rate of change of the mobile radio channel.
 - Doppler spread, $B_D$, is defined as the maximum Doppler shift: $f_m = v/\lambda$
 - Characterizes **frequency-dispersiveness** of the channel, or the spreading of transmitted frequency due to different Doppler shifts.
 
-#### Coherence Time
+#### ⁠G.3.c.II. Coherence Time
 
 - Coherence time is the time duration over which the channel impulse response is essentially time invariant.
 - If the symbol period of the baseband signal (reciprocal of the baseband signal bandwidth) is greater than the coherence time, then the signal will distort, due to the channel changing during the transmission of the signal.
@@ -700,11 +700,11 @@ flowchart TD
 
 ---
 
-# 3.7 Types of Small-Scale Fading; Rayleigh and Ricean Distribution
+# ⁠H. Types of Small-Scale Fading; Rayleigh and Ricean Distribution
 
 *(Both the classification and the two distributions are frequently asked, often in the same question)*
 
-## Classification Based on Multipath Time Delay Spread
+## ⁠H.1. Classification Based on Multipath Time Delay Spread
 
 1. **Flat Fading**
     1. BW of signal < BW of channel
@@ -717,7 +717,7 @@ flowchart TD
         - i.e., $B_S > B_C \leftrightarrow \sigma_\tau >> T_S$
     3. Spectral characteristics of the Tx signal are not preserved.
 
-## Classification Based on Doppler Spread
+## ⁠H.2. Classification Based on Doppler Spread
 
 1. **Fast Fading**
     1. High Doppler Spread
@@ -730,14 +730,14 @@ flowchart TD
     3. Channel variations slower than baseband signal variations
         - i.e. $T_C >> T_S$
 
-### Frequency Flat Fading
+### ⁠H.2.a. Frequency Flat Fading
 
 - Occurs when the symbol period of the transmitted signal is much larger than the delay spread of the channel
     - bandwidth of the applied signal is narrow
 - May cause deep fades.
     - increase the transmit power to combat this situation
 
-### Fast Fading
+### ⁠H.2.b. Fast Fading
 
 - Occurs due to Doppler spread:
     - rate of change of the channel characteristics is larger than the rate of change of the transmitted signal
@@ -751,7 +751,7 @@ flowchart TD
     - $T_S$: symbol period
     - $B_C$: coherence bandwidth
 
-### Slow Fading
+### ⁠H.2.c. Slow Fading
 
 - Due to Doppler spread:
     - rate of change of the channel characteristics is much smaller than the rate of change of the transmitted signal.
@@ -762,11 +762,11 @@ flowchart TD
     - $T_S$: symbol period
     - $B_C$: coherence bandwidth
 
-#### Fast vs Slow Fading: deciding factor
+#### ⁠H.2.c.I. Fast vs Slow Fading: deciding factor
 
 - The velocity of the mobile (or the velocity of objects in the channel), and the baseband signaling, together determine whether a signal undergoes fast fading or slow fading.
 
-## Fading Distributions
+## ⁠H.3. Fading Distributions
 
 - Describes how the received signal amplitude changes with time.
     - remember that the received signal is a combination of multiple signals arriving from different directions, phases and amplitudes.
@@ -775,7 +775,7 @@ flowchart TD
     - Rayleigh fading
     - Ricean fading
 
-### Rayleigh Fading
+### ⁠H.3.a. Rayleigh Fading
 
 - If all the multipath components have approximately the same amplitude, i.e., MS is far from BS, the envelope of the received signal is Rayleigh distributed.
 - No dominant signal component (such as the LoS component).
@@ -790,7 +790,7 @@ flowchart TD
 - Its graph looks like:
     - ![Rayleigh Distribution](attachments/rayleigh-distribution.png)
 
-### Ricean Fading
+### ⁠H.3.b. Ricean Fading
 
 - When there is a stationary (non-fading) LoS signal present, then the envelope distribution is Ricean.
 - The Ricean distribution degenerates to Rayleigh when the dominant component fades away.
@@ -811,7 +811,7 @@ flowchart TD
 
 ---
 
-# Additional Info (Numericals: to be revisited)
+# ⁠I. Additional Info (Numericals: to be revisited)
 
 The following numerical problem types are frequently asked from this chapter but are deferred here per current study focus (theory-first). Revisit once theory is locked in:
 
