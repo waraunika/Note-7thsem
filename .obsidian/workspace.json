@@ -1,24 +1,20 @@
 {
   "main": {
-    "id": "f7b22520f520a424",
+    "id": "5032c49f34c1fbab",
     "type": "split",
     "children": [
       {
-        "id": "efdddc67cbd7276c",
+        "id": "5e3a7d6c154cdc34",
         "type": "tabs",
         "children": [
           {
-            "id": "e14cc83ef4f322e8",
+            "id": "9e1af084b2128245",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Wireless Communication/Chapter 7 Multiple Access in Wireless Communications.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Chapter 7 Multiple Access in Wireless Communications"
+              "title": "New tab"
             }
           }
         ]
@@ -27,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "8750cf2a4df25d97",
+    "id": "4cd6db0122f8a650",
     "type": "split",
     "children": [
       {
-        "id": "c8c8ba1f7dff6949",
+        "id": "e3cce5417b913887",
         "type": "tabs",
         "children": [
           {
-            "id": "1067af6c424b5ba6",
+            "id": "69b6899911b99a5a",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -50,7 +46,7 @@
             }
           },
           {
-            "id": "3d8b7a214b62b40e",
+            "id": "a96206eb86fad9ed",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -67,7 +63,7 @@
             }
           },
           {
-            "id": "a06217ff5b0ea1f1",
+            "id": "77d1558683ee562b",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -83,18 +79,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
-    "id": "71978beb9409a1ec",
+    "id": "1db74ccb9acf52c9",
     "type": "split",
     "children": [
       {
-        "id": "41e64077368cc3ca",
+        "id": "1e94ca13d3cf6474",
         "type": "tabs",
         "children": [
           {
-            "id": "3fcd94e62ded5b7e",
+            "id": "4afb6d7275d75ae5",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -112,7 +109,7 @@
             }
           },
           {
-            "id": "d4b67d1bd2143c58",
+            "id": "8f62fde4df799973",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -125,7 +122,7 @@
             }
           },
           {
-            "id": "9a53d958f5f5c5a3",
+            "id": "fc873aab9a09ff6e",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -140,7 +137,7 @@
             }
           },
           {
-            "id": "5f744a298b6e159f",
+            "id": "65b8acdb6c568c9a",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -154,7 +151,7 @@
             }
           },
           {
-            "id": "0c682935dd88c702",
+            "id": "bc1a5c72a441af1b",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -187,12 +184,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e14cc83ef4f322e8",
+  "active": "9e1af084b2128245",
   "lastOpenFiles": [
-    "Wireless Communication/Chapter 6 Speech and Channel Coding Fundamentals.md",
-    "Wireless Communication/Chapter 5 Equalization and Diversity.md",
-    "Wireless Communication/Chapter 3 Mobile Radio Propagation.md",
-    "Wireless Communication/Chapter 2 Cellular Mobile Communication Concept.md",
-    "Wireless Communication/Chapter 1 Introduction.md"
+    "Excalidraw/Drawing 2026-09-09 10.15.05.excalidraw.md",
+    "Excalidraw/attachments/room.png",
+    "Excalidraw/attachments",
+    "Excalidraw/random.md"
   ]
 }
