@@ -93,7 +93,7 @@
     - Reverse (Uplink) voice/data channel: MS → BS
     - Forward (Downlink) control channel: BS → MS
     - Reverse (Uplink) control channel: MS → BS
-- A MS contains a transceiver, an antenna, and control circuitry. A BS consists of several transmitters and receivers.
+- An MS contains a transceiver, an antenna, and control circuitry. A BS consists of several transmitters and receivers.
 
 ### ⁠B.3.c. Call Flow Examples
 
@@ -152,7 +152,7 @@
 
 ## ⁠C.2. Chronology of Important Developments in Mobile Communications
 
-*(Frequently the backbone for a full 1G–3G/4G evolution answer, memorize key years)*
+*(Frequently the backbone for a full 1G–3G/4G evolution answer)*
 
 | Date | Event |
 | --- | --- |
@@ -222,6 +222,7 @@
 
 ### ⁠C.4.a. 2G Technologies Comparison
 
+
 | Parameter | cdmaOne (IS-95) | GSM, DCS-1900 | IS-54/IS-136, PDC |
 |---|---|---|---|
 | Uplink Frequencies | 824–849 MHz (Cellular), 1850–1910 MHz (US PCS) | 890–915 MHz (Europe), 1850–1910 MHz (US PCS) | 800/1500 MHz (Japan), 1850–1910 MHz (US PCS) |
@@ -233,6 +234,7 @@
 | Channel Data Rate | 1.2288 Mchips/sec | 270.833 kbps | 48.6 kbps (IS-136), 42 kbps (PDC) |
 | Voice Channels per carrier | 64 | 8 | 3 |
 | Speech Coding | CELP @ 13kbps, EVRC @ 8kbps | RPE-LTP @ 13 kbps | VSELP @ 7.95 kbps |
+
 
 ### ⁠C.4.b. Second Generation Network Architecture
 
@@ -246,7 +248,7 @@
 - Data can be sent over 2G channels using a modem, providing data rates on the order of ~9.6 kbps.
 - Increased data rates are required for internet applications, this necessitated evolution towards **2.5G**.
 
-## ⁠C.5. G Networks (2G+)
+## ⁠C.5. 2.5G Networks (2G+)
 
 - Except for the A interface between a BS and an MSC, the core network is circuit-switched.
 - One possible architecture around which many new networks were built:
@@ -262,7 +264,7 @@
 3. Allows for distributed processing, offloading the core network, and provides a platform for new services/features/applications to be developed, tested, and installed as needed.
     - The architecture is compatible with an all-IP network, the trend of the future.
 
-### ⁠C.5.a. G Technologies (Evolution of TDMA and CDMA Systems)
+### ⁠C.5.a. 2.5G Technologies (Evolution of TDMA and CDMA Systems)
 
 - **Evolution of TDMA systems:**
     - **HSCSD** (High-Speed Circuit Switched Data) for 2.5G GSM, up to 57.6 kbps.
@@ -432,6 +434,7 @@ flowchart LR
 
 ### ⁠D.1.a. North American Major Standards
 
+
 | Standard | Type | Year | Multiple Access | Frequency Band | Modulation | Channel BW |
 |---|---|---|---|---|---|---|
 | AMPS | Cellular | 1983 | FDMA | 824–894 MHz | FM | 30 kHz |
@@ -447,7 +450,9 @@ flowchart LR
 | MIRS | SMR/PCS | 1994 | TDMA | Several | 16-QAM | 25 kHz |
 | iDEN | SMR/PCS | 1995 | TDMA | Several | 16-QAM | 25 kHz |
 
+
 ### ⁠D.1.b. European Standards
+
 
 | Standard | Type | Year | Multiple Access | Frequency Band | Modulation | Channel BW |
 |---|---|---|---|---|---|---|
@@ -461,7 +466,9 @@ flowchart LR
 | DECT | Cordless | 1993 | TDMA | 1880–1900 MHz | GFSK | 1.728 MHz |
 | DCS-1800 | Cordless/PCS | 1993 | TDMA | 1710–1880 MHz | GMSK | 200 kHz |
 
+
 ### ⁠D.1.c. Japan Standards
+
 
 | Standard | Type | Year | Multiple Access | Frequency Band | Modulation | Channel BW |
 |---|---|---|---|---|---|---|
@@ -472,6 +479,7 @@ flowchart LR
 | NTT | Paging | 1979 | FDMA | 280 MHz | FSK | 12.5 kHz |
 | NEC | Paging | 1979 | FDMA | Several | FSK | 10 kHz |
 | PHS | Cordless | 1993 | TDMA | 1895–1907 MHz | π/4-DQPSK | 300 kHz |
+
 
 ## ⁠D.2. Generational Comparison Summary
 
@@ -500,6 +508,7 @@ flowchart LR
 
 ## ⁠E.2. 5G vs 4G
 
+
 | Aspect | 4G | 5G |
 |---|---|---|
 | Peak data rate | ~20 Mbps (typical LTE-A ranges higher in practice) | Significantly higher (multi-Gbps class) |
@@ -508,6 +517,7 @@ flowchart LR
 | Network architecture | Centralized core network | Dense heterogeneous networks, cloud radio network |
 | Key enabler | All-IP mobile system | Internet of Things (IoT) integration |
 | Target use case | Mobile broadband, streaming | Massive device connectivity, ultra-reliable low-latency communication |
+
 
 ## ⁠E.3. Features of 5G (List Form)
 

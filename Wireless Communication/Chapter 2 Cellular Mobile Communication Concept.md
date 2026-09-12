@@ -39,7 +39,6 @@ The cellular concept has the following system level ideas
 
 ## ⁠B.2. Cell Footprint
 
-
 - The actual radio coverage of a cell is known as **cell footprint**.
 - Irregular cell structure and irregular placing of the transmitter may not be acceptable in the initial system design.
 - However, as traffic grows, where new cells and channels need to be added,
@@ -74,7 +73,7 @@ Real world planning
 
 ## ⁠C.1. Terminology
 
-*(Frequently asked directly: cluster size, interference tier — both carry high recall value)*
+*(Frequently asked directly: cluster size, interference tier)*
 
 - Cluster Size
     - The $N$ cells which collectively use the complete set of available frequency is called the cluster size.
@@ -109,7 +108,6 @@ Real world planning
         - reduce the likelihood of blocking, increase capacity.
 
 # ⁠D. Handoff Strategies
-
 
 - When a mobile moves into a different cell while a conversation is in progress, the MSC automatically transfers the call to a new channel belonging to the new base station.
 - Handoff operation
@@ -157,6 +155,26 @@ Real world planning
     - Cell dragging problem
         - pedestrian users provide a very strong signal to the base station (due to LoS)
         - The user may travel deep within a neighboring cell
+        - Solution:
+            - adjust handoff thresholds; use MAHO for quicker decisions.
+    - Site Acquisition
+        - Difficult to obtain new cell sites in urban areas
+        - Solution: use co-located cells (same building, different heights)
+    - Zoning laws
+        - Permits and regulators delay deployment
+        - Solution: Plan ahead; use existing infrastructure
+    - Intersystem Handoff
+        - Moving between different systems/networks
+        - Solution: Compatibility protocols, standalone interfaces
+    - Traffic load
+        - target cell may have no free channels
+        - Solution: Use guard channels or queueing for handoff priority
+    - Signal Measurement
+        - Fading causes false handoff triggers
+        - Solution: Use running average instead of instantaneous measurements
+    - Mobile speed estimation
+        - No need to know user speed for optional handoff
+        - Solution: Estimate from rate of signal level change
 - On average:
     - femtocell: reach 10m
     - pico cell: 200m
@@ -194,6 +212,14 @@ Real world planning
     - Dynamic allocation can improve this.
 - Queuing of handover requests is another method to decrease the probability of forced termination of a cell due to a lack of available channel.
     - the time span over which a handover is usually required leaves room for queueing handover request.
+- Methods for prioritizing handoffs
+
+| Method | Description | Advantage | Disadvantage |
+| --- | --- | --- | --- |
+| **Guard Channel** | Reserve a fraction of channels exclusively for handoffs | Guarantees handoff channels | Reduces total carried traffic |
+| **Queuing** | Place handoff request in a queue while waiting for a channel | Decreases forced termination probability | Delay may cause call drop if signal fades too fast |
+| **Dynamic Assignment** | MSC allocates channels dynamically based on demand | Efficient spectrum use | Higher Computational load |
+
 
 ## ⁠D.6. Practical Handover
 
@@ -255,7 +281,7 @@ Real world planning
 - Let $i_0$ be the number of co-channel interfering cells.
 - The SIR for a mobile receiver can be expressed as:
     $$\frac{S}{I} = \frac{S}{\sum_{i=1}^{N_I} I_i}$$
-    - where,$S$ = desired signal power
+    - where, $S$ = desired signal power
     - $I_i$ = interference power caused by the ith interfering co-channel cell base station
     - $N_I$ = Number of co-channel interfering cells
 - Let $D_i$ be the distance between the $i^{th}$ interferer and mobile.
@@ -443,7 +469,6 @@ Real world planning
 | Infrastructure/cost | Requires additional towers, antennas, and base stations | Requires only additional/replacement directional antennas at existing site |
 | Handoff impact | More frequent handoffs; must handle high-speed and low-speed traffic simultaneously | Increases handoffs between sectors of the same cell, but no new cell boundaries created |
 | Drawback | Lower spectral efficiency if only partially implemented | Reduces trunking efficiency since channels are divided among sectors |
-
 
 
 ---

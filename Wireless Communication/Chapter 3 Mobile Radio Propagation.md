@@ -1,5 +1,6 @@
 # ⁠A. Exam Frequency Table (2070–2082 BS, 22 papers)
 
+
 | Topic | Typical Marks | Frequency |
 |---|---|---|
 | Small-scale fading: definition, types, influencing factors (+Doppler shift derivation) | 2–10 | Very High |
@@ -21,7 +22,7 @@
 
 ---
 
-# ⁠B. –3.2 Free Space Propagation and Basic Propagation Mechanisms
+# ⁠B. Free Space Propagation and Basic Propagation Mechanisms
 
 ## ⁠B.1. Free Space Propagation Model
 
@@ -271,8 +272,6 @@
 
 - As the mobile moves away from the transmitter over large distances, the local average received signal will gradually decrease.
 - This is called large-scale path loss.
-- Typically the local average received power is computed by averaging signal measurements over a measurement track of $5\lambda$ to $40\lambda$
-    - this means a 1m – 10m track
 - The models that predict the mean signal strength for an arbitrary receiver-transmitter (T-R) separation distance are called large-scale propagation models.
 - Large T-R separation distances (several hundreds of thousands of meters)
 - Main propagation mechanism: reflections
@@ -286,6 +285,19 @@
     - determine the transmitter power requirement
     - determine the battery lifetime
 - finding modulation and coding schemes to improve the channel quality
+
+## Large-scale vs Small-scale Propagation Models
+
+| Aspect | Large-Scale Propagation Model | Small-Scale Propagation Model |
+| --- | --- | --- |
+| Property | Gradual variation of local average received signal strength | Rapid fluctuations over very short travel distances |
+| Distance scale | several hundreds to thousands of meters | typically 5λ to 40λ (i.e. 1m–10m) |
+| Primary cause | Reflection and shadowing | Multipath propagation |
+| Governed by | Free space attenuation ($F^{−n}$) and log-normal shadowing | Doppler shift, time dispersion |
+| Typical variation | Signal power can vary predictably with distance | Power may change by 30–40 dB by light movement |
+| Modeling approach | Predicts mean signal strength for T-R separation distance | Modeled statistically with multipath channel parameters |
+| Use case | Determining transmitter power requirements, battery life | Designing equalizers, diversity schemes|
+| Rx signal effect | Does not by itself distort signal timing/spectrum | Time dispersion (echoes/ISI) and frequency dispersion of received signal |
 
 ---
 
@@ -310,7 +322,8 @@
     - $\overline{PL}$ is the total path loss measured in decibel
     - $d$ is the length of the path
     - $d_0$ is the reference distance, usually 1km or 1 mile for large cell and 1m to 10m for microcell
-- path loss exponent
+
+Path loss exponent
 
 | Environment | Path Loss exponent |
 | --- | --- |
@@ -339,7 +352,7 @@
 
 # ⁠E. Outdoor Propagation Models
 
-*(Okumura and Hata both carry heavy PYQ weight, mostly as numericals: theory below covers the "necessary conditions"/"compare Okumura vs Hata" style questions)*
+*(Okumura and Hata both carry heavy PYQ weight, mostly as numericals)*
 
 - Outdoor radio transmission takes place over irregular terrain.
 - The terrain profile must be taken into consideration for estimating path loss.
@@ -355,7 +368,8 @@
     - Frequencies: 150 MHz to 1920 MHz
     - can be extrapolated up to 3GHz
     - Distance: 1km to 100 km
-    - Base station antenna heights: 30m to 100m
+    - Base station antenna heights: 30m to 1000m
+    - Mobile station height: 0m to 10m
 - Okumura developed a set of curves giving the median attenuation relative to free space in an urban area over quasi-smooth terrain.
 - Formula
     $$L_{50}\left(dB\right)=L_{F}+A_{mu}\left(f,d\right)-G\left(h_{te}\right)-G\left(h_{re}\right)-G_{AREA}$$
@@ -364,8 +378,10 @@
     - $L_{F}$ = free space propagation loss
     - $A_{mu}\left(f,d\right)$ = median attenuation relative to free space
     - $G\left(h_{te}\right)$ = base station antenna height gain factor = $20\log \dfrac{h_{te}}{200}$ for 30m to 1000m of $h_{te}$
-    - $G\left(h_{re}\right)$ = mobile antenna height gain factor = $10\log\dfrac{h_{re}}{3}$ for 0 to 3m of $h_{re}$
-    - $G_{AREA}$ = gain due to type of environment = $20 \log \dfrac{h_{re}}{3}$ for 3m to 10m of $h_{re}$
+    - $G\left(h_{re}\right)$ = mobile antenna height gain factor =
+        - $10\log\dfrac{h_{re}}{3}$ for 0 to 3m of $h_{re}$
+        - $20 \log \dfrac{h_{re}}{3}$ for 3m to 10m of $h_{re}$
+    - $G_{AREA}$ = gain due to type of environment
 
 ### ⁠E.1.a. Explanation
 
@@ -437,11 +453,11 @@ Correction factors for Hata model:
         - Ricean fading for LOS paths.
 - Multipath delay spread:
     - buildings with fewer metals and hard partitions typically have small rms delay spread: 30 to 60 ns
-    - can support data rates in excess of several Mbps without equalization
-    - larger buildings with a great amount of metal and open aisles may have rms delay spreads as large as 300ns
-    - cannot support data rates more than a few hundred kbps without equalization
+        - can support data rates in excess of several Mbps without equalization
+    - Larger buildings with a great amount of metal and open aisles may have rms delay spreads as large as 300ns
+        - cannot support data rates more than a few hundred kbps without equalization
 - Path loss:
-    - the following formula that we have seen earlier also describes the indoor path loss:
+    - the following formula that like earlier also describes the indoor path loss:
     $$PL(d)(dB) = \overline{PL}(d_0) + 10n \log\left(\frac{d}{d_0}\right) + X_\sigma$$
     - n and $\sigma$ depend on the type of the building
     - a smaller value of $\sigma$ indicates better accuracy of the path loss model.
@@ -769,7 +785,7 @@ flowchart TD
 ## ⁠H.3. Fading Distributions
 
 - Describes how the received signal amplitude changes with time.
-    - remember that the received signal is a combination of multiple signals arriving from different directions, phases and amplitudes.
+    - The received signal is a combination of multiple signals arriving from different directions, phases and amplitudes.
 - It is a statistical characterization of the variation of the envelope of the received signal over time.
 - Two most common distributions:
     - Rayleigh fading
@@ -798,12 +814,12 @@ flowchart TD
     $$p(r) =
     \begin{cases}
     \dfrac{r}{\sigma^2} e^{-\dfrac{r^2+A^2}{2\sigma^2}} I_0\left( \dfrac{Ar}{\sigma^2} \right)\ &(0 \le r \lt \infty)\\
-    0 & (r \le 0)
+    0 & (r \lt 0)
     \end{cases}$$
     - where A denotes the peak amplitude of the dominant signal, and
     - $I_0$ denotes the zeroth order Bessel function of the first kind.
 - The Ricean distribution is often described in terms of a parameter $K$ (Ricean K-factor)
-- $K = A^2/(2\sigma^2)$
+- $K = \dfrac{A^2}{(2\sigma^2)}$
 - In terms of dB, $K(dB) = 10\log(\dfrac{A^2}{2\sigma^2})$ dB
 - For $K >> 1$, the Ricean distribution tends towards a Gaussian distribution about the mean.
 - Its graph looks like:
