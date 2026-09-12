@@ -1,12 +1,12 @@
 {
-	"vimMode": false,
-	"tabSize": 2,
-	"attachmentFolderPath": "./attachments",
-	"readableLineLength": true,
-	"pdfExportSettings": {
-		"pageSize": "A4",
-		"landscape": false,
-		"margin": "0",
-		"downscalePercent": 62
-	}
+  "vimMode": false,
+  "tabSize": 2,
+  "attachmentFolderPath": "./attachments",
+  "readableLineLength": true,
+  "pdfExportSettings": {
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 62
+  }
 }
