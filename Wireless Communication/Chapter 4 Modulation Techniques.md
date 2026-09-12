@@ -5,7 +5,7 @@
 | QPSK transmission & detection (+constellation diagram) | 6–8 | Very High |
 | MSK & GMSK modulation techniques (theory + block diagrams) | 2–8 | Very High |
 | OFDM operation with block diagram (Tx/Rx) | 4–8 | High |
-| OQPSK transmitter/receiver + why π/4-QPSK preferred over OQPSK | 5–7 | Moderate–High |
+| OQPSK transmitter/receiver + why $\pi/4$-QPSK preferred over OQPSK | 5–7 | Moderate–High |
 | DPSK modulation: transmitter/receiver + PN sequence purpose | 4–8 | Moderate–High |
 | Advantages of digital modulation over analog (paired with GMSK) | 2 | Moderate |
 | BPSK vs QPSK comparison | 5 | Moderate |
@@ -14,7 +14,7 @@
 | DSSS / FHSS block diagrams and operation | 4–8 | High |
 | Advantages / disadvantages of spread spectrum | 2–4 | Moderate |
 
-**Reading tip:** QPSK (transmission + detection + constellation) is nearly every year. MSK/GMSK theory and OFDM block diagrams are the next tier; DPSK and OQPSK/$\pi$-4-QPSK usually appear paired together in one long question, so prepare them as a set.
+**Reading tip:** QPSK (transmission + detection + constellation) is nearly every year. MSK/GMSK theory and OFDM block diagrams are the next tier; DPSK and OQPSK/$\pi/4$-QPSK usually appear paired together in one long question, so prepare them as a set.
 
 ---
 
@@ -119,7 +119,7 @@ $$s_{BPSK} = \left\{\left[ \sqrt{E_b} \phi_1(t) \right], \left[ - \sqrt{E_b} \ph
 - The signal has power $P = \dfrac{A^2}{2}$, so $A = \sqrt{2P}$, and:
     $$\begin{align}
     s(t) = &\sqrt{2P} \cos(2\pi f_c t) \\
-    = &\sqrt{PT_s} \sqrt{\dfrac{2}{T_b}} \cos(2\pi f_c t) \\
+    = &\sqrt{PT_b} \sqrt{\dfrac{2}{T_b}} \cos(2\pi f_c t) \\
     = &\sqrt{E_b} \sqrt{\dfrac{2}{T_b}} \cos(2\pi f_c t) \\
     \end{align}$$
     where $E_b = PT_b$ is the energy contained in a bit duration.
@@ -205,7 +205,10 @@ $$s_{BPSK} = \left\{\left[ \sqrt{E_b} \phi_1(t) \right], \left[ - \sqrt{E_b} \ph
 - The differentially encoded sequence $\{d_k\}$ is generated from the input binary sequence $\{m_k\}$ by complementing the modulo-2 sum of $m_k$ and $d_{k-1}$.
 - The effect is to leave the symbol $d_k$ unchanged from the previous symbol if the incoming symbol $m_k$ is 1, and to toggle $d_k$ if $m_k$ is 0.
 - Relation: $d_k = m_k \oplus d_{k-1}$
-- Example: for $m_k$ = `1, 0, 0, 1, 0, 1, 1, 0`, we have $d_{k-1}$ = `1, 1, 0, 1, 1, 0, 0, 0` and $d_k$ = `1, 1, 0, 1, 1, 0, 0, 0, 1`.
+- Example:
+    - $m_k$ = `1, 0, 0, 1, 0, 1, 1, 0`, then
+    - $d_{k-1}$ = `1, 1, 0, 1, 1, 0, 0, 0` and
+    - $d_k$ = `1, 1, 0, 1, 1, 0, 0, 0, 1`.
 
 ### ⁠C.3.a. Block Diagram
 
@@ -391,6 +394,27 @@ $$s_{BPSK} = \left\{\left[ \sqrt{E_b} \phi_1(t) \right], \left[ - \sqrt{E_b} \ph
 - The spectrum of an OQPSK signal is **identical** to that of a QPSK signal, both occupy the same bandwidth; the staggered alignment does not change the nature of the spectrum.
 - OQPSK retains its bandlimited nature even after nonlinear amplification, making it attractive for mobile communication systems where bandwidth efficiency and efficient nonlinear amplifiers are critical for low power drain.
 - OQPSK also performs better than QPSK in the presence of phase jitter due to noisy reference signals at the receiver.
+
+### Transmitter/Reciever
+
+Transmitter
+
+![Block Diagram of OQPSK Transmitter](attachments/oqpsk-transmitter.png)
+
+Receiver-simplified but in polish, with terms:
+- Sygnal = signal
+- opóźniony = delayed/latency
+- uklad odzysk nosna  = carrier recovery circuit
+- jednostka decyzyjna = decision unit
+- przetwornik równoległo szeregowy = parallel to serial converter
+
+![German oqpsk receiver](attachments/oqpsk-receiver-german.png)
+
+
+Reveiver
+
+![Receiver- OQPSK](attachments/oqpsk-demodulator.png)
+
 
 ## ⁠C.8. π/4-Shifted QPSK
 
@@ -736,6 +760,37 @@ In general, SS modulation techniques can be categorized into:
 - Example:
     ![Bit modulation for DSSS](attachments/DSSS-example.png)
 - If PSK is used, the PN sequence generated at the modulator is used along with PSK modulation to shift the phase of the PSK signal pseudorandomly. The resulting signal at the modulator output is called **DSSS**.
+
+#### Transmitter and Receiver
+
+![Transmitter](attachments/dsss-transmitter.png)
+
+- This system is one of the most widely used direct sequence implementations.
+- Synchronized data symbols,
+    - which may be information bits or binary channel code symbols
+    - are added in modulo-2 fashion to chips
+    - before being modulated
+- A coherent or differentially coherent PSK demodulation may be used in the receiver.
+- The received spread spectrum signal for a single user can be represented as
+    $$S_{ss}(t) = \sqrt{\dfrac{2E_s}{T_s}} m(t) p(t) \cos(2\pi f_c t + \theta)$$
+    - where
+    - m(t) is the data sequence,
+    - p(t) is the PN spreading sequence,
+    - $f_c$ is the carrier frequency
+    - $\theta$ is the carrier phase angle at t = 0.
+![Receiver](attachments/dsss-receiver.png)
+
+- The data waveform is a time sequence of non-overlapping rectangular pulses, each of which has an amplitude of +1 or -1.
+- Each symbol in $m(t)$ represents a data symbol and has duration $T_s$
+- Each pulse in $p(t)$ represents a chip, is usally rectangular with an amplitude equal to +1 or -1, has a duration of $T_c$
+- The transitions of the data symbols and chips coincide such that the ratio $T_s$ and $T_c$ is an integer
+- If $W_{ss}$ is the bandwidth of $S_{ss}(t)$ and $B$ is the bandwidth of $m(t) \cos(2\pi f_c t)$, the spreading due to $p(t)$ gives $W_{ss} \gt \gt B$
+
+- Assuming that code synchronization has been achieved at the receiver, the received signal passes through the wideband filter and is multiplied by a local replica of the PN code sequence $p(t)$
+- If $p(t) = \pm 1$, then $p^2(t) = 1$, and this multiplication yields the despread signal $s(t)$ given by
+    $$s_1 (t) = \sqrt{\dfrac{2E_s}{T_s}} m(t) \cos(2\pi f_c t + \theta)$$
+    - at the input of the demodulator.
+- Because $s_1 (t)$ has the form of a BPSK signal, the corresponding modulation extracts $m(t)$
 
 ### ⁠F.6.b. Frequency Hopping Spread Spectrum (FHSS)
 

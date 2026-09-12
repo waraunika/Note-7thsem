@@ -70,11 +70,11 @@
 - Now, **Receiving Antenna Power ($P_r$)** is product of power density and antenna's effective area or aperture
 - Thus, $P_r = P_d \cdot A_e$
 - Further deriving:
-    $$P_r = \left(\frac{\text{EIRP}}{4\pi d^2} \right) A_e$$
+    $$P_r = \left(\frac{\text{EIRP}}{4\pi d} \right)^2 A_e$$
 - and substituting value of $A_e$
-    $$P_r = \frac{P_t G_t A_e}{4\pi d^2}\ watts$$
+    $$P_r = \frac{P_t G_t A_e}{4\pi d}^2\ watts$$
 - Finally, we resolve to
-    $$P_r = P_t G_t G_r \left(\frac{\lambda}{4\pi d^2}\right)$$
+    $$P_r = P_t G_t G_r \left(\frac{\lambda}{4\pi d}\right)^2$$
 - Where,
     - $P_t$ = transmitted power radiated by an isotropic source
     - $G_t$ = transmitting antenna gain
@@ -122,7 +122,7 @@
 - Adequate bandwidth is available at much higher frequencies (around 1GHz and greater than a few GHz).
 - However, at such frequencies, the radio signals suffer a greater signal strength loss at shorter distance, and also suffer larger signal strength losses while passing through obstacles such as walls.
 - Hence, the propagation path loss and the received signal power are reciprocal to each other; assuming all the other factors constant, we can say that the received carrier signal power, $P_r$, is inversely proportional to $d^n$, i.e.
-    $$P_r \propto d^{-n}$$
+    $$P_r \propto d^{-n}$$577139
 - $d$ = distance between transmitter and receiver
 - $n$ = path loss exponent, which varies between 2 and 6.
 
