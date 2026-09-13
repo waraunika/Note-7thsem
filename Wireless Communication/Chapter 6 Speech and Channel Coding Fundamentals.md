@@ -1,5 +1,6 @@
 # ⁠A. High-Frequency Exam Questions
 
+
 |Topic|Typical Marks|Frequency|
 |---|---|---|
 |Characteristics of Speech Signal|4 - 8|Very High|
@@ -23,29 +24,57 @@ The properties of a speech signal are exploited by coders to achieve compression
 - **Definition:** There is a high correlation between adjacent samples in a speech segment.
 - **Significance:** This implies a large component of any sample can be predicted from previous samples with a small random error. This property is the basis for differential and predictive coding schemes.
 - **Formula:**  
-   $$\begin{equation}
-        C(k) = \dfrac1N \sum_{n=0}^{N-|k|-1} x(n)\cdot x(n+|k|)
-    \end{equation}$$ 
+   $$C(k) = \dfrac1N \sum_{n=0}^{N-|k|-1} x(n)\cdot x(n+|k|)$$ 
 - **Observation:** Typical speech signals have an adjacent sample correlation as high as **0.85 to 0.9**.
 
 ### ⁠B.1.a. Probability Density Function (PDF)
 
 - The amplitude of a speech signal has a non-uniform probability density function.
 - **Formula:**  
-   $$\begin{equation}
-        p(x) = \frac{1}{\sqrt{2\sigma_x}} \exp\left(\frac{-\sqrt{2} |x|}{\sigma_x}\right)
-    \end{equation}$$ 
+   $$p(x) = \frac{1}{\sqrt{2\sigma_x}} \exp\left(\frac{-\sqrt{2} |x|}{\sigma_x}\right)$$ 
 - **Characteristics of PDF:**
     - High probability of near-zero amplitudes.
     - Significant probability of very high amplitudes.
     - Monotonically decreasing function between these extremes.
 - **Coding Implication:** Non-uniform quantizers (including vector quantizers) are used to allocate more levels to high-probability regions and fewer levels to low-probability regions.
 
-## ⁠B.2. Power Spectral Density Function (PSD)
+## ⁠B.2. Cumulative Distribution Function
+
+- Since the CDF rises steeply near zero,
+- quantizer decision levels are placed closer together near zero
+- and farther apart at high amplitudes
+
+## ⁠B.3. Power Spectral Density Function (PSD)
 
 - **Non-flat Characteristic:** The PSD of speech is non-flat.
 - **Coding Implication:** This allows for significant compression by coding different frequency bands separately (Frequency Domain Coding). This distributes quantization noise across the spectrum.
 - **Critical Note:** High-frequency components, though low in energy, are very important for speech intelligibility and must be adequately represented.
+
+## ⁠B.4. Bandwidth
+
+- Speech energy is concentrated between 300-3400 Hz,
+- So it is sampled at 8 kHz for telephone-quality coding
+
+## ⁠B.5. Dynamic Range
+
+- Speech has a wide range between loud and soft signal levels
+- requiring quantizers that can handle both without clipping or excess noise
+
+## ⁠B.6. Non-Stationary but Short-term Stationary
+
+- Speech statistics vary over time,
+- but remain approximately constant over short intervals (20-30ms)
+- Hence, coders process speech frame by frame
+
+## ⁠B.7. Silence intervals
+
+- In conversation, each speaker is active only for a part of the time
+- This property can be used for basis of Voice Activity Detection and Discontinuous Transmission
+
+## ⁠B.8. Perceptual property
+
+- Human ear is less sensitive to noise near strong speech energy (masking)
+- This property can be used as basis for perceptual weighting filters in low bit-rate coders.
 
 ---
 
@@ -68,14 +97,10 @@ This method divides the speech signal into frequency components which are quanti
 - **Bit Rate:** Operates in the range of **9.6 kbps to 20 kbps**.
 - **Common Transform:**
     - **Discrete Cosine Transform (DCT):**  
-    $$\begin{equation}
-        X_C (k) = \sum_{n=0}^{N-1} x(n) g(k) \cos\left[\frac{(2n+1)k\pi}{2N} \right]\ \text{for } k = 0, 1, 2, \dots N-1
-    \end{equation}$$  
+    $$X_C (k) = \sum_{n=0}^{N-1} x(n) g(k) \cos\left[\frac{(2n+1)k\pi}{2N} \right]\ \text{for } k = 0, 1, 2, \dots N-1$$  
     - Where g(0) = 1 and g(k) = $\sqrt{2}$, k = 1, 2, $\dots$ N-1
     - **Inverse DCT:**  
-   $$\begin{equation}
-        x(n) = \frac1N \sum_{k=0}^{N-1} X_C (k) \cos\left[ \frac{(2n+1)k\pi}{2N} \right]\ \text{for } n = 0, 1, 2, \dots N-1
-    \end{equation}$$ 
+   $$x(n) = \frac1N \sum_{k=0}^{N-1} X_C (k) \cos\left[ \frac{(2n+1)k\pi}{2N} \right]\ \text{for } n = 0, 1, 2, \dots N-1$$ 
 
 ---
 
@@ -139,11 +164,38 @@ Vocoders analyze the voice signal at the transmitter, transmit derived parameter
 - **Significance:** The most popular class of low-bit-rate vocoders; computationally intensive.
 - **Bit Rate:** Capable of good quality voice at **4.8 kbps**.
 - **Principle:** Models the vocal tract as an all-pole linear filter. The objective is to estimate the parameters of this model.  
-    $$\begin{equation}
-        H(z) = \frac{G}{1 + \sum_{k=1}^{M} b_k z^{-k}}
-    \end{equation}$$ 
+    $$H(z) = \frac{G}{1 + \sum_{k=1}^{M} b_k z^{-k}}$$ 
     - where `G` is the gain of the filter.
+    
+## Encoder / Decoder
 
+![LPC](attachments/lpc-detector-synthesizer.png)
+
+**Excitation and Filter**
+- The excitation to this filter is
+    - either a pulse at the pitch frequency or random white noise
+    - depending on whether the speech segment is voiced or unvoiced.
+- The coefficients of the all pole filter are obtained
+    - in time domain using linear prediction technqiues.
+
+**Analysis**
+- The prediction principles used are simliar to ADPCM coders.
+- However, instead of transmitting quantized values of the error signal
+    - representing the difference between the predicted and actual waveform,
+    - the LPC transmits only selected charactersitics of the error signal.
+- The parameters include 
+    - the gain factor, pitch information, and voiced/unvoiced information,
+    - which allow approximation of the correct error signal.
+
+**Synthesizer**
+- At the receiver, 
+    - the received information about the error singal is used to
+    - determine the appropriate excitation for the synthesis filter.
+- That is, the error signal is the excitation to the decoder.
+- The synthesis filter is designed at the receiver using the received predictor coefficients.
+- In practice, LPC coders transmit
+    - the filter coefficients which already represent the error signal
+     - and can be directly synthesized by the receiver.
 ---
 
 # ⁠F. GSM Codec

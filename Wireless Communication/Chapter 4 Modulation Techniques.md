@@ -778,6 +778,7 @@ In general, SS modulation techniques can be categorized into:
     - p(t) is the PN spreading sequence,
     - $f_c$ is the carrier frequency
     - $\theta$ is the carrier phase angle at t = 0.
+
 ![Receiver](attachments/dsss-receiver.png)
 
 - The data waveform is a time sequence of non-overlapping rectangular pulses, each of which has an amplitude of +1 or -1.
@@ -785,7 +786,6 @@ In general, SS modulation techniques can be categorized into:
 - Each pulse in $p(t)$ represents a chip, is usally rectangular with an amplitude equal to +1 or -1, has a duration of $T_c$
 - The transitions of the data symbols and chips coincide such that the ratio $T_s$ and $T_c$ is an integer
 - If $W_{ss}$ is the bandwidth of $S_{ss}(t)$ and $B$ is the bandwidth of $m(t) \cos(2\pi f_c t)$, the spreading due to $p(t)$ gives $W_{ss} \gt \gt B$
-
 - Assuming that code synchronization has been achieved at the receiver, the received signal passes through the wideband filter and is multiplied by a local replica of the PN code sequence $p(t)$
 - If $p(t) = \pm 1$, then $p^2(t) = 1$, and this multiplication yields the despread signal $s(t)$ given by
     $$s_1 (t) = \sqrt{\dfrac{2E_s}{T_s}} m(t) \cos(2\pi f_c t + \theta)$$
