@@ -167,7 +167,7 @@ Vocoders analyze the voice signal at the transmitter, transmit derived parameter
     $$H(z) = \frac{G}{1 + \sum_{k=1}^{M} b_k z^{-k}}$$ 
     - where `G` is the gain of the filter.
     
-## Encoder / Decoder
+## ⁠E.1. Encoder / Decoder
 
 ![LPC](attachments/lpc-detector-synthesizer.png)
 
