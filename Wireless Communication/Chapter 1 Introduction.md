@@ -485,16 +485,18 @@ flowchart LR
 
 *(Direct exam scaffold for "1G vs 2G vs 3G vs 4G")*
 
-| Aspect | 1G | 2G | 3G | 4G |
-|---|---|---|---|---|
-| Signal type | Analog | Digital | Digital | Digital, all-IP |
-| Multiple access | FDMA | TDMA / CDMA | CDMA (WCDMA/cdma2000) | OFDMA + MIMO |
-| Data capability | None | Limited (up to ~9.6–171 kbps via GPRS) | 144 kbps – 2.048 Mbps | Up to 20 Mbps+ |
-| Key standard | AMPS | GSM, IS-95, IS-136 | WCDMA/UMTS, cdma2000 | LTE, WiMAX |
-| Channel BW (representative) | 30 kHz | 200 kHz (GSM) / 1.25 MHz (IS-95) | 5 MHz (WCDMA) | Variable (OFDM subcarriers) |
-| Core tech introduced | FM voice, FSK signaling | Digital voice, SMS | Multimedia, mobile internet | IP multimedia, high mobility (200 km/hr) |
+# Generational Comparison: 1G to 5G
 
----
+| Aspect | 1G | 2G | 3G | 4G | 5G |
+|---|---|---|---|---|---|
+| Signal type | Analog | Digital | Digital | Digital, all-IP | Digital, all-IP |
+| Multiple access | FDMA | TDMA / CDMA | CDMA (WCDMA/cdma2000) | OFDMA + MIMO | Massive MIMO, NOMA, mmWave-based access |
+| Data capability | None | Limited (up to ~9.6–171 kbps via GPRS) | 144 kbps – 2.048 Mbps | Up to 20 Mbps+ | Multi-Gbps class (targeting 10+ Gbps peak) |
+| Key standard | AMPS | GSM, IS-95, IS-136 | WCDMA/UMTS, cdma2000 | LTE, WiMAX | 5G NR (New Radio) |
+| Channel BW (representative) | 30 kHz | 200 kHz (GSM) / 1.25 MHz (IS-95) | 5 MHz (WCDMA) | Variable (OFDM subcarriers) | Variable, much wider (up to 100s of MHz using mmWave) |
+| Core tech introduced | FM voice, FSK signaling | Digital voice, SMS | Multimedia, mobile internet | IP multimedia, high mobility (200 km/hr) | IoT integration, ultra-low latency, dense heterogeneous networks, cloud-RAN |
+| Latency | Very high (not applicable/defined) | High | Moderate | Lower (LTE latency improvements) | Very low latency (enables real-time IoT, URLLC) |
+| Target use case | Basic voice calls | Voice + basic messaging (SMS) | Mobile broadband, multimedia | Mobile broadband, streaming, high-speed data | Massive device connectivity, ultra-reliable low-latency communication (URLLC), enhanced mobile broadband |---
 
 # ⁠E. Trends in Cellular Radio Beyond 3G
 

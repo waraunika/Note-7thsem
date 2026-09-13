@@ -41,7 +41,7 @@
     - Network Switching Subsystem (NSS)
     - Public Networks
 - Figure illustrating such networks:
-    - ![GSM architecture illustrating all subsystems](attachments/gsm-architecture.png)
+![GSM architecture illustrating all subsystems](attachments/gsm-architecture.png)
 
 ### ⁠A.2.a. Radio Subsystem (Base Station Subsystem: BSS)
 
@@ -403,7 +403,7 @@ flowchart LR
     3. **Paging Channels (W1–W7)**: control information and paging messages.
     4. **Forward Traffic Channels**: user data and signaling (including power control commands).
 - Figure:
-    - ![Forward Channel Description and block diagram for CDMA](attachments/cdma-forward-channel.png)
+    ![Forward Channel Description and block diagram for CDMA](attachments/cdma-forward-channel.png)
 - A long PN code (42 bits) is used for data scrambling or encryption.
 - To avoid the near-far problem and achieve maximum efficiency, power control is very important to CDMA systems:
     - **Open loop power control**: the mobile measures the strength of the pilot signal and adjusts its power based on it.

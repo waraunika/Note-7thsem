@@ -419,7 +419,6 @@ Real world planning
 
 ## ⁠H.3. Microcell Zone Concept
 
-
 - Antennas are placed at the outer edges of the cell
 - Any channel may be assigned to any zone by the base station
 - Mobile is served by the zone with the strongest signal.
@@ -427,7 +426,7 @@ Real world planning
     - A cell is conceptually divided into microcell or zones
     - Each microcell (zone) is connected to the same base stations (Fiber/Microwave)
 - Figure
-    - ![Working of microcell zones](attachments/capacity-microcell.png)
+![Working of microcell zones](attachments/capacity-microcell.png)
     - Each zone uses a directional antenna
     - Each zone radiates power into the cell
     - MS is served by the strongest zone
@@ -440,11 +439,11 @@ Real world planning
 
 | Aspect | Proper Handoff | Improper Handoff |
 |---|---|---|
-| Timing | Occurs when signal strength genuinely drops as mobile moves away from serving BS | Occurs due to momentary fading, not actual mobile movement away from BS |
+| Timing | Occurs when signal strength genuinely drops as mobile moves away from BS | Occurs due to momentary fading, not actual mobile movement away from BS |
 | Trigger | Sustained decline in received signal strength below handoff threshold | Short-term/instantaneous fade mistaken for a real handoff need |
-| Handoff margin ($\Delta$) | Appropriately sized — enough time to complete handoff before call quality degrades | Poorly judged — either triggers unnecessarily or triggers too late |
-| Load on MSC | Normal, expected load | Unnecessary handoffs burden the MSC when margin is too large or averaging is poor |
-| Call outcome | Call continues seamlessly on new BS with good link quality | Risk of dropped call (if triggered too late) or wasted handoff (if triggered on false signal dip) |
+| Handoff margin ($\Delta$) | Appropriately sized to complete handoff before call quality degrades | Poorly judged: either triggers unnecessarily or triggers too late |
+| Load on MSC | Normal, expected load | Burdens when margin is too large or averaging is poor |
+| Call outcome | Call continues seamlessly on new BS with good link | Risk of dropped call or wasted handoff |
 | Root cause avoided by | Running average / proper signal-strength averaging tuned to mobile speed | Reacting to instantaneous fading without averaging over time |
 
 
