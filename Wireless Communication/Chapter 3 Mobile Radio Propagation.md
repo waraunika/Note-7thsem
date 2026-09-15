@@ -122,7 +122,7 @@
 - Adequate bandwidth is available at much higher frequencies (around 1GHz and greater than a few GHz).
 - However, at such frequencies, the radio signals suffer a greater signal strength loss at shorter distance, and also suffer larger signal strength losses while passing through obstacles such as walls.
 - Hence, the propagation path loss and the received signal power are reciprocal to each other; assuming all the other factors constant, we can say that the received carrier signal power, $P_r$, is inversely proportional to $d^n$, i.e.
-    $$P_r \propto d^{-n}$$577139
+    $$P_r \propto d^{-n}$$
 - $d$ = distance between transmitter and receiver
 - $n$ = path loss exponent, which varies between 2 and 6.
 
