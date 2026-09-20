@@ -87,7 +87,7 @@
 | --- | --- |
 | Choosing a knowledge representation language | Choosing a programming language |
 | Building a knowledge base | Writing a program |
-| Implementing the proof theory | Choosing or writing a compiler
+| Implementing the proof theory | Choosing or writing a compiler |
 | Inferring new facts | Running  a program |
 | knowledge engineer specifies what is true | Programmer specifies how to find a solution | 
 
@@ -277,3 +277,106 @@ flowchart LR
 - Semantic relationship
     - it relates object with its attributes and frame structure can be represented in semantic network.
 
+## Issues in Knowledge Representation
+
+- Scalability
+    - Scalability becomes a significant difficulty as knowledge's volume and complexity rise.
+    - Large knowledge bases must be efficiently represented and processed using sophisticated methods and distributed computing concepts
+- Information that is Uncertain/Incomplete:
+    - AI systems frequently work with information that is uncertain or incomplete.
+    - A major research are is improving knowledge representation approaches to manage uncertainty and reason with inadequate data.
+- Knowledge Fusion and Integration:
+    - Combining and integrating knoweldge from various sources and modalities is a difficult task.
+    - The goal of teh future research is to create methods that make it possibel for heterogenous knowledge to be seamlessly integrated for better AI performance.
+- Explainability and Interpretability
+    - AI systems should be able to justify their decision with examples.
+    - Building trust, assuring ethical AI, and satisfying legal standards all depend on the development of clear and understandable knowledge representation approaches.
+
+# Scripts
+
+- Scripts were introduced by Schank and Abelson in 1977 that used CD framework
+- The scripts are useful in describing certain stereotyped sitatutions such as going to theater
+- It consists of set of slots containing default values along with some information about the type of values similar to frames.
+- It differs from FS as the values of the slots in scripts must be ordered and have more specalized roles.
+- In real world sitautions, we see that event tends to occur in known patterns because of clausal relationship to the occurence of events.
+
+## Script Component
+
+Each script contains the following main components
+
+
+| Component | Functionality |
+| --- | --- |
+| Entry Condition | Must be satisfied before events in the script can occur |
+| Result | Condition that will be true after events in script occur | 
+| Props | Slots representing objects invovled in the events
+| Roles | Persons invovled in the events |
+| Track | Specific variation on more general pattern in the script. Different tracks may share many components of the same script but not all |
+| Scenes | The sequence of events that occur. Events are represented in conceptual dependency form |
+
+## Example
+
+Script: Play in theater
+
+Track: Play in Theater
+
+Props:
+- Tickets
+- Seat
+- Play
+
+Roles:
+- Person (who wants to see a play) - P
+- Ticket Distributor - TD
+- Ticket Checker - TC
+
+Entry Conditions:
+- P wants to see a play
+- P has money
+
+Results:
+- P saw a play
+- P has less money
+- P is happy (optional if he liked the play)
+
+Scene 1: Going to the theater
+- P PTRANS P into theater
+- P ATTEND eyes to ticket counter
+
+Scene 2: Buying ticket
+- P PTRANS P to ticket counter
+- P MTRANS (need a ticket) to TD
+- TD ATRANS ticket to P
+
+Scene 3: Watching a play
+- P ATTEND eyes on play
+- P MBUILD (good moments) from play
+
+Scene 4: Exiting
+- P PTRANS P out of Hall and Theater
+
+## Script Invocation
+
+- It must be activated based on its significance
+- If the topic is important, then it should be opened
+- If a topic is just mentioned, then a pointer to that script could be held
+- For example, given "John enjoyed the play in theater", a script "Play in Theater" suggested above is invoked
+- All implicit questions can be answered correctly
+- Here the significance of this script is high
+    - Did John go to the theater?
+    - Did he buy ticket?
+    - Did he have money?
+- If we have a sentence like "John went to theater to pick up his daughter", then invoking this script will lead ot many wrong answers
+    - Here, significance of script theater is less
+- Getting significance from the story is not straightforward.
+- However some heuristics can be applied to get the value.
+
+## Merit/Demerit
+
+- Advantages
+    - Capable of predicting implicit events
+    - Single coherent interpolation may be built up from a collection of observation
+- Disadvantages
+    - More specific (inflexible) and less general than frames
+    - Not suitable to represent all kinds of knowledge
+- To deal with inflexibility, smaller modules called memory organization packets (MOP) can be combined in a way that is appropriate for the situation.
