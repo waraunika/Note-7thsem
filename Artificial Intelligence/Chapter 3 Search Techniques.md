@@ -65,10 +65,12 @@ Uninformed (blind) search strategies
 - have no additional information about the state space beyond that
 - generally less effective than informed search.
 
-**Strategy:**<br>
-expand the current state to generate a new set of states, and distinguish a goal state from a non-goal state using only the problem definition.
+**Strategy:**
+- expand the current state to generate a new set of states,
+- and distinguish a goal state from a non-goal state
+- using only the problem definition.
 
-**Types:**<br>
+**Types:**
 Breadth First Search, Depth First Search, Depth Limit Search.
 
 ### Breadth First Search (BFS)
@@ -98,7 +100,7 @@ Starting from the root node (the initial state),
 - **Time complexity**:
     - $O(b^{d+1})$.
     - Worst case expands all but the last node at depth d,
-    - giving total nodes generated 1 + b + b² + ... + (b^(d+1) - b) = O(b^(d+1)).
+    - giving total nodes generated $1 + b + b² + ... + (b^{d+1} - b) = O(b^{d+1})$.
 - **Space complexity**:
     - $O(b^{d+1})$,
     - since every generated node must remain in memory.
@@ -141,7 +143,7 @@ DFS expands the deepest unexpanded node in the tree first.
 - **Completeness**:
     - No. Fails in infinite-depth spaces and in the presence of loops.
 - **Time complexity**:
-    - O(b^m), where m is the maximum depth of the tree. Terrible if m is much larger than d, but if solutions are dense, DFS may be much faster than BFS.
+    - O($b^m$), where m is the maximum depth of the tree. Terrible if m is much larger than d, but if solutions are dense, DFS may be much faster than BFS.
 - **Space complexity**:
     - O(bm), i.e., linear space, 
     - since only a single path plus expanded
@@ -177,7 +179,7 @@ DFS can run off down a very long (or infinite) path, and any solution found may 
 - **Space complexity**:
     - $O(bl)$, i.e., linear space.
 - **Optimal**:
-    - No, it may find a non-optimal goal first even if l ≥ d.
+    - No, it may find a non-optimal goal first even if l $\ge$ d.
 
 **Advantages:**
 - Memory efficient.
@@ -252,7 +254,7 @@ DFS can run off down a very long (or infinite) path, and any solution found may 
 
 ### Greedy Best-First Search
 
-Greedy search tries to get as close as it can to the goal as quickly as possible:<br>
+Greedy search tries to get as close as it can to the goal as quickly as possible:
 it expands the node that appears to be closest to the goal.
 
 It evaluates a node using the heuristic function only:
@@ -481,7 +483,7 @@ A move is picked at random:
 function SIMULATED-ANNEALING(problem, schedule) returns solution state
     current <- MAKE-NODE(problem.INITIAL-STATE)
     for t = 1 to infinity do
-        T <- schedule(t)             // get the temperature at time t
+        T <- schedule(t)              // get the temperature at time t
         if T = 0 then
             return current.STATE
         neighbor <- a randomly selected successor of current

@@ -259,7 +259,7 @@ An **agent** is anything that can be viewed as **perceiving its environment thro
 - Should do whatever action is expected to maximize its **performance measure** (an objective criterion for the success of the agent's behavior), given the evidence provided by its percept sequence and whatever built-in knowledge it has.
 - Classic example: the vacuum-cleaner agent.
 
-![Agent with sensor and effectors](attachments/agent%20with%20sensor%20effectors.png)
+![Agent with sensor and effectors](attachments/agent-with-sensor-effectors.png)
 
 ### PEAS Framework
 
@@ -397,13 +397,13 @@ Learning involves three key factors:
 
 **Justification that learning is essential for intelligent agents:**
 - A purely reflex or fixed-rule agent can only perform as well as its designer anticipated at design time,
-- and cannot adapt to environments or situations the designer did not foresee.
+    - and cannot adapt to environments or situations the designer did not foresee.
 - Learning allows an agent to improve autonomously from experience,
-- generalize to novel situations, and correct its own errors over time without this,
-- an agent's competence is permanently capped by its initial programming.
+    - generalize to novel situations, and correct its own errors over time without this,
+    - an agent's competence is permanently capped by its initial programming.
 - This is why "learning" is treated as one of the four core factors
-- alongside NLP, knowledge representation, and automated reasoning
-- required for a machine to exhibit genuinely intelligent behavior,
-- as in the Turing Test criteria above.
+    - alongside NLP, knowledge representation, and automated reasoning
+    - required for a machine to exhibit genuinely intelligent behavior,
+    - as in the Turing Test criteria above.
 
 --- 

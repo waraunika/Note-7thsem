@@ -27,7 +27,7 @@
 
 | Kind | What it is | Example |
 |---|---|---|
-| Declarative | Knowing *that*: facts, concepts, objects, stated without saying how to use them | "Kathmandu is the capital of Nepal" |
+| Declarative | Knowing *what*: facts, concepts, objects, stated without saying how to use them | "Kathmandu is the capital of Nepal" |
 | Procedural | Knowing *how*: rules, strategies, procedures, agendas | the steps to sort a list |
 | Heuristic | Rules of thumb from experience: good, not guaranteed | in chess, keep the opponent's king exposed |
 | Structural | Relationships between concepts and objects | "a cow is-a mammal" |
@@ -99,11 +99,11 @@ The symbols of propositional logic are:
 
 | Symbol | Meaning | Mnemonic |
 |---|---|---|
-| ¬ | Negation | NOT |
-| ∧ | Conjunction | AND |
-| ∨ | Disjunction | OR |
-| → | Implication | IF...THEN |
-| ↔ | Biconditional | IF AND ONLY IF |
+| $\neg$ | Negation | NOT |
+| $\wedge$ | Conjunction | AND |
+| $\vee$ | Disjunction | OR |
+| $\rightarrow$ | Implication | IF...THEN |
+| $\leftrightarrow$ | Biconditional | IF AND ONLY IF |
 | ( ) | Parentheses | grouping |
 
 An **atomic** sentence is a single propositional symbol (P, Q). A **compound** sentence joins atomic ones with connectives.
@@ -118,19 +118,19 @@ A WFF is a string built only by these recursive rules:
 
 - Any propositional symbol is a WFF.
 - If $\alpha$ is a WFF, then ($\neg \alpha$) and ($\alpha$) are WFFs.
-- If $\alpha, \beta$ are WFFs, then so are $(\alpha \land \beta), (\alpha \lor \beta), (\alpha \leftarrow \beta), (\alpha \leftrightarrow \beta)$
+- If $\alpha, \beta$ are WFFs, then so are $(\alpha \vee \beta), (\alpha \wedge \beta), (\alpha \leftarrow \beta), (\alpha \leftrightarrow \beta)$
 - Nothing else is a WFF.
 
 Precedence, when brackets are missing: ¬, then ∧, then ∨, then →, then ↔.
 
 ### Properties of a Formula
 
-- **Valid (a tautology)**: true under every interpretation. Example: P ∨ ¬P.
-- **Satisfiable**: true under at least one interpretation. Example: P ∧ Q.
-- **Unsatisfiable (a contradiction)**: true under no interpretation. Example: P ∧ ¬P.
-- **Equivalent**: α ≡ β when they have the same truth value in every row; equivalently, α ↔ β is valid.
+- **Valid (a tautology)**: true under every interpretation. Example: $P \vee\ \neg P$
+- **Satisfiable**: true under at least one interpretation. Example: $P \wedge\ Q$.
+- **Unsatisfiable (a contradiction)**: true under no interpretation. Example: $P \wedge\ \neg P$.
+- **Equivalent**: $\alpha\ \equiv\ \beta$ when they have the same truth value in every row; equivalently, $\alpha \leftrightarrow \beta$ is valid.
 
-A useful link: α is valid if and only if ¬α is unsatisfiable. This is the reason proving a goal can be done by refuting its negation.
+A useful link: $\alpha$ is valid if and only if $\neg\alpha$ is unsatisfiable. This is the reason proving a goal can be done by refuting its negation.
 
 **Worked example: proving (A ∧ (A → B)) → B is a tautology**
 
@@ -161,14 +161,14 @@ an inference rule is sound exactly when its implication form is a tautology.
 
 | Rule | From ∴ conclude |
 |---|---|
-| Modus ponens | P → Q, P ∴ Q |
-| Modus tollens | P → Q, ¬Q ∴ ¬P |
-| Hypothetical syllogism | P → Q, Q → R ∴ P → R |
-| Disjunctive syllogism | P ∨ Q, ¬P ∴ Q |
-| Addition | P ∴ P ∨ Q |
-| Simplification | P ∧ Q ∴ P |
-| Conjunction | P, Q ∴ P ∧ Q |
-| Resolution | P ∨ Q, ¬P ∨ R ∴ Q ∨ R |
+| Modus ponens | P → Q, P \| ∴ Q |
+| Modus tollens | P → Q, ¬Q \| ∴ ¬P |
+| Hypothetical syllogism | P → Q, Q → R \| ∴ P → R |
+| Disjunctive syllogism | P ∨ Q, ¬P \| ∴ Q |
+| Addition | P \| ∴ P ∨ Q |
+| Simplification | P ∧ Q \| ∴ P |
+| Conjunction | P, Q \| ∴ P ∧ Q |
+| Resolution | P ∨ Q, ¬P ∨ R \| ∴ Q ∨ R |
 
 **Quantifier rules:**
 
@@ -299,7 +299,7 @@ An **interpretation** specifies referents for these symbols:
 - King(x) and King(John) → θ = [John/x]
 - P(x, y) and P(a, f(z)) → θ = [a/x, f(z)/y] 
     - z stays free - binding it further would be less general than necessary
-- P(x, f(y)) and P(a, f(g(x))) → substitute [a/x] first,
+- P(x, f(y)) and P(a, f(g(x))) → substitute \[a/x\] first,
     - then y must match g(x), and
     - x is already bound to a,
     - giving θ = \[a/x, g(a)/y\]
@@ -369,21 +369,21 @@ An **interpretation** specifies referents for these symbols:
     - the conjunction into separate clauses,
     - renaming variables again if needed so no two clauses share a variable.
 
-Skipping standardizing apart (step 4) or the final split (step 8) risks <br>
-unifying two variables that were never meant to refer to the same thing,<br>
+Skipping standardizing apart (step 4) or the final split (step 8) risks
+unifying two variables that were never meant to refer to the same thing,
 and can lead to an unsound proof.
 
 ### Worked Example: "Everyone Who Loves All Animals Is Loved by Someone"
 
-**FOPL:** ∀x [∀y Animal(y) → Loves(x,y)] → [∃z Loves(z,x)]
+**FOPL:** ∀x \[∀y Animal(y) → Loves(x,y)\] → \[∃z Loves(z,x)\]
 
-**Step 2, eliminate →** (twice): ∀x ¬[∀y ¬Animal(y) ∨ Loves(x,y)] ∨ [∃z Loves(z,x)]
+**Step 2, eliminate →** (twice): ∀x ¬\[∀y ¬Animal(y) ∨ Loves(x,y)\] ∨ \[∃z Loves(z,x)\]
 
-**Step 3, move ¬ inward** (using the dual and De Morgan): ∀x [∃y Animal(y) ∧ ¬Loves(x,y)] ∨ [∃z Loves(z,x)]
+**Step 3, move ¬ inward** (using the dual and De Morgan): ∀x \[∃y Animal(y) ∧ ¬Loves(x,y)\] ∨ \[∃z Loves(z,x)\]
 
 **Step 5, skolemize.** Both existentials sit inside ∀x, so both become functions of x: y ⟹ F(x), z ⟹ G(x):
 
-∀x [Animal(F(x)) ∧ ¬Loves(x, F(x))] ∨ Loves(G(x), x)
+∀x \[Animal(F(x)) ∧ ¬Loves(x, F(x))\] ∨ Loves(G(x), x)
 
 **Steps 6-8, drop ∀, distribute, split:**
 
@@ -483,7 +483,7 @@ KB ⊨ α if and only if KB ∧ ¬α is unsatisfiable
 1. ∀x food(x) → likes(John, x)
 2. food(Apple)
 3. food(Chicken)
-4. ∀y∀x [eats(y,x) ∧ ¬killed(y)] → food(x)
+4. ∀y∀x \[eats(y,x) ∧ ¬killed(y)\] → food(x)
 5. eats(Bill, Peanuts) ∧ ¬killed(Bill)
 6. ∀x eats(Bill, x) → eats(Sue, x)
 
@@ -505,14 +505,14 @@ KB ⊨ α if and only if KB ∧ ¬α is unsatisfiable
 
 **Step 4, resolution:**
 
-8. ¬food(Peanuts) - from (7, 1), [Peanuts/x]
-9. ¬eats(y, Peanuts) ∨ killed(y) - from (8, 4), [Peanuts/x]
-10. killed(Bill) - from (9, 5a), [Bill/y]
+8. ¬food(Peanuts) - from (7, 1), \[Peanuts/x\]
+9. ¬eats(y, Peanuts) ∨ killed(y) - from (8, 4), \[Peanuts/x\]
+10. killed(Bill) - from (9, 5a), \[Bill/y\]
 11. □ - from (10, 5b)
 
 The empty clause is derived, so "John likes peanuts" is proved. Clauses 2, 3, and 6 (apples, chicken, and Sue) are never used in this proof - they are distractors not needed to reach the goal.
 
-**A note on clause 4's structure**: the premise has the shape ¬[A ∧ ¬B] ∨ C, which correctly simplifies to ¬A ∨ B ∨ C - a single clause (see the CNF error notes in Section 4.4). Splitting it into two separate clauses, ¬eats(y,x) ∨ food(x) and ¬killed(y) ∨ food(x), is not a valid equivalence, since it would incorrectly assert that merely not being killed is sufficient on its own to make something food.
+**A note on clause 4's structure**: the premise has the shape ¬\[A ∧ ¬B\] ∨ C, which correctly simplifies to ¬A ∨ B ∨ C - a single clause (see the CNF error notes in Section 4.4). Splitting it into two separate clauses, ¬eats(y,x) ∨ food(x) and ¬killed(y) ∨ food(x), is not a valid equivalence, since it would incorrectly assert that merely not being killed is sufficient on its own to make something food.
 
 ### Worked Example: "Colonel West Is a Criminal"
 
@@ -520,9 +520,9 @@ The empty clause is derived, so "John likes peanuts" is proved. Clauses 2, 3, an
 
 **Step 1, facts into FOPL:**
 
-1. ∀p∀q∀r [American(p) ∧ Weapon(q) ∧ Sells(p,q,r) ∧ Hostile(r)] → Criminal(p)
+1. ∀p∀q∀r \[American(p) ∧ Weapon(q) ∧ Sells(p,q,r) ∧ Hostile(r)\] → Criminal(p)
 2. ∃x Missile(x) ∧ Owns(Nono, x)
-3. ∀x [Missile(x) ∧ Owns(Nono,x)] → Sells(West, x, Nono)
+3. ∀x \[Missile(x) ∧ Owns(Nono,x)\] → Sells(West, x, Nono)
 4. ∀x Missile(x) → Weapon(x)
 5. ∀x Enemy(x, America) → Hostile(x)
 6. American(West)
@@ -547,13 +547,13 @@ The empty clause is derived, so "John likes peanuts" is proved. Clauses 2, 3, an
 
 **Step 4, resolution:**
 
-9. ¬American(West) ∨ ¬Weapon(q) ∨ ¬Sells(West,q,r) ∨ ¬Hostile(r) - (8, 1), [West/p]
+9. ¬American(West) ∨ ¬Weapon(q) ∨ ¬Sells(West,q,r) ∨ ¬Hostile(r) - (8, 1), \[West/p\]
 10. ¬Weapon(q) ∨ ¬Sells(West,q,r) ∨ ¬Hostile(r) - (9, 6)
-11. ¬Missile(q) ∨ ¬Sells(West,q,r) ∨ ¬Hostile(r) - (10, 4), [q/x]
-12. ¬Missile(q) ∨ ¬Owns(Nono,q) ∨ ¬Hostile(Nono) - (11, 3), [q/x, Nono/r]
-13. ¬Owns(Nono, M1) ∨ ¬Hostile(Nono) - (12, 2a), [M1/q]
+11. ¬Missile(q) ∨ ¬Sells(West,q,r) ∨ ¬Hostile(r) - (10, 4), \[q/x\]
+12. ¬Missile(q) ∨ ¬Owns(Nono,q) ∨ ¬Hostile(Nono) - (11, 3), \[q/x, Nono/r\]
+13. ¬Owns(Nono, M1) ∨ ¬Hostile(Nono) - (12, 2a), \[M1/q\]
 14. ¬Hostile(Nono) - (13, 2b)
-15. ¬Enemy(Nono, America) - (14, 5), [Nono/x]
+15. ¬Enemy(Nono, America) - (14, 5), \[Nono/x\]
 16. □ - (15, 7)
 
 "Colonel West is a criminal" is proved in eight resolution steps, and every premise is used in this particular proof.
@@ -567,7 +567,7 @@ The empty clause is derived, so "John likes peanuts" is proved. Clauses 2, 3, an
 **Step 1, facts into FOPL:**
 
 1. ∀x horse(x) → mammal(x) (and similarly for cow, pig)
-2. ∀x∀y [offspring(x,y) ∧ horse(y)] → horse(x)
+2. ∀x∀y \[offspring(x,y) ∧ horse(y)\] → horse(x)
 3. horse(Bluebeard)
 4. parent(Bluebeard, Charlie)
 5. ∀x∀y offspring(x,y) ↔ parent(y,x)
