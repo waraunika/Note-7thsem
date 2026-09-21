@@ -1,5 +1,5 @@
 # Exam Frequency Table (BS years across papers)
- 
+
 | Topic | Typical Marks | Frequency |
 |---|---|---|
 | Supervised vs Unsupervised (vs Reinforcement) Learning, with examples | 4–8 | Very High |
@@ -11,7 +11,7 @@
 | Induction vs Deduction | 3 | Moderate |
 | Boltzmann Machine — definition, working | 1–8 | Moderate |
 | Neural Networks — learning (supervised/unsupervised in NN context) | 4 | Moderate (often bundled with the general supervised/unsupervised question) |
- 
+
 ---
 
 # Concepts of Learning
@@ -125,7 +125,7 @@ flowchart LR
 
 ### The Environment
 
-- Refers to the nature and quality of information given to the learning elmeent.
+- Refers to the nature and quality of information given to the learning element.
 - The **nature** of information depends on its level
 - i.e. the degree of generality w.r.t the performance element.
     - **High Level**
@@ -189,7 +189,7 @@ Four Learning Situations
 Examples of analogies
 - Pressure drop is like voltage drop
 - a variable in programming language is like a box
-- a simply hydraulics problem is analogous to Kirchhoff's First law
+- a simple hydraulics problem is analogous to Kirchhoff's First law
 
 ### Example
 
@@ -240,14 +240,14 @@ flowchart LR
 
 ### Formal Structure
 
-- Given a target function $f(x)$, and a trainign set of examples $D = \{[x_i, f(x_i)]\}$ for $i = 1, 2, \dots, N$
-- The **learning task** is to find a hypothesis $h$ such that $h(x) \approx f(x)$.
+- Given a target function $f(x)$, and a training set of examples $D = \{[x_i, f(x_i)]\}$ for $i = 1, 2, \dots, N$
+- The **learning task** is to find a hypothesis $h$ such that $h(x) \approx\ f(x)$.
 - A hypothesis $h$ is **consistent** if it agrees with $f$ on all observations.
 - **Ockham's Razor**: Select the simplest consistent hypothesis.
-- The learning problem is **realizable** if $f(x) \in H$ (the true function lies within the hypothesis space being searched).
+- The learning problem is **realizable** if $f(x) \in\ H$ (the true function lies within the hypothesis space being searched).
 - In the *real* inductive learning problem, we must find an appropriate hypothesis space $H$ and minimze the expected distance to $f(x)$
 - This distance is the **generalization error**
-    - since data is never nosie-free or available in infinite amounst.
+    - since data is never nosie-free or available in infinite amount.
 
 ### Learning Problem Types
 
@@ -300,11 +300,11 @@ $$\text{Entropy} = -\sum_i P(v_i)\ln[P(v_i)]$$
 - For each candidate attribute, compute the **weighted avaerage entropy** of the subsets created by splitting on that attribute
 - Compute the **entropy decrease** (information gain) = (entropy before split) - (weighted entropy after split) for each attribute.
 - Select the attribute with the **largest entropy decrease** as the splitting attribute (the root, for the first split).
-- Repeat this process at each subsequent node using teh remaining attributes and the corresponding subset of data, until the tree is complete.
+- Repeat this process at each subsequent node using the remaining attributes and the corresponding subset of data, until the tree is complete.
 
 ### How do we know a Learned Hypothesis is Correct?
 
-- We can never be fully certain that $h \approx f$ (this is related to *Hume's Problem of Induction*)
+- We can never be fully certain that $h \approx\ f$ (this is related to *Hume's Problem of Induction*)
 - Approach:
     - try $h$ on a new test set of examples
     - this is called **cross-validation**
@@ -314,7 +314,7 @@ $$\text{Entropy} = -\sum_i P(v_i)\ln[P(v_i)]$$
 
 ### How to Make Learning Work Well
 
-- Use simply hypotheses, always start wit hthe simplest ones first.
+- Use simple hypotheses, always start wit hthe simplest ones first.
 - Constrain the hypothesis space $H$ with priors, use domain knowledge or reasonable a priori beliefs on parameters.
 - Use many observations, though this is much harder in practice
 - Use cross-validation to get generalization
@@ -371,7 +371,7 @@ From these, EBL computes a generalization of the training example that is suffic
     - Mutation
     - Crossover
     - Survival of the fittest
-    - Survival of teh most diverse
+    - Survival of the most diverse
 
 ## Simulated Evolution Main Idea
 
@@ -385,12 +385,12 @@ From these, EBL computes a generalization of the training example that is suffic
 ## Definition and Purpose
 
 - GAs work by simulating the logic of **Darwinian Selection**, where only the best are selected for replication
-- Only the most suited elements in a population are likeyl to survive and generate offspring, thus transmitting their biological heredity to new generations
+- Only the most suited elements in a population are likely to survive and generate offspring, thus transmitting their biological heredity to new generations
     - i.e. select the best, discard the rest
 - Genetic algorithms are majorly used for two purposes
     1. **Search**
     2. **Optimization**
-- Genetic algorithms address complicated problems with many variables and a large number of possible outcomes by simulating "survival of teh fittest" to reach a defined goal.
+- Genetic algorithms address complicated problems with many variables and a large number of possible outcomes by simulating "survival of the fittest" to reach a defined goal.
 - They operate by generating many random answers to a problem, eliminating the worst, and cross-pollinating the better answers.
 - Repeating this elimination and regeneration process gradually improves the quality of the answers to an optimal or near-optimal condition.
 
@@ -404,7 +404,7 @@ Basic components, aka Operators, of GA
 - **Crossover** to produce the next generation of chromoses.
 - **Random mutation** of chromosomes in the new generation.
 
-In computing terms, a genetic algorithm implements this model by using arrays of bits or characters (binary strings) to represent chromoses.
+In computing terms, a genetic algorithm implements this model by using arrays of bits or characters (binary strings) to represent chromosomes.
 Each string represents a potential solution.
 The GA manipulates the most promising chromosomes, searching for improved solutions.
 
@@ -412,8 +412,7 @@ The GA manipulates the most promising chromosomes, searching for improved soluti
 
 1. **Build and maintain a population** of solutions to a problem.
 2. **Choose the better solutions** for recombination with each other.
-3. **Choose the better solutions** for recombination with each other.
-4. **Use their offspring to replace** poorer solutions.
+3. **Use their offspring to replace** poorer solutions.
 
 ## Fitness function
 
@@ -443,7 +442,7 @@ The GA manipulates the most promising chromosomes, searching for improved soluti
         - a special case of N-point crossover
         - two random points are chosen on the chromosomes, and the genetic material between these points is exchanged
     - **Uniform Crossover**
-        - each gene (bit) is selected randomly from one of teh corresponding genes of the parent chromosomes (e.g., tossing a coin per gene).
+        - each gene (bit) is selected randomly from one of the corresponding genes of the parent chromosomes (e.g., tossing a coin per gene).
         - the crossover between two good solutions may not always yield a better (or as good) solutions. Since parents are good, the probability of the child being good is high. If the offspring is poor, it will be removed in the next iteration during "Selection"
 
 ### Mutation
@@ -478,8 +477,8 @@ The GA manipulates the most promising chromosomes, searching for improved soluti
 ```
 Initialize a random population of individuals
 Compute fitness of each individual
-WHILE NOT finished BEGIN /* produce new generation */
-    FOR population_size BEGIN /* reproductive cycle*
+WHILE NOT finished BEGIN       /* produce new generation */
+    FOR population_size BEGIN  /* reproductive cycle */
         Select two individuals from old generation,
             recombine the two individuals to give two offspring
         Make a mutation for selected individuals
@@ -494,7 +493,7 @@ END
 
 ```mermaid
 flowchart TD
-        A[Initialize random population] --> B[Compute fitness of each individual]
+    A[Initialize random population] --> B[Compute fitness of each individual]
     B --> C{Population<br>converged?}
     C -->|No| D[Select two individuals<br>higher fitness favored]
     D --> E[Crossover:<br>recombine to produce offspring]
@@ -514,12 +513,12 @@ flowchart TD
 ## Applications
 
 - Searching parameter space for an optimal assignment (not guaranteed to find the optimal, but can approach it)
-- Classif optimzation problems, e.g., the Traveling Salesman Problem
+- Classic optimzation problems, e.g., the Traveling Salesman Problem
 - Program design ("Gentic Programming")
 - Aircraft carrier landings, and other real-world optimization/search problems
 
 ## Genetic Algorithms as a Search Technique — Fitness Schemes
- 
+
 - Evolution mechanisms used as a search technique:
     - Produce offspring with variation (mutation, crossover).
     - Select the "fittest" to continue to the next generation, where fitness represents the probability of survival:
@@ -550,7 +549,7 @@ as an example:
 
 - **Problem Setup**
     - a solid pendulum is hinged at its base to a platform which can move in opposite directions
-    - the pendulum can move in the same plane as teh platform.
+    - the pendulum can move in the same plane as the platform.
 - **Objective**
     - keep the pendulum upright by compensating for its tilt, via corresponding movements of the platform
 
@@ -565,9 +564,9 @@ as an example:
 - Requires finding a suitable relation between these variables
     - this can become complicated and demands a lot of computing power.
 
-### Using Human Controlelr Approach
+### Using Human Controller Approach
 
-- When the pendulum tilts, we informally measure teh nature of the movement
+- When the pendulum tilts, we informally measure the nature of the movement
     - how much it has moved, in what direction and how quickly
 - We automatically make a corresponding compensating movement
     - without explictly quantifying these factors, using quick estimations
@@ -583,7 +582,7 @@ as an example:
     - then a fuzzy set $A$ in $U$ is defined as a set of ordered pairs:
     $$A = \{(x, \mu_A(x)) \mid\ x \in\ U\} $$
     - where $\mu_A(x)$ is called the **membership function** or (degree of membership) of $x$ in $A$, and $U$ is the **universe of discourse**
-- Unlike a crisp (classical) st, where an element either fully belongs (membership = 1) or doesn't belong (membership = 0),
+- Unlike a crisp (classical) set, where an element either fully belongs (membership = 1) or doesn't belong (membership = 0),
     - in fuzzy set, an element can have a degree of membership anywhere between 0 and 1 (inclusive)
     - representing a matter of degree.
 - **Fuzzy truth**, $T$: the likelihood of a predicate being true, given a crisp input value.
