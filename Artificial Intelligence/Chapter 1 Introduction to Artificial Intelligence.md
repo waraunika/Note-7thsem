@@ -104,8 +104,7 @@ AI is commonly organized along two axes: **thinking vs acting**, and **humanly v
 - This approach models how ideal agents "should act", the actions taken must be rational, but not necessarily the result of formal, human-style rational *reasoning* (e.g., a reflex action can still be rational).
 - It is more of a **black-box / engineering approach**: what matters is that the agent behaves rationally, not how internally "human-like" its reasoning process is.
 
-**"Systems that think like humans" vs "systems that act like humans":
-- justification with example:**
+**"Systems that think like humans" vs "systems that act like humans", justification with example:**
 - The "thinking humanly" school (cognitive modelling) tries to replicate the human reasoning *process* itself,
 - while "acting humanly" (Turing Test tradition) only cares about matching human *behavior/output*,
 - regardless of the internal mechanism.
@@ -399,8 +398,8 @@ Learning involves three key factors:
 - A purely reflex or fixed-rule agent can only perform as well as its designer anticipated at design time,
     - and cannot adapt to environments or situations the designer did not foresee.
 - Learning allows an agent to improve autonomously from experience,
-    - generalize to novel situations, and correct its own errors over time without this,
-    - an agent's competence is permanently capped by its initial programming.
+    - generalize to novel situations, and correct its own errors over time.
+    - Without this, an agent's competence is permanently capped by its initial programming.
 - This is why "learning" is treated as one of the four core factors
     - alongside NLP, knowledge representation, and automated reasoning
     - required for a machine to exhibit genuinely intelligent behavior,

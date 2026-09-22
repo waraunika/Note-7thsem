@@ -172,7 +172,7 @@ Four Learning Situations
     - for learning, the simplest task is classification based on a single rule,
     - while the most complex task requires the application of multiple rules in sequence
 - **Feedback**
-    - the performance elemnt must send information to the learning system,
+    - the performance element must send information to the learning system,
     - used to evaluate overall performance
 - **Transparency**
     - the learning element should have access to all the internal actions of the performance element.
@@ -314,7 +314,7 @@ $$\text{Entropy} = -\sum_i P(v_i)\ln[P(v_i)]$$
 
 ### How to Make Learning Work Well
 
-- Use simple hypotheses, always start wit hthe simplest ones first.
+- Use simple hypotheses, always start with the simplest ones first.
 - Constrain the hypothesis space $H$ with priors, use domain knowledge or reasonable a priori beliefs on parameters.
 - Use many observations, though this is much harder in practice
 - Use cross-validation to get generalization

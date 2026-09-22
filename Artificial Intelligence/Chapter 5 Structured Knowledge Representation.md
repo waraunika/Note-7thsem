@@ -46,7 +46,7 @@
     - although neural networks may not be easily converted to a symbolic form
     - they are most definitely a knowledge base, because they encode the knowledge implicit in the training.
 
-## Knoweldge Engineering vs Programming
+## Knowledge Engineering vs Programming
 
 | Knowledge Engineering | Programming |
 | --- | --- |
@@ -72,7 +72,7 @@
         - mapping from the representation back to facts in the world.
         - This mapping allows interpretation of the results of a reasoning or intference process as meaningful facts about the world.
 - For example, consider the fact "Flood is a phenomenon" and the general rule "Some phenomenons devestate."
-    - Using an appropriate representation (e.g., predicate logic: $Phenomenon(flood)$, $\exists x Phenomenon(x) \wedge Devestate(x)$)
+    - Using an appropriate representation (e.g., predicate logic: $Phenomenon(flood)$, $\exists x Phenomenon(x) \wedge\ Devestate(x)$)
     - We can derive the new internal fact $Devestate(flood)$.
     - The backward mapping allows us to interpret this as real-world fact "Flood devestates"
 - Good representations must support both directions of mapping,
@@ -162,7 +162,7 @@ A general term for representations, such as semantic nets, that organize knowled
 (*frequently asked*)
 
 - **Scalability**
-    - Scalability becomes a significant difficulty as the volume and complexity of knowledge ris.
+    - Scalability becomes a significant difficulty as the volume and complexity of knowledge rise.
     - Large KB must be efficiently represented and processed using sophisticated methods and distributed computing concepts.
 - **Uncertain/Incomplete Information**
     - AI systems frequently work with information that is uncertain or incomplete.
@@ -201,7 +201,7 @@ A general term for representations, such as semantic nets, that organize knowled
 # Semantic Nets
 
 - Semantic network is an alternative to predicate logic as form of knowledge representation.
-- A semantic network is a declarative grpahic representation that can be used to represent knowledge and support automated systems for reasoning about the knowledge.
+- A semantic network is a declarative graphic representation that can be used to represent knowledge and support automated systems for reasoning about the knowledge.
 - The structure of a semantic net is shown graphically in terms of **node** and **arcs** connecting them
     - Nodes are sometimes referred to as objects, events, or subjects
     - Arcs represent the links or relations
@@ -292,7 +292,7 @@ flowchart LR
 - A frame is similar to a record structure
 - Used in many AI applications, including Vision and NLP, providing a convenient structure for representing knowledge.
 - A single frame is not very useful on its own.
-- Frame systems usually hav e acollection of frames connected to each other.
+- Frame systems usually have a collection of frames connected to each other.
 - Frames are also useful for representing common-sense knoweldge
 - While semantic nets are basically a two-dimensional representation of knowledge, frames add a **third dimension** by allowing nodes to have internal structures.
 - By using frame structure with filler slots and inheritance, very powerful knowledge representation systems can be built.
@@ -302,10 +302,10 @@ flowchart LR
 ## Structure of a Frame
 
 - Frame identification name
-    - a field written at teh top of the frame structure, where the name of the frame is placed
+    - a field written at the top of the frame structure, where the name of the frame is placed
     - example: a frame that stores knowledge about a car can have the frame name "Car".
 - Relationship of this frame to other frames
-    - relates different frames to each otehr
+    - relates different frames to each other
     - example: a super class of the fraem "Car" is the frame "Vehicle"
 - Knowledge about an attribute of an object and its value
     - attributes are written in slots, and the value of a slot is written as the slot filler.
@@ -410,13 +410,13 @@ flowchart LR
 | Primitves | Meaning |
 | --------- | ------- |
 | ATRANS    | Transfer of an abstract relationship, e.g., give |
+| MTRANS    | Transfer of mental information between actors, e.g., tell    |
 | PTRANS    | Transfer of physical location of an object, e.g., go, move |
 | PROPEL    | Application of physical force to an object, e.g., push, pull |
 | MOVE      | Movement of a body part of an actor by that actor, e.g, kick |
 | GRASP     | Actor grasping an object, e.g., hold, clutch |
 | INGEST    | An actor ingesting an object, e.g., eat, drink |
 | EXPEL     | An actor expelling something from its body, e.g., cry, spit  |
-| MTRANS    | Transfer of mental information between actors, e.g., tell    |
 | MBUILD    | Construction of new information from old, e.g., conclude     |
 | SPEAK     | Producing a sound |
 | ATTEND    | An actor focusing a sense organ e.g., listen, look           |
@@ -428,19 +428,19 @@ flowchart LR
 - Introduced by Schank and Abelson in 1977
 - Scripts are useful for describing certain stereotyped situations, such as going to a theater or eating at a restaurant.
 - A script consists of a set of slots containing default values, along with some information about the type of values, similar to frames.
-- It differs from frames, as the values of the slots in scripts must be ordered have mroe specialized roles.
+- It differs from frames, as the values of the slots in scripts must be ordered have more specialized roles.
 - In real-world situations, events tend to occur in known patterns because of the casual relationship between the occurence of events.
 
 ## Script Components
 
-| Component | Functionality |
+| Component       | Functionality |
 | --- | --- |
 | Entry Condition | Must be satisfied before events in the script can occur |
-| Result | Condition that will be true after events in the script occur |
-| Props | Slots representing objects involved in the events |
-| Roles | Persons involved in the events |
-| Track | A specific variation on a more general pattern in the script — different tracks may share many components of the same script, but not all |
-| Scenes | The sequence of events that occur; events are represented in conceptual dependency form |
+| Result          | Condition that will be true after events in the script occur |
+| Props           | Slots representing objects involved in the events |
+| Roles           | Persons involved in the events |
+| Track           | A specific variation on a more general pattern in the script — different tracks may share many components of the same script, but not all |
+| Scenes          | The sequence of events that occur; events are represented in conceptual dependency form |
  
 ### Worked Example Script: Play in Theater
  

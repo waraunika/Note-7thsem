@@ -47,13 +47,13 @@
 
 ### Human brain vs ANN
 
-| Aspect | Human Brain | ANN |
-|---|---|---|
-| Structure | Highly complex and intricate | Designed with layers of interconnected neurons |
+| Aspect            | Human Brain                    | ANN |
+|-------------------|--------------------------------|---|
+| Structure         | Highly complex and intricate   | Designed with layers of interconnected neurons |
 | Number of Neurons | Approximately 86 billion neurons | Variable, can range from a few to billions |
 | Processing Speed | Slower processing compared to ANNs (few hundred Hz) | Extremely fast processing capabilities (in GHz) |
 | Memory Capacity | Estimated to be around 2.5 petabytes | Limited memory capacity, dependent on architecture |
-| Energy Efficiency | Relatively energy-efficient | Can be energy-intensive |
+| Energy Efficiency | Relatively energy-efficient    | Can be energy-intensive |
 | A contrast | Vision: equivalent to 1000 supercomputers | Arithmetic: equivalent to 10 brains (even a pocket calculator can beat a brain here) |
 
 ## Network Structure
@@ -92,6 +92,7 @@
 
 - Feed-forward ANNs allow signals to travel one way only: from input to output.
 - There is no feedback (loops), i.e., the output of any layer does not affect the same layer.
+
 ![Feed-forward ANN](attachments/ff-ann.png)
 
 #### Feedback Networks (Recurrent Networks)
@@ -207,8 +208,10 @@ $$X_1 W_1 + X_2 W_2 + X_3 W_3 > T$$
     - $w_1(\text{new}) = 1 + (-1)(-1) = 2$
     - $w_2(\text{new}) = 1 + (-1)(-1) = 2$
     - $b(\text{new}) = -1 + (-1) = -2$
-- Final result:
-    - ![Finally 1 1 1 wins](attachments/hebb-example-final.png)
+
+Final result:
+
+![Finally 1 1 1 wins](attachments/hebb-example-final.png)
 
 ### Is Hebbian Learning Supervised?
 
@@ -253,7 +256,7 @@ $$X_1 W_1 + X_2 W_2 + X_3 W_3 > T$$
 - Typically, $\alpha$ is selected by trial and error:
     - typical range: $0.01 < \alpha < 10.0$.
     - often start at 0.1.
-    - sometimes suggested: $0.1 < n\alpha < 10.00$, where $n$ is the number of inputs.
+    - sometimes suggested: $0.1 < n\alpha\ < 10.00$, where $n$ is the number of inputs.
 
 ### Worked Example: AND Gate
 
@@ -358,11 +361,12 @@ $$w_i(\text{new}) = w_i(\text{old}) + \alpha t x_i$$
 - Use error/loss function $L(o, t) = \frac{1}{2}(o - t)^2$.
 - Activation function: sigmoid, $f(x) = \dfrac{1}{1 + \exp(-x)}$.
 - Complete Network:
-    - ![XOR](attachments/xor.png)
+![XOR](attachments/xor.png)
+
 - Solving:
-    - ![XOR-solving-1](attachments/xor-solving-1.png)
-    - ![XOR-solving-2](attachments/xor-solving-2.png)
-    - ![XOR-solving-3](attachments/xor-solving-3.png)
+![XOR-solving-1](attachments/xor-solving-1.png)
+![XOR-solving-2](attachments/xor-solving-2.png)
+![XOR-solving-3](attachments/xor-solving-3.png)
 
 ## Hopfield Network
 
@@ -442,7 +446,7 @@ $$w_i(\text{new}) = w_i(\text{old}) + \alpha t x_i$$
 8. The final weight vectors represent the compressed representation of the input data in a 2D map.
 
 ## Comparative Questions
- 
+
 *(Frequently asked)*
 
 ### Feedforward Network vs Hopfield Network
@@ -536,6 +540,7 @@ $$w_i(\text{new}) = w_i(\text{old}) + \alpha t x_i$$
 
 - Rules that express knowledge about which other knowledge should be used.
 - E.g., "IF the car will not start AND the electrical system is operating properly THEN use fuel_system_rules."
+
 ![Knowledge System](attachments/knowledge-system.png)
 
 ### Working Memory
@@ -552,6 +557,7 @@ $$w_i(\text{new}) = w_i(\text{old}) + \alpha t x_i$$
 - Most inference engines are based on the application of a logical reasoning rule:
     - **Modus Ponens** (P1: If A then B; P2: A is true; Conclude: B is true).
     - **Forward and backward chaining**.
+
 ![Inference Engine](attachments/inference-engine.png)
 
 #### Recognize-Select-Act Cycle
@@ -762,7 +768,7 @@ flowchart TD
 
 - Pragmatics deals with how language is used in different contexts to convey meaning effectively.
 - Aspects of pragmatics include:
-    - **Pronouns and referring expressions**: e.g., "Jill brought him a band aid": here "him" refers to Jack, because of preceding context.
+    - **Pronouns and referring expressions**: e.g., "Jack got hurt and Jill brought him a band aid": here "him" refers to Jack, because of preceding context.
     - **Logical inferences**: pragmatics considers inferences that can be drawn from a set of propositions, beyond their literal meaning.
         - Example: "Jack got hurt and Jill wanted to help" → we can infer that "Jill brought the band-aid to help Jack recover from his injury."
     - **Discourse structure**: analyzes how sentences are connected, and how their meaning is influenced by the discourse context (meaning of a collection of sentences).
@@ -857,7 +863,7 @@ flowchart TD
     ![Image Segmentation](attachments/image-segmentation.png)
 - **Image Analysis**:
     - Take useful measurements from pixels, regions, spatial relationships, motion, etc., gray scale/color intensity values, size, distance.
-    - ![Image Analysis](attachments/image-analysis.png)
+    ![Image Analysis](attachments/image-analysis.png)
 - **Pattern Recognition**:
     - Classify an image (region) into one of a number of known classes.
     - Statistical pattern recognition: measurements from vectors classified into classes.

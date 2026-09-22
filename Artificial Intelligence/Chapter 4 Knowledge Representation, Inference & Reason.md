@@ -247,7 +247,7 @@ An **interpretation** specifies referents for these symbols:
 - **Quantifier order carries meaning**: 
     - ∀x∃y is not the same as ∃y∀x.
     - "Each Stark hates some Lannister" -> (∀x∃y) is different from 
-    - "one Lannister is hated by all Starks" (∃y∀x).
+    - "One Lannister is hated by all Starks" (∃y∀x).
 
 ### Translation Patterns
 
@@ -716,7 +716,7 @@ Every leaf is a fact, so the goal is proved.
 
 ### Comparison Table
 
-| | Forward Chaining | Backward Chaining |
+| Aspect | Forward Chaining | Backward Chaining |
 |---|---|---|
 | Starts from | Known facts / data | The goal to be proved |
 | Direction | Bottom-up, data-driven | Top-down, goal-driven |
