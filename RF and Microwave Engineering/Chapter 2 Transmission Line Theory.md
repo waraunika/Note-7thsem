@@ -1,4 +1,4 @@
-# ⁠A. Definition
+# Definition
 
 Transmission lines
 - are hard or soft **media for transmission or guidance of energy** from source to load with or without losses.
@@ -6,8 +6,31 @@ Transmission lines
 - e.g., 2-wired parallel lines, co-axial lines, waveguide, optical fiber, star squad, strip lines, microstrips, twin lead, free-space, etc.
 
 ----
+# Types of Transmission Line
 
-# ⁠B. Physical Properties
+## Microstrip vs Strip Line
+
+Microstrip Cross-section Diagram
+
+![Microstrip line](attachments/tx-microstrip.png)
+
+Stripline Cross-section Diagram
+
+![Stripline](attachments/tx-stripline.png)
+
+| Microstrip | Stripline |
+| --- | --- |
+| The signal conductor is placed on outer layer of a PCB | Conductor is sandwiched between two dielectric layers, with ground planes on both sides of the dielectric layers |
+| Lower propagation constant (approx 3) | Higher propagation constant, equal to substrate's $D_k$ |
+| Lower dielectric loss | Higher dielectri closs |
+| Higher radiation loss | Lower radiation loss |
+| One side of the substrate is exposed and hence signal propagation is faster | Slower signal propagation due to enclosed structure |
+| Involves quasi-TEM mode of propagation | Propagate through fully transverse EM mode, TEM |
+| degree of dispersion varies with frequency and length of tx line | dispersion-free, frequency independent tx |
+
+---
+
+# Physical Properties
 
 Some general physical factors need to be considered while choosing a proper transmission line, which can be summarized as:
 - Indoor or outdoor use
@@ -19,7 +42,7 @@ Some general physical factors need to be considered while choosing a proper tran
 
 ---
 
-# ⁠C. Electrical Properties and Parameters
+# Electrical Properties and Parameters
 
 Factors that need to be considered to characterize the electrical properties of any transmission line are listed below.
 - Input impedance (Z$_S$)
@@ -34,7 +57,7 @@ Each parameter is defined with suitable expression subsequently in following sec
 
 ---
 
-# ⁠D. Transmission Line Equations
+# Transmission Line Equations
 
 - Consider a uniform transmission line in a homogenous medium
     - to be made up of a cascade of short sections of length $\Delta$z
@@ -69,7 +92,7 @@ Each parameter is defined with suitable expression subsequently in following sec
     \gamma = (\alpha + j\beta) = \sqrt{(R+j\omega L)(G + j\omega C)}
     \end{equation}$$
 
-## ⁠D.1. Propagation Constant and characteristic Impedance
+## Propagation Constant and characteristic Impedance
 
 - In (9), $\gamma$ is the complex propagation constant
     - the real part of which gives the attenuation constant $\alpha$ and the imaginary part, the phase constant $\beta$
@@ -97,7 +120,7 @@ Each parameter is defined with suitable expression subsequently in following sec
 - In most practical cases,
     - the losses in the line are so small (R << $\omega$L, G << $\omega$C) that they can be neglected.
 
-### ⁠D.1.a. Lossless Line
+### Lossless Line
 - The propagation parameters for the lossless line are obtained by setting R = G = 0.
 - With this, the attenuation constant $\alpha$ becomes zero.
 - The phase constant and phase velocity are given by,
@@ -111,7 +134,7 @@ Each parameter is defined with suitable expression subsequently in following sec
         Z_0 = \sqrt{\dfrac{L}{C}} = \dfrac{1}{vC}
     \end{equation}$$
 
-### ⁠D.1.b. Terminated Lossless Line
+### Terminated Lossless Line
 
 - Consider a transmission line of characteristic impedance Z$_0$ terminated in arbitrary load impedance, Z$_t$ as in figure:
     - ![Transmission line terminated in a load impedance Z_l](attachments/TL-terminated-Zl.png)
@@ -148,7 +171,7 @@ Each parameter is defined with suitable expression subsequently in following sec
 - In (23), the first term gives the incident power and the second term gives the reflected power.
 - Thus the power delivered to the load is equal to the incident power minus the refelcted power.
 
-### ⁠D.1.c. Return Loss
+### Return Loss
 
 - When the load is mismatched, the power loss to the load is expressed in terms of reflection loss, also called return loss (RL) in dB and is given by the expression
     $$\begin{equation}
@@ -159,7 +182,7 @@ Each parameter is defined with suitable expression subsequently in following sec
 - For the total reflection ($\Gamma_l = 1$),
     - the return loss is 0 dB.
 
-### ⁠D.1.d. Voltage Standing Wave Ratio (VSWR)
+### Voltage Standing Wave Ratio (VSWR)
 
 - When the load is mismatched, the presence of the reflected wave superposes on the incident wave to give rise to a standing wave on the line.
 - That is, the magnitude of the voltage on the line does not remain constant.
@@ -176,7 +199,7 @@ Each parameter is defined with suitable expression subsequently in following sec
         \text{VSWR} = \dfrac{V_{max}}{v_{min}} = \left( \dfrac{1 + |\Gamma_l|}{1 - |\Gamma_l|} \right)\
     \end{equation}$$
 
-### ⁠D.1.e. Input Impedance
+### Input Impedance
 
 - At a distance $l$ from the load, the impedance Z$_{in}$ seen towards the load can be obtained from (18).
     $$\begin{equation}
@@ -199,28 +222,6 @@ Each parameter is defined with suitable expression subsequently in following sec
     - 1/4 wavelength (or odd multiples of quarter wavelength) long transmission line inverts the load impedance about the characteristic impedance of the line.
 
 ---
-
-# Types of Transmission Line
-
-## Microstrip vs Strip Line
-
-Microstrip Cross-section Diagram
-
-![Microstrip line](attachments/tx-microstrip.png)
-
-Stripline Cross-section Diagram
-
-![Stripline](attachments/tx-stripline.png)
-
-| Microstrip | Stripline |
-| --- | --- |
-| The signal conductor is placed on outer layer of a PCB | Conductor is sandwiched between two dielectric layers, with ground planes on both sides of the dielectric layers |
-| Lower propagation constant (approx 3) | Higher propagation constant, equal to substrate's $D_k$ |
-| Lower dielectric loss | Higher dielectri closs |
-| Higher radiation loss | Lower radiation loss |
-| One side of the substrate is exposed and hence signal propagation is faster | Slower signal propagation due to enclosed structure |
-| Involves quasi-TEM mode of propagation | Propagate through fully transverse EM mode, TEM |
-| degree of dispersion varies with frequency and length of tx line | dispersion-free, frequency independent tx |
 
 
 
