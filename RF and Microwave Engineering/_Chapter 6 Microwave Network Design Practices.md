@@ -563,3 +563,112 @@ Prototyping
         L_{S}=\frac{Z_{0}}{\omega}\tan\left(\frac{\pi l_{L}}{\lambda}\right)
     \end{equation}$$
 - Generally, the value of this inductance small enough to ignore
+
+# Flowchart
+
+Prof. NBA's flowchart
+
+```mermaid
+flowchart TD
+    ip[/Z0, Zs, Zl<br>S-matrix/] --> gamma[Γs, Γin, Γout, Γl]
+    gamma --> sc{Stability<br>Check}
+    sc -->|No| sr[Define<br>Stable Region]
+    sc -->|Yes<br>Entire smith chart is valid| tg[Total Gain<br>G_tb, G_tu, G_total]
+    sr -->|Part of smith chart valid<br>is conditionally stable| scs[Draw stability circles]
+    scs --> cr[Find Cs, Rs, Cl, Rl]
+    cr --> tg
+```
+
+# Microwave Oscillators
+
+![Circuit for a one-port negative-resistance oscillatokr](attachments/oscillator-1-port.png)
+- Figure shows the canonical RF circuit for a one-port negative-resistance oscillator where $Z_{in} = R_{in} + j X_{in}$ is the input impedance of the active device
+    - e.g., a biased diode
+- in general, this impedance is current (or voltage) dependent, as well as frequency dependent, which we can indicate by writing $Z_{in}(I, j\omega) = R_{in}(I, j\omega) + jX_{in}(I, j\omega)$
+- The device is terminated with a passive load impedance, $Z_L + R_L + j X_L$
+- Applying KVL:
+    $$(Z_L + Z_{in})I = 0$$
+- If oscillation is occuring, such that the RF current I is nonzero, then the following condition must be satisfied:
+    $$R_L + R_{in} = 0$$
+    $$X_L + X_{in} = 0$$
+- Since the load is passive, $R_L > 0$, so $R_{in} < 0$
+- Thus while a positive resistance implies energy dissipation, a negative resistance implies an energy source.
+- The condition of $X_L + X_{in} = 0$ controls the frequency of oscillation.
+- The condition, $(Z_L + Z_{in})I = 0$ implies $Z_L = - Z_{in}$ for steady-state condition, implies that the reflection coefficients $\Gamma_L$ and $\Gamma_{in}$ are related as
+    $$\Gamma_L = \frac{Z_L - Z_0}{Z_L + Z_0} = \frac{-Z_{in} - Z_0}{-Z_in + Z_0} = \frac{Z_{in} + Z_0}{Z_{in} - Z_0} = \frac{1}{\Gamma_{in}}$$
+- The process of oscilaltion depends on the noinlinear behavior of $Z_{in}$, as follows.
+- Initially, it is necessary for the overall circuit to be unstable at a certain frequency, that is, $R_{in}(I, j\omega) + R_L < 0$
+- Then any transient excitation or noise will cause an oscillation to build up at the frequency, $\omega$
+- As $I$ increases, $R_{in}(I, j\omega)$ must become less negative until the current $I_0$ is reachehd such that $R_{in}(I_0, j\omega_0) + R_L = 0$, and $X_{in}(I_0, j\omega_0) + X_L = 0$
+- Then the oscillator is running in a stable state.
+- The final frequency, $\omega_0$, generally differs from the startup frequency because $X_{in}$ is current dependent, so thaht $X_{in}(I, j\omega) \neq X_{in}(I_0, j\omega_0)$
+- Thus we see that the conditions for resistances being 0 are not enough to guarantee a stable state of oscillation.
+- In particular stability requries that any perturbation in current or frequency will be damped out, allowing the oscillator to return to its original state.
+- This condition can be quantified by considering the effect of a small change, $\partial I$, in the current and a small change, $\partial s$, in the complex frequency $s = \alpha + j\omega$.
+- if we let $Z_T(I, s) = Z_{in}(I, s) + Z_L(s)$, then we can write a Taylor series for $Z_T(I, s)$ about the operating point $I_0, \omega_0$ as
+    $$Z_T(I, s) = Z_T(I_0, s_0) + \left.\frac{\partial Z_T}{\partial s}\right|_{s_0, I_0}\delta s + \left.\frac{\partial Z_T}{\partial I}\right|_{s_0, I_0}\delta I$$
+- since $Z_T(I, s)$ must still equal zero if oscillation if oscillation is occuring.
+- So, applying $s_0 = j\omega_0$ is the complex frequency at the original operating point.
+- Using $Z_T(I_0, s_0) = 0$ and that $\dfrac{\partial Z_T}{\partial s} = -j \dfrac{\partial Z_T}{\partial \omega}$, to solve the above equation for $\partial s = \partial\alpha + j\partial\omega$:
+    $$\delta s = \delta\alpha + j\delta\omega = \left.\frac{-\partial Z_T/\partial I}{\partial Z_T/\partial s}\right|_{s_0, I_0}\delta I = 
+    \frac{-j(\partial Z_T/\partial I)(\partial Z_T^*/\partial\omega)}{|\partial Z_T/\partial\omega|^2}\delta I$$
+- Now, if the transient caused by $\delta I$ and $\delta\omega$ is to decay, we must have $\delta a < 0$ when $\delta I > 0$
+- Then from above equation, we have
+    $$I_m\left\{\frac{\partial Z_T}{\partial I} \frac{\partial Z_T^*}{\partial\omega}\right\} < 0$$
+    $$\text{or }\frac{\partial R_T}{\partial I} \frac{\partial X_T}{\partial\omega} - \frac{\partial X_T}{\partial I} \frac{\partial R_T}{\partial\omega} > 0$$
+- For a passive load, $\partial R_L/\partial I = \partial X_L/\partial I = \partial R_L/\partial\omega = 0$, so above equation reduces to
+    $$\frac{\partial R_{in}}{\partial I} \frac{\partial}{\partial\omega}(X_L + X_{in}) - \frac{\partial X_{in}}{\partial I} \frac{\partial R_{in}}{\partial\omega} > 0$$
+- We usually hahve $\partial R_{in}/\partial I > 0$.
+- So the above equation can be satisfied if $\partial(X_L + X_{in})/\partial\omega >> 0$, which implies that a high-Q circuit will result in maximum oscilaltor stability
+- Cavity and dielectric resonators are often used for this purpose.
+- effective oscillator design requires the consideration of several other issues, such as selection of an operating point for stable operation and maximum power output, frequency-pulling , large-signal effects, and nosie characteristics.
+- But we must leave these topics to more advanced texts.
+
+example of load matched oscillator, fro f=6GHz, $\Gamma_{in} = 12.45\angle 40^0$, $Z_0 = 50\Omega$ and load impedance $Z_L = 50\Omega$
+![Load matching circuit for the one-port oscillator](attachments/oscillator-1-port-matched.png)
+
+# Mixers
+
+- A mixer is a three-port device that uses a nonlinear or time-varying element to achieve frequency conversion.
+- An ideal mixers produces an output consisting of the hsum and difference of its two input signals.
+- Operation practical RF and microwave mixers is usally based on the nonlinearity provided by either a diode or a transistor.
+- A nonlinear component can generate a wide variety of harmonics and other products of input frequencies, so filtering must be sued to select the desired frequency components.
+- Modern microwave systems typically use several mixers and fitlers to perform the function os ffrequency up-conversion and down-conversion between baseband signal frequqncies and RF carrier frequencies
+
+## Mixer Characteristics
+- Symbol for mixer:
+
+![Frequency conversion using a mixer (a) Up-conversion and (b) Down-conversion](attachments/mixer-up-and-down.png)
+
+- The mixer's symbol is intended to imply that the output is proportional to the product of the two input signals.
+- We will see that this is an idealized view of mixer operation, which in actuality produces a large variety of harmonics and other undesired products of the input signals.
+- figure (a) illustrates the frequency operation of FUC, as occurs in a transmitter.
+- A local oscilaltor (LO) signal at theh relatively high frequency $f_{LO}$ is connected to one of the input ports of the mixer.
+- the LO signal can be represented as
+    $$\nu_{LO}(t) = \cos(2\pi f_{LO} t)$$
+- A lower frequency baseband or intermediate frequency (IF) signal is applied to theh other mixer input.
+- this signal typically contains the information or data to be transmitted, and can be expressed for our purposes as
+    $$\nu_{IF}(t) = \cos(2\pi f_{IF}t)$$
+- the output of the idealized mixer is given by the product of the LO and IF signals
+    $$\nu_{RF}(t) = K\nu_{LO}(t)\nu_{IF}(t) = K\cos(2\pi f_{LO}t)\cos(2\pi f_{IF}t)$$
+    $$=\frac{K}{2}\left[\cos 2\pi(f_{LO} - f_{IF})t + \cos 2\pi(f_{LO} + f_{IF})t\right]$$
+- where K is a constant accounting for the votlage conversion loss of the mixer.
+- The RF output is seen to consist of the sum and differences of the input signal frequencies
+    $$f_{RF} = f_{LO} \pm f_{IF}$$
+- The spectra of the input and output signals are shown in figure (a), where we see that the mixer has the effect of modulating the LO signal with the IF signal.
+- The sum and difference frequencies at $f_{LO} \pm f_{IF}$ are called the sidebands of teh carrier frequency $f_{LO}$, withh $f_{LO} + f_{IF}$ being the upper sideband (USB) and $f_{LO} - f_{IF}$ being the lower sideband (LSB).
+- A double sided band (DSB) signal can contain both upper and lower sidebands, while single sideband (SSB) signal can be produced by filtering or by using a single-sideband mixer.
+- COnversely, Figure (b) shows the process of frequency down-conversion, as used in receiver.
+- In this case RF input signal of the form
+    $$\nu_{RF}(t) = \cos(2\pi f_{RF}t)$$
+- is applied to the input of the mixer, along with the local oscillator singal of $\nu_{LO} = \cos(2\pi f_{LO}t).
+- The output of the mixer is
+    $$\nu_{IF}(t) = K \nu_{RF}(t)\nu_{LO}(t) = K \cos(2\pi f_{RF}t)\cos(2\pi f_{LO}t)$$
+    $$=\frac{K}{2}\left[\cos 2\pi(f_{RF} - f_{LO})t + \cos 2\pi(f_{RF} + f_{LO})t\right]$$
+- Thus the mixeroutput consists of the sum and difference of teh input signal frequencies.
+- The spectrum for these signals as shown in figure (b)
+- in practice, the RF and LO frequqencies are relatively close together, so the sum frequency is approximately twice the RF frequency, while the difference is much smaller than $f_{RF}$.
+- the desired IF output in a receiver is the difference frequency, $f_{RF} - f_{LO}$, which is easily selected by LP filtering:
+    $$f_{IF} = f_{RF} - f_{LO}$$
+- Note that the above discussion only considers the sum and difference outptus as generated by multiplciation of input signals, whereaas in realistic mixer many more products will be generated due to the more complicated nonlinear behavior of the diode or transistor.
+- These products are usually undesirable, and removed by filtering.
