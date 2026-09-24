@@ -75,7 +75,7 @@ $$\nabla^2\psi = \gamma^2\psi \quad\Longrightarrow\quad \frac{\partial^2\psi}{\p
     $$\gamma_g^2 = \gamma^2 + k_x^2 + k_y^2 = \gamma^2 + k_c^2$$
     - where $k_c$ is the **cutoff wave number**.
 - For a lossless dielectric, $\gamma^2 = -\omega^2\mu\epsilon$, giving:
-$$\gamma_g = \pm\sqrt{k_c^2 - \omega^2\mu\epsilon}$$
+$$\gamma_g = \pm j\sqrt{k_c^2 - \omega^2\mu\epsilon}$$
 
 ### Three Propagation Basis
 
