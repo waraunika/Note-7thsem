@@ -200,7 +200,7 @@ Classification:
     - cause adverse health effects.
 - Mobile phones transmit RF electromagnetic fields which,
     - unlike ionizing radiation (X-rays, gamma rays),
-    -  cannot break chemical bonds or cause ionization in the human body.
+    - cannot break chemical bonds or cause ionization in the human body.
 - However, a number of studies have reported links between RF exposure and various health effects,
     - including:
     - cell growth, cell differentiation, DNA effects, immune system effects, hormonal effects,
