@@ -45,9 +45,9 @@ Some general physical factors need to be considered while choosing a proper tran
 # Electrical Properties and Parameters
 
 Factors that need to be considered to characterize the electrical properties of any transmission line are listed below.
-- Input impedance (Z$_S$)
-- Line (surge or characteristic) impedance (Z$_0$)
-- Load impedance (Z$_L$)
+- Input impedance ($Z_S$)
+- Line (surge or characteristic) impedance ($Z_0$)
+- Load impedance ($Z_L$)
 - Line resistance (R, $\Omega$/m)
 - Self-inductance (L, H/m)
 - Capacitance between the conducting lines (C, F/m)

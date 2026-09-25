@@ -29,20 +29,20 @@
 
 my mnemonics to memorize: Lets see Cun (kun) ex kurdai, k ka q-u dai (xudai), EV win gardai xa. 
 
-| Band (GHz) | RSGB | IEEE |
-| ---        | ---  | --- |
-| L          | 1 - 2     | 1 - 2 |
-| S          | 2 - 4     | 2 - 4 |
-| C          | 4 - 8     | 4 - 8 |
-| X          | 8 - 12    | 8 - 12 |
-| Ku         | 12 - 18   | 12 - 18 |
-| K          | 18 - 26.5 | 18 - 27 |
-| Ka         | 26.5 - 40 | 27 - 40 |
-| Q          | 33 - 50   | Milimeter (40 - 300) |
-| U          | 40 - 60   | " " |
-| E          | 50 - 75   | " " |
-| V          | 60 - 90   | Submilimeter (> 300)  |
-| W          | 75 - 110  | " " |
+| Band (GHz) | RSGB | IEEE | Use |
+| ---        | ---  | --- | --- |
+| L          | 1 - 2     | 1 - 2 | ATC, GPS |
+| S          | 2 - 4     | 2 - 4 | WiFi, Bluetooth |
+| C          | 4 - 8     | 4 - 8 | commercial satellite video distribution |
+| X          | 8 - 12    | 8 - 12 | marine/airborne radar |
+| Ku         | 12 - 18   | 12 - 18 | DTH satellite, VSAT data |
+| K          | 18 - 26.5 | 18 - 27 | specialized astronomical |
+| Ka         | 26.5 - 40 | 27 - 40 | high-capacity satellite broadband |
+| Q          | 33 - 50   | Milimeter (40 - 300) | |
+| U          | 40 - 60   | " " | |
+| E          | 50 - 75   | " " | | 
+| V          | 60 - 90   | Submilimeter (> 300)  | ultra-high-capcity mm-wave|
+| W          | 75 - 110  | " " | advanced military tracking radar |
 
 # Microwave Application
 
@@ -178,7 +178,7 @@ my mnemonics to memorize: Lets see Cun (kun) ex kurdai, k ka q-u dai (xudai), EV
     - become comparable with the time period of the wave,
     - resisting its operation at these frequencies.
 - A number of new principles of oepration have been employed to generate microwave signals:
-    - velocity modulation, interaction fo space-chahrge waves with EM field,
+    - velocity modulation, interaction of space-charge waves with EM field,
     - quantum mechanical tunneling, avalanche breakdown, and transferred electron techniques, etc.
 - At microwave frequencies,
     - **measurement** of voltages and currents

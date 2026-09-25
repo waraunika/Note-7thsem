@@ -8,7 +8,7 @@
 - Waveguides support two main modes of EM wave propagation:
     - **Transmission Electric (TE) waves**:
         - The E-field component in the direction of propagation (z-direction) is zero, and propagation takes place in the transverse (x and y) direction
-    - **Transverse Magnetic (TM) waves**:
+    - **Transverse Magnetic \(TM\) waves**:
         - The H-field component in the z-direction is zero, and propagation exists in the x and y directions.
 
 ## Modes of Propagation
@@ -16,7 +16,7 @@
 - A **mode** is a specific field configuration/pattern that satisfies both Maxwell's equations and the waveguide's boundary conditions.
 - Each mode is labeled by its type (TE or TM) and by mode indices ($m,n$ for rect., $n,m$ or $n,p$ for circular),
     - which count the number of field variations across the guide's cross-section.
-- Every node has an associated set of **critical parameters** (cutoff parameters)
+- Every mode has an associated set of **critical parameters** (cutoff parameters)
     - that determine whether and how it propagates.
 - **Cutoff wave number ($k_c$)**
     - fixed purely by the waveguide's cross-sectional geometry and the mode indices
@@ -43,7 +43,7 @@
     - because a TEM mode's transverse $E$-field pattern must satisfy Laplace's equation, in the cross section:
     ($\nabla_t^2E_t = 0$)
     - For which, a *single* simply connected hollow conductor (like rectangular or circular) has only trivial (zero) solution.
-- Since waveguide is a **single hollwo conductor**, it cannot support a TEM mode.
+- Since waveguide is a **single hollow conductor**, it cannot support a TEM mode.
 - Propagation is only possible if *either* $E_z \neq\ 0$ (TM mode) *or* $H_z \neq\ 0$ (TE mode)
     - one longitudinal component must exist to satisfy Maxwell's equations within the single-conductor boundary
 - So, waveguides are classified purely into TE and TM mode,
@@ -86,7 +86,7 @@ $$\begin{align}
     \omega^{2}\mu\epsilon&=k_{c}^{2}\\
     \omega&=\frac{k_{c}}{\sqrt{\mu\epsilon}}\\
     2\pi f&=\frac{1}{\sqrt{\mu\epsilon}}\sqrt{\left(\frac{m\pi}{a}\right)^{2}+\left(\frac{n\pi}{b}\right)^{2}}\\
-    f&=\frac{1}{\sqrt{\mu\epsilon}}\sqrt{\left(\frac{m}{a}\right)^{2}+\left(\frac{n}{b}\right)^{2}}
+    f&=\frac{1}{2\sqrt{\mu\epsilon}}\sqrt{\left(\frac{m}{a}\right)^{2}+\left(\frac{n}{b}\right)^{2}}
 \end{align}$$
 $$f_c = \frac{1}{2\pi\sqrt{\mu\epsilon}}\sqrt{k_x^2 + k_y^2}$$
 - **Propagating wave**: if $\omega^2\mu\epsilon > k_c^2$ (i.e., $f > f_c$),
@@ -104,8 +104,8 @@ $$H_z = H_{0z}\cos\left(\frac{m\pi x}{a}\right)\cos\left(\frac{n\pi y}{b}\right)
 - All transverse field components ($H_x$, $H_y$, $E_x$, $E_y$) are obtained directly from $H_z$ using Maxwell's curl equations. The results are:
     $$H_x = H_{0x}\sin\left(\frac{m\pi x}{a}\right)\cos\left(\frac{n\pi y}{b}\right)e^{-j\beta_g z}$$
     $$H_y = H_{0y}\cos\left(\frac{m\pi x}{a}\right)\sin\left(\frac{n\pi y}{b}\right)e^{-j\beta_g z}$$
-    $$E_x = E_{0x}\cos\left(\frac{m\pi x}{a}\right)\cos\left(\frac{n\pi y}{b}\right)e^{-j\beta_g z}$$
-    $$E_y = E_{0y}\cos\left(\frac{m\pi x}{a}\right)\cos\left(\frac{n\pi y}{b}\right)e^{-j\beta_g z}$$
+    $$E_x = E_{0x}\cos\left(\frac{m\pi x}{a}\right)\sin\left(\frac{n\pi y}{b}\right)e^{-j\beta_g z}$$
+    $$E_y = E_{0y}\sin\left(\frac{m\pi x}{a}\right)\cos\left(\frac{n\pi y}{b}\right)e^{-j\beta_g z}$$
     $$E_z = 0$$
     - where $H_{0x}, H_{0y}, E_{0x}, E_{0y}$ are amplitude constants proportional to derivatives of $H_{0z}$ (e.g. $H_x \propto \dfrac{-j\beta}{k_c^2}\dfrac{\partial H_z}{\partial x}$).
 
@@ -209,7 +209,8 @@ $$f_c = \frac{1}{2\sqrt{\mu\epsilon}}\sqrt{\left(\frac{m}{a}\right)^2 + \left(\f
 ### General Setup
 
 - The scalar Helmholtz equation in cylindrical coordinates is:
-    $$\frac{1}{r}\frac{\partial}{\partial r}\left(r\frac{\partial\psi}{\partial r}\right) + \frac{1}{r^2}\frac{\partial^2\psi}{\partial\phi^2} + \frac{\partial^2\psi}{\partial z^2} = \gamma^2\psi$$
+    $$\frac{1}{r}\frac{\partial}{\partial r}\left(r\frac{\partial\psi}{\partial r}\right) +
+    \frac{1}{r^2}\frac{\partial^2\psi}{\partial\phi^2} + \frac{\partial^2\psi}{\partial z^2} = \gamma^2\psi$$
 - Using separation of variables,
     - $\psi = R(r)\,\Phi(\phi)\,Z(z)$.
 - Substituting and separating gives three equations:
@@ -218,8 +219,8 @@ $$f_c = \frac{1}{2\sqrt{\mu\epsilon}}\sqrt{\left(\frac{m}{a}\right)^2 + \left(\f
         - with solution $Z = Ae^{-\gamma_g z} + Be^{\gamma_g z}$,
         - where $\gamma_g$ is the propagation constant in the guide.
     - The $\phi$-equation,
-        - obtained by isolating the angular dependence as a separation constant
-        - $-n^2$: $\dfrac{d^2\Phi}{d\phi^2} = -n^2\Phi$,
+        - obtained by isolating the angular dependence as a separation constant: $-n^2$
+            $$\dfrac{d^2\Phi}{d\phi^2} = -n^2\Phi$$
         - with harmonic solution $\Phi = A_n\sin(n\phi) + B_n\cos(n\phi)$.
         - Using trigonometric identity,
         - this combines into a single term $F_n\cos(n\phi)$

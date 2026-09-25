@@ -33,10 +33,10 @@
 **Consider an arbitrary N-Port network**
 - Figure:
     - ![Arbitrary N-Port network representation](attachments/N-port%20network.png)
-- The voltage V$_n$and the current at the terminal plane t$_n$ are given by
+- The voltage V$_n$ and the current at the terminal plane t$_n$ are given by
     $$\begin{align}
-        V_n = V_n^+ + V_n^- \\
-        I_n = \dfrac{1}{Z_0} (V_n^+ + V_n^-)
+        V_n &= V_n^+ + V_n^- \\
+        I_n &= \dfrac{1}{Z_0} (V_n^+ + V_n^-)
     \end{align}$$
 
 ## ⁠B.1. Impedance Matrix
@@ -76,8 +76,8 @@
 
 - Main definition:
     - square matrix for multiport junction, of a set of elements,
-    which relate incident and reflected waves at the ports of the junction
-- For circuits operating at $\mu$ wave frequencies,
+    - which relate incident and reflected waves at the ports of the junction
+- For circuits operating at $\mu$wave frequencies,
     - network representation in terms of admittance or impedance matrix is not very convinient.
     - since voltage, currents and impedances cannot be measured directly.
 - Parameters that can be measured directly are the incident and reflected power levels
@@ -111,7 +111,9 @@ $$\begin{align}
 - or in short form 
     $$\begin{align}[b] = [S] [a]\end{align}$$
 - The elements of the scattering matrix can be obtained from (Prof. NBA has complicated this slightly)
-    $$\begin{align}S_{ij} = \left. \dfrac{b_i}{a_i} \right|_{a_k = 0} = \left. \dfrac{V_i^-}{V_j^+} \right|_{V_k^+=0}\ V_k^+ = 0 \text{ for } k \ne j\end{align}$$
+    $$\begin{align}
+    S_{ij} = \left.\frac{b_i}{a_i} \right|_{a_k = 0} = \left.\frac{V_i^-}{V_j^+} \right|_{V_k^+=0}\ V_k^+ = 0 \text{ for } k \ne j
+    \end{align}$$
 - S$_{ii}$ is the reflection coefficient at the port $i$.
 - S$_{ij}$ is the transmission coefficient from port $j$ to port $i$
 - For a reciprocal network,
@@ -128,7 +130,7 @@ $$\begin{align}
 2. Under perfect matched condition, diagonal elements of S are equal to 0.
     - $[S]_{ii} = 0$
 3. N-ports are symmetric if
-    - $[S]_{ij} = [S]_ji$
+    - $[S]_{ij} = [S]_{ji}$
 4. N-ports are reciprocal if 
     - $[S]_{ii} = [S]_{jj}$ and $[S]_{ij} = -[S]_{ji}$
 5. For lossless network, S matrix is unitary
@@ -138,9 +140,9 @@ $$\begin{align}
 
 1. It helps in ease of measurement at high frequencies compared to open/short current and voltage measurements
 2. S-parameters are used to extract transmission line parameters such as R, L, C, G, TD and $Z_0$
-3. The return loss, insertion loss, gain, VSWR, reflection coefficients, and transmission coefficients of theh network are derived using S-parameters
+3. The return loss, insertion loss, gain, VSWR, reflection coefficients, and transmission coefficients of the network are derived using S-parameters
 4. The behavior of S-parameters can be used to gain intuition of signal integrity problems.
-5. It is easy to convert S-parameters of S-matrix to othehr parameters such as Z-parameters, Y-parameters, H-parameters, T-parameters and abcd-paramters
+5. It is easy to convert S-parameters of S-matrix to other parameters such as Z-parameters, Y-parameters, H-parameters, T-parameters and abcd-paramters
 
 ## ⁠C.3. Drawbacks of S Parameters
 
@@ -159,8 +161,8 @@ $$\begin{align}
 - Therefore, there exists a relation between \[S\] and \[Z\].
 - It is given by,
     $$\begin{align}
-        [S] = ([Z] + [U])^{-1}\ ([Z] - [U])\\
-        [S] = ([Z] - [U])\ ([Z] + [U])^{-1}
+        [S] &= ([Z] + [U])^{-1}\ ([Z] - [U])\\
+        [S] &= ([Z] - [U])\ ([Z] + [U])^{-1}
     \end{align}$$
 - Alternatively, if the elements of the scattering matrix are known, the impedance matrix can be obtained from,
     $$\begin{align} [Z] = ([U] - [S])^{-1}\ ([U] + [S]) \end{align}$$
@@ -182,11 +184,13 @@ $$\begin{align}
 - Referring to figure above, the average power flowing into port $n$ can be determined using (7, 8).
 - Using (7, 8), we can express the total voltage and current at port n as
     $$\begin{align}
-        V_n = \sqrt{Z_0}\ (a_n + b_n)\\
-        V_n = \dfrac{1}{\sqrt{Z_0}}\ (a_n - b_n)
+        V_n^+ = \sqrt{Z_0}\ (a_n + b_n)\\
+        V_n^- = \dfrac{1}{\sqrt{Z_0}}\ (a_n - b_n)
     \end{align}$$
 - the avg power delivered to port $n$ is given by
-    $$\begin{align}P_n = \dfrac12 \Re \left[ V_n I_n^* \right] = \dfrac12 \Re \left[ (a_n a_n^* - b_n b_n^*) + (b_n a_n^* - a_n b_n^*) \right] \end{align}$$
+    $$\begin{align}
+    P_n = \dfrac12 \Re \left[ V_n I_n^* \right] = \dfrac12 \Re \left[ (a_n a_n^* - b_n b_n^*) + (b_n a_n^* - a_n b_n^*) \right]
+    \end{align}$$
 - The second term within the bracket on the RHS of (19) is purely imaginary and simplifies to:
     $$\begin{align} P_n = \dfrac12 \left[ |a_n|^2 - |b_n|^2 \right] \end{align}$$
 - (20) gives the power flow into the network through port $n$ in terms of the normalized incident and reflected voltage variables.
