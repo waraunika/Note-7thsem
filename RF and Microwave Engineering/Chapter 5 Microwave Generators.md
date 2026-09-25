@@ -118,9 +118,7 @@
 - The velocity-modulated beam then crosses a field-free **drift space**,
     - where bunching occurs (see Bunching Effect above),
     - faster electrons catch up to slower ones ahead, forming density bunches.
-
     ![Bunching effect graph](attachments/klystron-2-cavity-bunching.png)
-
 - The bunched beam arrives at the catcher cavity,
     - inducing a strong RF current there,
     - this is the **amplified output signal**, coupled out of the catcher cavity.
@@ -171,9 +169,7 @@
     - as it passes through the resonant cavity,
     - but feedback is achieved by **reversing the beam back through the same cavity**,
     - using a negatively biased repeller that turns the beam around.
-
-![Schematic diagram of a reflex klystron](attachments/klystron-reflex.png)
-
+    ![Schematic diagram of a reflex klystron](attachments/klystron-reflex.png)
 - The velocity-modulated beam bunches during its trip toward the repeller and back
     - on its **return pass** through the cavity, the bunched beam gives up energy to sustain oscillations in the cavity.
 
