@@ -186,7 +186,7 @@ my mnemonics to memorize: Lets see Cun (kun) ex kurdai, k ka q-u dai (xudai), EV
 - The impedance of
     - the parasitics of measurement cables and connectors
     - becomes large enough to frequently exceed the component value.
-- Thus,special cables and connectors are required.
+- Thus, special cables and connectors are required.
 - The meter's own impedance and capacitance also affect the measurement.
 
 ## Why S-Paramater Based Analysis is a Must at Microwave Frequencies
@@ -242,11 +242,11 @@ my mnemonics to memorize: Lets see Cun (kun) ex kurdai, k ka q-u dai (xudai), EV
     - but if analyzed at a scale/frequency where wave effects dominate
     - the same field-theory-based, distributed-element treatment used for microwaves becomes necessary.
 - **Key differences**
-    - Microwaves offer vastly high usable bandiwdthh than acoustic/seismic frequencies
+    - Microwaves offer vastly high usable bandwidth than acoustic/seismic frequencies
         - enabling far higher data rates for communication
     - Microwaves can propagate through vacuum/space
         - essential for satellite links
-        - whereas acoustic/seismic waves cnanot
+        - whereas acoustic/seismic waves cannot
     - Microwave systems are subject to LoS nad atmospheric/weathehr attenuation
         - while acoustic/seismic waves propagate differently
         - depending on the medium's mechanical properties
