@@ -436,7 +436,7 @@ $$f_c = \frac{1}{2\sqrt{\mu\epsilon}}\sqrt{\left(\frac{m}{a}\right)^2 + \left(\f
 
 - By probe coupling in a rectangular waveguide, first an E-field is produced, which then causes an H-field.
 - A coaxial line may be coupled to a waveguide by placing the probe parallel to the E-field, or near the point of maximum E-field.
-- The most efficient location for the probe is the **center fo the wider wall**,
+- The most efficient location for the probe is the **center of the wider wall**,
     - parallel to the narrower wall, and
     - **one quarter-wavelength** from the shorted end of the waveguide
     - energy transfer is maximum at this point.
@@ -497,7 +497,7 @@ $$f_c = \frac{1}{2\sqrt{\mu\epsilon}}\sqrt{\left(\frac{m}{a}\right)^2 + \left(\f
 
 - The figure above shows a rectangular cavity resonator formed using a rectangular waveguide shorted at both ends.
 - The resonant frequency ($f_r$) of the resonator is:
-$$f_r = \frac{c}{2\sqrt{\mu_r\epsilon_r}}\sqrt{\left(\frac{m}{a}\right)^2 + \left(\frac{n}{b}\right)^2 + \left(\frac{p}{l}\right)^2}$$
+    $$f_r = \frac{c}{2\sqrt{\mu_r\epsilon_r}}\sqrt{\left(\frac{m}{a}\right)^2 + \left(\frac{n}{b}\right)^2 + \left(\frac{p}{l}\right)^2}$$
     where $c$ is the speed of light; $a, b, l$ are the dimensions of the cavity; $m, n$ are the mode indices of the waveguide; and $p$ is a positive integer representing the number of half-wave variations in the z-direction.
 - The modes are called $TE_{mnp}$ and $TM_{mnp}$.
 - The resonant frequency differs for different modes; the mode with the lowest resonant frequency is called the **dominant (primary) mode**.
@@ -512,27 +512,27 @@ $$f_r = \frac{c}{2\sqrt{\mu_r\epsilon_r}}\sqrt{\left(\frac{m}{a}\right)^2 + \lef
 - The resonant frequency is given by:
 $$f_r = \frac{c}{2\pi\sqrt{\mu_r\epsilon_r}}\sqrt{\left(\frac{p_{mn}}{a}\right)^2 + \left(\frac{p\pi}{l}\right)^2}$$
 
-# Tuning of Cavity
+## Tuning of Cavity
 
 - Tuning of waveguide cavities is done by changing the inductive or capacitive properties of the waveguide, by inserting specially designed apertures or irises into the cavity using posts or screws.
 - Tuning is classified as **inductive**, **capacitive**, and **resonant** tuning.
 - Cavity tuning provides impedance matching, tuning of the resonant frequency, and control of the Q-factor.
 
-## Inductive Tuning
+### Inductive Tuning
 
 - For inductive tuning, conductive apertures are extended from the side walls (the $b$-dimension) of the waveguide, providing the effect of an inductive susceptance by permitting current flow and energy storage in the H-field.
 - The amount of inductive susceptance depends on the length of the window.
 
 ![Inductive tuning of rectangular waveguide](attachments/WG-tuning-inductive.png)
 
-## Capacitive Tuning
+### Capacitive Tuning
 
 - For capacitive tuning, conductive apertures extend into the waveguide from the top and bottom walls, constituting a capacitive susceptance.
 - The susceptance value depends on the closeness of the window.
 
 ![Capacitive tuning of a rectangular wg](attachments/WG-tuning-capacitive.png)
 
-## Resonant Tuning
+### Resonant Tuning
 
 - Resonant tuning is a combination of capacitive and inductive tuning.
 - An adjustable slug, screw, window, aperture, or iris is used to tune resonators by placing them in the area of maximum E-field lines (capacitive tuning) and H-field lines (inductive tuning).
@@ -594,10 +594,8 @@ $$f_r = \frac{c}{2\pi\sqrt{\mu_r\epsilon_r}}\sqrt{\left(\frac{p_{mn}}{a}\right)^
 
 - Illustration of the cross-sectional E-field patterns in the various arms:
     - **Divider** (signal fed into the E-arm, port-3):
-
     ![wave pattern E-plane Tee Divider](attachments/tee-e-plane-pattern-divider.png)
     - **Adder** (signals fed into ports 1 and 2, combining at port-3):
-
     ![wave pattern E-plane Tee Adder](attachments/tee-e-plane-pattern-adder.png)
 - As shown above, the E-plane Tee can be used as a **signal combiner or splitter**:
     - If a signal is fed from port-3 (E-arm), the E-field splits **equally** into port-1 and port-2, but **180° out of phase**.
@@ -898,7 +896,7 @@ $$[S] = \begin{bmatrix} 0 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}$$
     - good approximations for the phase velocity,
     - propagation constant, and
     - characteristic impedance can be obtained from static or quasi-static solutions:
-$$v_p = \frac{c}{\sqrt{\epsilon_e}}, \qquad \beta = k_0\sqrt{\epsilon_e}$$
+    $$v_p = \frac{c}{\sqrt{\epsilon_e}}, \qquad \beta = k_0\sqrt{\epsilon_e}$$
     where $\epsilon_e$ is the **effective dielectric constant** of the microstrip line.
 - Since some field lines are in the dielectric region and some are in air, the effective dielectric constant satisfies:
     $$1 < \epsilon_e < \epsilon_r$$
