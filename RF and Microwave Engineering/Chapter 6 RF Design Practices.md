@@ -68,8 +68,10 @@ $$G_T|_{S_{12}=0} = \frac{|S_{21}|^2(1-|\Gamma_L|^2)(1-|\Gamma_S|^2)}{|1-S_{11}\
 ![Simplified/Generalized Transistor Amp](attachments/transistor-amp-ckt-diagram.png)
 
 - The total transducer power gain can be split into three cascaded stages: $G_T = G_S G_0 G_L$, where:
-$$G_S = \frac{1-|\Gamma_S|^2}{|1-\Gamma_S\Gamma_{in}|^2}, \qquad G_0 = |S_{21}|^2, \qquad G_L = \frac{1-|\Gamma_L|^2}{|1-\Gamma_L\Gamma_{out}|^2}$$
-    ($G_S$ = gain of input matching network, $G_0$ = gain of the transistor itself, $G_L$ = gain of output matching network.)
+    $$
+    G_S = \frac{1-|\Gamma_S|^2}{|1-\Gamma_S\Gamma_{in}|^2}, \qquad G_0 = |S_{21}|^2, \qquad G_L = \frac{1-|\Gamma_L|^2}{|1-\Gamma_L\Gamma_{out}|^2}
+    $$
+    - $G_S$ = gain of input matching network, $G_0$ = gain of the transistor itself, $G_L$ = gain of output matching network.
 - For the **unilateral** amplifier ($S_{12}=0$):
 $$G_S = \frac{1-|\Gamma_S|^2}{|1-S_{11}\Gamma_S|^2}, \qquad G_0=|S_{21}|^2, \qquad G_L=\frac{1-|\Gamma_L|^2}{|1-S_{22}\Gamma_L|^2}$$
 
@@ -219,10 +221,10 @@ flowchart TD
 ![2 Port filter network](attachments/2-port-filter-model.png)
 
 - Key filter parameters, defined via the two-port model:
-$$IL = -10\log_{10}\left(\frac{P_L}{P_{in}}\right) = -10\log_{10}(1-|\Gamma|^2)$$
-$$RL = -10\log_{10}\left(\frac{P_R}{P_{in}}\right) = -10\log_{10}(|\Gamma|^2)$$
-$$\tau_d = \frac{d\phi_T}{d\omega} = \frac{1}{2\pi}\frac{d\phi_T}{df}$$
-    where $P_{in}$ is input power, $P_R$ is power returned to the source, and $\phi_T$ is the transmission phase.
+    $$IL = -10\log_{10}\left(\frac{P_L}{P_{in}}\right) = -10\log_{10}(1-|\Gamma|^2)$$
+    $$RL = -10\log_{10}\left(\frac{P_R}{P_{in}}\right) = -10\log_{10}(|\Gamma|^2)$$
+    $$\tau_d = \frac{d\phi_T}{d\omega} = \frac{1}{2\pi}\frac{d\phi_T}{df}$$
+    - where $P_{in}$ is input power, $P_R$ is power returned to the source, and $\phi_T$ is the transmission phase.
 - **Group delay** measures how long a signal takes to propagate through the filter. If constant, all frequency components of a multi-frequency signal travel at the same velocity, no frequency dispersion. Any deviation from constant group delay causes an FM signal to become distorted.
 - An **ideal filter** has zero insertion loss and constant group delay over the PB, and infinite rejection everywhere else.
 
@@ -278,8 +280,8 @@ $$g_1 = \frac{P_1}{\sinh(\beta/2N)}, \qquad g_k = \frac{4P_{k-1}P_k}{g_{k-1}\cdo
 
 - Prototype element values are normalized so $g_0=1$ and $\omega/\omega_c=1$; this prototype is the basis for the actual filter design at the desired band-edge and impedance.
 - If $g_R, g_L, g_C$ correspond to the normalized resistance/inductance/capacitance, the actual filter elements are:
-$$R = R_0 g_R, \qquad L = R_0\frac{g_L}{\omega_1}, \qquad C = \frac{g_C}{R_0\omega_1}$$
-    where $\omega_1,\omega_2$ are the band-edge angular frequencies, $\omega_c$ is the angular cutoff frequency, and $R_0$ is the generator resistance.
+    $$R = R_0 g_R, \qquad L = R_0\frac{g_L}{\omega_1}, \qquad C = \frac{g_C}{R_0\omega_1}$$
+    - where $\omega_1,\omega_2$ are the band-edge angular frequencies, $\omega_c$ is the angular cutoff frequency, and $R_0$ is the generator resistance.
 
 ### Transformation Table: Prototype to LPF/HPF/BPF/BSF
 
@@ -369,8 +371,8 @@ $$\frac{\partial R_{in}}{\partial I}\frac{\partial}{\partial\omega}(X_L+X_{in}) 
 - A **Local Oscillator (LO)** signal at relatively high frequency, $v_{LO}(t)=\cos(2\pi f_{LO}t)$, is applied to one mixer input.
 - A lower-frequency baseband/Intermediate Frequency (IF) signal (carrying the data), $v_{IF}(t)=\cos(2\pi f_{IF}t)$, is applied to the other input.
 - The idealized mixer output is their product:
-$$v_{RF}(t) = K\,v_{LO}(t)\,v_{IF}(t) = \frac{K}{2}\left[\cos 2\pi(f_{LO}-f_{IF})t + \cos 2\pi(f_{LO}+f_{IF})t\right]$$
-    where $K$ accounts for the mixer's voltage conversion loss.
+    $$v_{RF}(t) = K\,v_{LO}(t)\,v_{IF}(t) = \frac{K}{2}\left[\cos 2\pi(f_{LO}-f_{IF})t + \cos 2\pi(f_{LO}+f_{IF})t\right]$$
+    - where $K$ accounts for the mixer's voltage conversion loss.
 - The RF output consists of the sum and difference: $f_{RF}=f_{LO}\pm f_{IF}$.
 - These are called the **sidebands** of the carrier $f_{LO}$: $f_{LO}+f_{IF}$ is the **Upper Sideband (USB)**, and $f_{LO}-f_{IF}$ is the **Lower Sideband (LSB)**.
 - A **Double Sideband (DSB)** signal contains both; a **Single Sideband (SSB)** signal is produced by filtering, or by using a dedicated single-sideband mixer.
