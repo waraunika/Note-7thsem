@@ -259,7 +259,9 @@ $$IL = 1+a_m^2 T_N^2\left(\frac{\omega}{\omega_c}\right)$$
 $$T_1 = \frac{\omega}{\omega_c},\ \ T_2 = 2\left(\frac{\omega}{\omega_c}\right)^2-1,\ \ T_3 = 4\left(\frac{\omega}{\omega_c}\right)^3-3\frac{\omega}{\omega_c},\ \ T_4 = 8\left(\frac{\omega}{\omega_c}\right)^4-8\left(\frac{\omega}{\omega_c}\right)^2+1$$
 $$T_N = 2T_{N-1}-T_{N-2}$$
 - Also expressible as:
-$$T_N\left(\frac{\omega}{\omega_c}\right) = \cos\left(N\cos^{-1}\frac{\omega}{\omega_c}\right) \text{ for } \frac{\omega}{\omega_c}<1, \qquad T_N = \cosh\left(N\cosh^{-1}\frac{\omega}{\omega_c}\right) \text{ for } \frac{\omega}{\omega_c}>1$$
+$$
+T_N\left(\frac{\omega}{\omega_c}\right) = \cos\left(N\cos^{-1}\frac{\omega}{\omega_c}\right) \text{ for } \frac{\omega}{\omega_c}<1, \qquad T_N = \cosh\left(N\cosh^{-1}\frac{\omega}{\omega_c}\right) \text{ for } \frac{\omega}{\omega_c}>1
+$$
 - Since $T_N$ oscillates between $\pm1$ in the PB, maximum passband gain is $1+a_m^2$ (this is the source of the "ripple").
 - For $\omega \gg \omega_c$: $T_N \approx \frac{1}{2}\left(\frac{2\omega}{\omega_c}\right)^N$, giving:
 $$IL = 1+\frac{a_m^2}{4}\left(\frac{2\omega}{\omega_c}\right)^{2N}$$
@@ -273,7 +275,9 @@ $$g_0=g_{N+1}=1, \qquad g_k = 2\sin\left(\frac{(2k-1)\pi}{2N}\right) \text{ for 
 - **Chebyshev $g_k$ values** (more involved, since ripple must be accounted for):
 $$g_0=1 \text{ (all } N\text{)}, \quad g_N=1 \text{ (odd } N\text{)}, \quad g_{N+1}=\coth^2(\beta/4) \text{ (even } N\text{)}$$
 $$\beta = \ln\left(\coth\left(\frac{a_m}{17.87}\right)\right) \text{ for } a_m \text{ in dB}$$
-$$g_1 = \frac{P_1}{\sinh(\beta/2N)}, \qquad g_k = \frac{4P_{k-1}P_k}{g_{k-1}\cdot[\text{recursive terms}]}, \quad k=2,\dots,N$$
+$$
+g_1 = \frac{P_1}{\sinh(\beta/2N)}, \qquad g_k = \frac{4P_{k-1}P_k}{g_{k-1}\cdot[\text{recursive terms}]}, \quad k=2,\dots,N
+$$
 - Values of $g_k$ are typically obtained from **lookup tables** for given $a_m$ and IL, rather than computed by hand each time.
 
 ### Prototyping: Scaling to the Desired Filter
