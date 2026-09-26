@@ -250,7 +250,7 @@ Find, if the matrix is: (a) Reciprocal, (b) Lossless (c) Find the return loss at
 (a) Reciprocal
 
 So, we have:
-$$\begin{align} S_{11} = S_{22}*\\ S_{12} = S_{21} \end{align}$$
+$$\begin{align} S_{12} = S_{21} \end{align}$$
 
 Thus, they are reciprocal.
 
@@ -274,7 +274,7 @@ Since $[S][S]*$ is not equal to $[I]$, the junction isn't lossless.
 (c) Return loss at input
 
 Here, $S_{11} = 0.4 + j0.5$, and thus, return loss at input is
-$|S_{21}|^2 = |0.16 + 0.25| = 0.41 = -3.87 dB$
+$|S_{11}|^2 = |0.16 + 0.25| = 0.41 = 3.87 dB$
 
 (d) Reflected power, if input = 5 W
 Reflected power = Return loss * $P_{in}$
