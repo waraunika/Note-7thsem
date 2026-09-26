@@ -174,7 +174,7 @@
     - on its **return pass** through the cavity, the bunched beam gives up energy to sustain oscillations in the cavity.
 
 **Performance**:
-a low-power device, typically 10–500 mW, operating from 1–25 GHz.
+- a low-power device, typically 10–500 mW, operating from 1–25 GHz.
 
 **Applications**:
 - local oscillator in microwave receivers, and general microwave signal sources.
