@@ -66,7 +66,9 @@
     $$\nabla^2E = \gamma^2E, \qquad \nabla^2H = \gamma^2H$$
     - where the propagation constant is $\gamma = \sqrt{j\omega\mu(\sigma + j\omega\epsilon)} = \alpha + j\beta$.
 - Any rectangular component of $E$ or $H$ satisfies the scalar **Helmholtz wave equation**:
-$$\nabla^2\psi = \gamma^2\psi \quad\Longrightarrow\quad \frac{\partial^2\psi}{\partial x^2} + \frac{\partial^2\psi}{\partial y^2} + \frac{\partial^2\psi}{\partial z^2} = \gamma^2\psi$$
+$$
+\nabla^2\psi = \gamma^2\psi \quad\Longrightarrow\quad \frac{\partial^2\psi}{\partial x^2} + \frac{\partial^2\psi}{\partial y^2} + \frac{\partial^2\psi}{\partial z^2} = \gamma^2\psi
+$$
 - Using **separation of variables**, assume $\psi = X(x)\,Y(y)\,Z(z)$.
 - Substituting and dividing through by $\psi$ separates the equation into three independent ordinary differential equations, each equal to a constant:
     $$\frac{d^2X}{dx^2} = -k_x^2 X, \qquad \frac{d^2Y}{dy^2} = -k_y^2 Y, \qquad \frac{d^2Z}{dz^2} = -k_z^2 Z$$
@@ -122,13 +124,17 @@ $$\beta_g = \omega\sqrt{\mu\epsilon}\sqrt{1 - \left(\frac{f_c}{f}\right)^2}$$
 - **Phase velocity** in the guide:
 $$v_g = \frac{v_p}{\sqrt{1 - \left(\dfrac{f_c}{f}\right)^2}}, \qquad v_p = \frac{1}{\sqrt{\mu\epsilon}}$$
 - **Wave impedance** for TE mode:
-$$Z_{TE} = \frac{E_x}{H_y} = \frac{\omega\mu}{\beta_g} = \frac{\eta}{\sqrt{1 - \left(\dfrac{f_c}{f}\right)^2}}, \qquad \eta = \sqrt{\frac{\mu}{\epsilon}}$$
+$$
+Z_{TE} = \frac{E_x}{H_y} = \frac{\omega\mu}{\beta_g} = \frac{\eta}{\sqrt{1 - \left(\dfrac{f_c}{f}\right)^2}}, \qquad \eta = \sqrt{\frac{\mu}{\epsilon}}
+$$
 
 #### Why the Dominant Mode Overall is $TE_{10}$ (for $a > b$)
 
 - Unlike TM, the TE mode family **does** allow $m = 0$ or $n = 0$ (but not both simultaneously, since that would make $k_c = 0$).
 - The smallest non-trivial combinations are $(m,n) = (1,0)$ and $(0,1)$.
-- Comparing their cutoff frequencies using $f_c = \dfrac{1}{2\sqrt{\mu\epsilon}}\sqrt{\left(\dfrac{m}{a}\right)^2+\left(\dfrac{n}{b}\right)^2}$:
+- Comparing their cutoff frequencies using 
+$
+f_c = \dfrac{1}{2\sqrt{\mu\epsilon}}\sqrt{\left(\dfrac{m}{a}\right)^2+\left(\dfrac{n}{b}\right)^2}$:
 $$f_{c,TE_{10}} = \frac{1}{2a\sqrt{\mu\epsilon}}, \qquad f_{c,TE_{01}} = \frac{1}{2b\sqrt{\mu\epsilon}}$$
 - Since the waveguide convention takes $a$ (wide dimension) $> b$ (narrow dimension), we have $\dfrac{1}{2a} < \dfrac{1}{2b}$, so $f_{c,TE_{10}} < f_{c,TE_{01}}$.
 - Since $TE_{10}$ has the lowest cutoff frequency among **all** TE and TM modes (lower even than $TM_{11}$, which requires both $a$ and $b$ to be finite and nonzero, always giving a strictly larger cutoff), $TE_{10}$ is the **overall dominant mode** of the rectangular waveguide.
