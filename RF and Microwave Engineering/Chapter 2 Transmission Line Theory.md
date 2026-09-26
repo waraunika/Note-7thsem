@@ -22,7 +22,7 @@ Stripline Cross-section Diagram
 | --- | --- |
 | The signal conductor is placed on outer layer of a PCB | Conductor is sandwiched between two dielectric layers, with ground planes on both sides of the dielectric layers |
 | Lower propagation constant (approx 3) | Higher propagation constant, equal to substrate's $D_k$ |
-| Lower dielectric loss | Higher dielectri closs |
+| Lower dielectric loss | Higher dielectric loss |
 | Higher radiation loss | Lower radiation loss |
 | One side of the substrate is exposed and hence signal propagation is faster | Slower signal propagation due to enclosed structure |
 | Involves quasi-TEM mode of propagation | Propagate through fully transverse EM mode, TEM |

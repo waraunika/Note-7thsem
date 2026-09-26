@@ -58,7 +58,7 @@
         \vdots \\
         I_N
     \end{bmatrix}\end{align}$$
-- in short matrix formm
+- in short matrix form
     $$\begin{align} [V] = [Z] [I] \end{align}$$
 - Similarly, the admittance matrix \[Y\] of the network is defined as
     $$\begin{align} [I] = [Y] [V] \end{align} $$
@@ -84,7 +84,7 @@
     - that are related to the incident and reflected voltage waves.
 - The matrix that reflects the incident and reflected voltage waves at the various ports of the network is known as the scattering matrix.
 - Consider the Figure as above.
-- We assume tht transmission lines connected to the various ports have the same characteristic impedance (Z$_0$)
+- We assume the transmission lines connected to the various ports have the same characteristic impedance (Z$_0$)
 - We now define a set of normalized incident and reflected votlage wave variables a$_n$ and b$_n$ as:
 
 $$\begin{align}
