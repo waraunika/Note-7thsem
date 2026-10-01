@@ -95,7 +95,9 @@
     -   compare the results achieved with the goals set
 
 ## ⁠e.2. Level of Management
+
 ![Pasted image](attachmnets/Pasted%20image%2020260731115511.png)
+
 -   Depends upon the size, complexity and the nature of organization
 -   Top level Management
     -   Higher Authority
@@ -112,18 +114,23 @@
     -   More involved in working to achieve the goals set by the organization
 
 ## ⁠e.3. Managerial Skills
+
 -   Interpersonal Skills
     -   Interaction between the people inside and outside of organization
 -   Informational Skills
     -   Gather information related to the goals and operation of the organization
 -   Decisional Skills
     -   Use the information gathered to make decisions for the betterment of the organization
+
 ## ⁠e.4. Importance/Function
+
 -   Proper Planning, determine what is to be achieved
 -   Proper Organizing, allocate resources and establish the means to accomplish the plan
 -   Proper influence, motivate and lead personnel towards the goal
 -   Controlling activities in the organization, compare results achieved to the planned goals
+
 ## ⁠e.5. Models of Management
+
 - Hierarchical Management Model
 	- Authority and Responsibility
 	- Managers receive authority from the superiors to command resources and actions to the subordinates
@@ -151,9 +158,11 @@
 - Organization may choose to use all or few of these models according to their needs.
 
 # ⁠f. Theories of Management
+
 Necessary to understand the historical development of management
 
 ## ⁠f.1. Scientific Management Approach
+
 - Frederic W Taylor, first person to study management, early 1900's
 - believes scientific approaches should be used to increase the productivity and efficiency of the work
 - his belief, there should be one best way of doing each task
@@ -216,7 +225,9 @@ Necessary to understand the historical development of management
         -   importance should be given to the success of the organization rather than individual stress
     -   Espirit de Corps
         -   "Union is Strength" - refers to harmony and mutual understanding among the members of an organization
+
 ## ⁠f.3. Behavioral Management Approach
+
 - Elton Mayo and his associates in the 1920's
 - productivity not necessarily increased through the monetary incentives, human behavior and social environment plays an important part
 - HR Movement, saw the organization as the social system with members strongly influenced by intergroup relationships and with the individual motivated by a complex hierarchy of needs
@@ -240,8 +251,11 @@ Necessary to understand the historical development of management
 	-   worker satisfaction is based on productivity and increased the effectiveness
 	-   better communication between various level is important
 	-   management requires not only technical but the social skills as well
+
 ## ⁠f.4. Modern Management Theories
+
 ### ⁠f.4.a. Contingency and System Approach
+
 - Contingency Approach
 	- As an integrative approach, fits together both the theories
 	- assumes no single theory is the best, existing ideas must be applied selectively
@@ -252,17 +266,19 @@ Necessary to understand the historical development of management
 	- necessary to recognize the internal and external environment and the changes in these environment that directly affects the performance of the services.
 
 # ⁠g. Forms of Ownership
+
 ## ⁠g.1. Single Ownership
- - Oldest, popular and simplest form of organization
- - owned and controlled by single person
- - formed to fulfill own goals and use of own resources
- - total control and freedom to run the business in his/her own way
- - bears any profit or loss by himself, so total risk on the owner
- - usually the profit motive
- - unlimited liability, owner assumes all the debts.
-	 - In any case of the failure of the business, the owner will be required to sell off the property, business as well as personal ones to pay off the debts
- - government has no control over the business, but it is run under legal laws and jurisdiction.
- - adv/disadv:
+
+- Oldest, popular and simplest form of organization
+- owned and controlled by single person
+- formed to fulfill own goals and use of own resources
+- total control and freedom to run the business in his/her own way
+- bears any profit or loss by himself, so total risk on the owner
+- usually the profit motive
+- unlimited liability, owner assumes all the debts.
+    - In any case of the failure of the business, the owner will be required to sell off the property, business as well as personal ones to pay off the debts
+- government has no control over the business, but it is run under legal laws and jurisdiction.
+- adv/disadv:
 <table>
 	<tr>
 		<th colspan="2" style="text-align: center; font-size: 40px;">ADVANTAGE</th>

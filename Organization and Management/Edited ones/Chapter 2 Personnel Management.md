@@ -428,7 +428,7 @@
 
 **Job Evaluation Methods:**
 
-|                              | Description                                          |
+| Methods                      | Description                                          |
 | ---------------------------- | ---------------------------------------------------- |
 | **Ranking Method**           | Jobs ranked from highest to lowest                   |
 | **Classification Method**    | Jobs classified into predetermined grades            |

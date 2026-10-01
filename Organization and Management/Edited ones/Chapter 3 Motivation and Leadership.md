@@ -400,7 +400,7 @@ The process of influencing or stimulating a person to take action by creating a 
 - **Y-axis:** Concern for People (1 to 9)
 
 **The Grid:**
-![concern for production](attachmnets/concern%20for%20production.png)
+![concern for production](../attachmnets/concern%20for%20production.png)
 
 | Style                  | Grid Position | Description                                         | Characteristics                                                                                  |
 | ---------------------- | ------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -480,7 +480,6 @@ The process of influencing or stimulating a person to take action by creating a 
 - Ability, experience, and maturity of **Followers**
 - Structure, technology, objectives, and external **Situation**
 
-**Diagram:**
 **Key Insight:** Most realistic and effective approach to leadership.
 
 ---

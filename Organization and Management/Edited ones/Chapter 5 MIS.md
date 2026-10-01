@@ -173,14 +173,14 @@ MIS can be recorded as old as human history.
 │  Source: External (suppliers, competitors, media)           │
 ├─────────────────────────────────────────────────────────────┤
 │                    TACTICAL MANAGEMENT                      │
-│          (Middle Level - Department Heads)                  │
+│             (Middle Level - Department Heads)               │
 │                                                             │
 │  Information: Schedules, Revenue, Profits, Costs            │
 │  Timeframe: Weekly/Monthly                                  │
 │  Purpose: Control procedures, resource allocation           │
 ├─────────────────────────────────────────────────────────────┤
 │                   OPERATIONAL MANAGEMENT                    │
-│          (Lower Level - Supervisors)                        │
+│                 (Lower Level - Supervisors)                 │
 │                                                             │
 │  Information: Goods, Services, Performance                  │
 │  Timeframe: Hourly/Daily                                    │
@@ -214,7 +214,6 @@ MIS can be recorded as old as human history.
 **MIS Use:**
 
 - Set up control procedures
-
 - Allocate resources towards organizational objectives
 
 **Information Timing:** Weekly or monthly basis
@@ -232,7 +231,6 @@ MIS can be recorded as old as human history.
 **MIS Use:**
 
 - Set corporate policies and strategies
-
 - Ensure organizational growth and survival
 
 **Information Timing:** Quarterly or yearly basis
@@ -295,11 +293,11 @@ MIS can be recorded as old as human history.
 
 ```mermaid
 flowchart TD
-    A[Strategic Management] --> B[Policies Plans Budgets Objectives]
+    A(Strategic Management) --> B[Policies Plans Budgets Objectives]
     B --> C[Revenues Profits Costs]
-    C --> D[Tactical Management]
+    C --> D(Tactical Management)
     D --> E[Measurements Schedules]
-    E --> F[Operational Management]
+    E --> F(Operational Management)
     F --> G[Goods Service Performances]
 ```
 

@@ -1,41 +1,54 @@
 # ⁠A. Organization
 
 ## ⁠A.1. Definition of Organization
+
 An organization is a **social structure** or entity in which two or more people work **interdependently** through structured patterns to accomplish a set of goals.
 
 **Key Characteristics:**
-- **Social System**: People use their knowledge and techniques to interact and work together
-- **Technological System**: People use knowledge and techniques to transform inputs into outputs
-- **Goal-Oriented System**: People work together for specific objectives
-- **Open System**: Consists of interdependent parts that continually monitor and transact with the external environment
-- **Coordination**: Of man, machine, and materials
+
 - **Value Creation**: For stakeholders, stockholders, employees, community, and society
+- **Open System**: Consists of interdependent parts that continually monitor and transact with the external environment
+- **Goal-Oriented System**: People work together for specific objectives
+- **Social System**: People use their knowledge and techniques to interact and work together
+- **Coordination**: Of man, machine, and materials
+- **Technological System**: People use knowledge and techniques to transform inputs into outputs
+
 **Organization as a System:**
+
 - An organization is an open system that:
     - Takes inputs from the environment (resources, information)
     - Transforms them through internal processes
     - Produces outputs (goods/services)
     - Receives feedback from the environment
     - Adapts to changes in external environment (technology, customer needs, market trends, regulations)
+
 ```
-INPUT → PROCESSING → OUTPUT → FEEDBACK → ADAPTATION
-(Resources) (Operations) (Products/Services) (Customer Response) (Changes)
+   INPUT    →  PROCESSING  →       OUTPUT        →      FEEDBACK       → ADAPTATION
+(Resources)   (Operations)   (Products/Services)   (Customer Response)    (Changes)
 ```
+
 ---
+
 ## ⁠A.2. Necessity/Importance of Organization
+
 **Why do we need organization?**
+
 - People working together achieve more than working alone
 - Organizations fulfill basic human needs (economic, social)
 - Greater experience and potential
 - Specialization and division of labor
 - Continuity and stability
+
 **Role of Organizations in Society:**
+
 - Provide employment and livelihood
 - Drive economic development
 - Develop education systems, healthcare, technology
 - Create products and services that improve quality of life
 - Examples: Hospitals, Colleges, Banks, Telecommunication companies, Technology firms, Entertainment industry
+
 **Role for Professional Growth of Employees:**
+
 - Career development opportunities
 - Skill enhancement and training
 - Professional networking
@@ -43,6 +56,7 @@ INPUT → PROCESSING → OUTPUT → FEEDBACK → ADAPTATION
 - Job security and stability
 ---
 ## ⁠A.3. Principles of Organization (Henry Fayol's Principles)
+
 For an organization to run smoothly, the following principles must be followed:
 
 | Principle                                     | Description                                                                                                          |
@@ -76,7 +90,9 @@ For an organization to run smoothly, the following principles must be followed:
 | **Communication** | Formal channels                              | Unofficial communication (grapevine)                                  |
 | **Power**         | Formal authority                             | Social influence                                                      |
 
+
 **Relationship:**
+
 - Informal organization exists within formal organization
 - Can coexist within the same family/workplace
 - Influences employee behavior strongly
@@ -84,13 +100,17 @@ For an organization to run smoothly, the following principles must be followed:
 - Informal leaders may have greater power than formal leaders in getting things done
 ---
 # ⁠B. Management
+
 ## ⁠B.1. Definition of Management
+
 **Simple Definition:** Getting things done through other people.
+
 **Comprehensive Definition:**
 - The act of getting people together to achieve set goals using available resources effectively and efficiently
 - The **brain of an organization**
 - Coordination of human, material resources, and technology
 - As old as human origin (Sun Tzu's "Art of War" - 6th century BC; Chanakya's "Arthashastra" - 300 BC)
+
 **"Management is both a Science and an Art":**
 - **As a Science**: Has systematic body of knowledge, principles, cause-effect relationships, can be tested and verified
 - **As an Art**: Requires personal skills, creativity, practical application, and experience
@@ -123,6 +143,8 @@ For an organization to run smoothly, the following principles must be followed:
 | **Interpersonal Skills** | Interaction between people inside and outside organization | Communication, leadership, motivation, conflict resolution |
 | **Informational Skills** | Gather information related to goals and operations         | Data collection, analysis, information processing          |
 | **Decisional Skills**    | Use information gathered to make decisions                 | Problem-solving, strategic planning, resource allocation   |
+
+
 **Qualities of a Good Manager:**
 - Leadership ability
 - Communication skills
@@ -148,6 +170,7 @@ For an organization to run smoothly, the following principles must be followed:
 
 ---
 ## ⁠B.6. Importance of Management
+
 - Proper planning to determine what is to be achieved
 - Proper organizing to allocate resources and establish means to accomplish plans
 - Proper influence to motivate and lead personnel towards goals
@@ -156,22 +179,28 @@ For an organization to run smoothly, the following principles must be followed:
 - Achieving organizational objectives effectively and efficiently
 ---
 # ⁠C. Theories of Management
+
 ## ⁠C.1. Scientific Management Theory (Frederic W. Taylor)
+
 **Historical Background:** Developed by Frederic W. Taylor in the early 1900's; first person to study management systematically.
+
 **Core Beliefs:**
 - Scientific approaches should be used to increase productivity and efficiency
 - There is **one best way** of doing each task
 - Select employees best suited for the job
 - Provide necessary education and training related to the job
 - Encourage friendly environment with separation of duties
+
 **Taylor's Four Principles:**
 1. **Motion Study**: Improved method of work
 2. **Fatigue Study**: Prescribed amount of rest periods
 3. **Time Study**: Specific standard of output
 4. **Incentive Wages**: Payment by unit of output
+
 **Practical Example - Bethlehem Steel Company:**
 - Before: Labors picked 42 kgs of iron, average output 12.7 tons/labor, daily pay $1.14
 - After: Average output rose to 48.8 tons/labor, daily pay rose to $1.85
+
 **Applicability in Modern Organizations:**
 - Still applicable in production and manufacturing processes
 - Focus on efficiency and productivity remains relevant
@@ -179,7 +208,9 @@ For an organization to run smoothly, the following principles must be followed:
 - However, modern organizations also consider human factors and motivation
 ---
 ## ⁠C.2. Administrative Management Theory (Henry Fayol)
+
 **Historical Background:** Henry Fayol (1842-1925), French Mining Engineer and Management Consultant; first to analyze functions of management.
+
 **Three Major Contributions:**
 1. Clear distinction between technical and managerial skills
 2. Identified functions constituting management process (PODCC)
@@ -210,13 +241,16 @@ For an organization to run smoothly, the following principles must be followed:
 - Digital transformation has changed some aspects but core principles remain
 ---
 ## ⁠C.3. Behavioral Management Theory (Elton Mayo)
+
 **Historical Background:** Developed by Elton Mayo and associates in the 1920's; challenged scientific management's focus on monetary incentives.
+
 **Core Beliefs:**
 - Productivity not necessarily increased through monetary incentives
 - Human behavior and social environment play important roles
 - Organization is a social system
 - Individuals motivated by complex hierarchy of needs
 - Intergroup relationships strongly influence performance
+
 **Hawthorne Experiment (Three Studies over 5 Years):**
 
 | Study                            | Description                                                                     | Findings                                                                                     |
@@ -224,6 +258,7 @@ For an organization to run smoothly, the following principles must be followed:
 | **Relay Assembly Test Room**     | 6 girls working on telephone assemblies; studied factors affecting productivity | Productivity increased due to social and psychological factors, not just physical conditions |
 | **Interviewing Program**         | Over 2100 people interviewed over 3 years                                       | Individual needs and informal group roles significantly impact performance                   |
 | **Bank Wiring Observation Room** | 14 males observed at work                                                       | Social interaction positively impacts performance and quality                                |
+
 
 **Key Conclusions:**
 - Special attention from managers improves output (Hawthorne Effect)
@@ -235,16 +270,19 @@ For an organization to run smoothly, the following principles must be followed:
 - Management requires both technical and social skills
 ---
 ## ⁠C.4. Modern Management Theories
+
 **A. Contingency Approach:**
 - Integrative approach that fits together both theories
 - Assumes no single theory is universally best
 - Ideas must be applied selectively based on situation
 - Necessary to determine organization's situation and choose which theory works best
+
 **B. System Approach:**
 - Concentrates on efficient use of available resources to produce desirable outputs
 - Organization uses inputs (capital, physical and human resources) and transforms into outputs
 - Necessary to recognize internal and external environment
 - Changes in environment directly affect performance
+
 **Which Theory is Best for Organizations in Nepal?**
 - Depends on the organization's size, nature, and context
 - Small organizations may benefit from scientific management
@@ -252,7 +290,9 @@ For an organization to run smoothly, the following principles must be followed:
 - Context of Nepal: traditional values, hierarchical structures, growing technology adoption
 ---
 # ⁠D. Forms of Ownership
+
 ## ⁠D.1. Single Ownership (Sole Proprietorship)
+
 **Definition:**
 - Oldest, simplest, and most popular form;
 - owned and controlled by single person;
@@ -291,6 +331,7 @@ For an organization to run smoothly, the following principles must be followed:
 
 ---
 ## ⁠D.2. Partnership
+
 **Definition:**
 - Formed when two or more people join hands to work together,
 - sharing profit and loss equally or as per agreement.
@@ -320,6 +361,7 @@ For an organization to run smoothly, the following principles must be followed:
 
 ---
 ## ⁠D.3. Joint Stock Company
+
 **Definition:** 
 - Association of individuals for carrying on trade or business;
 - also called corporations or limited companies.
@@ -370,6 +412,7 @@ For an organization to run smoothly, the following principles must be followed:
 - Tax registration (PAN) documents
 ---
 ## ⁠D.4. Cooperative Societies
+
 **Definition:** Voluntary association of individuals for mutual social, economic, and cultural benefit; not primarily for profit motive but for rendering services.
 
 **Key Features:**
@@ -414,7 +457,10 @@ For an organization to run smoothly, the following principles must be followed:
 
 ---
 ## ⁠D.5. Public Corporation
-**Definition:** Organization formed by the government for social welfare and non-profit objectives. Historical: 20 formed between 1936-1939.
+
+**Definition:** Organization formed by the government for social welfare and non-profit objectives.
+
+Historical: 20 formed between 1936-1939.
 
 **Advantages:**
 
@@ -435,11 +481,14 @@ For an organization to run smoothly, the following principles must be followed:
 
 ---
 # ⁠E. Organizational Structure
+
 ## ⁠E.1. Definition
+
 Refers to division of labor and patterns of coordination, communication, workflow, and formal power. Represents the hierarchical arrangement of various positions. Defines who directs whom and who reports to whom.
 
 ---
 ## ⁠E.2. Line Organization
+
 **Definition:** Simplest form; represents direct vertical relationships with authority flowing from topmost executive to lower supervisor levels. Authority decreases with each successive level.
 
 **Diagram:**
@@ -467,6 +516,7 @@ C --> G[Supervisor]
 - Lack of specialization may hamper future growth
 ---
 ## ⁠E.3. Functional Organization
+
 **Definition:** Developed by F.W. Taylor; organization divided into units based on functions (production, marketing, finance, personnel). Each unit under charge of different person. If a person performs several functions, they report to multiple functional heads.
 
 **Diagram:**
@@ -495,25 +545,29 @@ flowchart TD
 - Delay in decision making involving multiple specialists
 ---
 ## ⁠E.4. Line and Staff Organization
+
 **Definition:** Line authority flows down as in line organization, with addition of specialists (staff) attached to line managers to advise on business matters. Staff executives provide advice and information for better performance.
+
 **Diagram:**
 ```mermaid
 flowchart TD
-	 b[legal advisor] --> a[general manager]
-	 c[research expert] --> a
-	 d[personnel manager] --> a
-	 a --> e[asst. manager]
-	 a --> f[asst. manager]
-	 a --> g[asst. manager]
-	 e --> h[supervisor]
-	 f --> i[supervisor]
-	 g --> j[supervisor]
+    LA[Legal Advisor] --> GM[General Manager]
+    RE[Research expert] --> GM
+    PM[Personnel Manager] --> GM
+    GM --> AM1[Assistant Manager]
+    GM --> AM2[Assistant Manager]
+    GM --> AM3[Assistant Manager]
+    AM1 --> S1[Supervisor]
+    AM2 --> S2[Supervisor]
+    AM3 --> S3[Supervisor]
 ```
+
 **Advantages:**
 - Line managers benefit from specialized knowledge of staff
 - Staff executives help make better decisions
 - More flexible; helpful when organization grows
 - Shares stressful duties of top executives
+
 **Disadvantages:**
 - Conflicts may occur between line and staff executives
 - Allocation of duties not always clear
@@ -521,7 +575,9 @@ flowchart TD
 - Staff executives not accountable for results
 ---
 ## ⁠E.5. Committee Organization
+
 **Definition:** Two or more persons appointed by higher authority for the purpose of advising. May be standing committee or for limited duration. May or may not have authority.
+
 **Advantages:**
 - Brings together wide range of ideas, expertise, and interests
 - Ensures all aspects of organization are considered in decision making
@@ -531,6 +587,7 @@ flowchart TD
 - Decisions may be based on compromise rather than what's best
 
 ## ⁠E.6. Engineering Projects Structure 
+
 **Which Structure is Best for Temporary Engineering Projects?**
 - **Project-based Organization** or **Matrix Organization**
 - **Reasons:**
@@ -542,7 +599,9 @@ flowchart TD
     - Expert coordination
 ---
 # ⁠F. Purchasing and Marketing Management
+
 ## ⁠F.1. Purchasing Management
+
 **Definition:** Activity of acquiring goods and services by payment to accomplish organizational goals. Includes procurement of materials, machines, tools, and equipment.
 
 **Key Responsibility:** Buy materials of **right quality**, **right quantity**, at **right time**, from **right sources**, with delivery at **right place**.
@@ -579,6 +638,7 @@ flowchart TD
 11. Allocate materials as per requirements
 ---
 ## ⁠F.2. Marketing Management
+
 **Definition:** Process of communicating the value of products or services to consumers; organizational function for creating, delivering, and communicating value to customers; managing customer relationships for mutual benefit.
 
 **Four P's of Marketing:**
@@ -586,6 +646,7 @@ flowchart TD
 2. **Pricing:** Setting price for the product
 3. **Placement:** How product reaches buyer (online, retail, wholesale)
 4. **Promotion:** Advertising, sales promotion, publicity, branding
+
 **Marketing Concept:**
 - Satisfying customers by selling products meeting their needs
 - Objective: Making profit by satisfying customers, not just volume sales
@@ -615,6 +676,7 @@ flowchart TD
 | **Market Information Management** | Obtaining, managing information about customer wants; improving decision making                   |
 | **Promotion**                     | Communicating with customers; includes advertising, personal selling, publicity, public relations |
 
+
 **Importance of Marketing in Modern Digital Era:**
 - Digital marketing expands reach globally
 - Social media enables direct customer engagement
@@ -623,6 +685,7 @@ flowchart TD
 - Cost-effective digital advertising
 - Real-time feedback and market research
 - Customer relationship management (CRM) systems
+
 **Salesmanship in Marketing:**
 - Salesmanship is indeed an important ingredient of marketing
 - Personal selling creates customer relationships
@@ -630,9 +693,11 @@ flowchart TD
 - Provides immediate feedback
 ---
 ## ⁠F.3. Advertising
+
 **Definition:** Form of marketing used to encourage or persuade consumers to take action upon a product.
 
 **Forms:** Newspapers, magazines, media, online sources, TV, door-to-door selling, billboards, sales promotions
+
 **Importance of Advertising:**
 - Increases sales by creating awareness
 - Makes consumers conscious about products and brands
