@@ -213,7 +213,7 @@ The processing task is **partitioned into hardware and software parts**, develop
 ![Traditional design flow vs hardware-software codesign](../attachments/design-flow-fpga.png)
 *Figure: (a) Traditional design flow (b) Hardware-software codesign.*
 
-![Example for feature extraction](attachments/codesign-example.png)
+![Example for feature extraction](../attachments/codesign-example.png)
 *Figure: The architecture of the hardware-software co-design feature extraction and matching system.*
 
 ---
