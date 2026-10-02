@@ -1,8 +1,3 @@
-<p style="text-align: center">
-    <b> 5 Hours <br> 9 Marks</b>
-</p>
-<hr style="width:500px; height:5px;">
-
 # A. FPGA Overview and Evolution
 
 ## A.1. What is an FPGA?
@@ -143,7 +138,7 @@ At a high level, every FPGA, regardless of vendor, is built from three classes o
 
 ## C.1. LUT (Look-Up Table)
 
-- The core combinational-logic primitive. A **k-input LUT** contains \(2^k\) SRAM configuration cells, each holding one row of a truth table, so a k-input LUT can implement **any** Boolean function of up to k variables simply by loading the right bit pattern.
+- The core combinational-logic primitive. A **k-input LUT** contains $2^k$ SRAM configuration cells, each holding one row of a truth table, so a k-input LUT can implement **any** Boolean function of up to k variables simply by loading the right bit pattern.
 - **4-input LUTs** were the traditional mainstream size for many years; modern high-performance families (e.g., Xilinx 7-Series and later) use **6-input LUTs**, often with two outputs (an LUT6 can be split into two LUT5s sharing inputs), improving logic density and reducing the number of levels of logic (and hence delay) needed for wide functions.
 - LUTs can also be repurposed as small **distributed RAM** or **shift registers (SRL)** when not needed purely for logic, a technique the tools use automatically or that a designer can infer explicitly.
 
@@ -157,7 +152,7 @@ At a high level, every FPGA, regardless of vendor, is built from three classes o
 
 - A CLB packages together: **LUTs**, **flip-flops**, **multiplexers** (for local signal steering/selection), and dedicated **carry-chain logic** (for fast ripple-carry addition/subtraction/comparison).
 - LUTs implement the combinational logic function; MUXes select/route between LUT outputs, carry logic, or wide-function combining paths; FFs register the result.
-- The number of LUTs per CLB/slice varies by vendor and family, commonly 4, 6, or more inputs per LUT, with 8 LUTs and 16 FFs being a typical modern Xilinx CLB (2 slices × 4 LUTs each, in some families).
+- The number of LUTs per CLB/slice varies by vendor and family, commonly 4, 6, or more inputs per LUT, with 8 LUTs and 16 FFs being a typical modern Xilinx CLB (2 slices x 4 LUTs each, in some families).
 - A modern mid-to-large FPGA can contain many tens of thousands to well over a million CLB-equivalent logic cells.
 
 ## C.4. DSP Slices (Dedicated Arithmetic Blocks)
@@ -167,7 +162,7 @@ At a high level, every FPGA, regardless of vendor, is built from three classes o
 - Because arithmetic-heavy operations (multiply, multiply-accumulate, filtering) are extremely inefficient to build purely from LUTs, modern FPGAs embed **hardened DSP blocks** directly in the fabric.
 - **Xilinx DSP48E2** (UltraScale/UltraScale+ family, successor to DSP48E1 in 7-Series, DSP48A/A1 in Spartan-6, and the original DSP48 in Virtex-4) is a representative example. A single DSP48E2 slice contains:
   - A **27-bit pre-adder**
-  - A **27×18-bit two's-complement multiplier**
+  - A **27x18-bit two's-complement multiplier**
   - A **48-bit accumulator / ALU** (supporting add, subtract, and bitwise logic operations, including a 96-bit-wide XOR mode useful for CRC/GF(2ⁿ) arithmetic)
   - Multiple internal **pipeline registers** (on the A/B inputs, after the multiplier, and after the ALU) that can be individually enabled for higher clock speed
   - **Cascade ports** (ACIN/ACOUT, BCIN/BCOUT, PCIN/PCOUT) that chain adjacent DSP slices together without going back through general routing, enabling efficient wide multipliers, systolic-array MAC chains, and long FIR filters
@@ -177,7 +172,6 @@ At a high level, every FPGA, regardless of vendor, is built from three classes o
 - Using DSP slices instead of LUT-built arithmetic gives higher clock frequency, lower latency, and dramatically lower LUT utilization for the same function.
 
 ![DSP Operation](../attachments/dsp-operation.png)
-
 
 ## C.5. Block RAM (BRAM)
 
@@ -447,7 +441,7 @@ In short: the PS/APU/RPU provide **general-purpose and real-time compute**, the 
 
 # I. FPGA Design Flow
 
-![Design Flow](../attachments/design-flow.png)
+![Design Flow for FPGA](../attachments/fpga-design-flow.png)
 
 ## I.1. Overview
 
