@@ -14,8 +14,8 @@
 - Why RTL came first
     - Early hardware design had no alternative
     - every register, every clock-cycle-by-clock-cycle data movement, and every control decision
-    - had to be explicitly specified by the designing
-    - using a HDL, such as Verilog or VHDL.
+    - had to be explicitly specified by the designer
+    - using an HDL, such as Verilog or VHDL.
     - This gives complete, fine-grained control over the resulting hardware.
     - But the method was slow and labor-intensive.
 - Why HLS was formed
@@ -68,8 +68,8 @@ Approach
     - meaning, it maps directly to physical FPGA primitives (flip-flops, LUTs, mutliplexers)
 - Example:
 
-```systemverilog
-always_ff @(positive clk) begin
+```verilog
+always @(positive clk) begin
     prod_reg <= A * B;          // hardware multiplier inferred
     Y        <= prod_reg + C;   // hardware adder inferred
 end
@@ -164,12 +164,12 @@ void compute_vector(int A[100], int B[100], int Y[100]) {
 
 ## Step 2: High-Level Synthesis (Scheduling & Allocation)
 
-- The HLS compiler translates the untimed sequential code into timed RTL hahrdware, guided by optimization directives (**pragmas**)
+- The HLS compiler translates the untimed sequential code into timed RTL hardware, guided by optimization directives (**pragmas**)
 - Two core theoretical operations govern this translation:
     - **Scheduling**: decides in which clock cycle each operation will occur.
     - **Allocation**: decicdes how many physical hardware components (multipliers, adders, BRAM memory ports) to assign to the computation.
 - Example:
-    - without any praga, the loop above runs sequentially
+    - without any pragma, the loop above runs sequentially
     - 100 iterations, each incurring its own per-iteration delay.
     - Adding, `#pragma HLS UNROLL factor=2` causes the compiler to
     - **allocate two physical multipliers**, processing two array elements simultaneously

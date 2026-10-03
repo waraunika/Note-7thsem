@@ -592,120 +592,37 @@ endmodule
 116 lines
 
 ```verilog
-// assumptions made:
-// Q1.15 data type is used:
-// 1 bit sign, 15 bit magnitude
-// it is assumed that the input ranges from [-1, 1)
-// every butterfly output is halved, so the result is X[k] / 8
+module fft(
+    input signed [31:0] x [0:7],
+    output signed [31:0] Y [0:7],
+    output signed [31:0] Yi [0:7]
+    );
 
-module fft_8point (
-    input CLK,
-    RST,
-    input signed [15:0] x0_re, x1_re, x2_re, x3_re, x4_re, x5_re, x6_re, x7_re,
-    input signed [15:0] x0_im, x1_im, x2_im, x3_im, x4_im, x5_im, x6_im, x7_im,
-    output signed [15:0] y0_re, y1_re, y2_re, y3_re, y4_re, y5_re, y6_re, y7_re,
-    output signed [15:0] y0_im, y1_im, y2_im, y3_im, y4_im, y5_im, y6_im, y7_im
-);
+    localparam signed p = 181 ; // (181/256) = 0.707
 
-  // (a + b) / 2 and (a - b) / 2
-  // inputs are 32 bits wide, so the add/sub can never wrap before the shift
-  function signed [15:0] hadd;
-    input signed [31:0] a, b;
-    hadd = (a + b) >>> 1;
-  endfunction
+    assign Y[0] = x[0]+ x[1]+x[2]+x[3]+x[4]+x[5]+x[6]+x[7];
+    assign Yi[0] = 0;
 
-  function signed [15:0] hsub;
-    input signed [31:0] a, b;
-    hsub = (a - b) >>> 1;
-  endfunction
+    assign Y[1]  = (x[0]-x[4]) + ((p*(x[1]-x[3]-x[5]+x[7])) >>> 8);
+    assign Yi[1] = (x[6]-x[2]) - ((p*(x[1]+x[3]-x[5]-x[7])) >>> 8);
 
-  // twiddle factors w8^k = cos(2*pi*k/8) - j sin(2*pi*k/8), k = 0..3
-  // k = 0: 1,  k = 1: 0.707 - j0.707,  k = 2: -j,  k = 3: -0.707 - j0.707
-  localparam [63:0] W_RE = {16'hA57E, 16'h0000, 16'h5A82, 16'h7FFF};
-  localparam [63:0] W_IM = {16'hA57E, 16'h8000, 16'hA57E, 16'h0000};
+    assign Y[2] = x[0] - x[2] + x[4] - x[6];
+    assign Yi[2] = -x[1] + x[3] -x[5] + x[7];
 
-  // inputs in bit-reversed order: position n holds x[bitrev(n)]
-  wire [127:0] xr = {x7_re, x3_re, x5_re, x1_re, x6_re, x2_re, x4_re, x0_re};
-  wire [127:0] xi = {x7_im, x3_im, x5_im, x1_im, x6_im, x2_im, x4_im, x0_im};
+    assign Y[3]  = (x[0]-x[4]) - ((p*(x[1]-x[3]-x[5]+x[7])) >>> 8);
+    assign Yi[3] = (x[2]-x[6]) - ((p*(x[1]+x[3]-x[5]-x[7])) >>> 8);
 
-  wire signed [15:0] x_re[0:7], x_im[0:7];
+    assign Y[4] = x[0]-x[1]+x[2]-x[3]+x[4]-x[5]+x[6]-x[7];
+    assign Yi[4] = 0;
 
-  genvar k;
-  generate
-    for (k = 0; k < 8; k = k + 1) begin : load
-      assign x_re[k] = xr[16*k+:16];
-      assign x_im[k] = xi[16*k+:16];
-    end
-  endgenerate
+    assign Y[5] = Y[3];
+    assign Yi[5] = -Yi[3];
 
-  // pipeline registers
-  reg signed [15:0] s1_re[0:7], s1_im[0:7];
-  reg signed [15:0] s2_re[0:7], s2_im[0:7];
-  reg signed [15:0] s3_re[0:7], s3_im[0:7];
+    assign Y[6] = Y[2];
+    assign Yi[6] = -Yi[2];
 
-  // temporaries for the stage 3 twiddle multiply
-  reg signed [15:0] w_re, w_im;
-  reg signed [31:0] p_re, p_im;
-
-  integer i;
-
-  always @(posedge CLK or posedge RST) begin
-    if (RST) begin
-      for (i = 0; i < 8; i = i + 1) begin
-        s1_re[i] <= 0;
-        s1_im[i] <= 0;
-        s2_re[i] <= 0;
-        s2_im[i] <= 0;
-        s3_re[i] <= 0;
-        s3_im[i] <= 0;
-      end
-    end else begin
-
-      // stage 1: butterfly on pairs (0,1) (2,3) (4,5) (6,7)
-      for (i = 0; i < 8; i = i + 2) begin
-        s1_re[i]   <= hadd(x_re[i], x_re[i+1]);
-        s1_im[i]   <= hadd(x_im[i], x_im[i+1]);
-        s1_re[i+1] <= hsub(x_re[i], x_re[i+1]);
-        s1_im[i+1] <= hsub(x_im[i], x_im[i+1]);
-      end
-
-      // stage 2: butterfly on pairs (0,2) (1,3) and (4,6) (5,7)
-      // twiddle is 1 for the first pair and -j for the second
-      // s * (-j) = (im, -re), so no multiplier is needed
-      for (i = 0; i < 8; i = i + 4) begin
-        s2_re[i]   <= hadd(s1_re[i], s1_re[i+2]);
-        s2_im[i]   <= hadd(s1_im[i], s1_im[i+2]);
-        s2_re[i+2] <= hsub(s1_re[i], s1_re[i+2]);
-        s2_im[i+2] <= hsub(s1_im[i], s1_im[i+2]);
-
-        s2_re[i+1] <= hadd(s1_re[i+1], s1_im[i+3]);
-        s2_im[i+1] <= hsub(s1_im[i+1], s1_re[i+3]);
-        s2_re[i+3] <= hsub(s1_re[i+1], s1_im[i+3]);
-        s2_im[i+3] <= hadd(s1_im[i+1], s1_re[i+3]);
-      end
-
-      // stage 3: butterfly on pairs (i, i+4), the lower one is first multiplied by w8^i
-      for (i = 0; i < 4; i = i + 1) begin
-        w_re = W_RE[16*i+:16];
-        w_im = W_IM[16*i+:16];
-
-        // p = w * s2[i+4], kept 32 bits wide so it cannot wrap
-        p_re = (s2_re[i+4] * w_re - s2_im[i+4] * w_im) >>> 15;
-        p_im = (s2_re[i+4] * w_im + s2_im[i+4] * w_re) >>> 15;
-
-        s3_re[i]   <= hadd(s2_re[i], p_re);
-        s3_im[i]   <= hadd(s2_im[i], p_im);
-        s3_re[i+4] <= hsub(s2_re[i], p_re);
-        s3_im[i+4] <= hsub(s2_im[i], p_im);
-      end
-
-    end
-  end
-
-  assign {y7_re, y6_re, y5_re, y4_re, y3_re, y2_re, y1_re, y0_re} =
-      {s3_re[7], s3_re[6], s3_re[5], s3_re[4], s3_re[3], s3_re[2], s3_re[1], s3_re[0]};
-  assign {y7_im, y6_im, y5_im, y4_im, y3_im, y2_im, y1_im, y0_im} =
-      {s3_im[7], s3_im[6], s3_im[5], s3_im[4], s3_im[3], s3_im[2], s3_im[1], s3_im[0]};
+    assign Y[7] = Y[1];
+    assign Yi[7] = -Yi[1];
 
 endmodule
 ```
