@@ -1,8 +1,3 @@
-<p style="text-align: center">
-    <b> 3 Hours <br> 5 Marks</b>
-</p>
-<hr style="width:500px; height:5px;">
-
 # Chapter 2 — FPGA Logical Components, Architectures and Interfaces
 
 ---
@@ -179,7 +174,7 @@ flowchart TD
 Both AXI4 and AXI4-Lite are built from **five independent channels**, each with its own **VALID/READY** handshake, which is what allows AXI to pipeline addresses ahead of data and support multiple outstanding transactions:
 
 1. **Read Address Channel** (AR) — master sends the address (and burst attributes) for a read.
-2. **Read Data Channel** (R) — slave returns the requested read data (one or more beats).
+2. **Read Data Channel** \(R\) — slave returns the requested read data (one or more beats).
 3. **Write Address Channel** (AW) — master sends the address (and burst attributes) for a write.
 4. **Write Data Channel** (W) — master sends the write data (one or more beats, with byte strobes).
 5. **Write Response Channel** (B) — slave confirms completion/status of the write transaction.

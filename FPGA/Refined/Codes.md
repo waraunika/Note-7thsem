@@ -63,7 +63,7 @@ module add4bit (
 
 endmodule
 
-module sub4bit_via_adder (
+module sub4bit (
     input  [3:0] A, B,
     output [3:0] Diff,
     output       Bout
@@ -89,7 +89,7 @@ module full_subtractor (
     assign Bout = (~A & B) | (~(A ^ B) & bin);
 endmodule
 
-module sub4bit_structural (
+module sub4bit (
     input  [3:0] A, B,
     output [3:0] Diff,
     output       Bout
@@ -323,264 +323,137 @@ int main(void) {
 
 ## Control Logic Module
 
-Two options: Combined Control Logic Module or Control Unit + ALU Control Unit
-
-### Combined Logic Module
-
-137 lines including comment
-
-```verilog
-module control (
-    input [6:0] opcode,
-    input [2:0] funct3,
-    input [6:0] funct7,
-
-    output reg RegWrite,
-    ALUSrc,  // 1: alu b input is the immediate, 0: rs2
-    ASrcPC,  // 1: alu a input is pc (auipc), 0: rs1
-    MemRead,
-    MemWrite,
-    MemToReg,  // 1: write back memory data, 0: alu result
-    output reg Branch,
-    Jump,  // jal or jalr, writes pc+4 to rd
-    Jalr,  // jalr only, target comes from alu (rs1 + imm)
-
-    output reg [3:0] ALU_operation
-);
-
-  // opcodes
-  localparam OP_Rtype = 7'b0110011;
-  localparam OP_Itype = 7'b0010011;  // addi, slti, xori, slli ...
-  localparam OP_Load  = 7'b0000011;
-  localparam OP_Stype = 7'b0100011;
-  localparam OP_Btype = 7'b1100011;
-  localparam OP_JAL   = 7'b1101111;
-  localparam OP_JALR  = 7'b1100111;
-  localparam OP_LUI   = 7'b0110111;
-  localparam OP_AUIPC = 7'b0010111;
-
-  // alu operation encodings (must match alu.v)
-  localparam ALU_ADD  = 4'b0010;
-  localparam ALU_SUB  = 4'b0110;
-  localparam ALU_AND  = 4'b0000;
-  localparam ALU_OR   = 4'b0001;
-  localparam ALU_XOR  = 4'b0100;
-  localparam ALU_SLL  = 4'b0111;
-  localparam ALU_SRL  = 4'b1000;
-  localparam ALU_SRA  = 4'b1001;
-  localparam ALU_SLT  = 4'b1010;
-  localparam ALU_SLTU = 4'b1011;
-  localparam ALU_PASS = 4'b1111;
-
-  // r-type and i-type share the funct3 decode
-  // funct7[5] is instruction bit 30, it picks sub/sra
-  reg [3:0] alu_funct;
-
-  always @(*) begin
-    case (funct3)
-      // only r-type can sub, for addi bit 30 is just part of the immediate
-      3'b000:  alu_funct = (opcode == OP_Rtype && funct7[5]) ? ALU_SUB : ALU_ADD;
-      3'b001:  alu_funct = ALU_SLL;
-      3'b010:  alu_funct = ALU_SLT;
-      3'b011:  alu_funct = ALU_SLTU;
-      3'b100:  alu_funct = ALU_XOR;
-      3'b101:  alu_funct = funct7[5] ? ALU_SRA : ALU_SRL;
-      3'b110:  alu_funct = ALU_OR;
-      default: alu_funct = ALU_AND;
-    endcase
-  end
-
-  always @(*) begin
-    // defaults, so nothing is left unassigned (no latches)
-    RegWrite      = 1'b0;
-    ALUSrc        = 1'b0;
-    ASrcPC        = 1'b0;
-    MemRead       = 1'b0;
-    MemWrite      = 1'b0;
-    MemToReg      = 1'b0;
-    Branch        = 1'b0;
-    Jump          = 1'b0;
-    Jalr          = 1'b0;
-    ALU_operation = ALU_ADD;
-
-    case (opcode)
-      OP_Rtype: begin
-        RegWrite      = 1'b1;
-        ALU_operation = alu_funct;
-      end
-
-      OP_Itype: begin
-        RegWrite      = 1'b1;
-        ALUSrc        = 1'b1;
-        ALU_operation = alu_funct;
-      end
-
-      OP_Load: begin
-        RegWrite = 1'b1;
-        ALUSrc   = 1'b1;
-        MemRead  = 1'b1;
-        MemToReg = 1'b1;
-      end
-
-      OP_Stype: begin
-        ALUSrc   = 1'b1;
-        MemWrite = 1'b1;
-      end
-
-      OP_Btype: begin
-        Branch = 1'b1;
-        // beq/bne use sub (zero flag), blt/bge use slt, bltu/bgeu use sltu
-        case (funct3[2:1])
-          2'b10:   ALU_operation = ALU_SLT;
-          2'b11:   ALU_operation = ALU_SLTU;
-          default: ALU_operation = ALU_SUB;
-        endcase
-      end
-
-      OP_JAL: begin
-        RegWrite = 1'b1;
-        Jump     = 1'b1;
-      end
-
-      OP_JALR: begin
-        RegWrite = 1'b1;
-        ALUSrc   = 1'b1;
-        Jump     = 1'b1;
-        Jalr     = 1'b1;
-      end
-
-      OP_LUI: begin
-        RegWrite      = 1'b1;
-        ALUSrc        = 1'b1;
-        ALU_operation = ALU_PASS;  // pass the immediate
-      end
-
-      OP_AUIPC: begin
-        RegWrite = 1'b1;
-        ALUSrc   = 1'b1;
-        ASrcPC   = 1'b1;
-      end
-
-      default: begin
-      end
-    endcase
-  end
-
-endmodule
-
-```
-
-### CU + ALU_CU
-
 99 + 59 = 158 lines
 
 #### CU
 
-99 lines
+121 lines
 
 ```verilog
-module cu (
-    input [6:0] opcode,
-
-    output reg RegWrite,
-    ALUSrc,  // 1: alu b input is the immediate, 0: rs2
-    ASrcPC,  // 1: alu a input is pc (auipc), 0: rs1
-    MemRead,
-    MemWrite,
-    MemToReg,  // 1: write back memory data, 0: alu result
-    output reg Branch,
-    Jump,  // jal or jalr, writes pc+4 to rd
-    Jalr,  // jalr only, target comes from alu (rs1 + imm)
-
-    output reg [1:0] ALUOp
+module control_unit (
+    input wire       reset,
+    input wire [6:0] opcode,
+ 
+    output reg       reg_write,
+    output reg       mem_read,
+    output reg       mem_write,
+    output reg       mem_to_reg,  // 1: write back memory data, 0: alu result
+    output reg       alu_src,     // 1: alu b input is the immediate, 0: rs2
+    output reg       branch,
+    output reg [2:0] alu_op,
+ 
+    // extras (beyond the minimum port list)
+    output reg       jump,        // jal or jalr, writes pc+4 to rd
+    output reg       jalr,        // jalr only, target = rs1 + imm
+    output reg       lui,         // lui only, writes the immediate
+    output reg       auipc        // auipc only, alu a input is pc
 );
-
+ 
   // opcodes
-  localparam OP_Rtype  = 7'b0110011;
-  localparam OP_Itype  = 7'b0010011;  // addi, slti, xori, slli ...
-  localparam OP_Load   = 7'b0000011;
-  localparam OP_Stype  = 7'b0100011;
-  localparam OP_Btype  = 7'b1100011;
-  localparam OP_JAL    = 7'b1101111;
-  localparam OP_JALR   = 7'b1100111;
-  localparam OP_LUI    = 7'b0110111;
-  localparam OP_AUIPC  = 7'b0010111;
-
-  // ALUOp: 00 add, 01 branch compare, 10 r-type, 11 i-type
+  localparam OP_RTYPE   = 7'b0110011;
+  localparam OP_ITYPE   = 7'b0010011;
+  localparam OP_LOAD    = 7'b0000011;
+  localparam OP_STORE   = 7'b0100011;
+  localparam OP_BRANCH  = 7'b1100011;
+  localparam OP_JAL     = 7'b1101111;
+  localparam OP_JALR    = 7'b1100111;
+  localparam OP_LUI     = 7'b0110111;
+  localparam OP_AUIPC   = 7'b0010111;
+ 
+  // alu_op instruction classes
+  localparam R_TYPE = 3'b000;  // add, sub, and, or, xor, slt, sltu, sll, srl, sra
+  localparam I_TYPE = 3'b001;  // addi, andi, ori, xori, slti, sltiu, slli, srli, srai
+  localparam STORE  = 3'b010;  // sb, sh, sw
+  localparam BRANCH = 3'b011;  // beq, bne, blt, bge, bltu, bgeu
+  localparam U_TYPE = 3'b100;  // lui, auipc
+  localparam JUMP   = 3'b101;  // jal, jalr
+  localparam LOAD   = 3'b110;  // lb, lh, lw, lbu, lhu
+  localparam NOP    = 3'b111;  // no operation / unknown opcode
+ 
   always @(*) begin
     // defaults, so nothing is left unassigned (no latches)
-    RegWrite = 1'b0;
-    ALUSrc   = 1'b0;
-    ASrcPC   = 1'b0;
-    MemRead  = 1'b0;
-    MemWrite = 1'b0;
-    MemToReg = 1'b0;
-    Branch   = 1'b0;
-    Jump     = 1'b0;
-    Jalr     = 1'b0;
-    ALUOp    = 2'b00;
-
-    case (opcode)
-      OP_Rtype: begin
-        RegWrite = 1'b1;
-        ALUOp    = 2'b10;
-      end
-
-      OP_Itype: begin
-        RegWrite = 1'b1;
-        ALUSrc   = 1'b1;
-        ALUOp    = 2'b11;
-      end
-
-      OP_Load: begin
-        RegWrite = 1'b1;
-        ALUSrc   = 1'b1;
-        MemRead  = 1'b1;
-        MemToReg = 1'b1;
-      end
-
-      OP_Stype: begin
-        ALUSrc   = 1'b1;
-        MemWrite = 1'b1;
-      end
-
-      OP_Btype: begin
-        Branch = 1'b1;
-        ALUOp  = 2'b01;
-      end
-
-      OP_JAL: begin
-        RegWrite = 1'b1;
-        Jump     = 1'b1;
-      end
-
-      OP_JALR: begin
-        RegWrite = 1'b1;
-        ALUSrc   = 1'b1;
-        Jump     = 1'b1;
-        Jalr     = 1'b1;
-      end
-
-      OP_LUI: begin
-        RegWrite = 1'b1;
-        ALUSrc   = 1'b1;
-      end
-
-      OP_AUIPC: begin
-        RegWrite = 1'b1;
-        ALUSrc   = 1'b1;
-        ASrcPC   = 1'b1;
-      end
-
-      default: begin
-      end
-    endcase
+    reg_write  = 1'b0;
+    mem_read   = 1'b0;
+    mem_write  = 1'b0;
+    mem_to_reg = 1'b0;
+    alu_src    = 1'b0;
+    branch     = 1'b0;
+    jump       = 1'b0;
+    jalr       = 1'b0;
+    lui        = 1'b0;
+    auipc      = 1'b0;
+    alu_op     = NOP;
+ 
+    if (!reset) begin  // reset high: everything stays inactive
+      case (opcode)
+        OP_RTYPE: begin
+          reg_write = 1'b1;
+          alu_op    = R_TYPE;
+        end
+ 
+        OP_ITYPE: begin
+          reg_write = 1'b1;
+          alu_src   = 1'b1;
+          alu_op    = I_TYPE;
+        end
+ 
+        OP_LOAD: begin
+          reg_write  = 1'b1;
+          mem_read   = 1'b1;
+          mem_to_reg = 1'b1;
+          alu_src    = 1'b1;
+          alu_op     = LOAD;
+        end
+ 
+        OP_STORE: begin
+          mem_write = 1'b1;
+          alu_src   = 1'b1;
+          alu_op    = STORE;
+        end
+ 
+        OP_BRANCH: begin
+          branch = 1'b1;
+          alu_op = BRANCH;
+        end
+ 
+        OP_JAL: begin
+          reg_write = 1'b1;
+          jump      = 1'b1;
+          alu_op    = JUMP;
+        end
+ 
+        OP_JALR: begin
+          reg_write = 1'b1;
+          jump      = 1'b1;
+          jalr      = 1'b1;
+          alu_src   = 1'b1;  // rs1 + imm
+          alu_op    = JUMP;
+        end
+ 
+        OP_LUI: begin
+          reg_write = 1'b1;
+          alu_src   = 1'b1;
+          lui       = 1'b1;
+          alu_op    = U_TYPE;
+        end
+ 
+        OP_AUIPC: begin
+          reg_write = 1'b1;
+          alu_src   = 1'b1;
+          auipc     = 1'b1;
+          alu_op    = U_TYPE;
+        end
+ 
+        default: begin
+        end
+      endcase
+    end
   end
-
+ 
 endmodule
 ```
 
-#### ALU_CU
+## ALU_CU
 
 59 lines
 
@@ -648,49 +521,53 @@ endmodule
 
 ## ALU module
 
-42 lines
+46 lines
 
 ```
 module alu (
-    input [31:0] src_a,
-    input [31:0] src_b,
-    input [3:0] alu_control,
-    output reg [31:0] result,
-    output zero
+    input      [31:0] src_a,
+    input      [31:0] src_b,
+    input      [ 3:0] alu_ctrl,
+    output reg [31:0] result
 );
 
-  // alu operation encodings
-  localparam ALU_ADD  = 4'b0010;
-  localparam ALU_SUB  = 4'b0110;
-  localparam ALU_AND  = 4'b0000;
-  localparam ALU_OR   = 4'b0001;
-  localparam ALU_XOR  = 4'b0100;
-  localparam ALU_SLL  = 4'b0111;
-  localparam ALU_SRL  = 4'b1000;
-  localparam ALU_SRA  = 4'b1001;
-  localparam ALU_SLT  = 4'b1010;
-  localparam ALU_SLTU = 4'b1011;
-  localparam ALU_PASS = 4'b1111;  // pass through for lui
+  // operation codes
+  localparam ADD                   = 4'b0000;
+  localparam SUB                   = 4'b0001;
+  localparam LESS_THAN             = 4'b0010;  // slt, slti, blt
+  localparam LESS_THAN_UNSIGNED    = 4'b0011;  // sltu, sltiu, bltu
+  localparam GREATER_THAN          = 4'b0100;  // bge  (a >= b, signed)
+  localparam GREATER_THAN_UNSIGNED = 4'b0101;  // bgeu (a >= b, unsigned)
+  localparam XOR                   = 4'b0110;
+  localparam OR                    = 4'b0111;
+  localparam AND                   = 4'b1000;
+  localparam SLL                   = 4'b1001;
+  localparam SRL                   = 4'b1010;
+  localparam SRA                   = 4'b1011;
+  localparam EQUAL                 = 4'b1100;  // beq
+  localparam NOT_EQUAL             = 4'b1101;  // bne
+  localparam PC_PLUS_4             = 4'b1110;  // jal, jalr link value (src_a = pc)
 
   always @(*) begin
-    case (alu_control)
-      ALU_ADD:  result = src_a + src_b;
-      ALU_SUB:  result = src_a - src_b;
-      ALU_AND:  result = src_a & src_b;
-      ALU_OR:   result = src_a | src_b;
-      ALU_XOR:  result = src_a ^ src_b;
-      ALU_SLL:  result = src_a << src_b[4:0];  // only low 5 bits are the shift amount
-      ALU_SRL:  result = src_a >> src_b[4:0];
-      ALU_SRA:  result = $signed(src_a) >>> src_b[4:0];
-      ALU_SLT:  result = ($signed(src_a) < $signed(src_b)) ? 32'd1 : 32'd0;
-      ALU_SLTU: result = (src_a < src_b) ? 32'd1 : 32'd0;
-      ALU_PASS: result = src_b;
-      default:  result = 32'd0;
+    case (alu_ctrl)
+      ADD:                   result = src_a + src_b;
+      SUB:                   result = src_a - src_b;
+      LESS_THAN:             result = {31'b0, $signed(src_a) < $signed(src_b)};
+      LESS_THAN_UNSIGNED:    result = {31'b0, src_a < src_b};
+      GREATER_THAN:          result = {31'b0, $signed(src_a) >= $signed(src_b)};
+      GREATER_THAN_UNSIGNED: result = {31'b0, src_a >= src_b};
+      XOR:                   result = src_a ^ src_b;
+      OR:                    result = src_a | src_b;
+      AND:                   result = src_a & src_b;
+      SLL:                   result = src_a << src_b[4:0];  // only low 5 bits are the shift amount
+      SRL:                   result = src_a >> src_b[4:0];
+      SRA:                   result = $signed(src_a) >>> src_b[4:0];
+      EQUAL:                 result = {31'b0, src_a == src_b};
+      NOT_EQUAL:             result = {31'b0, src_a != src_b};
+      PC_PLUS_4:             result = src_a + 32'd4;
+      default:               result = 32'd0;
     endcase
   end
-
-  // zero flag is set when result is zero
-  assign zero = (result == 32'd0);
 
 endmodule
 ```
