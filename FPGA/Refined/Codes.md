@@ -323,10 +323,6 @@ int main(void) {
 
 ## Control Logic Module
 
-99 + 59 = 158 lines
-
-#### CU
-
 136 lines
 
 ```verilog
@@ -468,7 +464,6 @@ module control_unit (
 endmodule
 ```
 
-
 ## ALU module
 
 46 lines
@@ -589,7 +584,7 @@ endmodule
 
 ## Implement an FFT algorithm in Verilog [5] (82 Bh, Md2)
 
-116 lines
+33 lines
 
 ```verilog
 module fft(

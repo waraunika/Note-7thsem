@@ -2,7 +2,7 @@
 
 ## Multi-threading
 
-- is a systm in which multiple threads are created of a process for increasing the computing speed of a system.
+- is a system in which multiple threads are created of a process for increasing the computing speed of a system.
 - in multithreading, many threads of a process are executed simultaneously.
 
 General representation of multithreading in OS
@@ -18,7 +18,7 @@ flowchart TD
 ## Multi-processing
 
 - multiprocessing is a system that has more than one or two processors.
-- in multiprocessing, CPUs are added for increasing computing speed of teh system.
+- in multiprocessing, CPUs are added for increasing computing speed of the system.
 - because of multiprocessing, there are many processes thaht are executed simultaneously.
 - can be classified into two categories
     - symmetric multiprocessing

@@ -130,6 +130,7 @@ Example: `RV32IMAFDQC` is legal, but `RV32IMAFDCQ` is not.
 | May use microcode | No microcode |
 | Large number of instructions | Small number of instructions |
 | Compound addressing modes | Limited addressing modes |
+
 # Acceleration in FPGA : [1 Mark]
 
 **Acceleration** means implementing a custom logic/algorithm in the FPGA **programmable logic (PL)** to achieve higher performance.
@@ -197,6 +198,7 @@ The processing task is **partitioned into hardware and software parts**, develop
    - Validate on the real board using known test vectors, golden reference outputs, and performance measurements.
    - Measure throughput, latency, resource usage, and power to confirm the co-design meets requirements.
    - *Example:* Compare the FPGA Sobel output against a MATLAB/Python golden reference, then test live camera input on the Zynq board and measure frames per second.
+
 ## Advantages
 
 - Better performance.
