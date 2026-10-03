@@ -267,7 +267,6 @@ AXI4-Stream is used differently depending on whether the underlying data natural
 | USB 3.2 | Gen 2x2 | N/A | SuperSpeed USB 20 Gbps | 20 Gbps |
 | USB4 | — | — | USB4 | up to 40 Gbps |
 
-> Note: USB 3.2 Gen 2x2 and USB4 achieve their headline rates by running **two lanes** at Gen-2 speed (2×10 Gbps) rather than a single faster lane — worth remembering when comparing "per-lane" vs. "aggregate" figures across protocols.
 
 ## D.3. PCIe (PCI Express)
 
@@ -283,7 +282,6 @@ AXI4-Stream is used differently depending on whether the underlying data natural
 | 4.0 | 128b/130b | 16 GT/s | ~1.97 GB/s | ~7.88 GB/s | ~15.75 GB/s | ~31.5 GB/s |
 | 5.0 | 128b/130b | 32 GT/s | ~3.94 GB/s | ~15.75 GB/s | ~31.5 GB/s | ~63 GB/s |
 
-> **Corrections applied vs. the original draft**: PCIe 3.0/4.0/5.0 all use **128b/130b** encoding (not 8b/10b, and not "18b/130b" as a typo for Gen4) — this encoding has only ~1.5% overhead, versus 8b/10b's 20% overhead used in Gen1/Gen2. Figures above are per-direction, full-duplex theoretical maximums; real-world throughput is typically a few percent lower due to protocol/packet overhead. Gen1 x1 throughput is ~250 MB/s (not the raw 2.5 GT/s figure), and Gen5 numbers scale consistently from the 32 GT/s per-lane rate rather than the inconsistent x1 figures in the earlier draft.
 
 ## D.4. Ethernet
 

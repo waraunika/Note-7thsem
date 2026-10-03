@@ -334,7 +334,7 @@ int main(void) {
 
 ## Control Logic Module
 
-136 lines
+75 lines
 
 ```verilog
 module control_unit (
@@ -390,87 +390,26 @@ module control_unit (
   // ------------------------------------------------------------
   // ALU Control
   // ------------------------------------------------------------
+  // R-type needs funct7 == 0 for AND/OR/SLT/ADD; I-type has no funct7 check
+  wire is_arith = (opcode == R_TYPE && funct7 == 7'b0000000) | (opcode == I_TYPE);
 
-  reg [4:0] alu_op_reg;
+  assign alu_op =
+    // SUB (R-type only)
+    (opcode == R_TYPE && funct7 == 7'b0100000 && funct3 == 3'b000) ? 5'b00001 :
 
-  assign alu_op = alu_op_reg;
+    // R-type / I-type share the same funct3 mapping
+    is_arith ? ((funct3 == 3'b111) ? 5'b00010 : // AND / ANDI
+               (funct3 == 3'b110) ? 5'b00011 :  // OR  / ORI
+               (funct3 == 3'b010) ? 5'b00101 :  // SLT / SLTI
+                                   5'b00000) :  // ADD / ADDI
 
-  always @(*) begin
-    // Default: ADD
-    alu_op_reg = 5'b00000;
+    // BRANCH
+    (opcode == BRANCH && funct3[2:1] == 2'b00) ? 5'b00001 :  // BEQ, BNE -> SUB
+    (opcode == BRANCH && funct3[2:1] == 2'b10) ? 5'b00101 :  // BLT, BGE -> SLT
 
-    case (opcode)
-      // ----------------------------------------------------
-      // R-Type
-      // ----------------------------------------------------
-      R_TYPE: begin
-        case (funct3)
-          3'b000: begin
-            if (funct7 == 7'b0100000) alu_op_reg = 5'b00001;  // SUB
-            else alu_op_reg = 5'b00000;  // ADD
-          end
+    // LOAD / STORE / JALR / anything else -> ADD
+    5'b00000;
 
-          3'b111:  alu_op_reg = 5'b00010;  // AND
-          3'b110:  alu_op_reg = 5'b00011;  // OR
-          3'b010:  alu_op_reg = 5'b00101;  // SLT
-          default: alu_op_reg = 5'b00000;  // ADD
-        endcase
-      end
-
-      // ----------------------------------------------------
-      // I-Type
-      // ----------------------------------------------------
-      I_TYPE: begin
-        case (funct3)
-          3'b000:  alu_op_reg = 5'b00000;  // ADDI
-          3'b111:  alu_op_reg = 5'b00010;  // ANDI
-          3'b110:  alu_op_reg = 5'b00011;  // ORI
-          3'b010:  alu_op_reg = 5'b00101;  // SLTI
-          default: alu_op_reg = 5'b00000;  // ADD
-        endcase
-      end
-
-      // ----------------------------------------------------
-      // Load
-      // ----------------------------------------------------
-      LOAD: begin
-        alu_op_reg = 5'b00000;  // ADD
-      end
-
-      // ----------------------------------------------------
-      // Store
-      // ----------------------------------------------------
-      STORE: begin
-        alu_op_reg = 5'b00000;  // ADD
-      end
-
-      // ----------------------------------------------------
-      // JALR
-      // ----------------------------------------------------
-      JALR: begin
-        alu_op_reg = 5'b00000;  // ADD
-      end
-
-      // ----------------------------------------------------
-      // Branch
-      // ----------------------------------------------------
-      BRANCH: begin
-        case (funct3)
-          3'b000:  alu_op_reg = 5'b00001;  // BEQ -> SUB
-          3'b001:  alu_op_reg = 5'b00001;  // BNE -> SUB
-          3'b100:  alu_op_reg = 5'b00101;  // BLT -> SLT
-          3'b101:  alu_op_reg = 5'b00101;  // BGE -> SLT
-          default: alu_op_reg = 5'b00000;  // ADD
-        endcase
-      end
-
-      // ----------------------------------------------------
-      // JAL / Unknown opcode
-      // ----------------------------------------------------
-      default: begin
-        alu_op_reg = 5'b00000;
-      end
-    endcase
   end
 endmodule
 ```
