@@ -93,7 +93,69 @@ J --> P[P-Channel]
 
 ![Design Flowchart](../attachments/design-flow.png)
 
-## B.2. Four Levels of Design Representation
+## B.2. Detailed Steps of the VLSI Design Flow
+
+The canonical VLSI design flow is typically described as an **eight-step process**: system specification, architectural design, functional/behavioral design, logic design, circuit design, physical design, fabrication, and packaging/testing. Each is detailed below.
+
+### B.2.1. System Specification
+
+- The **first step** of the design process: laying down the specification of the system as a whole.
+- This is a **high-level representation** of the system, considering:
+    - **Performance** and **functionality**
+    - **Physical dimensions** (die size/area budget)
+    - **Design technique** to be used
+    - **Technological and economical viability**
+- **Outcome**: a specification covering **size, speed, power, and functionality**, along with the **basic architecture** of the VLSI system, this document is what every later stage is validated against.
+
+### B.2.2. Architectural Design
+
+- Using the system specification, the **design engineer/architect** works out the chip's architecture: major subsystems, datapaths, memory organization, and how they interconnect.
+- This step produces an initial **C-model or high-level RTL model** and an initial **floorplan** sketch (a rough estimate of how major blocks will be arranged on the die).
+
+### B.2.3. Functional (Behavioral) Design
+
+- The system's **main functional units** and their **interconnect requirements** are identified.
+- The **area, power, and other parameters** of each functional unit are **estimated** at this stage (before detailed implementation), to catch infeasible designs early.
+- The key goal is to specify each unit's **behavior** in terms of its **inputs, outputs, and timing**.
+- **Outcome**: usually a **timing diagram** describing how each unit's signals behave over time.
+- This early behavioral information feeds forward into later phases, generally **improving the overall design process and reducing the complexity** of subsequent stages (since major architectural mistakes are caught before detailed logic/circuit work begins).
+
+### B.3.4. Logic Design
+
+- Converts the functional/behavioral description into actual **logic**: Boolean expressions, word widths, register allocation, arithmetic and logic operations.
+- This is where **register-transfer level (RTL)** descriptions (in VHDL/Verilog) are typically produced and verified: the RTL is what represents the functional design as testable, synthesizable logic.
+
+### B.2.5. Circuit Design
+
+- **Purpose**: develop a **circuit representation** based on the logic design.
+- The Boolean expressions from the logic design are converted into a circuit representation, this conversion takes into account the **speed and power requirements** of the original specification, since the same Boolean function can be implemented with circuits of very different speed/power/area trade-offs.
+- This step designs the actual **gates, transistors, and interconnections** needed.
+- **Outcome**: a **netlist**, a structural description of all components and their connections.
+- **Circuit simulation** is used at this stage to verify the **correctness and timing** of each component before committing to physical implementation.
+
+### B.2.6. Physical Design
+
+- Takes the circuit (post logic-synthesis) and converts it into an actual **layout**, the geometric mask patterns that will be fabricated.
+- Physical design itself has several well-known sub-steps (industry-standard terminology):
+    - **Floorplanning**: deciding the rough physical placement of major blocks on the die, and planning power/ground distribution.
+    - **Placement**: assigning exact physical locations to every standard cell/gate.
+    - **Clock Tree Synthesis (CTS)**: building a low-skew clock distribution network to every sequential element.
+    - **Routing**: creating the actual metal-layer wiring that realizes every net in the netlist.
+    - **Parasitic extraction**: extracting the real resistance/capacitance of the routed wires for accurate post-layout timing analysis.
+    - **Physical verification**: **DRC** (Design Rule Check, verifies the layout obeys the foundry's manufacturing rules), **LVS** (Layout-Versus-Schematic, verifies the layout is electrically identical to the source netlist/schematic; "LVS clean" means they match), and **ERC** (Electrical Rule Check, checks for electrical issues like floating nodes or shorted supplies).
+
+### B.2.7. Fabrication (and Tape-Out)
+
+- After physical verification, the design is ready for fabrication.
+- **Tape-out** is the milestone marking the handoff of the final, signed-off design (as a **GDSII** layout file) to the semiconductor foundry, historically named for the era when designs were physically delivered on magnetic tape.
+- **Fabrication** itself is a multi-step process at the foundry, including: **wafer growth, epitaxial growth, masking, etching, doping, deposition, and diffusion** of various materials onto the wafer, with a separate photomask used at each masking step. Each fabricated wafer yields hundreds of individual chips ("dies").
+
+### B.2.8. Packaging, Testing, and Debugging
+
+- Individual dies are diced from the wafer, then **packaged** into their final form factor (e.g., BGA, QFN).
+- **Automated Test Equipment (ATE)** and techniques such as **burn-in testing** are used to verify functionality and performance and to screen out defective parts before the chip ships.
+
+## B.3. Four Levels of Design Representation
 
 As a design moves through the flow, it is successively represented at four levels of abstraction, from most abstract to most physical:
 
@@ -108,7 +170,7 @@ As a design moves through the flow, it is successively represented at four level
 
 - Each level maps onto later stages of the design flow: behavioral ↔ functional/logic design, gate-level ↔ logic synthesis output, transistor-level ↔ circuit design, layout ↔ physical design.
 
-## B.3. Design Methodology: Top-Down vs. Bottom-Up
+## B.4. Design Methodology: Top-Down vs. Bottom-Up
 
 There are two basic approaches to structuring a digital VLSI design:
 
@@ -125,68 +187,6 @@ There are two basic approaches to structuring a digital VLSI design:
 - In practice, real projects generally use a **combination of both**: a top-down architectural decomposition guided by, and reconciled against, a bottom-up inventory of available reusable blocks.
 
 ![Design Flow Simplified](../attachments/simplified-design-flow.png)
-
-## B.4. Detailed Steps of the VLSI Design Flow
-
-The canonical VLSI design flow is typically described as an **eight-step process**: system specification, architectural design, functional/behavioral design, logic design, circuit design, physical design, fabrication, and packaging/testing. Each is detailed below.
-
-### B.4.1. System Specification
-
-- The **first step** of the design process: laying down the specification of the system as a whole.
-- This is a **high-level representation** of the system, considering:
-    - **Performance** and **functionality**
-    - **Physical dimensions** (die size/area budget)
-    - **Design technique** to be used
-    - **Technological and economical viability**
-- **Outcome**: a specification covering **size, speed, power, and functionality**, along with the **basic architecture** of the VLSI system, this document is what every later stage is validated against.
-
-### B.4.2. Architectural Design
-
-- Using the system specification, the **design engineer/architect** works out the chip's architecture: major subsystems, datapaths, memory organization, and how they interconnect.
-- This step produces an initial **C-model or high-level RTL model** and an initial **floorplan** sketch (a rough estimate of how major blocks will be arranged on the die).
-
-### B.4.3. Functional (Behavioral) Design
-
-- The system's **main functional units** and their **interconnect requirements** are identified.
-- The **area, power, and other parameters** of each functional unit are **estimated** at this stage (before detailed implementation), to catch infeasible designs early.
-- The key goal is to specify each unit's **behavior** in terms of its **inputs, outputs, and timing**.
-- **Outcome**: usually a **timing diagram** describing how each unit's signals behave over time.
-- This early behavioral information feeds forward into later phases, generally **improving the overall design process and reducing the complexity** of subsequent stages (since major architectural mistakes are caught before detailed logic/circuit work begins).
-
-### B.4.4. Logic Design
-
-- Converts the functional/behavioral description into actual **logic**: Boolean expressions, word widths, register allocation, arithmetic and logic operations.
-- This is where **register-transfer level (RTL)** descriptions (in VHDL/Verilog) are typically produced and verified: the RTL is what represents the functional design as testable, synthesizable logic.
-
-### B.4.5. Circuit Design
-
-- **Purpose**: develop a **circuit representation** based on the logic design.
-- The Boolean expressions from the logic design are converted into a circuit representation, this conversion takes into account the **speed and power requirements** of the original specification, since the same Boolean function can be implemented with circuits of very different speed/power/area trade-offs.
-- This step designs the actual **gates, transistors, and interconnections** needed.
-- **Outcome**: a **netlist**, a structural description of all components and their connections.
-- **Circuit simulation** is used at this stage to verify the **correctness and timing** of each component before committing to physical implementation.
-
-### B.4.6. Physical Design
-
-- Takes the circuit (post logic-synthesis) and converts it into an actual **layout**, the geometric mask patterns that will be fabricated.
-- Physical design itself has several well-known sub-steps (industry-standard terminology, expanding on the original notes):
-    - **Floorplanning**: deciding the rough physical placement of major blocks on the die, and planning power/ground distribution.
-    - **Placement**: assigning exact physical locations to every standard cell/gate.
-    - **Clock Tree Synthesis (CTS)**: building a low-skew clock distribution network to every sequential element.
-    - **Routing**: creating the actual metal-layer wiring that realizes every net in the netlist.
-    - **Parasitic extraction**: extracting the real resistance/capacitance of the routed wires for accurate post-layout timing analysis.
-    - **Physical verification**: **DRC** (Design Rule Check, verifies the layout obeys the foundry's manufacturing rules), **LVS** (Layout-Versus-Schematic, verifies the layout is electrically identical to the source netlist/schematic; "LVS clean" means they match), and **ERC** (Electrical Rule Check, checks for electrical issues like floating nodes or shorted supplies).
-
-### B.4.7. Fabrication (and Tape-Out)
-
-- After physical verification, the design is ready for fabrication.
-- **Tape-out** is the milestone marking the handoff of the final, signed-off design (as a **GDSII** layout file) to the semiconductor foundry, historically named for the era when designs were physically delivered on magnetic tape.
-- **Fabrication** itself is a multi-step process at the foundry, including: **wafer growth, epitaxial growth, masking, etching, doping, deposition, and diffusion** of various materials onto the wafer, with a separate photomask used at each masking step. Each fabricated wafer yields hundreds of individual chips ("dies").
-
-### B.4.8. Packaging, Testing, and Debugging
-
-- Individual dies are diced from the wafer, then **packaged** into their final form factor (e.g., BGA, QFN).
-- **Automated Test Equipment (ATE)** and techniques such as **burn-in testing** are used to verify functionality and performance and to screen out defective parts before the chip ships.
 
 ## B.5. Agents (Roles) in VLSI Designing
 
@@ -345,13 +345,13 @@ CMOS technology is used across the large majority of modern digital IC design, i
 
 - When a **positive voltage** (logic HIGH) is applied to the **gate terminal**, relative to the source, of an NMOS transistor:
     - It creates an **electric field** that **attracts electrons** toward the interface between the gate oxide and the semiconductor substrate, forming a conductive n-type channel.
-    - Once the gate-source voltage exceeds the **threshold voltage** \(V_{th}\), the **N-channel MOSFET turns ON**, allowing current to flow between drain and source.
+    - Once the gate-source voltage exceeds the **threshold voltage** $V_{th}$, the **N-channel MOSFET turns ON**, allowing current to flow between drain and source.
 
 ## D.8. PMOS Transistor: Working Principle
 
 - When a **negative voltage** (logic LOW), relative to the source, is applied to the **gate terminal** of a PMOS transistor:
     - It creates an **electric field** that **repels holes** away from the gate-oxide/substrate interface, forming a conductive p-type channel.
-    - Once the gate-source voltage is more negative than (i.e., the source-gate voltage exceeds) the threshold \(V_{th}\), the **P-channel MOSFET turns ON**.
+    - Once the gate-source voltage is more negative than (i.e., the source-gate voltage exceeds) the threshold $V_{th}$, the **P-channel MOSFET turns ON**.
 - In a CMOS inverter, the complementary switching behavior of NMOS and PMOS (D.2, D.7, D.8) is exactly what produces correct inverting logic, see Section E.
 
 ---
@@ -394,51 +394,51 @@ CMOS technology is used across the large majority of modern digital IC design, i
 
 ![DC analysis](../attachments/input-output-voltage.png)
 
-- **DC analysis** answers the question: "given a _constant_ input voltage \(V_{in}\), what is the resulting _constant_ output voltage \(V_{out}\)?", i.e., it characterizes the inverter's steady-state behavior, ignoring switching transients (which are instead covered by AC analysis, Section E.4).
+- **DC analysis** answers the question: "given a _constant_ input voltage $V_{in}$, what is the resulting _constant_ output voltage $V_{out}$?", i.e., it characterizes the inverter's steady-state behavior, ignoring switching transients (which are instead covered by AC analysis, Section E.4).
 - **At the extremes**:
-    - When \(V_{in} = 0\) → NMOS OFF, PMOS ON → \(V_{out} = V_{DD}\).
-    - When \(V_{in} = V_{DD}\) → NMOS ON, PMOS OFF → \(V_{out} = 0\).
-- **In between** these extremes, both transistors can be partially or fully ON simultaneously, and \(V_{out}\) depends on the actual transistor currents, not just their ON/OFF state.
+    - When $V_{in} = 0$ → NMOS OFF, PMOS ON → $V_{out} = V_{DD}$.
+    - When $V_{in} = V_{DD}$ → NMOS ON, PMOS OFF → $V_{out} = 0$.
+- **In between** these extremes, both transistors can be partially or fully ON simultaneously, and $V_{out}$ depends on the actual transistor currents, not just their ON/OFF state.
 - By **Kirchhoff's Current Law (KCL)**, since the NMOS and PMOS are in series between VDD and ground, the same current must flow through both, so at every point on the DC transfer curve, the circuit must settle such that:
   $$I_{DSn} = |I_{DSp}|$$
-    - Setting the NMOS drain current expression equal to the magnitude of the PMOS drain current expression (using the standard MOSFET current equations for whichever region, cutoff, linear/triode, or saturation, each transistor is operating in at that particular \(V_{in}\)) gives the equations that can be solved analytically for \(V_{out}\) as a function of \(V_{in}\).
-    - A **graphical solution**: plotting \(I_{DSn}\) vs. \(V_{out}\) and \(I_{DSp}\) vs. \(V_{out}\) (transformed onto the same axes) for a given \(V_{in}\), and finding their intersection, gives excellent intuition for how the operating point moves as \(V_{in}\) sweeps from 0 to VDD, even without working through the full algebra.
+    - Setting the NMOS drain current expression equal to the magnitude of the PMOS drain current expression (using the standard MOSFET current equations for whichever region, cutoff, linear/triode, or saturation, each transistor is operating in at that particular $V_{in}$) gives the equations that can be solved analytically for $V_{out}$ as a function of $V_{in}$.
+    - A **graphical solution**: plotting $I_{DSn}$ vs. $V_{out}$ and $I_{DSp}$ vs. $V_{out}$ (transformed onto the same axes) for a given $V_{in}$, and finding their intersection, gives excellent intuition for how the operating point moves as $V_{in}$ sweeps from 0 to VDD, even without working through the full algebra.
 
 ### Voltage Transfer Characteristics (VTC)
 
 ![Characteristics](../attachments/transfer-characteristics-inverter.png)
 
-- The **Voltage Transfer Characteristic (VTC)** is exactly this DC transfer curve, \(V_{out}\) plotted against \(V_{in}\), for the CMOS inverter (or any logic gate).
-- The VTC is commonly divided into **five distinct regions**, based on which region (cutoff, linear/triode, or saturation) each transistor is operating in as \(V_{in}\) sweeps from 0 to VDD:
-    1. **Region A** (\(V_{in}\) near 0): NMOS is in **cutoff** (OFF), PMOS is in the **linear/triode** region → output is pulled fully to \(V_{out} = V_{DD}\).
-    2. **Region B**: NMOS enters **saturation**, PMOS remains in the **linear** region → \(V_{out}\) begins to fall, but is still relatively high.
+- The **Voltage Transfer Characteristic (VTC)** is exactly this DC transfer curve, $V_{out}$ plotted against $V_{in}$, for the CMOS inverter (or any logic gate).
+- The VTC is commonly divided into **five distinct regions**, based on which region (cutoff, linear/triode, or saturation) each transistor is operating in as $V_{in}$ sweeps from 0 to VDD:
+    1. **Region A** ($V_{in}$ near 0): NMOS is in **cutoff** (OFF), PMOS is in the **linear/triode** region → output is pulled fully to $V_{out} = V_{DD}$.
+    2. **Region B**: NMOS enters **saturation**, PMOS remains in the **linear** region → $V_{out}$ begins to fall, but is still relatively high.
     3. **Region C** (around the midpoint): **Both** transistors are in **saturation** simultaneously, this is the steep, high-gain transition region where the output switches rapidly from HIGH to LOW for a small change in input.
-    4. **Region D**: NMOS enters the **linear** region, PMOS is in **saturation** → \(V_{out}\) continues falling toward 0.
-    5. **Region E** (\(V_{in}\) near VDD): NMOS is in the **linear** region, PMOS is in **cutoff** (OFF) → output is pulled fully to \(V_{out} = 0\).
+    4. **Region D**: NMOS enters the **linear** region, PMOS is in **saturation** → $V_{out}$ continues falling toward 0.
+    5. **Region E** ($V_{in}$ near VDD): NMOS is in the **linear** region, PMOS is in **cutoff** (OFF) → output is pulled fully to $V_{out} = 0$.
 - **Key VTC-derived design metrics**:
-    - **\(V\_{OH}\)**: the nominal output HIGH voltage (ideally \(V_{DD}\)).
-    - **\(V\_{OL}\)**: the nominal output LOW voltage (ideally 0 V).
-    - **\(V\_{IL}\)**: the maximum input voltage still reliably interpreted as a logic LOW (defined as the input voltage where the VTC slope \(dV_{out}/dV_{in} = -1\), on the high-output side).
-    - **\(V\_{IH}\)**: the minimum input voltage still reliably interpreted as a logic HIGH (the input voltage where the VTC slope \(dV_{out}/dV_{in} = -1\), on the low-output side).
-    - **Switching threshold, \(V_M\)**: the point on the VTC where \(V_{out} = V_{in}\) (the curve crosses the unity line); at this exact point, both transistors are in saturation and, by design, \(I_{Dn} = I_{Dp}\). For a "balanced" inverter, sizing the PMOS wider than the NMOS (to compensate for hole mobility being lower than electron mobility) places \(V_M\) near \(V_{DD}/2\), giving symmetric noise margins and switching behavior.
+    - **$V\_{OH}$**: the nominal output HIGH voltage (ideally $V_{DD}$).
+    - **$V\_{OL}$**: the nominal output LOW voltage (ideally 0 V).
+    - **$V\_{IL}$**: the maximum input voltage still reliably interpreted as a logic LOW (defined as the input voltage where the VTC slope $dV_{out}/dV_{in} = -1$, on the high-output side).
+    - **$V\_{IH}$**: the minimum input voltage still reliably interpreted as a logic HIGH (the input voltage where the VTC slope $dV_{out}/dV_{in} = -1$, on the low-output side).
+    - **Switching threshold, $V_M$**: the point on the VTC where $V_{out} = V_{in}$ (the curve crosses the unity line); at this exact point, both transistors are in saturation and, by design, $I_{Dn} = I_{Dp}$. For a "balanced" inverter, sizing the PMOS wider than the NMOS (to compensate for hole mobility being lower than electron mobility) places $V_M$ near $V_{DD}/2$, giving symmetric noise margins and switching behavior.
     - **Noise Margins**: quantify how much noise/voltage error the inverter's input can tolerate before the output is affected:
-        - $$NM_H = V_{OH} - V_{IH}$$ (high-side noise margin)
-        - $$NM_L = V_{IL} - V_{OL}$$ (low-side noise margin)
+        - $NM_H = V_{OH} - V_{IH}$ (high-side noise margin)
+        - $NM_L = V_{IL} - V_{OL}$ (low-side noise margin)
         - Larger noise margins mean better **noise immunity**: a key reason (alongside low static power) that CMOS is favored for dense, robust digital design.
-    - **Voltage gain** in the transition region (the maximum magnitude of \(dV_{out}/dV_{in}\)): a steeper transition (higher gain) means a sharper, more well-defined switching point and better signal regeneration between cascaded stages.
+    - **Voltage gain** in the transition region (the maximum magnitude of $dV_{out}/dV_{in}$): a steeper transition (higher gain) means a sharper, more well-defined switching point and better signal regeneration between cascaded stages.
 
 ## E.4. AC (Dynamic / Transient / Switching) Analysis
 
 ![Transient Analysis Diagram](../attachments/transient-analysis.png)
 
-- **DC analysis** (Section E.3) tells us \(V_{out}\) for a **constant** \(V_{in}\).
-- **AC analysis** tells us \(V_{out}(t)\) given a **time-varying** \(V_{in}(t)\): this generally requires solving differential equations describing how the output node's parasitic/load capacitance charges and discharges through the transistors' time-varying resistance.
-- The input is usually modeled as a **step** or a **ramp** transitioning between 0 and \(V_{DD}\) (or vice versa), approximating a realistic logic transition.
+- **DC analysis** (Section E.3) tells us $V_{out}$ for a **constant** $V_{in}$.
+- **AC analysis** tells us $V_{out}(t$) given a **time-varying** $V_{in}(t$): this generally requires solving differential equations describing how the output node's parasitic/load capacitance charges and discharges through the transistors' time-varying resistance.
+- The input is usually modeled as a **step** or a **ramp** transitioning between 0 and $V_{DD}$ (or vice versa), approximating a realistic logic transition.
 - **AC analysis** is also referred to, interchangeably, as **transient analysis**, **switching analysis**, or **dynamic analysis**: all describing the same underlying study of time-domain switching behavior.
-- The **switching characteristic**: \(V_{out}(t)\) given \(V_{in}(t)\): of a logic gate directly determines **how fast the gate can operate**, i.e., its maximum usable clock frequency in a larger design.
+- The **switching characteristic**: $V_{out}(t$) given $V_{in}(t$): of a logic gate directly determines **how fast the gate can operate**, i.e., its maximum usable clock frequency in a larger design.
 - The **switching speed** of a gate is fundamentally measured by the **time required to charge and discharge its capacitive load**: every gate output drives some combination of the next stage's gate capacitance and the interconnect (wire) capacitance, and the RC-like charge/discharge time of that load, through the driving transistor's ON resistance, sets the propagation delay.
-    - Two standard delay metrics: **\(t\_{PHL}\)** (propagation delay for a HIGH-to-LOW output transition, measured between the 50% points of input and output) and **\(t\_{PLH}\)** (propagation delay for a LOW-to-HIGH output transition).
-    - **Short-circuit power**: during the brief period of a transition when \(V_{in}\) is near the switching region (Region C of the VTC, Section E.3), **both** NMOS and PMOS can be simultaneously partially ON, creating a brief direct current path from VDD to ground, this "short-circuit current" is a real (though typically smaller than switching/dynamic) component of total CMOS power consumption, distinct from the capacitive charge/discharge power.
+    - Two standard delay metrics: **$t\_{PHL}$** (propagation delay for a HIGH-to-LOW output transition, measured between the 50% points of input and output) and **$t\_{PLH}$** (propagation delay for a LOW-to-HIGH output transition).
+    - **Short-circuit power**: during the brief period of a transition when $V_{in}$ is near the switching region (Region C of the VTC, Section E.3), **both** NMOS and PMOS can be simultaneously partially ON, creating a brief direct current path from VDD to ground, this "short-circuit current" is a real (though typically smaller than switching/dynamic) component of total CMOS power consumption, distinct from the capacitive charge/discharge power.
 
 ### Critical Paths
 
@@ -479,4 +479,4 @@ CMOS technology is used across the large majority of modern digital IC design, i
 1. **VLSI design flow**: an eight-stage front-end-to-back-end process, system specification → architectural design → functional/behavioral design → logic design → circuit design → physical design (floorplan/place/route/DRC-LVS-ERC) → fabrication/tape-out → packaging & test (Section B).
 2. **Verification methodologies**: simulation (behavioral/RTL/gate/switch/transistor-level), emulation, formal methods (equivalence checking, model checking), and semiformal/assertion-based methods, implemented in practice using SystemVerilog/UVM, VHDL, e/Specman, and scripting languages, alongside static/dynamic timing analysis (Section C).
 3. **CMOS circuit design**: the complementary-switching principle where NMOS and PMOS devices are driven by the same signal but always in opposite ON/OFF states, giving CMOS its signature low static power, high noise immunity, and high density (Section D).
-   4–5. **CMOS inverter design and analysis**: one PMOS pull-up + one NMOS pull-down sharing a gate input and drain output, analyzed via its DC Voltage Transfer Characteristic (five VTC regions, \(V_{OH}/V_{OL}/V_{IH}/V_{IL}\), switching threshold \(V_M\), noise margins) and its AC/transient switching behavior (propagation delay, capacitive charge/discharge time, short-circuit power, and critical-path timing) (Section E).
+   4–5. **CMOS inverter design and analysis**: one PMOS pull-up + one NMOS pull-down sharing a gate input and drain output, analyzed via its DC Voltage Transfer Characteristic (five VTC regions, $V_{OH}/V_{OL}/V_{IH}/V_{IL}$, switching threshold $V_M$, noise margins) and its AC/transient switching behavior (propagation delay, capacitive charge/discharge time, short-circuit power, and critical-path timing) (Section E).

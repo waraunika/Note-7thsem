@@ -55,7 +55,7 @@
 - Connections are made from a logic block into the routing channel through a **connection block**.
 - Because SRAM technology is used to implement the LUTs, the SRAM configuration cells controlling connection sites take up meaningful area — so the architecture is designed to use these connection resources efficiently.
 - Each logic block is surrounded by connection blocks on **all four sides**, connecting the logic block's pins to the surrounding wire segments.
-- **Pass transistors** are used to implement the connections for **output pins**, while **multiplexers** are used for **input pins** — using a MUX for inputs reduces the number of SRAM configuration cells required per pin (a MUX needs only \(\log_2(N)\) select bits for N inputs, versus one SRAM cell per possible pass-transistor connection).
+- **Pass transistors** are used to implement the connections for **output pins**, while **multiplexers** are used for **input pins** — using a MUX for inputs reduces the number of SRAM configuration cells required per pin (a MUX needs only $\log_2(N$) select bits for N inputs, versus one SRAM cell per possible pass-transistor connection).
 - Logic-block pins connected to a connection block can then reach any of a number of wire segments through the **switch blocks**.
 - **Four types of wire segments** are available in this scheme:
   1. **General-purpose segments** — pass through switches in the switch block; the "default" flexible routing resource.
@@ -174,7 +174,7 @@ flowchart TD
 Both AXI4 and AXI4-Lite are built from **five independent channels**, each with its own **VALID/READY** handshake, which is what allows AXI to pipeline addresses ahead of data and support multiple outstanding transactions:
 
 1. **Read Address Channel** (AR) — master sends the address (and burst attributes) for a read.
-2. **Read Data Channel** \(R\) — slave returns the requested read data (one or more beats).
+2. **Read Data Channel** $R$ — slave returns the requested read data (one or more beats).
 3. **Write Address Channel** (AW) — master sends the address (and burst attributes) for a write.
 4. **Write Data Channel** (W) — master sends the write data (one or more beats, with byte strobes).
 5. **Write Response Channel** (B) — slave confirms completion/status of the write transaction.

@@ -327,133 +327,199 @@ int main(void) {
 
 #### CU
 
-121 lines
+136 lines
 
 ```verilog
 module control_unit (
-    input wire       reset,
+    input wire reset,
+
     input wire [6:0] opcode,
- 
-    output reg       reg_write,
-    output reg       mem_read,
-    output reg       mem_write,
-    output reg       mem_to_reg,  // 1: write back memory data, 0: alu result
-    output reg       alu_src,     // 1: alu b input is the immediate, 0: rs2
-    output reg       branch,
-    output reg [2:0] alu_op,
- 
-    // extras (beyond the minimum port list)
-    output reg       jump,        // jal or jalr, writes pc+4 to rd
-    output reg       jalr,        // jalr only, target = rs1 + imm
-    output reg       lui,         // lui only, writes the immediate
-    output reg       auipc        // auipc only, alu a input is pc
+    input wire [2:0] funct3,
+    input wire [6:0] funct7,
+
+    output wire       reg_write,
+    output wire       mem_read,
+    output wire       mem_write,
+    output wire       mem_to_reg,
+    output wire       alu_src,
+    output wire       branch,
+    output wire [4:0] alu_op,
+    output wire       Jump
 );
- 
-  // opcodes
-  localparam OP_RTYPE   = 7'b0110011;
-  localparam OP_ITYPE   = 7'b0010011;
-  localparam OP_LOAD    = 7'b0000011;
-  localparam OP_STORE   = 7'b0100011;
-  localparam OP_BRANCH  = 7'b1100011;
-  localparam OP_JAL     = 7'b1101111;
-  localparam OP_JALR    = 7'b1100111;
-  localparam OP_LUI     = 7'b0110111;
-  localparam OP_AUIPC   = 7'b0010111;
- 
-  // alu_op instruction classes
-  localparam R_TYPE = 3'b000;  // add, sub, and, or, xor, slt, sltu, sll, srl, sra
-  localparam I_TYPE = 3'b001;  // addi, andi, ori, xori, slti, sltiu, slli, srli, srai
-  localparam STORE  = 3'b010;  // sb, sh, sw
-  localparam BRANCH = 3'b011;  // beq, bne, blt, bge, bltu, bgeu
-  localparam U_TYPE = 3'b100;  // lui, auipc
-  localparam JUMP   = 3'b101;  // jal, jalr
-  localparam LOAD   = 3'b110;  // lb, lh, lw, lbu, lhu
-  localparam NOP    = 3'b111;  // no operation / unknown opcode
- 
+
+  // ------------------------------------------------------------
+  // Opcodes
+  // ------------------------------------------------------------
+  parameter R_TYPE = 7'b0110011;
+  parameter I_TYPE = 7'b0010011;
+  parameter LOAD   = 7'b0000011;
+  parameter STORE  = 7'b0100011;
+  parameter BRANCH = 7'b1100011;
+  parameter JAL    = 7'b1101111;
+  parameter JALR   = 7'b1100111;
+
+  // ------------------------------------------------------------
+  // Main Control Signals
+  // ------------------------------------------------------------
+
+  assign reg_write =
+        (opcode == R_TYPE) ||
+        (opcode == I_TYPE) ||
+        (opcode == LOAD)   ||
+        (opcode == JAL)    ||
+        (opcode == JALR);
+
+  assign mem_read = (opcode == LOAD);
+  assign mem_write = (opcode == STORE);
+
+  assign mem_to_reg = (opcode == LOAD);
+
+  assign alu_src = (opcode == I_TYPE) || (opcode == LOAD) || (opcode == STORE) || (opcode == JALR);
+
+  assign branch = (opcode == BRANCH);
+
+  assign Jump = (opcode == JAL) || (opcode == JALR);
+
+  // ------------------------------------------------------------
+  // ALU Control
+  // ------------------------------------------------------------
+
+  reg [4:0] alu_op_reg;
+
+  assign alu_op = alu_op_reg;
+
   always @(*) begin
-    // defaults, so nothing is left unassigned (no latches)
-    reg_write  = 1'b0;
-    mem_read   = 1'b0;
-    mem_write  = 1'b0;
-    mem_to_reg = 1'b0;
-    alu_src    = 1'b0;
-    branch     = 1'b0;
-    jump       = 1'b0;
-    jalr       = 1'b0;
-    lui        = 1'b0;
-    auipc      = 1'b0;
-    alu_op     = NOP;
- 
-    if (!reset) begin  // reset high: everything stays inactive
-      case (opcode)
-        OP_RTYPE: begin
-          reg_write = 1'b1;
-          alu_op    = R_TYPE;
-        end
- 
-        OP_ITYPE: begin
-          reg_write = 1'b1;
-          alu_src   = 1'b1;
-          alu_op    = I_TYPE;
-        end
- 
-        OP_LOAD: begin
-          reg_write  = 1'b1;
-          mem_read   = 1'b1;
-          mem_to_reg = 1'b1;
-          alu_src    = 1'b1;
-          alu_op     = LOAD;
-        end
- 
-        OP_STORE: begin
-          mem_write = 1'b1;
-          alu_src   = 1'b1;
-          alu_op    = STORE;
-        end
- 
-        OP_BRANCH: begin
-          branch = 1'b1;
-          alu_op = BRANCH;
-        end
- 
-        OP_JAL: begin
-          reg_write = 1'b1;
-          jump      = 1'b1;
-          alu_op    = JUMP;
-        end
- 
-        OP_JALR: begin
-          reg_write = 1'b1;
-          jump      = 1'b1;
-          jalr      = 1'b1;
-          alu_src   = 1'b1;  // rs1 + imm
-          alu_op    = JUMP;
-        end
- 
-        OP_LUI: begin
-          reg_write = 1'b1;
-          alu_src   = 1'b1;
-          lui       = 1'b1;
-          alu_op    = U_TYPE;
-        end
- 
-        OP_AUIPC: begin
-          reg_write = 1'b1;
-          alu_src   = 1'b1;
-          auipc     = 1'b1;
-          alu_op    = U_TYPE;
-        end
- 
-        default: begin
-        end
-      endcase
-    end
+    // Default: ADD
+    alu_op_reg = 5'b00000;
+
+    case (opcode)
+      // ----------------------------------------------------
+      // R-Type
+      // ----------------------------------------------------
+      R_TYPE: begin
+        case (funct3)
+          3'b000: begin
+            if (funct7 == 7'b0100000) alu_op_reg = 5'b00001;  // SUB
+            else alu_op_reg = 5'b00000;  // ADD
+          end
+
+          3'b111:  alu_op_reg = 5'b00010;  // AND
+          3'b110:  alu_op_reg = 5'b00011;  // OR
+          3'b010:  alu_op_reg = 5'b00101;  // SLT
+          default: alu_op_reg = 5'b00000;  // ADD
+        endcase
+      end
+
+      // ----------------------------------------------------
+      // I-Type
+      // ----------------------------------------------------
+      I_TYPE: begin
+        case (funct3)
+          3'b000:  alu_op_reg = 5'b00000;  // ADDI
+          3'b111:  alu_op_reg = 5'b00010;  // ANDI
+          3'b110:  alu_op_reg = 5'b00011;  // ORI
+          3'b010:  alu_op_reg = 5'b00101;  // SLTI
+          default: alu_op_reg = 5'b00000;  // ADD
+        endcase
+      end
+
+      // ----------------------------------------------------
+      // Load
+      // ----------------------------------------------------
+      LOAD: begin
+        alu_op_reg = 5'b00000;  // ADD
+      end
+
+      // ----------------------------------------------------
+      // Store
+      // ----------------------------------------------------
+      STORE: begin
+        alu_op_reg = 5'b00000;  // ADD
+      end
+
+      // ----------------------------------------------------
+      // JALR
+      // ----------------------------------------------------
+      JALR: begin
+        alu_op_reg = 5'b00000;  // ADD
+      end
+
+      // ----------------------------------------------------
+      // Branch
+      // ----------------------------------------------------
+      BRANCH: begin
+        case (funct3)
+          3'b000:  alu_op_reg = 5'b00001;  // BEQ -> SUB
+          3'b001:  alu_op_reg = 5'b00001;  // BNE -> SUB
+          3'b100:  alu_op_reg = 5'b00101;  // BLT -> SLT
+          3'b101:  alu_op_reg = 5'b00101;  // BGE -> SLT
+          default: alu_op_reg = 5'b00000;  // ADD
+        endcase
+      end
+
+      // ----------------------------------------------------
+      // JAL / Unknown opcode
+      // ----------------------------------------------------
+      default: begin
+        alu_op_reg = 5'b00000;
+      end
+    endcase
   end
- 
 endmodule
 ```
 
-## ALU_CU
+
+## ALU module
+
+46 lines
+
+```verilog
+module alu (
+
+    input wire [31:0] srcA,
+    input wire [31:0] srcB,
+    input wire [4:0] alu_op,
+    output reg [31:0] result
+);
+
+    always @(*) begin
+        case (alu_op)
+            
+            5'b00000: result = srcA + srcB; // ADD            
+            5'b00001: result = srcA - srcB; // SUB           
+            5'b00010: result = srcA & srcB; // AND            
+            5'b00011: result = srcA | srcB; // OR            
+            5'b00101: result = (srcA < srcB) ? 32'b1 : 32'b0; // SLT
+            default: result = 32'b0;
+        endcase
+    end
+endmodule
+```
+
+## Instruction Module
+
+37 lines
+
+```verilog
+module instruction_memory (
+    input wire [31:0] address,
+    output reg [31:0] instruction
+);
+    reg [31:0] memory [0:255];
+    initial begin
+    // RANDOM ASS INSTRUCTIONS
+        memory[0] = 32'b00000000000100000000000010010011;  // ADDI x1, x0, 1
+        memory[1] = 32'b00000000001000000000000100010011;  // ADDI x2, x0, 2
+        memory[2] = 32'b00000000001000001000000110110011;  // ADD x3, x1, x2
+        memory[3] = 32'b01000000001000001000001000110011;  // SUB x4, x1, x2
+    end
+    always @(*) begin
+        instruction = memory[address[9:2]];
+    end
+endmodule
+```
+
+## Unnecessary: ALU_CU
 
 59 lines
 
@@ -514,103 +580,6 @@ module alu_control (
         endcase
       end
     endcase
-  end
-
-endmodule
-```
-
-## ALU module
-
-46 lines
-
-```
-module alu (
-    input      [31:0] src_a,
-    input      [31:0] src_b,
-    input      [ 3:0] alu_ctrl,
-    output reg [31:0] result
-);
-
-  // operation codes
-  localparam ADD                   = 4'b0000;
-  localparam SUB                   = 4'b0001;
-  localparam LESS_THAN             = 4'b0010;  // slt, slti, blt
-  localparam LESS_THAN_UNSIGNED    = 4'b0011;  // sltu, sltiu, bltu
-  localparam GREATER_THAN          = 4'b0100;  // bge  (a >= b, signed)
-  localparam GREATER_THAN_UNSIGNED = 4'b0101;  // bgeu (a >= b, unsigned)
-  localparam XOR                   = 4'b0110;
-  localparam OR                    = 4'b0111;
-  localparam AND                   = 4'b1000;
-  localparam SLL                   = 4'b1001;
-  localparam SRL                   = 4'b1010;
-  localparam SRA                   = 4'b1011;
-  localparam EQUAL                 = 4'b1100;  // beq
-  localparam NOT_EQUAL             = 4'b1101;  // bne
-  localparam PC_PLUS_4             = 4'b1110;  // jal, jalr link value (src_a = pc)
-
-  always @(*) begin
-    case (alu_ctrl)
-      ADD:                   result = src_a + src_b;
-      SUB:                   result = src_a - src_b;
-      LESS_THAN:             result = {31'b0, $signed(src_a) < $signed(src_b)};
-      LESS_THAN_UNSIGNED:    result = {31'b0, src_a < src_b};
-      GREATER_THAN:          result = {31'b0, $signed(src_a) >= $signed(src_b)};
-      GREATER_THAN_UNSIGNED: result = {31'b0, src_a >= src_b};
-      XOR:                   result = src_a ^ src_b;
-      OR:                    result = src_a | src_b;
-      AND:                   result = src_a & src_b;
-      SLL:                   result = src_a << src_b[4:0];  // only low 5 bits are the shift amount
-      SRL:                   result = src_a >> src_b[4:0];
-      SRA:                   result = $signed(src_a) >>> src_b[4:0];
-      EQUAL:                 result = {31'b0, src_a == src_b};
-      NOT_EQUAL:             result = {31'b0, src_a != src_b};
-      PC_PLUS_4:             result = src_a + 32'd4;
-      default:               result = 32'd0;
-    endcase
-  end
-
-endmodule
-```
-
-## Instruction Module
-
-37 lines
-
-```verilog
-module inst_memory (
-    input [31:0] PC,
-    output reg [31:0] inst
-);
-
-  // 256 x 32-bit memory
-  reg [31:0] mem[0:255];
-  integer i;
-
-  initial begin
-    // initialize all to NOP
-    for (i = 0; i < 256; i = i + 1) begin
-      mem[i] = 32'h00000013;  // NOP (addi x0, x0, 0)
-    end
-
-    // test program: one instruction from each format (R, I, load, S, B, U, J)
-    mem[0] = 32'h02D00513;  // ADDI x10, x0, 45     (li a0, 45)
-    mem[1] = 32'h04100593;  // ADDI x11, x0, 65     (li a1, 65)
-    mem[2] = 32'h00B50633;  // ADD  x12, x10, x11   (110)
-    mem[3] = 32'h05560693;  // ADDI x13, x12, 85    (195)
-    mem[4] = 32'h10000713;  // ADDI x14, x0, 256    (address 0x100)
-    mem[5] = 32'h00D72023;  // SW   x13, 0(x14)     (store 195)
-    mem[6] = 32'h00072783;  // LW   x15, 0(x14)     (load it back, 195)
-    mem[7] = 32'h00D78463;  // BEQ  x15, x13, +8    (taken, skips next)
-    mem[8] = 32'h00100813;  // ADDI x16, x0, 1      (skipped)
-    mem[9] = 32'h123458B7;  // LUI  x17, 0x12345    (0x12345000)
-    mem[10] = 32'h008000EF;  // JAL  x1, +8          (x1 = 44, skips next)
-    mem[11] = 32'h00100913;  // ADDI x18, x0, 1      (skipped)
-    mem[12] = 32'h40A689B3;  // SUB  x19, x13, x10   (150)
-    mem[13] = 32'h0000006F;  // JAL  x0, 0           (halt: loop here)
-  end
-
-  always @(*) begin
-    inst = mem[PC[9:2]];  // word-aligned access
   end
 
 endmodule

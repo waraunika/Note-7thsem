@@ -171,7 +171,6 @@ end
 ```
 
 - Here, the datapath into `y` includes **three multiplications and two additions**, all happening combinationally in the same cycle before being captured by the register — this is a long critical path.
-
 - **Optimized** (splitting the three products into their own register layer before summing):
 
 ```verilog
@@ -213,7 +212,6 @@ end
 ```
 
 - The critical path into `sum` is a **three-input addition** in a single cycle.
-
 - **Optimized / balanced** (pre-combining two of the three inputs before the final add):
 
 ```verilog
