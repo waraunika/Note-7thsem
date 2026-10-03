@@ -218,6 +218,8 @@ note:
 ```c
 #include "xgpio.h"
 #include "xparameters.h"
+#include "sleep.h"
+#include <xil_printf.h>
 
 int main(void) {
     XGpio sw, led;
@@ -226,11 +228,12 @@ int main(void) {
     XGpio_Initialize(&sw, XPAR_AXI_GPIO_0_BASEADDR);
     XGpio_SetDataDirection(&sw, 1, 0xFFFFFFFF);
 
-    XGpio_Initialize(&led, XPAR_AXI_GPIO_1_BASEADDR);
+    XGpio_Initialize(&led, XPAR_AXI_GPIO_0_BASEADDR);
     XGpio_SetDataDirection(&led, 2, 0x00000000);
 
     while (1) {
         sw_val = XGpio_DiscreteRead(&sw, 1) & 0xFF;
+        xil_printf("Value read = %d\r\n", sw_val);
         XGpio_DiscreteWrite(&led, 2, sw_val);
 
         sleep(1);
@@ -248,6 +251,8 @@ note:
 ```c
 #include "xgpio.h"
 #include "xparameters.h"
+#include "sleep.h"
+#include <xil_printf.h>
 
 int main(void) {
     XGpio led;
@@ -256,10 +261,12 @@ int main(void) {
     XGpio_SetDataDirection(&led, 2, 0x00000000);
 
     while (1) {
+        xil_printf("Light on\r\n");
         XGpio_DiscreteWrite(&led, 2, 0x1F); // 5 bit: 0001 1111
-        sleep(10);
+        usleep(100000); // light off for 100,000 us = 100 ms
+        xil_printf("Light off\r\n");
         XGpio_DiscreteWrite(&led, 2, 0x00);
-        sleep(10);
+        usleep(9900000); // light on for 9900000 us = 9900 ms = 9.9 s
     }
 }
 ```
@@ -274,6 +281,8 @@ note:
 ```c
 #include "xgpio.h"
 #include "xparameters.h"
+#include "sleep.h"
+#include <xil_printf.h>
 
 int main(void) {
     XGpio led;
@@ -282,10 +291,12 @@ int main(void) {
     XGpio_SetDataDirection(&led, 2, 0x00000000);
 
     while (1) {
+        xil_printf("Light on\r\n");
         XGpio_DiscreteWrite(&led, 2, 0x0F); // 4 bit: 0000 1111
-        sleep(10);
+        usleep(100000); // light off for 100,000 us = 100 ms
+        xil_printf("Light off\r\n");
         XGpio_DiscreteWrite(&led, 2, 0x00);
-        sleep(10);
+        usleep(9900000); // light on for 9900000 us = 9900 ms = 9.9 s
     }
 }
 ```
